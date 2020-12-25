@@ -1,0 +1,10 @@
+.md-typeset h1 {
+  font-weight: normal;
+  color: #000;
+}
+.md-typeset h2 {
+  border-bottom: solid 1px #000000;
+}
+.md-typeset h3 {
+  border-bottom: 1px dotted #888;
+}
