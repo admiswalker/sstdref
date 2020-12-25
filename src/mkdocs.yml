@@ -1,1 +1,23 @@
 site_name: My Docs
+theme:
+    name: material
+    palette:
+        primary: indigo
+        accent: red
+    custom_dir: docs/custom_dir
+    language: en
+plugins:
+    - awesome-pages
+    - search:
+        lang:
+          - en
+          - ja
+extra_css:
+    - custom_dir/custom.css
+extra_javascript:
+    - custom_dir/custom.js
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
