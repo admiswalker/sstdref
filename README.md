@@ -7,6 +7,7 @@ URL: https://admiswalker.github.io/sstdref/
   ```
   $ pip install mkdocs
   $ pip install mkdocs-material
+  $ pip install mkdocs-awesome-pages-plugin
   ```
 - init mkdocs
   ```
