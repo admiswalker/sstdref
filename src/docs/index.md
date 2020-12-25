@@ -1,17 +1,24 @@
-# Welcome to MkDocs
+# What is SSTD ?
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+SubStandardLibrary (SSTD) is a convenient functions set for C++, works on GCC(g++).
 
-## Commands
+## Installation
+1. Downloading source code from [github.com/admiswalker/SubStandardLibrary](https://github.com/admiswalker/SubStandardLibrary).
+2. Copying all of under ```./sstd/*.```
+3. Compilling the sstd.
+   ```
+   $ cd ./sstd
+   $ make
+   ```
+4. Adding flags in your makefile.
+   ```
+   CFLAGS += -I./sstd/include -L./sstd/lib -lsstd
+   CFLAGS += -std=gnu++0x
+   ```
+5. Including a header ```#include <sstd/sstd.hpp>``` in your code.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## License
+- MIT licence or Public domain. (This software is dual license, so you can choose whichever you want).
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Repository
+- [github.com/admiswalker/SubStandardLibrary](https://github.com/admiswalker/SubStandardLibrary)
