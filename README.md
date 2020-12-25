@@ -19,10 +19,7 @@ URL: https://admiswalker.github.io/sstdref/
   ```
   $ make run
   ```
-- Editting documentation under
-  ```
-  sstdref/src/docs
-  ```
+- Editting documentation under ```sstdref/src/docs```
 - Checking the local server (http://127.0.0.1:8000/).
 - Adding the changes to git repository.
   ```
