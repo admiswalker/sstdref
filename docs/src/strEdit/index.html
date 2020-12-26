@@ -272,6 +272,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
@@ -349,6 +356,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
@@ -377,7 +391,7 @@
                 
                 <h1 id="stredit">strEdit</h1>
 <h2 id="abstract">Abstract</h2>
-<p>strEdit.hpp / strEdit.cpp は，文字列を編集するための関数を収録している．</p>
+<p><code>strEdit.hpp</code> / <code>strEdit.cpp</code> は，文字列を編集するための関数を収録している．</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">uint8</span><span class="o">&gt;</span>       <span class="n">readAll_bin</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span>        <span class="n">pReadFile</span><span class="p">);</span> <span class="c1">// read all of the file as a binary</span>
@@ -418,6 +432,61 @@
     <span class="kt">bool</span> <span class="nf">strIn</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="functions">Functions</h2>
+<ul>
+<li>空白 (半角スペース) とタブ文字の除去．</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lstrip</td>
+<td>文字列の先頭にある半角スペースとタブ文字を除去します．</td>
+</tr>
+<tr>
+<td>lstrip_ow</td>
+<td>文字列の先頭にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+</tr>
+<tr>
+<td>rstrip</td>
+<td>文字列の末尾にある半角スペースとタブ文字を除去します．</td>
+</tr>
+<tr>
+<td>rstrip_ow</td>
+<td>文字列の末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+</tr>
+<tr>
+<td>strip</td>
+<td>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．</td>
+</tr>
+<tr>
+<td>strip_ow</td>
+<td>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>文字列の比較．引数の型の違いにより複数定義されている．</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strcmp</td>
+<td>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す．</td>
+</tr>
+</tbody>
+</table>
 <h2 id="usage">Usage</h2>
 <h2 id="others">Others</h2>
 <ul>
