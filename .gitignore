@@ -7,6 +7,6 @@ __pycache__/
 tmpDir/
 tmp*/
 
-googletest-master/
-sstd/
-
+usages/exe/
+usages/googletest-master/
+usages/sstd/

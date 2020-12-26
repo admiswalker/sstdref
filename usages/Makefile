@@ -2,10 +2,11 @@
 # please set each item
 
 # source files
-SRCS = main.cpp
+SRC_DIR = src
+OUT_DIR = exe
 
-# name of generating file
-TARGET = exe
+SRCS   = $(wildcard $(SRC_DIR)/*.cpp)
+TARGET = $(patsubst $(SRC_DIR)/%.cpp,$(OUT_DIR)/%.exe,$(SRCS))
 
 # remove files
 RMs = *.stackdump __pycache__ tmpDir
@@ -20,94 +21,29 @@ CFLAGS += -O3
 
 #------------------------------------------------------------
 
-BACKUP_DIR   = ./backup
-ALL_FILES    = $(wildcard ./*)
-TMP_DIRS     = $(wildcard ./tmp*)
-LIBS_DIRS    = ./sstd ./googletest-master ./sparsehash-master
-BACKUP_FILES = $(filter-out $(TMP_DIRS) $(LIBS_DIRS) ./$(TARGET_t) ./$(TARGET_bm) $(BACKUP_DIR), $(ALL_FILES))
-TIME_STAMP   = `date +%Y_%m%d_%H%M`
-
-
 # when you need to check the change of files in lib, you need to change file name to a not-existing name like "FORCE_XXX".
 #LIB_SSTD       = FORCE_SSTD
 #LIB_GOOGLETEST = FORCE_GOOGLETEST
 LIB_SSTD       = ./sstd/lib/libsstd.a
 LIB_GOOGLETEST = ./googletest-master/build/lib/libgtest.a
 LIB_ALL += $(LIB_SSTD)
-LIB_ALL += $(LIB_flat)
 LIB_ALL += $(LIB_GOOGLETEST)
-LIB_ALL += $(LIB_hopscotch)
 
 
 # generate exe file
 TARGET_all = FORCE_MAKEALL
-$(TARGET_all): $(LIB_ALL) $(TARGET_tc) $(TARGET_ti_sf) $(TARGET_ti_sp) $(TARGET_ti_hf) $(TARGET_ti_hp) $(TARGET_bm) $(TARGET_bm_uM) $(TARGET_sp)
+$(TARGET_all): $(LIB_ALL) $(TARGET)
 	@echo "maked all"
-$(TARGET_tc): $(LIB_ALL) $(SRCS_tc) $(HEADS) $(HEADS_tc)
+$(TARGET): $(LIB_ALL) $(SRCS)
+	mkdir -p $(OUT_DIR)
 	@echo ""
 	@echo "------------------------------------------------------------"
-	@echo "SRCS_t: \n$(SRCS_t)\n"
-	@echo "CFLAGS: \n$(CFLAGS)"
+	@echo "SRCS: $<\n"
+	@echo "TARGET: $@\n"
+	@echo "CFLAGS: $(CFLAGS)\n"
 	@echo "------------------------------------------------------------"
-	$(CXX) -o $(TARGET_tc) $(SRCS_tc) $(CFLAGS) $(CFLAGS_tc)
+	$(CXX) -o ./$@ $(patsubst $(OUT_DIR)/%.exe,./$(SRC_DIR)/%.cpp,$@) $(CFLAGS)
 	@echo ""
-$(TARGET_ti_sf): $(LIB_ALL) $(SRCS_ti) $(HEADS) $(HEADS_ti)
-	@echo ""
-	@echo "------------------------------------------------------------"
-	@echo "SRCS_t: \n$(SRCS_t)\n"
-	@echo "CFLAGS: \n$(CFLAGS)"
-	@echo "------------------------------------------------------------"
-	$(CXX) -o $(TARGET_ti_sf) $(SRCS_ti) $(CFLAGS) $(CFLAGS_ti_sf)
-	@echo ""
-$(TARGET_ti_sp): $(LIB_ALL) $(SRCS_ti) $(HEADS) $(HEADS_ti)
-	@echo ""
-	@echo "------------------------------------------------------------"
-	@echo "SRCS_t: \n$(SRCS_t)\n"
-	@echo "CFLAGS: \n$(CFLAGS)"
-	@echo "------------------------------------------------------------"
-	$(CXX) -o $(TARGET_ti_sp) $(SRCS_ti) $(CFLAGS) $(CFLAGS_ti_sp)
-	@echo ""
-$(TARGET_ti_hf): $(LIB_ALL) $(SRCS_ti) $(HEADS) $(HEADS_ti)
-	@echo ""
-	@echo "------------------------------------------------------------"
-	@echo "SRCS_t: \n$(SRCS_t)\n"
-	@echo "CFLAGS: \n$(CFLAGS)"
-	@echo "------------------------------------------------------------"
-	$(CXX) -o $(TARGET_ti_hf) $(SRCS_ti) $(CFLAGS) $(CFLAGS_ti_hf)
-	@echo ""
-$(TARGET_ti_hp): $(LIB_ALL) $(SRCS_ti) $(HEADS) $(HEADS_ti)
-	@echo ""
-	@echo "------------------------------------------------------------"
-	@echo "SRCS_t: \n$(SRCS_t)\n"
-	@echo "CFLAGS: \n$(CFLAGS)"
-	@echo "------------------------------------------------------------"
-	$(CXX) -o $(TARGET_ti_hp) $(SRCS_ti) $(CFLAGS) $(CFLAGS_ti_hp)
-	@echo ""
-$(TARGET_bm): $(LIB_ALL) $(SRCS_bm) $(HEADS) $(HEADS_bm)
-	@echo ""
-	@echo "------------------------------------------------------------"
-	@echo "SRCS_bm: \n$(SRCS_bm)\n"
-	@echo "CFLAGS: \n$(CFLAGS)"
-	@echo "------------------------------------------------------------"
-	$(CXX) -o $(TARGET_bm) $(SRCS_bm) $(CFLAGS) $(CFLAGS_bm)
-	@echo ""
-$(TARGET_bm_uM): $(LIB_ALL) $(SRCS_bm_uM) $(HEADS) $(HEADS_bm)
-	@echo ""
-	@echo "------------------------------------------------------------"
-	@echo "SRCS_bm_uM: \n$(SRCS_bm_uM)\n"
-	@echo "CFLAGS: \n$(CFLAGS)"
-	@echo "------------------------------------------------------------"
-	$(CXX) -o $(TARGET_bm_uM) $(SRCS_bm_uM) $(CFLAGS) $(CFLAGS_bm)
-	@echo ""
-$(TARGET_sp): $(LIB_ALL) $(SRCS_sp)
-	@echo ""
-	@echo "------------------------------------------------------------"
-	@echo "SRCS_st: \n$(SRCS_sp)\n"
-	@echo "CFLAGS: \n$(CFLAGS)"
-	@echo "------------------------------------------------------------"
-	$(CXX) -o $(TARGET_sp) $(SRCS_sp) $(CFLAGS) $(CFLAGS_sp)
-	@echo ""
-
 
 $(LIB_SSTD):
 	@echo ""
@@ -115,10 +51,6 @@ $(LIB_SSTD):
 	@mv SubStandardLibrary-SSTD--master/sstd ./
 	@rm -rf SubStandardLibrary-SSTD--master/
 	@(cd ./sstd; make -j)
-
-$(LIB_flat):
-	@echo ""
-	@unzip -n flat_hash_map-master.zip
 
 $(LIB_GOOGLETEST):
 	@echo ""
@@ -134,20 +66,15 @@ all:
 
 .PHONY: clean
 clean:
-	-rm -rf $(TARGET)
+	-rm -rf $(OUT_DIR)
 	-rm -rf googletest-master
-	-rm -rf flat_hash_map-master
 	-rm -rf sstd
 	-rm -rf $(RMs)
 
 
 .PHONY: test
 test: # run_all_test
-	./exe_test_c
-	./exe_test_i_hf
-	./exe_test_i_hp
-	./exe_test_i_sf
-	./exe_test_i_sp
+	./exe_test
 
 
 .PHONY: zip
@@ -170,7 +97,7 @@ updateLib:
 
 
 .PHONY: steps
-steps: $(SRCS_t) $(SRCS_bm) $(HEADS) $(HEADS_t) $(HEADS_bm)
+steps: $(SRCS)
 	@echo "$^" | xargs wc -l
 	@echo ""
 	@(cd ./sstd; make steps)

@@ -60,6 +60,21 @@ namespace sstd{
 ```
 
 ## Usage
+- single integer
+```c++
+std::vector<int> v        = {1,2,3,4,5};
+std::vector<int> v_sliced = v && sstd::slice(1);
+
+sstd::printn(v);
+sstd::printn(v_sliced);
+```
+```
+v = [1 2 3 4 5]
+v_sliced = [2]
+```
+
+
+
 
 ## Others
 - Implementation: [sstd/src/vector/slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/vector/slice.hpp)
