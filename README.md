@@ -37,4 +37,9 @@ URL: https://admiswalker.github.io/sstdref/
 
 | File or directory name | Description Origin |
 | ---------------------- | ------------------ |
+| docs                   | Static files for github.io |
+| src                    | Markdown files for editing and generating static site |
 | usages                 | Example code for SSTD documentation |
+| .git                   | git files          |
+| Makefile               | ```$ make run``` for running preview server. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io```. |
+
