@@ -60,20 +60,126 @@ namespace sstd{
 ```
 
 ## Usage
-- single integer
-```c++
-std::vector<int> v        = {1,2,3,4,5};
-std::vector<int> v_sliced = v && sstd::slice(1);
 
-sstd::printn(v);
-sstd::printn(v_sliced);
+### one arg (copy)
+- input
+```c++
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<int> v          = {1,2,3,4,5};
+    std::vector<int> v_sliced01 = v && sstd::slice(1);
+    std::vector<int> v_sliced02 = v && sstd::slice(-1);
+    
+    sstd::printn(v);
+    sstd::printn(v_sliced01);
+    sstd::printn(v_sliced02);
+}
 ```
+- output
 ```
 v = [1 2 3 4 5]
-v_sliced = [2]
+v_sliced01 = [2]
+v_sliced02 = [5]
 ```
 
+### two args (copy)
+- input
+```c++
+#include <sstd/sstd.hpp>
 
+int main(){
+    std::vector<int> v        = {1,2,3,4,5};
+    std::vector<int> v_sliced = v && sstd::slice(1,3);
+    
+    sstd::printn(v);
+    sstd::printn(v_sliced);
+}
+```
+- output
+```
+v = [1 2 3 4 5]
+v_sliced = [2 3]
+```
+
+### begin to end (copy)
+- input
+```c++
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<int> v        = {1,2,3,4,5};
+    std::vector<int> v_sliced = v && sstd::slice(sstd::begin(),sstd::end());
+    
+    sstd::printn(v);
+    sstd::printn(v_sliced);
+}
+```
+- output
+```
+v = [1 2 3 4 5]
+v_sliced = [1 2 3 4 5]
+```
+
+### one arg (move)
+- input
+```c++
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<std::string> v          = {"1","2","3","4","5"};
+    std::vector<std::string> v_sliced01 = v && sstd::slice_mv(1);
+    std::vector<std::string> v_sliced02 = v && sstd::slice_mv(-1);
+    
+    sstd::printn(v);
+    sstd::printn(v_sliced01);
+    sstd::printn(v_sliced02);
+}
+```
+- output
+```
+v = ["1" "" "3" "4" ""]
+v_sliced01 = ["2"]
+v_sliced02 = ["5"]
+```
+
+### two args (move)
+- input
+```c++
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<std::string> v        = {"1","2","3","4","5"};
+    std::vector<std::string> v_sliced = v && sstd::slice_mv(1,3);
+    
+    sstd::printn(v);
+    sstd::printn(v_sliced);
+}
+```
+- output
+```
+v = ["1" "" "" "4" "5"]
+v_sliced = ["2" "3"]
+```
+
+### begin to end (move)
+- input
+```c++
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<std::string> v        = {"1","2","3","4","5"};
+    std::vector<std::string> v_sliced = v && sstd::slice_mv(sstd::begin(),sstd::end());
+    
+    sstd::printn(v);
+    sstd::printn(v_sliced);
+}
+```
+- output
+```
+v = ["" "" "" "" ""]
+v_sliced = ["1" "2" "3" "4" "5"]
+```
 
 
 ## Others
