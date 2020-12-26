@@ -34,6 +34,7 @@ URL: https://admiswalker.github.io/sstdref/
   ```
 
 # File and Directory descriptions
-## Example code for SSTD documentation
 
-Under ```usages```
+| File or directory name | Description Origin |
+| ---------------------- | ------------------ |
+| usages                 | Example code for SSTD documentation |
