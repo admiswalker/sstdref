@@ -263,6 +263,54 @@
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-arg-copy" class="md-nav__link">
+    one arg (copy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-args-copy" class="md-nav__link">
+    two args (copy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#begin-to-end-copy" class="md-nav__link">
+    begin to end (copy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-arg-move" class="md-nav__link">
+    one arg (move)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-args-move" class="md-nav__link">
+    two args (move)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#begin-to-end-move" class="md-nav__link">
+    begin to end (move)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -353,6 +401,54 @@
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-arg-copy" class="md-nav__link">
+    one arg (copy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-args-copy" class="md-nav__link">
+    two args (copy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#begin-to-end-copy" class="md-nav__link">
+    begin to end (copy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-arg-move" class="md-nav__link">
+    one arg (move)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-args-move" class="md-nav__link">
+    two args (move)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#begin-to-end-move" class="md-nav__link">
+    begin to end (move)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -434,6 +530,120 @@
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
+<h3 id="one-arg-copy">one arg (copy)</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span>          <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v_sliced01</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;&amp;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v_sliced02</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;&amp;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced01</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced02</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output
+<div class="highlight"><pre><span></span><code>v = [1 2 3 4 5]
+v_sliced01 = [2]
+v_sliced02 = [5]
+</code></pre></div></li>
+</ul>
+<h3 id="two-args-copy">two args (copy)</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span>        <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v_sliced</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;&amp;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output
+<div class="highlight"><pre><span></span><code>v = [1 2 3 4 5]
+v_sliced = [2 3]
+</code></pre></div></li>
+</ul>
+<h3 id="begin-to-end-copy">begin to end (copy)</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span>        <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v_sliced</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;&amp;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">slice</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">begin</span><span class="p">(),</span><span class="n">sstd</span><span class="o">::</span><span class="n">end</span><span class="p">());</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output
+<div class="highlight"><pre><span></span><code>v = [1 2 3 4 5]
+v_sliced = [1 2 3 4 5]
+</code></pre></div></li>
+</ul>
+<h3 id="one-arg-move">one arg (move)</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v</span>          <span class="o">=</span> <span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="s">&quot;5&quot;</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v_sliced01</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;&amp;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">slice_mv</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v_sliced02</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;&amp;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">slice_mv</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced01</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced02</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output
+<div class="highlight"><pre><span></span><code>v = [&quot;1&quot; &quot;&quot; &quot;3&quot; &quot;4&quot; &quot;&quot;]
+v_sliced01 = [&quot;2&quot;]
+v_sliced02 = [&quot;5&quot;]
+</code></pre></div></li>
+</ul>
+<h3 id="two-args-move">two args (move)</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v</span>        <span class="o">=</span> <span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="s">&quot;5&quot;</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v_sliced</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;&amp;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">slice_mv</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output
+<div class="highlight"><pre><span></span><code>v = [&quot;1&quot; &quot;&quot; &quot;&quot; &quot;4&quot; &quot;5&quot;]
+v_sliced = [&quot;2&quot; &quot;3&quot;]
+</code></pre></div></li>
+</ul>
+<h3 id="begin-to-end-move">begin to end (move)</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v</span>        <span class="o">=</span> <span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="s">&quot;5&quot;</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v_sliced</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;&amp;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">slice_mv</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">begin</span><span class="p">(),</span><span class="n">sstd</span><span class="o">::</span><span class="n">end</span><span class="p">());</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output
+<div class="highlight"><pre><span></span><code>v = [&quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;]
+v_sliced = [&quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;]
+</code></pre></div></li>
+</ul>
 <h2 id="others">Others</h2>
 <ul>
 <li>Implementation: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/vector/slice.hpp">sstd/src/vector/slice.hpp</a></li>
