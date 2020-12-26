@@ -1,8 +1,9 @@
 # sstdref
+sstdref is the documentation files for SSTD.
 
 URL: https://admiswalker.github.io/sstdref/
 
-# installation
+# Installation
 - mkdocs
   ```
   $ pip install mkdocs
@@ -31,3 +32,8 @@ URL: https://admiswalker.github.io/sstdref/
   ```
   $ make updateDocs
   ```
+
+# File and Directory descriptions
+## Example code for SSTD documentation
+
+Under ```usages```
