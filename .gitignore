@@ -1,1 +1,12 @@
 src/site/*
+
+*exe*
+*.pyc
+
+__pycache__/
+tmpDir/
+tmp*/
+
+googletest-master/
+sstd/
+
