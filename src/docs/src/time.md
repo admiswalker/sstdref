@@ -1,7 +1,6 @@
 # time
 ## Abstract
-C/C++ における時刻計算は，tm 構造体や unixtime により処理する．
-しかしながら，gcc と MSVC++ ではそれぞれに関数名が異なる． また，関数の名も直感的ではない． したがって，sstd では，これらの関数をラップした．
+```struct tm``` と ```time_t``` (unixtime) および，その他の時刻を相互変換する．
 
 ## Header file
 ```c++
@@ -32,6 +31,45 @@ namespace sstd{
 ```
 
 ## Usage
+- input
+```c++
+#include <sstd/sstd.hpp>
+#include <time.h>
+
+int main(){
+    time_t unixtime_UTC; time(&unixtime_UTC); // get current unixtime (UTC)
+    struct tm tm_UTC = sstd::time2tm(unixtime_UTC);
+    struct tm tm_Local = sstd::timeGm2tmLocal(unixtime_UTC);
+    
+    sstd::printn(unixtime_UTC);
+    sstd::printn(tm_UTC);
+    sstd::printn(tm_Local);
+}
+```
+- output  
+Below is the result on Japanese local time (UTC+9hour).
+```
+unixtime_UTC = 1608991553
+tm_UTC = 2020-12-26 14:05:53
+tm_Local = 2020-12-26 23:05:53
+```
+
+## Appendix
+```c++
+struct tm{
+  int tm_sec;      /* 秒 [0-61] 最大2秒までのうるう秒を考慮 */
+  int tm_min;      /* 分 [0-59] */
+  int tm_hour;     /* 時 [0-23] */
+  int tm_mday;     /* 日 [1-31] */
+  int tm_mon;      /* 月 [0-11] 0から始まることに注意 */
+  int tm_year;     /* 年 [1900からの経過年数] */
+  int tm_wday;     /* 曜日 [0:日 1:月 ... 6:土] */
+  int tm_yday;     /* 年内の通し日数 [0-365] 0から始まることに注意*/
+  int tm_isdst;    /* 夏時間が無効であれば 0 */
+};
+```
+
+- ref: [localtime - 初心者のためのポイント学習 C 言語](http://www9.plala.or.jp/sgwr-t/lib/localtime.html)
 
 ## Others
 - Implementation: [sstd/src/time.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time.hpp)
