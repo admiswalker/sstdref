@@ -2,9 +2,6 @@
 # please set each item
 
 # source files
-SRC_DIR = src
-OUT_DIR = exe
-
 SRC    = main.cpp
 TARGET = mdEx_cpp_example.exe
 
@@ -45,10 +42,6 @@ $(TARGET): $(SRC)
 	@echo ""
 
 
-test:
-	@($(TARGET) ./output.md ./input.md)
-
-
 $(LIB_SSTD):
 	@echo ""
 	@unzip -n SubStandardLibrary-SSTD--master.zip
@@ -70,15 +63,16 @@ all:
 
 .PHONY: clean
 clean:
-	-rm -rf $(OUT_DIR)
 	-rm -rf googletest-master
 	-rm -rf sstd
-	-rm -rf $(RMs)
+	-rm -rf tmp
+	-rm -rf out.md
 
 
 .PHONY: test
 test: # run_all_test
-	./exe_test
+	@($(TARGET) ./output.md ./input.md)
+#	./exe_test
 
 
 .PHONY: updateLib

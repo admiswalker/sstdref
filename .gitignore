@@ -8,8 +8,9 @@ tmpDir/
 tmp*/
 
 
-mdExpansion_cpp_example/googletest-master/
-mdExpansion_cpp_example/sstd/
+mdEx_cpp_example/googletest-master/
+mdEx_cpp_example/sstd/
+mdEx_cpp_example/out.md
 
 usages/exe/
 usages/googletest-master/

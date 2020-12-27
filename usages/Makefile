@@ -30,12 +30,12 @@ LIB_ALL += $(LIB_SSTD)
 LIB_ALL += $(LIB_GOOGLETEST)
 
 
-# generate exe file
 TARGET_all = FORCE_MAKEALL
 $(TARGET_all): $(LIB_ALL) $(TARGETS)
 	@echo "maked all"
 
 
+# generate exe file
 define Fnc_gen_exe
 $(1): $(2)
 	mkdir -p $(OUT_DIR)
