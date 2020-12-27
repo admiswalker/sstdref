@@ -7,6 +7,10 @@ __pycache__/
 tmpDir/
 tmp*/
 
+
+mdExpansion_cpp_example/googletest-master/
+mdExpansion_cpp_example/sstd/
+
 usages/exe/
 usages/googletest-master/
 usages/sstd/
