@@ -13,7 +13,7 @@ TARGETS_nmd = $(patsubst $(SRC_DIR)/%,$(OUT_DIR)/%,$(SRCS_nmd))
 #------------------------------------------------------------
 
 TARGET_all = FORCE_MAKEALL
-$(TARGET_all): $(TARGETS_md) $(TARGETS_nmd) #build_MkDocs build_mdEx
+$(TARGET_all): $(TARGETS_md) $(TARGETS_nmd) build_mdEx #build_MkDocs
 	@echo "SRCS: $(SRCS)\n"
 	@echo "SRCS_md: $(SRCS_md)\n"
 	@echo "SRCS_nmd: $(SRCS_nmd)\n"
@@ -24,10 +24,11 @@ $(TARGET_all): $(TARGETS_md) $(TARGETS_nmd) #build_MkDocs build_mdEx
 
 define apply_mdEx
 $(1): $(2)
+	@echo "--- apply_mdEx ---"
 	@echo "target: $(1)"
 	@echo "   src: $(2)"
-	mkdir -p $(OUT_DIR)
-	./mdEx_cpp_example/mdEx_cpp_example.exe $(1) $(2)
+#	@(cd ./mdEx_cpp_example; ./mdEx_cpp_example.exe ../$(OUT_DIR) ../$(2) ../$(1))
+	cd ./mdEx_cpp_example; ./mdEx_cpp_example.exe $(patsubst %,../%,$(OUT_DIR)) $(patsubst %,../%,$(2)) $(patsubst %,../%,$(1))
 	@echo ""
 endef
 $(foreach x, $(TARGETS_md), $(eval $(call apply_mdEx, $(x), $(patsubst $(OUT_DIR)/%,$(SRC_DIR)/%,$(x)))))
@@ -35,6 +36,7 @@ $(foreach x, $(TARGETS_md), $(eval $(call apply_mdEx, $(x), $(patsubst $(OUT_DIR
 
 define copy_file
 $(1): $(2)
+	@echo "--- copy_file ---"
 	@echo "target: $(1)"
 	@echo "   src: $(2)"
 	mkdir -p $(OUT_DIR)

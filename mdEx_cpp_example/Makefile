@@ -71,7 +71,7 @@ clean:
 
 .PHONY: test
 test: # run_all_test
-	@($(TARGET) ./output.md ./input.md)
+	@($(TARGET) ./input.md ./output.md)
 #	./exe_test
 
 

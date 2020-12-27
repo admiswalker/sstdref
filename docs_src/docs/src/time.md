@@ -33,6 +33,7 @@ namespace sstd{
 ## Usage
 - input
 ```cpp
+#mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 #include <time.h>
 
@@ -49,9 +50,7 @@ int main(){
 - output  
 Below is the result on Japanese local time (UTC+9hour).
 ```
-unixtime_UTC = 1608991553
-tm_UTC = 2020-12-26 14:05:53
-tm_Local = 2020-12-26 23:05:53
+#mdEx: cpp example (out)
 ```
 
 ## Appendix

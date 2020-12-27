@@ -1,4 +1,5 @@
 #include <sstream>
+#include <regex>
 #include <sstd/sstd.hpp>
 
 std::string vStr2str_n(const std::vector<std::string>& vStr){
@@ -9,9 +10,9 @@ std::string vStr2str_n(const std::vector<std::string>& vStr){
     return s;
 }
 
-bool sstd__save2file(const std::string& tmpFile, const std::string& s){
+bool sstd__save2file(const std::string& savePath, const std::string& s){
     sstd::file fp;
-    if(! fp.fopen(tmpFile, "wb") ){ sstd::pdbg("ERROR: fopen() was failed.\n"); return false; }
+    if(! fp.fopen(savePath, "wb") ){ sstd::pdbg("ERROR: fopen() was failed.\n"); return false; }
     
     size_t w_size = fp.fwrite(&s[0], sizeof(char), s.size());
     if(w_size != s.size()){ sstd::pdbg("ERROR: fopen() was failed.\n"); return false; }
@@ -60,16 +61,15 @@ std::string cpp2out(const std::string& tmpDir, const std::string& cpp_path){
 }
 
 int main(int argc, char *argv[]){
-    if(argc != 1+2){ sstd::pdbg("ERROR: input args != 2.\n"); return -1; }
-    std::string path_out = argv[1];
+    if(argc != 1+3){ sstd::pdbg("ERROR: input args != 3.\n"); return -1; }
+    std::string tmpDir   = argv[1];
     std::string path_in  = argv[2];
+    std::string path_out = argv[3];
     
     std::string strIn = sstd::readAll(path_in);
     std::vector<std::string> vStrIn = sstd::splitByLine(strIn);
     std::vector<std::string> vStrOut;
-    
-    std::string tmpDir = "./tmp";
-    sstd::mkdir(tmpDir);
+    sstd::printn(path_in);
     
     std::string cpp_out;
     
@@ -91,19 +91,22 @@ int main(int argc, char *argv[]){
             vStrOut <<= vStrIn[i]; // add "```"
             
             // vCppCode to cpp_file
-            std::string cpp_path = tmpDir+'/'+path_in+'_'+sstd::ssprintf("%d",i)+".cpp";
+//            std::string cpp_path = tmpDir+'/'+path_in+'_'+sstd::ssprintf("%d",i)+".cpp";
+            std::string cpp_path = tmpDir+'/'+std::regex_replace(path_in.c_str(), std::regex("/"), "_")+'_'+sstd::ssprintf("%d",i)+".cpp";
+            sstd::printn(cpp_path);
+            sstd::printn(cpp_code);
             sstd__save2file(cpp_path, cpp_code);
             
             // cpp_file to output
             cpp_out = cpp2out(tmpDir, cpp_path);
             
         }else if(vStrIn[i] == "#mdEx: cpp example (out)"){
-            ++i;
             vStrOut.pop_back(); // rm "#mdEx: cpp example (in)"
             vStrOut <<= cpp_out;
         }
     }
     std::string strOut = vStr2str_n(vStrOut);
+    sstd::printn(path_out);
     if(! sstd__save2file(path_out, strOut) ){ sstd::pdbg("ERROR: sstd__save2file() was failed.\n"); return false; }
     
 	return 0;
