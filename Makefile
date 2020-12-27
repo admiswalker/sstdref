@@ -4,33 +4,44 @@ TEMP = ./tmp
 SRC_DIR = ./docs_src
 OUT_DIR = ./tmp
 
-SRCS       = $(shell find $(SRC_DIR) -type f)
-SRCS_md    = $(filter %.md, $(SRCS))
-TARGETS_md = $(patsubst $(SRC_DIR)/%.md,$(OUT_DIR)/%.md,$(SRCS_md))
+SRCS     = $(shell find $(SRC_DIR) -type f)
+SRCS_md  = $(filter %.md, $(SRCS))
+SRCS_nmd = $(filter-out %.md, $(SRCS))
+TARGETS_md  = $(patsubst $(SRC_DIR)/%,$(OUT_DIR)/%,$(SRCS_md))
+TARGETS_nmd = $(patsubst $(SRC_DIR)/%,$(OUT_DIR)/%,$(SRCS_nmd))
 
 #------------------------------------------------------------
 
 TARGET_all = FORCE_MAKEALL
-$(TARGET_all): build_MkDocs build_mdEx
+$(TARGET_all): $(TARGETS_md) $(TARGETS_nmd) #build_MkDocs build_mdEx
 	@echo "SRCS: $(SRCS)\n"
 	@echo "SRCS_md: $(SRCS_md)\n"
+	@echo "SRCS_nmd: $(SRCS_nmd)\n"
 	@echo "TARGETS_md: $(TARGETS_md)\n"
+	@echo "TARGETS_nmd: $(TARGETS_nmd)\n"
 	@echo "maked all"
 
-#copy_files:
-#define copy_files
-#$(1): $(2)
-#	mkdir -p $(OUT_DIR)
-#	@echo ""
-#	@echo "------------------------------------------------------------"
-#	@echo "TARGET: \n$(1)\n"
-#	@echo "SRCS: \n$(2)"
-#	@echo "CFLAGS: \n$(CFLAGS)"
-#	@echo "------------------------------------------------------------"
-#	$(CXX) -o $(1) $(2) $(CFLAGS)
-#	@echo ""
-#endef
-#$(foreach x, $(TARGETS), $(eval $(call copy_files, ./$(x), $(patsubst $(OUT_DIR)/%.exe,./$(SRC_DIR)/%.cpp,$(x)))))
+
+define apply_mdEx
+$(1): $(2)
+	@echo "target: $(1)"
+	@echo "   src: $(2)"
+	mkdir -p $(OUT_DIR)
+	./mdEx_cpp_example/mdEx_cpp_example.exe $(1) $(2)
+	@echo ""
+endef
+$(foreach x, $(TARGETS_md), $(eval $(call apply_mdEx, $(x), $(patsubst $(OUT_DIR)/%,$(SRC_DIR)/%,$(x)))))
+
+
+define copy_file
+$(1): $(2)
+	@echo "target: $(1)"
+	@echo "   src: $(2)"
+	mkdir -p $(OUT_DIR)
+	cp -f $(2) $(1)
+endef
+$(foreach x, $(TARGETS_nmd), $(eval $(call copy_file, $(x), $(patsubst $(OUT_DIR)/%,$(SRC_DIR)/%,$(x)))))
+
 
 build_MkDocs:
 	@(mkdir -p $(TEMP))
