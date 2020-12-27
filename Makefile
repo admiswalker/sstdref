@@ -19,4 +19,3 @@ updateDocs:
 
 clean:
 	@(rm -rf $(TEMP))
-	@(rm -rf ./docs)
