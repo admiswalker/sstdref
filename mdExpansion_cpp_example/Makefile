@@ -45,6 +45,10 @@ $(TARGET): $(SRC)
 	@echo ""
 
 
+test:
+	@($(TARGET) ./output.md ./input.md)
+
+
 $(LIB_SSTD):
 	@echo ""
 	@unzip -n SubStandardLibrary-SSTD--master.zip
