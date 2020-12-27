@@ -32,7 +32,7 @@ namespace sstd{
 
 ## Usage
 - input
-```c++
+```cpp
 #include <sstd/sstd.hpp>
 #include <time.h>
 

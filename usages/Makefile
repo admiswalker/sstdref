@@ -5,8 +5,8 @@
 SRC_DIR = src
 OUT_DIR = exe
 
-SRCS   = $(wildcard $(SRC_DIR)/*.cpp)
-TARGET = $(patsubst $(SRC_DIR)/%.cpp,$(OUT_DIR)/%.exe,$(SRCS))
+SRCS    = $(wildcard $(SRC_DIR)/*.cpp)
+TARGETS = $(patsubst $(SRC_DIR)/%.cpp,$(OUT_DIR)/%.exe,$(SRCS))
 
 # remove files
 RMs = *.stackdump __pycache__ tmpDir
@@ -32,18 +32,24 @@ LIB_ALL += $(LIB_GOOGLETEST)
 
 # generate exe file
 TARGET_all = FORCE_MAKEALL
-$(TARGET_all): $(LIB_ALL) $(TARGET)
+$(TARGET_all): $(LIB_ALL) $(TARGETS)
 	@echo "maked all"
-$(TARGET): $(LIB_ALL) $(SRCS)
+
+
+define Fnc_gen_exe
+$(1): $(2)
 	mkdir -p $(OUT_DIR)
 	@echo ""
 	@echo "------------------------------------------------------------"
-	@echo "SRCS: $<\n"
-	@echo "TARGET: $@\n"
-	@echo "CFLAGS: $(CFLAGS)\n"
+	@echo "TARGET: \n$(1)\n"
+	@echo "SRCS: \n$(2)"
+	@echo "CFLAGS: \n$(CFLAGS)"
 	@echo "------------------------------------------------------------"
-	$(CXX) -o ./$@ $(patsubst $(OUT_DIR)/%.exe,./$(SRC_DIR)/%.cpp,$@) $(CFLAGS)
+	$(CXX) -o $(1) $(2) $(CFLAGS)
 	@echo ""
+endef
+$(foreach x, $(TARGETS), $(eval $(call Fnc_gen_exe, ./$(x), $(patsubst $(OUT_DIR)/%.exe,./$(SRC_DIR)/%.cpp,$(x)))))
+
 
 $(LIB_SSTD):
 	@echo ""
@@ -75,19 +81,6 @@ clean:
 .PHONY: test
 test: # run_all_test
 	./exe_test
-
-
-.PHONY: zip
-zip:
-	-rm -rf $(RMs)
-	@mkdir -p $(BACKUP_DIR)
-	zip -r $(BACKUP_DIR)/${TIME_STAMP}$(m).zip $(BACKUP_FILES)
-.PHONY: backup
-backup:
-	@(make zip)
-	@(make)
-# when you need comments for backup, just type
-# $ make backup m=_comment_will_be_inserted_after_the_date
 
 
 .PHONY: updateLib
