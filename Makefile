@@ -12,13 +12,13 @@ TARGETS_nmd = $(patsubst $(SRC_DIR)/%,$(OUT_DIR)/%,$(SRCS_nmd))
 
 #------------------------------------------------------------
 
+build_MkDocs = ./tmp/site/index.html
+
+
+
+
 TARGET_all = FORCE_MAKEALL
-$(TARGET_all): $(TARGETS_md) $(TARGETS_nmd) build_mdEx #build_MkDocs
-	@echo "SRCS: $(SRCS)\n"
-	@echo "SRCS_md: $(SRCS_md)\n"
-	@echo "SRCS_nmd: $(SRCS_nmd)\n"
-	@echo "TARGETS_md: $(TARGETS_md)\n"
-	@echo "TARGETS_nmd: $(TARGETS_nmd)\n"
+$(TARGET_all): build_mdEx $(TARGETS_md) $(TARGETS_nmd) $(build_MkDocs)
 	@echo "maked all"
 
 
@@ -27,8 +27,9 @@ $(1): $(2)
 	@echo "--- apply_mdEx ---"
 	@echo "target: $(1)"
 	@echo "   src: $(2)"
+	@(mkdir -p $(dir $(1)))
 #	@(cd ./mdEx_cpp_example; ./mdEx_cpp_example.exe ../$(OUT_DIR) ../$(2) ../$(1))
-	cd ./mdEx_cpp_example; ./mdEx_cpp_example.exe $(patsubst %,../%,$(OUT_DIR)) $(patsubst %,../%,$(2)) $(patsubst %,../%,$(1))
+	@(cd ./mdEx_cpp_example; ./mdEx_cpp_example.exe $(patsubst %,../%,$(OUT_DIR)) $(patsubst %,../%,$(2)) $(patsubst %,../%,$(1)))
 	@echo ""
 endef
 $(foreach x, $(TARGETS_md), $(eval $(call apply_mdEx, $(x), $(patsubst $(OUT_DIR)/%,$(SRC_DIR)/%,$(x)))))
@@ -39,21 +40,21 @@ $(1): $(2)
 	@echo "--- copy_file ---"
 	@echo "target: $(1)"
 	@echo "   src: $(2)"
-	mkdir -p $(OUT_DIR)
-	cp -f $(2) $(1)
+	@(mkdir -p $(dir $(1)))
+	@cp -f $(2) $(1)
 endef
 $(foreach x, $(TARGETS_nmd), $(eval $(call copy_file, $(x), $(patsubst $(OUT_DIR)/%,$(SRC_DIR)/%,$(x)))))
 
 
-build_MkDocs:
+$(build_MkDocs):
 	@(mkdir -p $(TEMP))
-	@(cp -r ./docs_src/* ./$(TEMP))
+#	@(cp -r ./docs_src/* ./$(TEMP))
 	@(cd ./$(TEMP); mkdocs build)
 
 build_mdEx:
 	@(cd ./mdEx_cpp_example; make) # markdown expansion
 
-run: build_MkDocs build_mdEx
+run: $(TARGET_all)
 	@(xdg-open http://127.0.0.1:8000/)
 	@(cd ./$(TEMP); mkdocs serve)
 

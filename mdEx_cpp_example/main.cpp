@@ -69,7 +69,6 @@ int main(int argc, char *argv[]){
     std::string strIn = sstd::readAll(path_in);
     std::vector<std::string> vStrIn = sstd::splitByLine(strIn);
     std::vector<std::string> vStrOut;
-    sstd::printn(path_in);
     
     std::string cpp_out;
     
@@ -93,8 +92,6 @@ int main(int argc, char *argv[]){
             // vCppCode to cpp_file
 //            std::string cpp_path = tmpDir+'/'+path_in+'_'+sstd::ssprintf("%d",i)+".cpp";
             std::string cpp_path = tmpDir+'/'+std::regex_replace(path_in.c_str(), std::regex("/"), "_")+'_'+sstd::ssprintf("%d",i)+".cpp";
-            sstd::printn(cpp_path);
-            sstd::printn(cpp_code);
             sstd__save2file(cpp_path, cpp_code);
             
             // cpp_file to output
@@ -106,7 +103,6 @@ int main(int argc, char *argv[]){
         }
     }
     std::string strOut = vStr2str_n(vStrOut);
-    sstd::printn(path_out);
     if(! sstd__save2file(path_out, strOut) ){ sstd::pdbg("ERROR: sstd__save2file() was failed.\n"); return false; }
     
 	return 0;
