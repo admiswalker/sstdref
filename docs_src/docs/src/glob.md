@@ -25,6 +25,8 @@ int main(){
     
     std::vector<std::string> vStr = sstd::glob("./tmp/*.txt");
     sstd::printn(vStr);
+    
+    sstd::rm("./tmp");
 }
 ```
 - output  
