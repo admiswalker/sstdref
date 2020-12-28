@@ -34,8 +34,8 @@ namespace sstd{
 - input
 ```cpp
 #mdEx: cpp example (in)
+#include <time.h> // inorder to get current time
 #include <sstd/sstd.hpp>
-#include <time.h>
 
 int main(){
     time_t unixtime_UTC; time(&unixtime_UTC); // get current unixtime (UTC)

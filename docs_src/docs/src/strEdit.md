@@ -69,7 +69,6 @@ namespace sstd{
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
-#include <time.h>
 
 int main(){
     std::string s = "   abc   ";
@@ -81,7 +80,6 @@ int main(){
 }
 ```
 - output  
-Below is the result on Japanese local time (UTC+9hour).
 ```
 #mdEx: cpp example (out)
 ```
