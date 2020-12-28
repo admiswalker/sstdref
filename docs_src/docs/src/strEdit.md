@@ -65,6 +65,26 @@ namespace sstd{
 | strcmp | Comparing two strings given as input arguments and returns true if they are equal, false otherwise.<br/>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す． |
 
 ## Usage
+- input
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+#include <time.h>
+
+int main(){
+    std::string s = "   abc   ";
+    
+    sstd::printn(sstd::lstrip(s));
+    sstd::printn(sstd::rstrip(s));
+    sstd::printn(sstd::strip(s));
+    sstd::strip_ow(s); sstd::printn(s);
+}
+```
+- output  
+Below is the result on Japanese local time (UTC+9hour).
+```
+#mdEx: cpp example (out)
+```
 
 ## Others
 - Implementation: [sstd/src/vector/strEdit.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/strEdit.hpp)
