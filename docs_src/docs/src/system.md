@@ -29,8 +29,8 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/XXXXXX.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/XXXXXX.cpp)
-- Header: [sstd/src/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/XXXXXX.hpp)
-- Test: [test/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/XXXXXX.hpp)
+- Source: [sstd/src/stdlib.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/stdlib.cpp)
+- Header: [sstd/src/stdlib.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/stdlib.hpp)
+- Test: [test/stdlib.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/stdlib.hpp)
   (Not implemented yet)
 
