@@ -14,7 +14,7 @@
     
     
       
-        <title>glob - SSTD documentation</title>
+        <title>sleep - SSTD documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glob" class="md-skip">
+        <a href="#sleep" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              glob
+              sleep
             
           </span>
         </div>
@@ -212,70 +212,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        glob
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../glob/" class="md-nav__link">
       glob
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    Abstract
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#header-file" class="md-nav__link">
-    Header file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -349,11 +290,70 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../sleep/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        sleep
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       sleep
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -534,14 +534,18 @@
               
                 
                 
-                <h1 id="glob">glob</h1>
+                <h1 id="sleep">sleep</h1>
 <h2 id="abstract">Abstract</h2>
-<p><code>glob</code> は，正規表現 <code>*</code> により，ディレクトリを探索します．<br />
-※その他の正規表現については，現状未実装です．</p>
+<p><code>sleep</code> waits for the specified time.<br />
+<code>sleep</code> は指定時間待機します．</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">glob</span><span class="p">(</span><span class="k">const</span>        <span class="kt">char</span><span class="o">*</span> <span class="n">path</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">glob</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">path</span><span class="p">);</span>
+    <span class="kr">inline</span> <span class="kt">void</span> <span class="n">sleep_hour</span><span class="p">(</span><span class="n">uint</span> <span class="n">rhs</span><span class="p">);</span>
+    <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">sleep_min</span> <span class="p">(</span><span class="n">uint</span> <span class="n">rhs</span><span class="p">);</span>
+    <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">sleep_s</span>   <span class="p">(</span><span class="n">uint</span> <span class="n">rhs</span><span class="p">);</span>
+    <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">sleep_ms</span>  <span class="p">(</span><span class="n">uint</span> <span class="n">rhs</span><span class="p">);</span>
+    <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">sleep_us</span>  <span class="p">(</span><span class="n">uint</span> <span class="n">rhs</span><span class="p">);</span>
+    <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">sleep_ns</span>  <span class="p">(</span><span class="n">uint</span> <span class="n">rhs</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
@@ -550,26 +554,27 @@
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/a.txt&quot;</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/b.csv&quot;</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/c.txt&quot;</span><span class="p">);</span>
+    <span class="n">time_m</span> <span class="n">timem</span><span class="p">;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
 
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">vStr</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">glob</span><span class="p">(</span><span class="s">&quot;./tmp/*.txt&quot;</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vStr</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">sleep_s</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">sleep_us</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span>
 
-    <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_print</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>vStr = [&quot;./tmp/a.txt&quot; &quot;./tmp/c.txt&quot;]
+<div class="highlight"><pre><span></span><code>--------------------------------
+ Execution time:     1. 120 sec
+--------------------------------
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
-<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/glob.cpp">sstd/src/glob.cpp</a></li>
-<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/glob.hpp">sstd/src/glob.hpp</a></li>
-<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/glob.hpp">test/glob.hpp</a></li>
+<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/sleep.hpp">sstd/src/sleep.hpp</a></li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/sleep.hpp">test/sleep.hpp</a>
+  (Not implemented yet)</li>
 </ul>
                 
               
@@ -589,7 +594,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../rm/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -598,19 +603,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                What is SSTD ?
+                rm
               </div>
             </div>
           </a>
         
         
-          <a href="../itr/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ssprintf/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                itr
+                ssprintf
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
