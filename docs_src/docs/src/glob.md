@@ -22,8 +22,6 @@ int main(){
     sstd::system("touch ./tmp/a.txt");
     sstd::system("touch ./tmp/b.csv");
     sstd::system("touch ./tmp/c.txt");
-    sstd::system("tree ./tmp");
-    printf("\n");
     
     std::vector<std::string> vStr = sstd::glob("./tmp/*.txt");
     sstd::printn(vStr);
