@@ -1,5 +1,6 @@
 # ssprintf
 ## Abstract
+```ssprintf()``` is the ```std::string``` version of  ```sprintf()```.  
 ```ssprintf()``` は，```sprintf()``` の ```std::string``` 版です．
 
 ## Header file
