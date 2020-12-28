@@ -59,7 +59,7 @@ run: $(TARGET_all)
 	@(cd ./$(TEMP); mkdocs serve)
 
 updateDocs:
-	@(make build_MkDocs)
+	@(make $(build_MkDocs))
 	@(mkdir -p ./docs)
 	@(cp -r ./$(TEMP)/site/* ./docs)
 	@(git add ./docs)
