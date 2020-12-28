@@ -421,8 +421,8 @@
 <h2 id="usage">Usage</h2>
 <ul>
 <li>input
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;time.h&gt; // for time()</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
     <span class="kt">time_t</span> <span class="n">unixtime_UTC</span><span class="p">;</span> <span class="n">time</span><span class="p">(</span><span class="o">&amp;</span><span class="n">unixtime_UTC</span><span class="p">);</span> <span class="c1">// get current unixtime (UTC)</span>
@@ -436,9 +436,9 @@
 </code></pre></div></li>
 <li>output<br />
 Below is the result on Japanese local time (UTC+9hour).
-<div class="highlight"><pre><span></span><code>unixtime_UTC = 1609085346
-tm_UTC = 2020-12-27 16:09:06
-tm_Local = 2020-12-28 01:09:06
+<div class="highlight"><pre><span></span><code>unixtime_UTC = 1609147778
+tm_UTC = 2020-12-28 09:29:38
+tm_Local = 2020-12-28 18:29:38
 </code></pre></div></li>
 </ul>
 <h2 id="appendix">Appendix</h2>

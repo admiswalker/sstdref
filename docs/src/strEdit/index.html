@@ -434,60 +434,82 @@
 </code></pre></div>
 <h2 id="functions">Functions</h2>
 <ul>
-<li>空白 (半角スペース) とタブ文字の除去．</li>
+<li>Removing spaces and tabs.<br />
+  空白 (半角スペース) とタブ文字の除去．</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>名前</th>
-<th>説明</th>
+<th>Name</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>lstrip</td>
-<td>文字列の先頭にある半角スペースとタブ文字を除去します．</td>
+<td>Removing head spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．</td>
 </tr>
 <tr>
 <td>lstrip_ow</td>
-<td>文字列の先頭にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+<td>Removing head spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
 </tr>
 <tr>
 <td>rstrip</td>
-<td>文字列の末尾にある半角スペースとタブ文字を除去します．</td>
+<td>Removing tail spaces and tabs.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．</td>
 </tr>
 <tr>
 <td>rstrip_ow</td>
-<td>文字列の末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+<td>Removing tail spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
 </tr>
 <tr>
 <td>strip</td>
-<td>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．</td>
+<td>Removing head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．</td>
 </tr>
 <tr>
 <td>strip_ow</td>
-<td>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+<td>Removing head and tail spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>文字列の比較．引数の型の違いにより複数定義されている．</li>
+<li>String comparison<br />
+  文字列の比較．引数の型の違いにより複数定義されている．</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>名前</th>
-<th>説明</th>
+<th>Name</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>strcmp</td>
-<td>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す．</td>
+<td>Comparing two strings given as input arguments and returns true if they are equal, false otherwise.<br/>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す．</td>
 </tr>
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;   abc   &quot;</span><span class="p">;</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">lstrip</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">rstrip</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">strip</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">strip_ow</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output<br />
+<div class="highlight"><pre><span></span><code>sstd::lstrip(s) = &quot;abc   &quot;
+sstd::rstrip(s) = &quot;   abc&quot;
+sstd::strip(s) = &quot;abc&quot;
+s = &quot;abc&quot;
+</code></pre></div></li>
+</ul>
 <h2 id="others">Others</h2>
 <ul>
 <li>Implementation: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/strEdit.hpp">sstd/src/vector/strEdit.hpp</a></li>
