@@ -20,10 +20,7 @@ namespace sstd{
 int main(){
     sstd::mkdir("./tmp/a/b/c/");
     
-    sstd::system("cd ./tmp; ls");
-    sstd::system("cd ./tmp/a; ls");
-    sstd::system("cd ./tmp/a/b; ls");
-    
+    sstd::system("tree ./tmp");
     sstd::rm("./tmp");
 }
 ```
