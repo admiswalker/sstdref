@@ -3,7 +3,7 @@
 ```strEdit.hpp``` / ```strEdit.cpp``` は，文字列を編集するための関数を収録している．
 
 ## Header file
-```c++
+```cpp
 namespace sstd{
     std::vector<uint8>       readAll_bin(const char*        pReadFile); // read all of the file as a binary
     std::vector<uint8>       readAll_bin(const std::string&  readFile); // read all of the file as a binary

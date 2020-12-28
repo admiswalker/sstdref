@@ -4,7 +4,7 @@
 ※その他の正規表現については，現状未実装です．
 
 ## Header file
-```c++
+```cpp
 namespace sstd{
     std::vector<std::string> glob(const        char* path);
     std::vector<std::string> glob(const std::string& path);

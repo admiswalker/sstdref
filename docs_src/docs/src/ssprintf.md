@@ -4,7 +4,7 @@
 ```ssprintf()``` は，```sprintf()``` の ```std::string``` 版です．
 
 ## Header file
-```c++
+```cpp
 namespace sstd{
     std::string ssprintf(const char* format, ...);
 }

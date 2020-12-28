@@ -5,7 +5,7 @@
 ```std::vector``` に対する ```slice``` 操作を定義しています．
 
 ## Header file
-```c++
+```cpp
 namespace sstd{
     sstd_vecSc::slice_i  slice(const         int val);
     sstd_vecSc::slice_u  slice(const        uint val);

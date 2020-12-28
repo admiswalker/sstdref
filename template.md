@@ -3,7 +3,7 @@
 This is a documentation template.
 
 ## Header file
-```c++
+```cpp
 ```
 
 ## Usage

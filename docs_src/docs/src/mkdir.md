@@ -4,7 +4,7 @@
 ```mkdir``` はディレクトリを再帰的に作成します．
 
 ## Header file
-```c++
+```cpp
 namespace sstd{
     void mkdir(const char*        pPath);
     void mkdir(const std::string&  path);

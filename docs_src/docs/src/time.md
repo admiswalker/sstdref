@@ -3,7 +3,7 @@
 ```struct tm``` と ```time_t``` (unixtime) および，その他の時刻を相互変換する．
 
 ## Header file
-```c++
+```cpp
 namespace sstd{
     struct tm time2tm       (time_t unixtime);
     time_t    tm2time       (struct tm& rhs);

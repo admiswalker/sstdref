@@ -4,7 +4,7 @@
 ```rm.cpp``` / ```rm.hpp``` にはディレクトリ削除に関する処理を収録します．
 
 ## Header file
-```c++
+```cpp
 namespace sstd{
     struct pathAndType{
         std::string path;
