@@ -64,6 +64,7 @@ namespace sstd{
 ### one arg (copy)
 - input
 ```c++
+#mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
@@ -78,14 +79,13 @@ int main(){
 ```
 - output
 ```
-v = [1 2 3 4 5]
-v_sliced01 = [2]
-v_sliced02 = [5]
+#mdEx: cpp example (out)
 ```
 
 ### two args (copy)
 - input
 ```c++
+#mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
@@ -98,13 +98,13 @@ int main(){
 ```
 - output
 ```
-v = [1 2 3 4 5]
-v_sliced = [2 3]
+#mdEx: cpp example (out)
 ```
 
 ### begin to end (copy)
 - input
 ```c++
+#mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
@@ -117,13 +117,13 @@ int main(){
 ```
 - output
 ```
-v = [1 2 3 4 5]
-v_sliced = [1 2 3 4 5]
+#mdEx: cpp example (out)
 ```
 
 ### one arg (move)
 - input
 ```c++
+#mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
@@ -138,14 +138,13 @@ int main(){
 ```
 - output
 ```
-v = ["1" "" "3" "4" ""]
-v_sliced01 = ["2"]
-v_sliced02 = ["5"]
+#mdEx: cpp example (out)
 ```
 
 ### two args (move)
 - input
 ```c++
+#mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
@@ -158,13 +157,13 @@ int main(){
 ```
 - output
 ```
-v = ["1" "" "" "4" "5"]
-v_sliced = ["2" "3"]
+#mdEx: cpp example (out)
 ```
 
 ### begin to end (move)
 - input
 ```c++
+#mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
@@ -177,8 +176,7 @@ int main(){
 ```
 - output
 ```
-v = ["" "" "" "" ""]
-v_sliced = ["1" "2" "3" "4" "5"]
+#mdEx: cpp example (out)
 ```
 
 
