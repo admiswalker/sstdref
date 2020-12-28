@@ -58,7 +58,8 @@ run: $(TARGET_all)
 	@(xdg-open http://127.0.0.1:8000/)
 	@(cd ./$(TEMP); mkdocs serve)
 
-updateDocs: $(build_MkDocs)
+updateDocs:
+	@(cd ./$(TEMP); mkdocs build)
 	@(mkdir -p ./docs)
 	@(cp -r ./$(TEMP)/site/* ./docs)
 	@(git add ./docs)
