@@ -186,19 +186,6 @@
       
 
 
-
-  <li class="md-nav__item">
-    <a href="../../template/" class="md-nav__link">
-      template
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
   
 
 
@@ -206,14 +193,14 @@
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-2">
       Src
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Src" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-2">
         <span class="md-nav__icon md-icon"></span>
         Src
       </label>
@@ -312,8 +299,34 @@
 
 
   <li class="md-nav__item">
+    <a href="../rm/" class="md-nav__link">
+      rm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
     <a href="../slice/" class="md-nav__link">
       slice
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../ssprintf/" class="md-nav__link">
+      ssprintf
     </a>
   </li>
 
@@ -432,17 +445,17 @@
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
     <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/a/b/c/&quot;</span><span class="p">);</span>
 
-    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;cd ./tmp; ls&quot;</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;cd ./tmp/a; ls&quot;</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;cd ./tmp/a/b; ls&quot;</span><span class="p">);</span>
-
+    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;tree ./tmp&quot;</span><span class="p">);</span>
     <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>a
-b
-c
+<div class="highlight"><pre><span></span><code>./tmp
+└── a
+    └── b
+        └── c
+
+3 directories, 0 files
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
@@ -485,13 +498,13 @@ c
           </a>
         
         
-          <a href="../slice/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../rm/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                slice
+                rm
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
