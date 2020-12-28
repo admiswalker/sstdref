@@ -4,6 +4,9 @@
 ```sstd::slice``` は要素コピーを伴う命令で，```sstd::slice_mv``` は内部的に ```std::move``` を呼び出します．
 ```std::vector``` に対する ```slice``` 操作を定義しています．
 
+なお，```sstd::begin``` および ```sstd::end``` は，
+[src/itr.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/itr.hpp) に定義されている．
+
 ## Header file
 ```cpp
 namespace sstd{
