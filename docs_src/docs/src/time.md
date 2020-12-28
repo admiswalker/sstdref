@@ -34,7 +34,7 @@ namespace sstd{
 - input
 ```cpp
 #mdEx: cpp example (in)
-#include <time.h> // inorder to get current time
+#include <time.h> // for time()
 #include <sstd/sstd.hpp>
 
 int main(){
