@@ -227,6 +227,19 @@
 
 
   <li class="md-nav__item">
+    <a href="../measureTime/" class="md-nav__link">
+      measureTime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
     <a href="../mkdir/" class="md-nav__link">
       mkdir
     </a>
@@ -405,6 +418,19 @@
   </li>
 
         
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../typeDef.h/" class="md-nav__link">
+      typeDef.h
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -528,6 +554,8 @@
 <p><code>sstd::slice</code> / <code>sstd::slice_mv</code> は，Python の slice 実装を C++ 風にアレンジした sstd の独自実装です．
 <code>sstd::slice</code> は要素コピーを伴う命令で，<code>sstd::slice_mv</code> は内部的に <code>std::move</code> を呼び出します．
 <code>std::vector</code> に対する <code>slice</code> 操作を定義しています．</p>
+<p>なお，<code>sstd::begin</code> および <code>sstd::end</code> は，
+<a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/itr.hpp">src/itr.hpp</a> に定義されている．</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span>
     <span class="n">sstd_vecSc</span><span class="o">::</span><span class="n">slice_i</span>  <span class="n">slice</span><span class="p">(</span><span class="k">const</span>         <span class="kt">int</span> <span class="n">val</span><span class="p">);</span>

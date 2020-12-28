@@ -14,7 +14,7 @@
     
     
       
-        <title>ssprintf - SSTD documentation</title>
+        <title>measureTime - SSTD documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ssprintf" class="md-skip">
+        <a href="#measuretime" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              ssprintf
+              measureTime
             
           </span>
         </div>
@@ -225,11 +225,90 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../measureTime/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        measureTime
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       measureTime
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measurement-of-execution-time" class="md-nav__link">
+    Measurement of execution time. (実行時間の計測)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lap-time-measurement" class="md-nav__link">
+    Lap time measurement. (ラップタイムの測定)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -277,70 +356,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        ssprintf
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ssprintf/" class="md-nav__link">
       ssprintf
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    Abstract
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#header-file" class="md-nav__link">
-    Header file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -431,6 +451,26 @@
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measurement-of-execution-time" class="md-nav__link">
+    Measurement of execution time. (実行時間の計測)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lap-time-measurement" class="md-nav__link">
+    Lap time measurement. (ラップタイムの測定)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -453,35 +493,95 @@
               
                 
                 
-                <h1 id="ssprintf">ssprintf</h1>
+                <h1 id="measuretime">measureTime</h1>
 <h2 id="abstract">Abstract</h2>
-<p><code>ssprintf()</code> is the <code>std::string</code> version of  <code>sprintf()</code>.<br />
-<code>ssprintf()</code> は，<code>sprintf()</code> の <code>std::string</code> 版です．</p>
+<p><code>measureTime</code> measures the execution time.<br />
+<code>measureTime</code> は実行時間を計測します．</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">ssprintf</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">format</span><span class="p">,</span> <span class="p">...);</span>
+    <span class="kt">void</span>        <span class="n">measureTime_start</span>     <span class="p">(</span>      <span class="n">time_m</span><span class="o">&amp;</span> <span class="n">startTime</span><span class="p">);</span>
+    <span class="kt">double</span>      <span class="nf">measureTime_stop_s</span>    <span class="p">(</span><span class="k">const</span> <span class="n">time_m</span><span class="o">&amp;</span> <span class="n">startTime</span><span class="p">);</span> <span class="c1">// sec</span>
+    <span class="kt">double</span>      <span class="nf">measureTime_stop_ms</span>   <span class="p">(</span><span class="k">const</span> <span class="n">time_m</span><span class="o">&amp;</span> <span class="n">startTime</span><span class="p">);</span> <span class="c1">// milli sec</span>
+    <span class="kt">double</span>      <span class="nf">measureTime_stop_us</span>   <span class="p">(</span><span class="k">const</span> <span class="n">time_m</span><span class="o">&amp;</span> <span class="n">startTime</span><span class="p">);</span> <span class="c1">// micro sec</span>
+    <span class="kt">double</span>      <span class="nf">measureTime_stop_ns</span>   <span class="p">(</span><span class="k">const</span> <span class="n">time_m</span><span class="o">&amp;</span> <span class="n">startTime</span><span class="p">);</span> <span class="c1">// nano sec</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">measureTime_ms2str</span>    <span class="p">(</span><span class="n">uint64</span> <span class="n">tmp</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">measureTime_stop_str</span>  <span class="p">(</span><span class="k">const</span> <span class="n">time_m</span><span class="o">&amp;</span> <span class="n">startTime</span><span class="p">);</span>
+    <span class="kt">void</span>        <span class="nf">measureTime_stop_print</span><span class="p">(</span><span class="k">const</span> <span class="n">time_m</span><span class="o">&amp;</span> <span class="n">startTime</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
+<h3 id="measurement-of-execution-time">Measurement of execution time. (実行時間の計測)</h3>
 <ul>
 <li>input
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">ssprintf</span><span class="p">(</span><span class="s">&quot;%s %d%d%d %03d&quot;</span><span class="p">,</span> <span class="s">&quot;ABC&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;+---------------------------------------------------+</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;|                                                   |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;|     Welcome to Sub Standard Library (SSTD) !      |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;|                                                   |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;+---------------------------------------------------+</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;■ measureTime_start---------------</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="n">time_m</span> <span class="n">timem</span><span class="p">;</span> <span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">sleep_s</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">sleep_us</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;■ measureTime_stop----------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_print</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">pauseIfWin32</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>s = &quot;ABC 012 003&quot;
+<div class="highlight"><pre><span></span><code>+---------------------------------------------------+
+|                                                   |
+|     Welcome to Sub Standard Library (SSTD) !      |
+|                                                   |
++---------------------------------------------------+
+
+■ measureTime_start---------------
+
+
+■ measureTime_stop----------------
+--------------------------------
+ Execution time:     1. 113 sec
+--------------------------------
+</code></pre></div></li>
+</ul>
+<h3 id="lap-time-measurement">Lap time measurement. (ラップタイムの測定)</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vLT_ms</span><span class="p">;</span>
+
+    <span class="n">time_m</span> <span class="n">timem</span><span class="p">;</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
+    <span class="n">vLT_ms</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_ms</span><span class="p">(</span><span class="n">timem</span><span class="p">)</span> <span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">uint</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+        <span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+        <span class="n">vLT_ms</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_ms</span><span class="p">(</span><span class="n">timem</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vLT_ms</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output<br />
+<div class="highlight"><pre><span></span><code>vLT_ms = [0. 10.362 21.776 33.323 46.063 58.795]
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
-<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/ssprintf.cpp">sstd/src/ssprintf.cpp</a></li>
-<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/ssprintf.hpp">sstd/src/ssprintf.hpp</a></li>
-<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/ssprintf.hpp">test/ssprintf.hpp</a>
-  (Not implemented yet)</li>
+<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/measureTime.cpp">sstd/src/measureTime.cpp</a></li>
+<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/measureTime.hpp">sstd/src/measureTime.hpp</a></li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/measureTime.hpp">test/measureTime.hpp</a></li>
 </ul>
                 
               
@@ -501,7 +601,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../slice/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../glob/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -510,19 +610,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                slice
+                glob
               </div>
             </div>
           </a>
         
         
-          <a href="../strEdit/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../mkdir/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                strEdit
+                mkdir
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
