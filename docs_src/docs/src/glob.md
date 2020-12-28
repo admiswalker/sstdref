@@ -32,8 +32,8 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-## Others
-- Implementation (source): [sstd/src/glob.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/glob.cpp)
-- Implementation (header): [sstd/src/glob.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/glob.hpp)
-- Test code: [test/glob.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/glob.hpp)
+## Implementation
+- Source: [sstd/src/glob.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/glob.cpp)
+- Header: [sstd/src/glob.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/glob.hpp)
+- Test: [test/glob.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/glob.hpp)
 

@@ -24,9 +24,9 @@ int main(){
 
 ## Appendix
 
-## Others
-- Implementation (source): [sstd/src/XXXXXX.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/XXXXXX.cpp)
-- Implementation (header): [sstd/src/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/XXXXXX.hpp)
-- Test code: [test/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/XXXXXX.hpp)
+## Implementation
+- Source: [sstd/src/XXXXXX.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/XXXXXX.cpp)
+- Header: [sstd/src/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/XXXXXX.hpp)
+- Test: [test/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/XXXXXX.hpp)
   (Not implemented yet)
 

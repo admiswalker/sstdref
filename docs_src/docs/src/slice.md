@@ -180,7 +180,7 @@ int main(){
 ```
 
 
-## Others
-- Implementation: [sstd/src/vector/slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/vector/slice.hpp)
-- Test code: [test/vector_slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/vector_slice.hpp)
+## Implementation
+- Header: [sstd/src/vector/slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/vector/slice.hpp)
+- Test: [test/vector_slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/vector_slice.hpp)
 
