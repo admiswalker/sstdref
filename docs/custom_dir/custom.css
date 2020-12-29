@@ -8,7 +8,14 @@
 .md-typeset h3 {
   border-bottom: 1px dotted #888;
 }
-
+.md-typeset h4 {
+  display: inline-block;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  border-bottom: 1px dotted #888;
+}
 
 label.md-nav__link {
   background-color: #f5f5f5;
