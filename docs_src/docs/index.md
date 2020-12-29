@@ -6,13 +6,14 @@ title: What is SSTD ?
     }
     .img_overlay p {
          position: absolute;
-         font-size: xx-large;
+         font-size: 40px;
          font-weight: normal;
          color: white; /* string color */
          top: 0;
          left: 0;
          margin:0;
          padding:0;
+         margin-top:-5px;
     }
     .img_overlay img {
          width: 100%;

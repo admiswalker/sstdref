@@ -1,0 +1,40 @@
+site_name: SSTD documentation
+theme:
+    name: material
+    palette:
+        primary: indigo
+        accent: red
+    custom_dir: docs/custom_dir
+    language: en
+plugins:
+    - awesome-pages
+    - search:
+        lang:
+          - en
+          - ja
+extra_css:
+    - custom_dir/custom.css
+extra_javascript:
+    - custom_dir/custom.js
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+nav:
+  - src:
+    - glob: src/glob.md
+    - itr: src/itr.md
+    - measureTime: src/measureTime.md
+    - mkdir: src/mkdir.md
+    - pid: src/pid.md
+    - rm: src/rm.md
+    - sleep: src/sleep.md
+    - ssprintf: src/ssprintf.md
+    - stdlib:
+      - system: src/stdlib/system.md
+    - strEdit: src/strEdit.md
+    - time: src/time.md
+    - typeDef.h: src/typeDef.h.md
+    - vector:
+      - slice: src/vector/slice.md
