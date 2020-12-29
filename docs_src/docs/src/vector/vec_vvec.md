@@ -21,7 +21,7 @@ int main(){
     sstd::vec<int> v = {1, 2, 3}; // same as a "std::vector<int> v = {1, 2, 3};"
     sstd::printn(v);
 
-    sstd::vvec<int> vv = {{1, 2, 3}, {4, 5, 6}}; // same as a "std::vector<int> vv = {{1, 2, 3}, {4, 5, 6}};"
+    sstd::vvec<int> vv = {{1, 2, 3}, {4, 5, 6}}; // same as a "std::vector<vector<int>> vv = {{1, 2, 3}, {4, 5, 6}};"
     sstd::printn(vv);
 }
 ```
