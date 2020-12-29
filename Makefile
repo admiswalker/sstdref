@@ -61,6 +61,7 @@ $(build_MkDocs): $(READ_DIR_TREE)
 
 build_mdEx:
 	@(cd ./mdEx_cpp_example; make) # markdown expansion
+	@echo ""
 
 run: $(TARGET_all)
 	@(xdg-open http://127.0.0.1:8000/)

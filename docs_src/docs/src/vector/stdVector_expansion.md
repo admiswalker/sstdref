@@ -158,7 +158,7 @@ int main(){
 
 int main(){
     std::vector<int> v = {1, 2, 3};
-    int s = 4;
+    int s = 0;
     sstd::printn( v >> s );
     sstd::printn( v );
     sstd::printn( s );
@@ -176,7 +176,7 @@ int main(){
 
 int main(){
     std::vector<int> v1 = {1, 2, 3};
-    std::vector<int> v2 = {4, 5, 6};
+    std::vector<int> v2 = {-2, -1, 0};
     sstd::printn( v1 >> v2 );
     sstd::printn( v1 );
     sstd::printn( v2 );
