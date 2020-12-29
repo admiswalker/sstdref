@@ -19,7 +19,8 @@ def path2graph_base(path_root, path_rm, depth=int(1)):
             path_rmd      = path.split(path_rm)[-1]
             filename      = os.path.basename(path)
             filename_owEt = os.path.splitext(os.path.basename(path))[0] # without extension
-            vStr.append(("%s- %s: %s" % (' '*2*depth, filename_owEt, path_rmd)))
+            #vStr.append(("%s- %s: %s" % (' '*2*depth, filename_owEt, path_rmd)))
+            vStr.append(("%s- %s" % (' '*2*depth, path_rmd)))
     
     return vStr
 def path2graph(path_root, path_rm):
