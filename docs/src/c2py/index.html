@@ -1,0 +1,1744 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+    
+    
+      
+        <title>c2py - SSTD documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.73f7c429.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../custom_dir/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="red">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c2py" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="SSTD documentation" class="md-header-nav__button md-logo" aria-label="SSTD documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            SSTD documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              c2py
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SSTD documentation" class="md-nav__button md-logo" aria-label="SSTD documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    SSTD documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      What is SSTD ?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+
+  
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      src
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="src" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        src
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        c2py
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      c2py
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-corresponding-types" class="md-nav__link">
+    List of corresponding types. (対応する型の一覧)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample1" class="md-nav__link">
+    Sample1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample2" class="md-nav__link">
+    Sample2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample3" class="md-nav__link">
+    Sample3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample4" class="md-nav__link">
+    Sample4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample5" class="md-nav__link">
+    Sample5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample6" class="md-nav__link">
+    Sample6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-sample-1" class="md-nav__link">
+    Application sample 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-sample-2" class="md-nav__link">
+    Application sample 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-sample-3" class="md-nav__link">
+    Application sample 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../csv/" class="md-nav__link">
+      csv
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../glob/" class="md-nav__link">
+      glob
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
+    
+    <label class="md-nav__link" for="nav-2-4">
+      hashFunction
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="hashFunction" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        <span class="md-nav__icon md-icon"></span>
+        hashFunction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../hashFunction/md5/" class="md-nav__link">
+      MD5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../hashFunction/sha1/" class="md-nav__link">
+      SHA-1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../hashFunction/sha2/" class="md-nav__link">
+      SHA-2<br/>(224, 256, 384, 512 bits)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../itr/" class="md-nav__link">
+      itr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
+    
+    <label class="md-nav__link" for="nav-2-6">
+      matrix
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="matrix" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        <span class="md-nav__icon md-icon"></span>
+        matrix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../matrix/bmat/" class="md-nav__link">
+      bmat (binary-matrix)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../matrix/mat_colMajor/" class="md-nav__link">
+      mat_c (Col-major)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../matrix/mat_rowMajor/" class="md-nav__link">
+      mat_r (Row-major)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../measureTime/" class="md-nav__link">
+      measureTime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../mkdir/" class="md-nav__link">
+      mkdir
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../path/" class="md-nav__link">
+      path
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../pdbg/" class="md-nav__link">
+      pdbg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../pid/" class="md-nav__link">
+      pid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../rm/" class="md-nav__link">
+      rm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../sleep/" class="md-nav__link">
+      sleep
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../ssprintf/" class="md-nav__link">
+      ssprintf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" >
+    
+    <label class="md-nav__link" for="nav-2-15">
+      stdlib
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="stdlib" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-15">
+        <span class="md-nav__icon md-icon"></span>
+        stdlib
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../stdlib/system/" class="md-nav__link">
+      system
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../strEdit/" class="md-nav__link">
+      strEdit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../strmatch/" class="md-nav__link">
+      strmatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../time/" class="md-nav__link">
+      time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../typeDef.h/" class="md-nav__link">
+      typeDef.h
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-20" type="checkbox" id="nav-2-20" >
+    
+    <label class="md-nav__link" for="nav-2-20">
+      vector
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="vector" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-20">
+        <span class="md-nav__icon md-icon"></span>
+        vector
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../vector/Tr/" class="md-nav__link">
+      Tr (Transpose)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../vector/slice/" class="md-nav__link">
+      slice
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../vector/stdVector_expansion/" class="md-nav__link">
+      Ope. Exp. for std::vector&lt;T&gt;
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../vector/vec_vvec/" class="md-nav__link">
+      vec/vvec
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-corresponding-types" class="md-nav__link">
+    List of corresponding types. (対応する型の一覧)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample1" class="md-nav__link">
+    Sample1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample2" class="md-nav__link">
+    Sample2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample3" class="md-nav__link">
+    Sample3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample4" class="md-nav__link">
+    Sample4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample5" class="md-nav__link">
+    Sample5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample6" class="md-nav__link">
+    Sample6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-sample-1" class="md-nav__link">
+    Application sample 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-sample-2" class="md-nav__link">
+    Application sample 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-sample-3" class="md-nav__link">
+    Application sample 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="c2py">c2py</h1>
+<h2 id="abstract">Abstract</h2>
+<p><code>c2py()</code> calls any Python functions with built-in, <code>std::vector&lt;T&gt;</code>, <code>sstd::mat_c&lt;T&gt;</code> and <code>sstd::mat_r&lt;T&gt;</code> (<code>T</code> is limitted by built-in types.) types of arguments from 2 lines of C++ codes.<br />
+Data is sharing by the <code>tmp</code> directory.</p>
+<p><code>c2py()</code> は built-in 型，<code>std::vector&lt;T&gt;</code> 型, <code>sstd::mat_c&lt;T&gt;</code> 型，および <code>sstd::mat_r&lt;T&gt;</code> 型 (ただし，<code>T</code> は built-in 型に制限される．) を引数に持つ Python 関数を 2 行の C++ コードで呼び出します．
+データは <code>tmp</code> ディレクトリにより共有されます．</p>
+<h2 id="header-file">Header file</h2>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">c2py</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">c2py</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">temporarilyDir</span><span class="p">,</span>
+         <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">importFile</span><span class="p">,</span>
+         <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">functionName</span><span class="p">,</span>
+         <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">format</span><span class="p">);</span>
+    <span class="o">~</span><span class="n">c2py</span><span class="p">();</span>
+
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">ARGS</span><span class="o">&gt;</span>
+    <span class="n">T</span> <span class="k">operator</span><span class="p">()(</span><span class="n">ARGS</span><span class="p">...</span> <span class="n">args</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<ul>
+<li>
+<p>c2py interface
+<div class="highlight"><pre><span></span><code><span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="n">ATypeOfReturnValue</span><span class="o">&gt;</span> <span class="n">FunctionName</span><span class="p">(</span>
+    <span class="s">&quot;Tempolary directory&quot;</span><span class="p">,</span>                               <span class="c1">// Argument 1</span>
+    <span class="s">&quot;A name of calling .py file (without extension)&quot;</span><span class="p">,</span>    <span class="c1">// Argument 2</span>
+    <span class="s">&quot;A function name calling from .py file&quot;</span><span class="p">,</span>             <span class="c1">// Argument 3</span>
+    <span class="s">&quot;Arguments types specification of Python function&quot;</span><span class="p">);</span> <span class="c1">// Argument 4</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>c2py インターフェースの設計
+<div class="highlight"><pre><span></span><code><span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="err">戻り値の型</span><span class="o">&gt;</span> <span class="err">関数名</span><span class="p">(</span>
+    <span class="s">&quot;一時ディレクトリ&quot;</span><span class="p">,</span>                            <span class="c1">// 第 1 引数</span>
+    <span class="s">&quot;呼び出し先の .py ファイル (ただし拡張子を除く)&quot;</span><span class="p">,</span> <span class="c1">// 第 2 引数</span>
+    <span class="s">&quot;.py ファイル中から呼び出す関数名&quot;</span><span class="p">,</span>             <span class="c1">// 第 3 引数</span>
+    <span class="s">&quot;Python 関数の型指定&quot;</span><span class="p">);</span>                      <span class="c1">// 第 4 引数</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h2 id="list-of-corresponding-types">List of corresponding types. (対応する型の一覧)</h2>
+<p>Table 1. shows the correspondence between the types on the C ++ side and the types on the Python side.
+Table 2. shows a list of type names given when specifying a type on the C ++ side.
+If not specifying type on the Python side, numpy will be selected.
+And selecting the conversion symbol <code>~</code>, the numpy type will be converted to the built-in type.
+The c2py is basically processed by numpy, because of the binary compatibility between C++ and Python, 
+type conversion of numpy to built-in type will be overhead.</p>
+<p>表 1. に C++ 側の型と，Python 側の型との対応を示す．
+表 2. に C++ 側の型を指定する際に与える型名の一覧を示す．
+Python 側の型について，何も指定しない場合は，numpy 型が選択され，変換記号 <code>~</code> を指定することで，built-in 型に変換される．
+c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本的に numpy 型で行われるため，built-in 型への変換は，オーバーヘッドとなる．</p>
+<!-- ---------------------------------------------------------- -->
+<div align="center">
+<table style="border-collapse: collapse; font-size: 13px; width: 100%;">
+  <caption>Table 1. Correspondence between types implemented in c2py and Python<br/>表 1. c2py で実装されている型と Python 型との対応</caption>
+  <tr>
+    <td colspan="5" rowspan="1" style="border-top: solid 1px; text-align: center;">Types of C++ side</td>
+    <td colspan="1" rowspan="1" style="border-top: solid 1px; text-align: center;">Types of Python side</td>
+  </tr>
+  <tr>
+    <td style="text-align: center; border-bottom: solid 1px;">&nbsp;</td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/>/ Pointer array</td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/></td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/></td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/></td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/></td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;bool</td>
+    <td style="text-align: left;">std::vector&lt;bool&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;bool&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;bool&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;char</td>
+    <td style="text-align: left;">std::vector&lt;char&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;char&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;char&gt;</td>
+    <td style="text-align: center;">built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uchar</td>
+    <td style="text-align: left;">std::vector&lt;uchar&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;uchar&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;uchar&gt;</td>
+    <td style="text-align: center;">built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;int8</td>
+    <td style="text-align: left;">std::vector&lt;int8&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;int8&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;int8&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;int16</td>
+    <td style="text-align: left;">std::vector&lt;int16&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;int16&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;int16&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;int32</td>
+    <td style="text-align: left;">std::vector&lt;int32&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;int32&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;int32&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;int64</td>
+    <td style="text-align: left;">std::vector&lt;int64&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;int64&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;int64&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uint8</td>
+    <td style="text-align: left;">std::vector&lt;uint8&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;uint8&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;uint8&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uint16</td>
+    <td style="text-align: left;">std::vector&lt;uint16&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;uint16&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;uint16&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uint32</td>
+    <td style="text-align: left;">std::vector&lt;uint32&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;uint32&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;uint32&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uint64</td>
+    <td style="text-align: left;">std::vector&lt;uint64&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;uint64&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;uint64&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;float</td>
+    <td style="text-align: left;">std::vector&lt;float&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;float&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;float&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;double</td>
+    <td style="text-align: left;">std::vector&lt;double&gt;</td>
+    <td style="text-align: left;">sstd::mat_c&lt;double&gt;</td>
+    <td style="text-align: left;">sstd::mat_r&lt;double&gt;</td>
+    <td style="text-align: center;">numpy / built-in</td>
+  </tr>
+  <tr>
+    <td style="text-align: left; border-bottom: solid 1px;"></td>
+    <td style="text-align: left; border-bottom: solid 1px;">&nbsp;&nbsp;&nbsp;std::string</td>
+    <td style="text-align: left; border-bottom: solid 1px;">std::vector&lt;std::string&gt;</td>
+    <td style="text-align: left; border-bottom: solid 1px;">sstd::mat_c&lt;std::string&gt;</td>
+    <td style="text-align: left; border-bottom: solid 1px;">sstd::mat_r&lt;std::string&gt;</td>
+    <td style="text-align: center; border-bottom: solid 1px;">built-in</td>
+  </tr>
+</table>
+</div>
+<!-- ---------------------------------------------------------- -->
+<p><br/></p>
+<!-- ---------------------------------------------------------- -->
+<div align="center">
+<table style="border-collapse: collapse; text-align: center; font-size: 13px; width: 100%;">
+  <caption>Table 2. Type names giving to the 4th argument of c2py.<br/>表 2. c2py の第 4 引数に与える型名．</caption>
+  <tr>
+    <td colspan="5" rowspan="1" style="border-top: solid 1px; text-align: center;">Types of C++ side</td>
+  </tr>
+  <tr>
+    <td style="text-align: center; border-bottom: solid 1px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/>/ Pointer array</td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/></td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/></td>
+    <td style="text-align: center; border-bottom: solid 1px;">Entity / Pointer<br/></td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;bool</td>
+    <td style="text-align: left;">vec&lt;bool&gt;</td>
+    <td style="text-align: left;">mat_c&lt;bool&gt;</td>
+    <td style="text-align: left;">mat_r&lt;bool&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;char</td>
+    <td style="text-align: left;">vec&lt;char&gt;</td>
+    <td style="text-align: left;">mat_c&lt;char&gt;</td>
+    <td style="text-align: left;">mat_r&lt;char&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uchar</td>
+    <td style="text-align: left;">vec&lt;uchar&gt;</td>
+    <td style="text-align: left;">mat_c&lt;uchar&gt;</td>
+    <td style="text-align: left;">mat_r&lt;uchar&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;int8</td>
+    <td style="text-align: left;">vec&lt;int8&gt;</td>
+    <td style="text-align: left;">mat_c&lt;int8&gt;</td>
+    <td style="text-align: left;">mat_r&lt;int8&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;int16</td>
+    <td style="text-align: left;">vec&lt;int16&gt;</td>
+    <td style="text-align: left;">mat_c&lt;int16&gt;</td>
+    <td style="text-align: left;">mat_r&lt;int16&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;int32</td>
+    <td style="text-align: left;">vec&lt;int32&gt;</td>
+    <td style="text-align: left;">mat_c&lt;int32&gt;</td>
+    <td style="text-align: left;">mat_r&lt;int32&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;int64</td>
+    <td style="text-align: left;">vec&lt;int64&gt;</td>
+    <td style="text-align: left;">mat_c&lt;int64&gt;</td>
+    <td style="text-align: left;">mat_r&lt;int64&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uint8</td>
+    <td style="text-align: left;">vec&lt;uint8&gt;</td>
+    <td style="text-align: left;">mat_c&lt;uint8&gt;</td>
+    <td style="text-align: left;">mat_r&lt;uint8&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uint16</td>
+    <td style="text-align: left;">vec&lt;uint16&gt;</td>
+    <td style="text-align: left;">mat_c&lt;uint16&gt;</td>
+    <td style="text-align: left;">mat_r&lt;uint16&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uint32</td>
+    <td style="text-align: left;">vec&lt;uint32&gt;</td>
+    <td style="text-align: left;">mat_c&lt;uint32&gt;</td>
+    <td style="text-align: left;">mat_r&lt;uint32&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;uint64</td>
+    <td style="text-align: left;">vec&lt;uint64&gt;</td>
+    <td style="text-align: left;">mat_c&lt;uint64&gt;</td>
+    <td style="text-align: left;">mat_r&lt;uint64&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;float</td>
+    <td style="text-align: left;">vec&lt;float&gt;</td>
+    <td style="text-align: left;">mat_c&lt;float&gt;</td>
+    <td style="text-align: left;">mat_r&lt;float&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;"></td>
+    <td style="text-align: left;">&nbsp;&nbsp;&nbsp;double</td>
+    <td style="text-align: left;">vec&lt;double&gt;</td>
+    <td style="text-align: left;">mat_c&lt;double&gt;</td>
+    <td style="text-align: left;">mat_r&lt;double&gt;</td>
+  </tr>
+  <tr>
+    <td style="text-align: left; border-bottom: solid 1px;"></td>
+    <td style="text-align: left; border-bottom: solid 1px;">&nbsp;&nbsp;&nbsp;str / string</td>
+    <td style="text-align: left; border-bottom: solid 1px;">vec&lt;str&gt; / vec&lt;string&gt;</td>
+    <td style="text-align: left; border-bottom: solid 1px;">mat_c&lt;str&gt; / mat_c&lt;string&gt;</td>
+    <td style="text-align: left; border-bottom: solid 1px;">mat_r&lt;str&gt; / mat_r&lt;string&gt;</td>
+  </tr>
+</table>
+</div>
+<!-- ---------------------------------------------------------- -->
+
+<h2 id="usage">Usage</h2>
+<h3 id="sample1">Sample1</h3>
+<ul>
+<li><u><strong>pyFunction.py</strong></u>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">plus_a_b</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;echo &#39;def plus_a_b(a, b): return a+b&#39; &gt; ./tmp/pyFunction.py&quot;</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">plus_a_b</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;./tmp/pyFunction&quot;</span><span class="p">,</span> <span class="s">&quot;plus_a_b&quot;</span><span class="p">,</span> <span class="s">&quot;int, int, const int*&quot;</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="n">plus_a_b</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span> <span class="c1">// Running Python here</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>c = 3
+</code></pre></div></li>
+</ul>
+<h3 id="sample2">Sample2</h3>
+<ul>
+<li><u><strong>pyFunction.py</strong></u>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">plus_vecA_vecB</span><span class="p">(</span><span class="n">vecA</span><span class="p">,</span> <span class="n">vecB</span><span class="p">):</span> <span class="k">return</span> <span class="n">vecA</span><span class="o">+</span><span class="n">vecB</span>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;echo &#39;def plus_vecA_vecB(vecA, vecB): return vecA+vecB&#39; &gt; ./tmp/pyFunction.py&quot;</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">plus_vecA_vecB</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;./tmp/pyFunction&quot;</span><span class="p">,</span> <span class="s">&quot;plus_vecA_vecB&quot;</span><span class="p">,</span> <span class="s">&quot;vec&lt;int&gt;, const int*, len, const vec&lt;int&gt;*&quot;</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">arrA</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vecB</span><span class="o">=</span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vecC</span><span class="o">=</span><span class="n">plus_vecA_vecB</span><span class="p">(</span><span class="n">arrA</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vecB</span><span class="p">);</span> <span class="c1">// Running Python here</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vecC</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>vecC = [5 7 9]
+</code></pre></div></li>
+</ul>
+<h3 id="sample3">Sample3</h3>
+<p>Writing back self multiplied value.<br />
+自己乗算値を書き戻す．</p>
+<ul>
+<li><u><strong>pyFunction.py</strong></u>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">selfMult</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">vecB</span><span class="p">,</span> <span class="n">vecC</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vecB</span><span class="p">)):</span> <span class="n">vecB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">vecB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">vecB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vecC</span><span class="p">)):</span> <span class="n">vecC</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">vecC</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">vecC</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;echo &#39;def selfMult(a, vecB, vecC):</span><span class="se">\n</span><span class="s">    a[0]=a[0]*a[0]</span><span class="se">\n</span><span class="s">    for i in range(len(vecB)): vecB[i]=vecB[i]*vecB[i]</span><span class="se">\n</span><span class="s">    for i in range(len(vecC)): vecC[i]=vecC[i]*vecC[i]&#39; &gt; ./tmp/pyFunction.py&quot;</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">selfMult</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;./tmp/pyFunction&quot;</span><span class="p">,</span> <span class="s">&quot;selfMult&quot;</span><span class="p">,</span> <span class="s">&quot;void, int*, int*, len, vec&lt;int&gt;*&quot;</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">arrB</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vecC</span><span class="o">=</span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">};</span>
+    <span class="n">selfMult</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="n">arrB</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vecC</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;arrB[3] = [ &quot;</span><span class="p">);</span> <span class="k">for</span><span class="p">(</span><span class="n">uint</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">arrB</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="p">}</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vecC</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>a = 4
+arrB[3] = [ 9 16 25 ]
+vecC = [36 49 64]
+</code></pre></div></li>
+</ul>
+<h3 id="sample4">Sample4</h3>
+<p>Conversion types in Python side. Symbols on the right side of "|" (which is a separator symbol between C++ and Python) mean the symbols have effect on the Python side. On the right side of "|" enable to take "<em>" or "~" and these order have no meaning. (There is no difference between "|</em>~" and "|~*", so it will work same.)</p>
+<ul>
+<li>*: A symbol have a meaning to convert input value on Python side to a pseudo pointer type (self inclusion list).</li>
+<li>~: A symbol have a meaning to convert input value on Python side to a built-in type (instead of numpy type).</li>
+</ul>
+<p>Python 側で型変換を行う場合．セパレータ記号 "|" の左右は，それぞれ，C++ 側と Python 側を表している．分割記号 "|" の右側の型は "<em>" または "~" を取ることができ，これは Python 側における変換記号である．このとき，変換記号 "</em>"，"~" の順序は意味をなさない．(したがって， "|<em>~" と "|~</em>" の間に差はなく，同じように動作する．)</p>
+<ul>
+<li>*: Python 側の入力値を擬似ポインタ型 (自己包含リスト) へ変換する．</li>
+<li>
+<p>~: Python 側の入力値を（numpy 型の代わりに）組み込み型に変換する．
+<br/><br/></p>
+</li>
+<li>
+<p><u><strong>pyFunction.py</strong></u>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">checkTypes</span><span class="p">(</span><span class="n">Numpy</span><span class="p">,</span> <span class="n">builtIn</span><span class="p">,</span> <span class="n">pNumpy</span><span class="p">,</span> <span class="n">pBuiltIn</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">Numpy</span><span class="p">),</span> <span class="n">Numpy</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">builtIn</span><span class="p">),</span> <span class="n">builtIn</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">pNumpy</span><span class="p">),</span> <span class="n">pNumpy</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">pBuiltIn</span><span class="p">),</span> <span class="n">pBuiltIn</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;echo &#39;def checkTypes(Numpy, builtIn, pNumpy, pBuiltIn):</span><span class="se">\n</span><span class="s">    print(type(Numpy), Numpy)</span><span class="se">\n</span><span class="s">    print(type(builtIn), builtIn)</span><span class="se">\n</span><span class="s">    print(type(pNumpy), pNumpy)</span><span class="se">\n</span><span class="s">    print(type(pBuiltIn), pBuiltIn)&#39; &gt; ./tmp/pyFunction.py&quot;</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">checkTypes</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;./tmp/pyFunction&quot;</span><span class="p">,</span> <span class="s">&quot;checkTypes&quot;</span><span class="p">,</span> <span class="s">&quot;void, int, int|~, int|*, int|*~&quot;</span><span class="p">);</span>
+    <span class="n">checkTypes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>&lt;class &#39;numpy.ndarray&#39;&gt; [0]
+&lt;class &#39;list&#39;&gt; [0]
+&lt;class &#39;list&#39;&gt; [array([0], dtype=int32)]
+&lt;class &#39;list&#39;&gt; [[0]]
+</code></pre></div></li>
+</ul>
+<h3 id="sample5">Sample5</h3>
+<p>Writing back with changing the length of std::vector<T>. (In order to get value from function, sending address is needed.)<br />
+配列長の変化を含む std::vector<T> の書き戻し．(関数から値を受け取るため，アドレスを受け渡している)</p>
+<ul>
+<li><u><strong>pyFunction.py</strong></u>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">changeLen</span><span class="p">(</span><span class="n">pVec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">):</span>
+    <span class="n">pVec1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pVec1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># numpy    # numpy is not able to add values without changing address of variables. so we need to treat as a pointer like objects (self inclusion list).</span>
+    <span class="n">vec2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>                  <span class="c1"># built-in</span>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;echo &#39;import numpy as np</span><span class="se">\n</span><span class="s">def changeLen(pVec1, vec2):</span><span class="se">\n</span><span class="s">    pVec1[0]=np.append(pVec1[0], 4)</span><span class="se">\n</span><span class="s">    vec2.append(4)&#39; &gt; ./tmp/pyFunction.py&quot;</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">changeLen</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;./tmp/pyFunction&quot;</span><span class="p">,</span> <span class="s">&quot;changeLen&quot;</span><span class="p">,</span> <span class="s">&quot;void, vec&lt;int&gt;*|*, vec&lt;int&gt;*|~&quot;</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span> <span class="n">vec2</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+    <span class="n">changeLen</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vec1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vec2</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vec1</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vec2</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>vec1 = [1 2 3 4]
+vec2 = [1 2 3 4]
+</code></pre></div></li>
+</ul>
+<h3 id="sample6">Sample6</h3>
+<p>Receiving multiple return values from python side. (※ "ret" which is a symbol of return value, must be continuous in arg 4. Interrupted ret occurs error.)<br />
+Python 側から複数の戻り値を受け取る．(※ 戻り値記号 "ret" は，第 4 引数中で連続している必要がある．不連続な ret はエラーを引き起こす．)</p>
+<ul>
+<li><u><strong>pyFunction.py</strong></u>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">multiRet</span><span class="p">():</span> <span class="k">return</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;echo &#39;def multiRet(): return (9, 9, [1,2,3], [4,5,6])&#39; &gt; ./tmp/pyFunction.py&quot;</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">multiRet</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;./tmp/pyFunction&quot;</span><span class="p">,</span> <span class="s">&quot;multiRet&quot;</span><span class="p">,</span> <span class="s">&quot;int, ret int*, ret int*, len, ret vec&lt;int&gt;*&quot;</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">ret0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ret1</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ret2</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ret3</span><span class="p">;</span>
+    <span class="n">ret0</span> <span class="o">=</span> <span class="n">multiRet</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ret1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ret2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ret3</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">ret0</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">ret1</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;ret2[3] = [ &quot;</span><span class="p">);</span> <span class="k">for</span><span class="p">(</span><span class="n">uint</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">ret2</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="p">}</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">ret3</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>ret0 = 9
+ret1 = 9
+ret2[3] = [ 1 2 3 ]
+ret3 = [4 5 6]
+</code></pre></div></li>
+</ul>
+<h2 id="appendix">Appendix</h2>
+<h3 id="application-sample-1">Application sample 1</h3>
+<p>As one of the most convenient application, c2py enable to call matplotlib which is a famous graph plot library in python from C++. In the code below, generate sin wave on C++ and write graph by matplotlib in Python.</p>
+<p>最も便利な応用の 1 つとして，c2py では，Python で有名なグラフプロットライブラリである matplotlib を C++ から呼び出すことができる．下記のサンプルコードでは，C++ 側で生成した sin 波を，Python ライブラリである matplotlib で描画している．</p>
+<ul>
+<li><u><strong>pyFunction.py</strong></u>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>        <span class="c1"># &quot;QXcbConnection: Could not connect to display&quot; への対策</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>                  <span class="c1"># &quot;QXcbConnection: Could not connect to display&quot; への対策</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> <span class="c1"># &quot;QXcbConnection: Could not connect to display&quot; への対策</span>
+<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="kn">as</span> <span class="nn">tick</span>
+
+<span class="k">def</span> <span class="nf">vec2graph</span><span class="p">(</span><span class="n">writeName</span><span class="p">,</span> <span class="n">vecX</span><span class="p">,</span> <span class="n">vecY</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># アスペクト比の設定</span>
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vecX</span><span class="p">,</span> <span class="n">vecY</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="n">title</span>  <span class="o">=</span> <span class="s2">&quot;An example of Plotting a figure of sin wave data generated on C++,</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">title</span> <span class="o">+=</span> <span class="s2">&quot;using matplotlib which is a famous graph plotting library of python. </span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">title</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">sstd::c2py()</span><span class="se">\&quot;</span><span class="s2"> convertes a type of std::vector&lt;double&gt; on C++ to  </span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">title</span> <span class="o">+=</span> <span class="s2">&quot;numpy array type on Python, and calling a Python function from      </span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">title</span> <span class="o">+=</span> <span class="s2">&quot;only 2 lines of C++ code.                                                                    &quot;</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gainsboro&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;silver&#39;</span>    <span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># 軸の余白 # which: major tick と minor tick に対して変更を適用 # tick を内側方向に # tick を bottom, top, left, right に付加 # tick width # tick length</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 軸の余白 # which: major tick と minor tick に対して変更を適用 # tick を内側方向に # tick を bottom, top, left, right に付加 # tick width # tick length</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time [sec]</span><span class="se">\n</span><span class="s2">Fig 1.  0.1 Hz sin wave sampled by 10 Hz, 0-60 sec.&quot;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">tick</span><span class="o">.</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">tick</span><span class="o">.</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Amplitude&quot;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">tick</span><span class="o">.</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">tick</span><span class="o">.</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mf">0.1</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">writeName</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">double</span> <span class="n">freq2generate</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span> <span class="c1">// 0.1 Hz sin wave</span>
+    <span class="kt">double</span> <span class="n">freq2sample</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>    <span class="c1">// 10 Hz sampling</span>
+    <span class="n">uint</span> <span class="n">len</span><span class="o">=</span><span class="mi">60</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>         <span class="c1">// 60 sec</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vecY</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">sinWave</span><span class="p">(</span><span class="n">freq2generate</span><span class="p">,</span> <span class="n">freq2sample</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vecX</span><span class="p">(</span><span class="n">len</span><span class="p">);</span> <span class="k">for</span><span class="p">(</span><span class="n">uint</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">vecX</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="n">vecX</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">freq2sample</span><span class="p">);</span> <span class="p">}</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">vec2graph</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;pyFunctions&quot;</span><span class="p">,</span> <span class="s">&quot;vec2graph&quot;</span><span class="p">,</span> <span class="s">&quot;void, const char*, vec&lt;double&gt;*, vec&lt;double&gt;*&quot;</span><span class="p">);</span>
+    <span class="n">vec2graph</span><span class="p">(</span><span class="s">&quot;./sin.png&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vecX</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vecY</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u><br />
+<img alt="sin.png" src="../../contents/c2py/sin.png" /></li>
+</ul>
+<h3 id="application-sample-2">Application sample 2</h3>
+<p>An example of the additional implementation of vvec<T>. Currently, only vvec<double> is available.</p>
+<p>追加実装された vvec<T> の使用例．現状では，vvec<double> のみ利用可能．</p>
+<ul>
+<li><u><strong>Python</strong></u>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">vvec2graph</span><span class="p">(</span><span class="n">writeName</span><span class="p">,</span> <span class="n">vLabel</span><span class="p">,</span> <span class="n">vvecX</span><span class="p">,</span> <span class="n">vvecY</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># アスペクト比の設定</span>
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+    <span class="c1">#cmap = plt.get_cmap(&quot;tab10&quot;)</span>
+    <span class="n">vColor</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">]</span>
+    <span class="n">vLineStyle</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="s1">&#39;solid&#39;</span><span class="p">]</span> <span class="c1"># solid, dashed, dashdot, dotted</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vvecX</span><span class="p">)):</span>
+        <span class="c1">#ax1.plot(vvecX[i], vvecY[i], linewidth=0.5, color=cmap(i), linestyle=vLineStyle[i], label=vLabel[i])</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vvecX</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">vvecY</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">vColor</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">vLineStyle</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">vLabel</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gainsboro&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;silver&#39;</span>    <span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># 軸の余白 # which: major tick と minor tick に対して変更を適用 # tick を内側方向に # tick を bottom, top, left, right に付加 # tick width # tick length</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 軸の余白 # which: major tick と minor tick に対して変更を適用 # tick を内側方向に # tick を bottom, top, left, right に付加 # tick width # tick length</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time [sec]</span><span class="se">\n</span><span class="s2">Fig 2.  0.1 Hz sin, cos and -cos wave sampled by 10 Hz, 0-60 sec.&quot;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">tick</span><span class="o">.</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">tick</span><span class="o">.</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Amplitude&quot;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">tick</span><span class="o">.</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">tick</span><span class="o">.</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mf">0.1</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">writeName</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span> <span class="c1"># , dpi=100</span>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">double</span> <span class="n">freq_generate</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span> <span class="c1">// 0.1 Hz sin wave</span>
+    <span class="kt">double</span> <span class="n">freq_sample</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>    <span class="c1">// 10 Hz sampling</span>
+    <span class="n">uint</span> <span class="n">len</span><span class="o">=</span><span class="mi">60</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>         <span class="c1">// 60 sec</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">sinY</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">sinWave</span><span class="p">(</span><span class="n">freq_generate</span><span class="p">,</span> <span class="n">freq_sample</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">sinX</span><span class="p">(</span><span class="n">len</span><span class="p">);</span> <span class="k">for</span><span class="p">(</span><span class="n">uint</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">sinX</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="n">sinX</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">freq_sample</span><span class="p">);</span> <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">cosY</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">cosWave</span><span class="p">(</span><span class="n">freq_generate</span><span class="p">,</span> <span class="n">freq_sample</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">cosX</span><span class="p">(</span><span class="n">len</span><span class="p">);</span> <span class="k">for</span><span class="p">(</span><span class="n">uint</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">cosX</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="n">cosX</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">freq_sample</span><span class="p">);</span> <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">vLabel</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;sin&quot;</span><span class="p">,</span> <span class="s">&quot;cos&quot;</span><span class="p">,</span> <span class="s">&quot;-cos&quot;</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">vvecX</span><span class="o">=</span><span class="p">{</span><span class="n">sinX</span><span class="p">,</span> <span class="n">cosX</span><span class="p">,</span>    <span class="n">cosX</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">vvecY</span><span class="o">=</span><span class="p">{</span><span class="n">sinY</span><span class="p">,</span> <span class="n">cosY</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">cosY</span><span class="p">};</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">vvec2graph</span><span class="p">(</span><span class="n">tmpDir</span><span class="p">,</span> <span class="n">fileName</span><span class="p">,</span> <span class="s">&quot;vvec2graph&quot;</span><span class="p">,</span> <span class="s">&quot;void, const char*, const vec&lt;str&gt;*, const vvec&lt;double&gt;*, const vvec&lt;double&gt;*&quot;</span><span class="p">);</span>
+    <span class="n">vvec2graph</span><span class="p">(</span><span class="s">&quot;./sin_cos.png&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vLabel</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vvecX</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vvecY</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u><br />
+<img alt="sin_cos.png" src="../../contents/c2py/sin_cos.png" /></li>
+</ul>
+<h3 id="application-sample-3">Application sample 3</h3>
+<p>In the code below, reading png image from Python, editing on C++ and writing to png file by Python again.</p>
+<p>Python 関数から png ファイルを読み込み，C++ で色を編集した後，再度 Python 関数で png ファイルへ書き出すサンプルコードを示す．</p>
+<ul>
+<li><u><strong>Python</strong></u>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="k">def</span> <span class="nf">imgPath2mat_rRGB</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="n">imgRaw</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">imgRGB</span> <span class="o">=</span> <span class="n">imgRaw</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">imgR</span> <span class="o">=</span> <span class="n">imgRGB</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">imgG</span> <span class="o">=</span> <span class="n">imgRGB</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">imgB</span> <span class="o">=</span> <span class="n">imgRGB</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">imgR</span><span class="p">,</span> <span class="n">imgG</span><span class="p">,</span> <span class="n">imgB</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">mat_rRGB2img</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">imgR</span><span class="p">,</span> <span class="n">imgG</span><span class="p">,</span> <span class="n">imgB</span><span class="p">):</span>
+    <span class="n">imgCombined</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">imgR</span><span class="p">,</span> <span class="n">imgG</span><span class="p">)),</span> <span class="n">imgB</span><span class="p">))</span>
+    <span class="n">imgPIL</span>      <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">imgCombined</span><span class="p">)</span>
+    <span class="n">imgPIL</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">imgPath2mat_rRGB</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;pyFunctions&quot;</span><span class="p">,</span> <span class="s">&quot;imgPath2mat_rRGB&quot;</span><span class="p">,</span> <span class="s">&quot;void, ret mat_r&lt;uint8&gt;*, ret mat_r&lt;uint8&gt;*, ret mat_r&lt;uint8&gt;*, const char*&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">uint8</span><span class="o">&gt;</span> <span class="n">imgR</span><span class="p">,</span> <span class="n">imgG</span><span class="p">,</span> <span class="n">imgB</span><span class="p">;</span>
+    <span class="n">imgPath2mat_rRGB</span><span class="p">(</span><span class="o">&amp;</span><span class="n">imgR</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">imgG</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">imgB</span><span class="p">,</span> <span class="s">&quot;./sample.png&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">uint</span> <span class="n">p</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">p</span><span class="o">&lt;</span><span class="n">imgG</span><span class="p">.</span><span class="n">rows</span><span class="p">();</span> <span class="n">p</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">uint</span> <span class="n">q</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">q</span><span class="o">&lt;</span><span class="n">imgG</span><span class="p">.</span><span class="n">cols</span><span class="p">();</span> <span class="n">q</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">imgG</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">round2even</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="n">imgG</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">c2py</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">mat_rRGB2img</span><span class="p">(</span><span class="s">&quot;./tmpDir&quot;</span><span class="p">,</span> <span class="s">&quot;pyFunctions&quot;</span><span class="p">,</span> <span class="s">&quot;mat_rRGB2img&quot;</span><span class="p">,</span> <span class="s">&quot;void, const char*, mat_r&lt;uint8&gt;*, mat_r&lt;uint8&gt;*, mat_r&lt;uint8&gt;*&quot;</span><span class="p">);</span>
+    <span class="n">mat_rRGB2img</span><span class="p">(</span><span class="s">&quot;./sample_reCombined.png&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">imgR</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">imgG</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">imgB</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u><br />
+<img alt="sample.png" src="../../contents/c2py/sample.png" />
+<img alt="markerRight.png" src="../../contents/c2py/markerRight.png" />
+<img alt="sample_reCombined.png" src="../../contents/c2py/sample_reCombined.png" /><br />
+Input image (sample.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Output image (sample_reCombined.png)</li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.cpp">sstd/src/c2py.cpp</a></li>
+<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.hpp">sstd/src/c2py.hpp</a></li>
+<li>Python: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.py">sstd/src/c2py.py</a> </li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/c2py.hpp">test/c2py.hpp</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                What is SSTD ?
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../csv/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                csv
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../custom_dir/custom.js"></script>
+      
+    
+  </body>
+</html>

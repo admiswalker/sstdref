@@ -14,7 +14,7 @@
     
     
       
-        <title>mkdir - SSTD documentation</title>
+        <title>csv - SSTD documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mkdir" class="md-skip">
+        <a href="#csv" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              mkdir
+              csv
             
           </span>
         </div>
@@ -225,11 +225,90 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../csv/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        csv
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       csv
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv2vvec" class="md-nav__link">
+    csv2vvec()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vvec2csv" class="md-nav__link">
+    vvec2csv()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -413,70 +492,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        mkdir
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../mkdir/" class="md-nav__link">
       mkdir
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    Abstract
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#header-file" class="md-nav__link">
-    Header file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -781,6 +801,26 @@
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv2vvec" class="md-nav__link">
+    csv2vvec()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vvec2csv" class="md-nav__link">
+    vvec2csv()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -803,42 +843,82 @@
               
                 
                 
-                <h1 id="mkdir">mkdir</h1>
+                <h1 id="csv">csv</h1>
 <h2 id="abstract">Abstract</h2>
-<p><code>mkdir</code> creates directories recursively.<br />
-<code>mkdir</code> はディレクトリを再帰的に作成します．</p>
+<ul>
+<li>
+<p><code>csv2vvec()</code><br />
+  Parseing CSV file to <code>std::vector&lt;std::vector&lt;std::string&gt;&gt;</code>.<br />
+  CSV ファイルをパースして <code>std::vector&lt;std::vector&lt;std::string&gt;&gt;</code> に変換します.</p>
+</li>
+<li>
+<p><code>vvec2csv()</code><br />
+  Converting <code>std::vector&lt;std::vector&lt;std::string&gt;&gt;</code> to CSV file.<br />
+<code>std::vector&lt;std::vector&lt;std::string&gt;&gt;</code> を CSV ファイルに変換します.</p>
+</li>
+</ul>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span>
-    <span class="kt">void</span> <span class="n">mkdir</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span>        <span class="n">pPath</span><span class="p">);</span>
-    <span class="kt">void</span> <span class="nf">mkdir</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span>  <span class="n">path</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">csv2vvec</span><span class="p">(</span><span class="k">const</span>        <span class="kt">char</span><span class="o">*</span> <span class="n">pReadFile</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">csv2vvec</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span>  <span class="n">readFile</span><span class="p">);</span>
+
+    <span class="kt">bool</span> <span class="nf">vvec2csv</span><span class="p">(</span><span class="k">const</span>        <span class="kt">char</span><span class="o">*</span> <span class="n">pSavePath</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;&amp;</span> <span class="n">vecCSV</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">vvec2csv</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span>  <span class="n">savePath</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;&amp;</span> <span class="n">vecCSV</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
+<h3 id="csv2vvec">csv2vvec()</h3>
 <ul>
 <li>input
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/a/b/c/&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s">echo &#39;a, bcd\n&quot;hello, world&quot;, &quot;efg&quot;&#39; &gt; ./tmp/example.csv</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;$ cat ./tmp/example.csv</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span> <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;cat ./tmp/example.csv&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 
-    <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;tree ./tmp&quot;</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">vv</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">csv2vvec</span><span class="p">(</span><span class="s">&quot;./tmp/example.csv&quot;</span><span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span> <span class="n">vv</span> <span class="p">);</span>
+
     <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>./tmp
-└── a
-    └── b
-        └── c
+<div class="highlight"><pre><span></span><code>$ cat ./tmp/example.csv
+a, bcd
+&quot;hello, world&quot;, &quot;efg&quot;
 
-3 directories, 0 files
+vv = [[&quot;a&quot; &quot;bcd&quot;] [&quot;hello, world&quot; &quot;efg&quot;]]
+</code></pre></div></li>
+</ul>
+<h3 id="vvec2csv">vvec2csv()</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">vv</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;bcd&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;hello, world&quot;</span><span class="p">,</span> <span class="s">&quot;efg&quot;</span><span class="p">}};</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">vvec2csv</span><span class="p">(</span><span class="s">&quot;./tmp/example.csv&quot;</span><span class="p">,</span> <span class="n">vv</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;$ cat ./tmp/example.csv</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span> <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;cat ./tmp/example.csv&quot;</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output<br />
+<div class="highlight"><pre><span></span><code>$ cat ./tmp/example.csv
+&quot;a&quot;,&quot;bcd&quot;,
+&quot;hello, world&quot;,&quot;efg&quot;,
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
-<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/mkdir.cpp">sstd/src/mkdir.cpp</a></li>
-<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/mkdir.hpp">sstd/src/mkdir.hpp</a></li>
-<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/mkdir.hpp">test/mkdir.hpp</a>
+<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/csv.cpp">sstd/src/csv.cpp</a></li>
+<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/csv.hpp">sstd/src/csv.hpp</a></li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/csv.hpp">test/csv.hpp</a>
   (Not implemented yet)</li>
 </ul>
                 
@@ -859,7 +939,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../measureTime/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../c2py/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -868,19 +948,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                measureTime
+                c2py
               </div>
             </div>
           </a>
         
         
-          <a href="../path/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../glob/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                path
+                glob
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
