@@ -274,36 +274,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sample1" class="md-nav__link">
-    Sample1
+  <a href="#sample1-return-int-input-int-and-const-int" class="md-nav__link">
+    Sample1: (Return: "int" / Input: "int" and "const int*")
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sample2" class="md-nav__link">
-    Sample2
+  <a href="#sample2-return-vecint-input-const-int-len-and-const-vecint" class="md-nav__link">
+    Sample2: (Return: "vec&lt;int&gt;" / Input: "const int*", "len" and "const vec&lt;int&gt;*")
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sample3" class="md-nav__link">
-    Sample3
+  <a href="#sample3-return-void-input-int-int-len-and-vecint" class="md-nav__link">
+    Sample3: (Return: "void" / Input: "int*", "int*", "len" and "vec&lt;int&gt;*")
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sample4" class="md-nav__link">
-    Sample4
+  <a href="#sample4-types-conversion-of-numpy-to-built-in" class="md-nav__link">
+    Sample4: Types conversion of numpy to built-in
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sample5" class="md-nav__link">
-    Sample5
+  <a href="#sample5-writing-back-with-changing-the-length-of-stdvectort" class="md-nav__link">
+    Sample5: Writing back with changing the length of std::vector&lt;T&gt;
   </a>
   
 </li>
@@ -881,36 +881,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sample1" class="md-nav__link">
-    Sample1
+  <a href="#sample1-return-int-input-int-and-const-int" class="md-nav__link">
+    Sample1: (Return: "int" / Input: "int" and "const int*")
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sample2" class="md-nav__link">
-    Sample2
+  <a href="#sample2-return-vecint-input-const-int-len-and-const-vecint" class="md-nav__link">
+    Sample2: (Return: "vec&lt;int&gt;" / Input: "const int*", "len" and "const vec&lt;int&gt;*")
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sample3" class="md-nav__link">
-    Sample3
+  <a href="#sample3-return-void-input-int-int-len-and-vecint" class="md-nav__link">
+    Sample3: (Return: "void" / Input: "int*", "int*", "len" and "vec&lt;int&gt;*")
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sample4" class="md-nav__link">
-    Sample4
+  <a href="#sample4-types-conversion-of-numpy-to-built-in" class="md-nav__link">
+    Sample4: Types conversion of numpy to built-in
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sample5" class="md-nav__link">
-    Sample5
+  <a href="#sample5-writing-back-with-changing-the-length-of-stdvectort" class="md-nav__link">
+    Sample5: Writing back with changing the length of std::vector&lt;T&gt;
   </a>
   
 </li>
@@ -1285,7 +1285,7 @@ c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本�
 <!-- ---------------------------------------------------------- -->
 
 <h2 id="usage">Usage</h2>
-<h3 id="sample1">Sample1</h3>
+<h3 id="sample1-return-int-input-int-and-const-int">Sample1: (Return: "int" / Input: "int" and "const int*")</h3>
 <ul>
 <li><u><strong>pyFunction.py</strong></u>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">plus_a_b</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
@@ -1309,7 +1309,7 @@ c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本�
 <div class="highlight"><pre><span></span><code>c = 3
 </code></pre></div></li>
 </ul>
-<h3 id="sample2">Sample2</h3>
+<h3 id="sample2-return-vecint-input-const-int-len-and-const-vecint">Sample2: (Return: "vec&lt;int&gt;" / Input: "const int*", "len" and "const vec&lt;int&gt;*")</h3>
 <ul>
 <li><u><strong>pyFunction.py</strong></u>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">plus_vecA_vecB</span><span class="p">(</span><span class="n">vecA</span><span class="p">,</span> <span class="n">vecB</span><span class="p">):</span> <span class="k">return</span> <span class="n">vecA</span><span class="o">+</span><span class="n">vecB</span>
@@ -1334,7 +1334,7 @@ c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本�
 <div class="highlight"><pre><span></span><code>vecC = [5 7 9]
 </code></pre></div></li>
 </ul>
-<h3 id="sample3">Sample3</h3>
+<h3 id="sample3-return-void-input-int-int-len-and-vecint">Sample3: (Return: "void" / Input: "int*", "int*", "len" and "vec&lt;int&gt;*")</h3>
 <p>Writing back self multiplied value.<br />
 自己乗算値を書き戻す．</p>
 <ul>
@@ -1369,7 +1369,7 @@ arrB[3] = [ 9 16 25 ]
 vecC = [36 49 64]
 </code></pre></div></li>
 </ul>
-<h3 id="sample4">Sample4</h3>
+<h3 id="sample4-types-conversion-of-numpy-to-built-in">Sample4: Types conversion of numpy to built-in</h3>
 <p>Conversion types in Python side. Symbols on the right side of "|" (which is a separator symbol between C++ and Python) mean the symbols have effect on the Python side. On the right side of "|" enable to take "<em>" or "~" and these order have no meaning. (There is no difference between "|</em>~" and "|~*", so it will work same.)</p>
 <ul>
 <li>*: A symbol have a meaning to convert input value on Python side to a pseudo pointer type (self inclusion list).</li>
@@ -1411,9 +1411,9 @@ vecC = [36 49 64]
 &lt;class &#39;list&#39;&gt; [[0]]
 </code></pre></div></li>
 </ul>
-<h3 id="sample5">Sample5</h3>
-<p>Writing back with changing the length of std::vector<T>. (In order to get value from function, sending address is needed.)<br />
-配列長の変化を含む std::vector<T> の書き戻し．(関数から値を受け取るため，アドレスを受け渡している)</p>
+<h3 id="sample5-writing-back-with-changing-the-length-of-stdvectort">Sample5: Writing back with changing the length of std::vector&lt;T&gt;</h3>
+<p>Writing back with changing the length of <code>std::vector&lt;T&gt;</code>. (In order to get value from function, sending address is needed.)<br />
+配列長の変化を含む <code>std::vector&lt;T&gt;</code> の書き戻し．(関数から値を受け取るため，アドレスを受け渡している)</p>
 <ul>
 <li><u><strong>pyFunction.py</strong></u>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -1541,8 +1541,8 @@ ret3 = [4 5 6]
 <img alt="sin.png" src="../../contents/c2py/sin.png" /></li>
 </ul>
 <h3 id="application-sample-2">Application sample 2</h3>
-<p>An example of the additional implementation of vvec<T>. Currently, only vvec<double> is available.</p>
-<p>追加実装された vvec<T> の使用例．現状では，vvec<double> のみ利用可能．</p>
+<p>An example of the additional implementation of <code>vvec&lt;T&gt;</code>. Currently, only vvec<double> is available.</p>
+<p>追加実装された <code>vvec&lt;T&gt;</code> の使用例．現状では，<code>vvec&lt;double&gt;</code> のみ利用可能．</p>
 <ul>
 <li><u><strong>Python</strong></u>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">vvec2graph</span><span class="p">(</span><span class="n">writeName</span><span class="p">,</span> <span class="n">vLabel</span><span class="p">,</span> <span class="n">vvecX</span><span class="p">,</span> <span class="n">vvecY</span><span class="p">):</span>
