@@ -38,11 +38,13 @@ URL: https://admiswalker.github.io/sstdref/
 | File or directory name | Description Origin |
 | ---------------------- | ------------------ |
 | docs/                  | Static files for github.io |
-| src/                   | Markdown files for editing and generating static site |
-| usages/                | Example code for SSTD documentation |
+| docs_src/              | Markdown files for editing and generating static site |
+| docs_src/custom_dir/   | Custom CSS and JavaScripts |
+| mdEx_cpp_example/      | Markdown expansion to run cpp example code by ```#mdEx: cpp example (in)``` and ```#mdEx: cpp example (out)``` |
+| mdEx_title/            | Markdown extension to automatically generate titles |
+| tmp/                   | Tempolary files to generate docs/ files |
 | .git/                  | git files          |
 | Makefile               | ```$ make run``` for running preview server. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
 | README.me              | This file          |
+| template.md            | Template markdown file for docs_src/ |
 | .gitignore             | Registering files to ignore in order not to track files on git |
-
-
