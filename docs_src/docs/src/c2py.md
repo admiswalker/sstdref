@@ -28,7 +28,7 @@ public:
 
 - c2py interface
 ```cpp
-sstd::c2py<A type of return value> Function name(
+sstd::c2py<ATypeOfReturnValue> FunctionName(
     "Tempolary directory",                               // Argument 1
     "A name of calling .py file (without extension)",    // Argument 2
     "A function name calling from .py file",             // Argument 3
@@ -36,7 +36,7 @@ sstd::c2py<A type of return value> Function name(
 ```
 
 - c2py インターフェースの設計
-```
+```cpp
 sstd::c2py<戻り値の型> 関数名(
     "一時ディレクトリ",                            // 第 1 引数
     "呼び出し先の .py ファイル (ただし拡張子を除く)", // 第 2 引数
