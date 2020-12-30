@@ -44,7 +44,7 @@ URL: https://admiswalker.github.io/sstdref/
 | mdEx_title/            | Markdown extension to automatically generate titles |
 | tmp/                   | Tempolary files to generate docs/ files |
 | .git/                  | git files          |
-| Makefile               | ```$ make run``` for running preview server. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
+| Makefile               | ```$ make run``` for running preview server. ```$ make``` for rebuild preview. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
 | README.me              | This file          |
 | template.md            | Template markdown file for docs_src/ |
 | .gitignore             | Registering files to ignore in order not to track files on git |
