@@ -309,7 +309,7 @@ c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本�
 
 
 ## Usage
-### Sample1
+### Sample1: (Return: "int" / Input: "int" and "const int\*")
 - <u>**pyFunction.py**</u>
 ```python
 def plus_a_b(a, b): return a+b
@@ -335,7 +335,9 @@ int main(){
 ```
 #mdEx: cpp example (out)
 ```
-### Sample2
+
+
+### Sample2: (Return: "vec&lt;int&gt;" / Input: "const int\*", "len" and "const vec&lt;int&gt;\*")
 - <u>**pyFunction.py**</u>
 ```python
 def plus_vecA_vecB(vecA, vecB): return vecA+vecB
@@ -362,7 +364,9 @@ int main(){
 ```
 #mdEx: cpp example (out)
 ```
-### Sample3
+
+
+### Sample3: (Return: "void" / Input: "int\*", "int\*", "len" and "vec&lt;int&gt;\*")
 Writing back self multiplied value.  
 自己乗算値を書き戻す．
 
@@ -398,7 +402,9 @@ int main(){
 ```
 #mdEx: cpp example (out)
 ```
-### Sample4
+
+
+### Sample4: Types conversion of numpy to built-in
 Conversion types in Python side. Symbols on the right side of "|" (which is a separator symbol between C++ and Python) mean the symbols have effect on the Python side. On the right side of "|" enable to take "*" or "~" and these order have no meaning. (There is no difference between "|*~" and "|~*", so it will work same.)
 
 - *: A symbol have a meaning to convert input value on Python side to a pseudo pointer type (self inclusion list).
@@ -437,9 +443,9 @@ int main(){
 ```
 #mdEx: cpp example (out)
 ```
-### Sample5
-Writing back with changing the length of std::vector<T>. (In order to get value from function, sending address is needed.)  
-配列長の変化を含む std::vector<T> の書き戻し．(関数から値を受け取るため，アドレスを受け渡している)
+### Sample5: Writing back with changing the length of std::vector&lt;T&gt;
+Writing back with changing the length of ```std::vector<T>```. (In order to get value from function, sending address is needed.)  
+配列長の変化を含む ```std::vector<T>``` の書き戻し．(関数から値を受け取るため，アドレスを受け渡している)
 
 - <u>**pyFunction.py**</u>
 ```python
@@ -574,9 +580,9 @@ int main(){
 
 
 ### Application sample 2
-An example of the additional implementation of vvec<T>. Currently, only vvec<double> is available.
+An example of the additional implementation of ```vvec<T>```. Currently, only vvec<double> is available.
 
-追加実装された vvec<T> の使用例．現状では，vvec<double> のみ利用可能．
+追加実装された ```vvec<T>``` の使用例．現状では，```vvec<double>``` のみ利用可能．
 
 - <u>**Python**</u>
 ```python
