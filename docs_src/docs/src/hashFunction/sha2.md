@@ -1,4 +1,4 @@
-# SHA-2 (224, 256, 384, 512 bits)
+# SHA-2<br/>(224, 256, 384, 512 bits)
 ## Abstract
 ```sha224()```, ```sha256()```, ```sha384()``` and ```sha512()``` calculate SHA-2 cryptographic hash function.  
 ```sha224()```, ```sha256()```, ```sha384()``` および ```sha512()``` は暗号学的ハッシュ関数である SHA-2 を計算します．
