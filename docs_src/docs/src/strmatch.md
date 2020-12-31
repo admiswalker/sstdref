@@ -6,8 +6,15 @@
 ## Header file
 ```cpp
 namespace sstd{
-    bool strmatch(const char* str, const char* wildCard);
-    bool strmatch_getWC(const char* str, const char* wildCard, std::string& retWC);
+    bool strmatch(const        char* str, const        char* wildCard);
+    bool strmatch(const        char* str, const std::string& wildCard);
+    bool strmatch(const std::string& str, const        char* wildCard);
+    bool strmatch(const std::string& str, const std::string& wildCard);
+    
+    bool strmatch_getWC(const        char* str, const        char* wildCard, std::string& retWC);
+    bool strmatch_getWC(const        char* str, const std::string& wildCard, std::string& retWC);
+    bool strmatch_getWC(const std::string& str, const        char* wildCard, std::string& retWC);
+    bool strmatch_getWC(const std::string& str, const std::string& wildCard, std::string& retWC);
     
     bool isNum               (char rhs);
     bool isAlphabet          (char rhs);
@@ -25,12 +32,11 @@ namespace sstd{
 
 int main(){
     std::string s = "TOKYOTO...";
-    sstd::printn( sstd::strmatch(s.c_str(), "??KYOTO*") );
-//  sstd::printn( sstd::strmatch(s, "??KYOTO*") ); // Not implimented yet
+    sstd::printn( sstd::strmatch(s, "??KYOTO*") );
 
     std::string ret;
-    sstd::printn( sstd::strmatch_getWC(s.c_str(), "TO*...", ret) );
-    sstd::printn(ret); // It look like bug. we want "KYOTO"
+    sstd::printn( sstd::strmatch_getWC(s, "TO*...", ret) );
+    sstd::printn(ret);
 }
 ```
 - output  
