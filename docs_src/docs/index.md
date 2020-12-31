@@ -51,4 +51,5 @@ SubStandardLibrary (SSTD) is a convenient functions set for C++, works on GCC (g
   (This software is dual license, so you can choose whichever you want).
 
 ## Repository
-- [github.com/admiswalker/SubStandardLibrary](https://github.com/admiswalker/SubStandardLibrary)
+- Source code: [github.com/admiswalker/SubStandardLibrary](https://github.com/admiswalker/SubStandardLibrary)
+- Documentation: [github.com/admiswalker/sstdref](https://github.com/admiswalker/sstdref)
