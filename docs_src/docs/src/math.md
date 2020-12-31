@@ -1,6 +1,7 @@
 # math
 ## Abstract
-This is a documentation template.
+```math.hpp``` contains functions for mathmatical and statistical calculations.  
+```math.hpp``` は数学・統計計算用の関数を収録します．
 
 ## Header file
 ```cpp
