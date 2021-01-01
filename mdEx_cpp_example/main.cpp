@@ -20,20 +20,6 @@ bool sstd__save2file(const std::string& savePath, const std::string& s){
     return true;
 }
 
-std::string sstd__system_stdout_stderr(const std::string& cmd){
-    std::string ret;
-    
-    FILE* fp;
-    std::string cmd_stdout_stderr = cmd + R"( 2>&1)";
-    if((fp = popen(cmd_stdout_stderr.c_str(), "r"))==NULL){ sstd::pdbg("ERROR: popen() was failed.\n"); return ""; }
-    
-    char buf[1024];
-    while(fgets(buf, 1024, fp) != NULL){ ret+=buf; }
-    
-    pclose(fp);
-    return ret;
-}
-
 std::string cpp2exe(const std::string& exe_path, const std::string& cpp_path){
     std::string CXX = R"(g++)";
     std::string CFLAG;
@@ -43,7 +29,7 @@ std::string cpp2exe(const std::string& exe_path, const std::string& cpp_path){
     CFLAG += R"( -O3)";
     std::string cmd = sstd::ssprintf("%s -o %s %s %s", CXX.c_str(), exe_path.c_str(), cpp_path.c_str(), CFLAG.c_str());
     
-    return sstd__system_stdout_stderr(cmd); // compile with g++
+    return sstd::system_stdout_stderr(cmd); // compile with g++
 }
 
 std::string cpp2out(const std::string& tmpDir, const std::string& cpp_path){
@@ -55,8 +41,9 @@ std::string cpp2out(const std::string& tmpDir, const std::string& cpp_path){
     ret += cpp2exe(exe_path, cpp_path);
     
     // get output
+    sstd::system( sstd::ssprintf("cp -r ./sstd ./%s", tmpDir.c_str()) );
     std::string cmd = sstd::ssprintf("cd %s; ./%s", tmpDir.c_str(), fileName.c_str());
-    ret += sstd__system_stdout_stderr(cmd); // running exe
+    ret += sstd::system_stdout_stderr(cmd); // running exe
     
     return ret;
 }

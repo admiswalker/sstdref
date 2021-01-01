@@ -6,12 +6,22 @@
 ## Header file
 ```cpp
 namespace sstd{
-    int system(const        char* str);
-    int system(const std::string& str);
+    int system(const        char* cmd);
+    int system(const std::string& cmd);
+
+    std::string system_stdout(const        char* cmd);
+    std::string system_stdout(const std::string& cmd);
+    
+    std::string system_stderr(const        char* cmd);
+    std::string system_stderr(const std::string& cmd);
+    
+    std::string system_stdout_stderr(const        char* cmd);
+    std::string system_stdout_stderr(const std::string& cmd);
 }
 ```
 
 ## Usage
+### system
 - input
 ```cpp
 #mdEx: cpp example (in)
@@ -20,7 +30,28 @@ namespace sstd{
 int main(){
     sstd::system("mkdir -p ./tmp/a/b/c");
     sstd::system("tree ./tmp");
-    sstd::system("rm -rf ./tmp");
+}
+```
+- output  
+```
+#mdEx: cpp example (out)
+```
+
+### system_stdout_stderr
+Acquires the ```stdout``` and ```stderr``` that accompany the execution result.  
+実行結果に伴う標準出力と標準エラー出力を取得します．
+
+- input
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::system("touch hello");
+    sstd::system("touch system_stdout_stderr");
+    
+    std::string s = sstd::system_stdout_stderr("ls");
+    sstd::printn( s );
 }
 ```
 - output  
@@ -32,5 +63,3 @@ int main(){
 - Source: [sstd/src/stdlib.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/stdlib.cpp)
 - Header: [sstd/src/stdlib.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/stdlib.hpp)
 - Test: [test/stdlib.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/stdlib.hpp)
-  (Not implemented yet)
-
