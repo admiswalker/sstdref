@@ -38,7 +38,6 @@ std::string cpp2exe(const std::string& exe_path, const std::string& cpp_path){
     std::string CXX = R"(g++)";
     std::string CFLAG;
     CFLAG += R"( -L./sstd/lib -I./sstd/include -lsstd)"; // sstd
-    CFLAG += R"( -L./googletest-master/build/lib -I./googletest-master/googletest/include -lgtest -pthread)"; // google test
     CFLAG += R"( -std=c++11)";
     CFLAG += R"( -Wall)";
     CFLAG += R"( -O3)";
@@ -51,11 +50,13 @@ std::string cpp2out(const std::string& tmpDir, const std::string& cpp_path){
     std::string ret;
     
     // compile with g++
-    std::string exe_path = tmpDir + '/' + sstd::getFileName_withoutExtension(cpp_path.c_str()) + ".exe";
+    std::string fileName = sstd::getFileName_withoutExtension(cpp_path.c_str()) + ".exe";
+    std::string exe_path = tmpDir + '/' + fileName;
     ret += cpp2exe(exe_path, cpp_path);
     
     // get output
-    ret += sstd__system_stdout_stderr(exe_path); // running exe
+    std::string cmd = sstd::ssprintf("cd %s; ./%s", tmpDir.c_str(), fileName.c_str());
+    ret += sstd__system_stdout_stderr(cmd); // running exe
     
     return ret;
 }
@@ -90,12 +91,15 @@ int main(int argc, char *argv[]){
             vStrOut <<= vStrIn[i]; // add "```"
             
             // vCppCode to cpp_file
-//            std::string cpp_path = tmpDir+'/'+path_in+'_'+sstd::ssprintf("%d",i)+".cpp";
-            std::string cpp_path = tmpDir+'/'+std::regex_replace(path_in.c_str(), std::regex("/"), "_")+'_'+sstd::ssprintf("%d",i)+".cpp";
-            sstd__save2file(cpp_path, cpp_code);
+            std::string file_name = std::regex_replace(path_in.c_str(), std::regex("/"), "_")+'_'+sstd::ssprintf("%d",i)+".cpp";
+            std::string tmpDir_exe = tmpDir+'/'+file_name;
+            sstd::mkdir(tmpDir_exe);
             
-            // cpp_file to output
-            cpp_out = cpp2out(tmpDir, cpp_path);
+            std::string cpp_path = tmpDir+'/'+file_name+'/'+file_name;
+            sstd__save2file(cpp_path, cpp_code);
+            cpp_out = cpp2out(tmpDir_exe, cpp_path); // cpp_file to output
+            
+            sstd::rm(tmpDir_exe);
             
         }else if(vStrIn[i] == "#mdEx: cpp example (out)"){
             vStrOut.pop_back(); // rm "#mdEx: cpp example (in)"

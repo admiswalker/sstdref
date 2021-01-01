@@ -10,8 +10,7 @@ RMs = *.stackdump __pycache__ tmpDir
 
 # compilation options
 CFLAGS += -L./sstd/lib -I./sstd/include -lsstd # sstd
-CFLAGS += -L./googletest-master/build/lib -I./googletest-master/googletest/include -lgtest -pthread # google test
-CFLAGS += -std=c++11 # CFLAGS += -std=gnu++0x
+CFLAGS += -std=c++14 # CFLAGS += -std=gnu++0x
 CFLAGS += -Wall
 #CFLAGS += -Wextra
 CFLAGS += -O3
@@ -19,26 +18,23 @@ CFLAGS += -O3
 #------------------------------------------------------------
 
 # when you need to check the change of files in lib, you need to change file name to a not-existing name like "FORCE_XXX".
-#LIB_SSTD       = FORCE_SSTD
-#LIB_GOOGLETEST = FORCE_GOOGLETEST
-LIB_SSTD       = ./sstd/lib/libsstd.a
-LIB_GOOGLETEST = ./googletest-master/build/lib/libgtest.a
-LIB_ALL += $(LIB_SSTD)
-LIB_ALL += $(LIB_GOOGLETEST)
+#LIB_SSTD = FORCE_SSTD
+LIB_SSTD  = ./sstd/lib/libsstd.a
+LIB_ALL  += $(LIB_SSTD)
 
 
 # generate exe file
 TARGET_all = FORCE_MAKEALL
 $(TARGET_all): $(LIB_ALL) $(TARGET)
 	@echo "maked all"
-$(TARGET): $(SRC)
+$(TARGET): $(LIB_ALL) $(SRC)
 	@echo ""
 	@echo "------------------------------------------------------------"
 	@echo "TARGET: \n$@\n"
 	@echo "SRCS: \n$<"
 	@echo "CFLAGS: \n$(CFLAGS)"
 	@echo "------------------------------------------------------------"
-	$(CXX) -o $@ $< $(CFLAGS)
+	$(CXX) -o $@ $(SRC) $(CFLAGS)
 	@echo ""
 
 
@@ -49,11 +45,6 @@ $(LIB_SSTD):
 	@rm -rf SubStandardLibrary-SSTD--master/
 	@(cd ./sstd; make -j)
 
-$(LIB_GOOGLETEST):
-	@echo ""
-	@unzip -n googletest-master.zip
-	@(cd ./googletest-master; mkdir -p build; cd build; cmake ..; make)
-
 
 .PHONY: all
 all:
@@ -63,9 +54,9 @@ all:
 
 .PHONY: clean
 clean:
-	-rm -rf googletest-master
 	-rm -rf sstd
 	-rm -rf tmp
+	-rm -rf *.exe
 	-rm -rf out.md
 
 
