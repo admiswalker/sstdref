@@ -1358,7 +1358,7 @@ c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本�
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>c = 3
+<div class="highlight"><pre><span></span><code>./sstd/include/sstd/./src/c2py.hpp: operator_brackets(234): ERROR: &quot;c2py.py&quot; is not found.c = 0
 </code></pre></div></li>
 </ul>
 <h3 id="sample2-return-vecint-input-const-int-len-and-const-vecint">Sample2: (Return: "vec&lt;int&gt;" / Input: "const int*", "len" and "const vec&lt;int&gt;*")</h3>
@@ -1383,7 +1383,7 @@ c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本�
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>vecC = [5 7 9]
+<div class="highlight"><pre><span></span><code>./sstd/include/sstd/./src/c2py.hpp: operator_brackets(234): ERROR: &quot;c2py.py&quot; is not found.vecC = []
 </code></pre></div></li>
 </ul>
 <h3 id="sample3-return-void-input-int-int-len-and-vecint">Sample3: (Return: "void" / Input: "int*", "int*", "len" and "vec&lt;int&gt;*")</h3>
@@ -1416,9 +1416,9 @@ c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本�
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>a = 4
-arrB[3] = [ 9 16 25 ]
-vecC = [36 49 64]
+<div class="highlight"><pre><span></span><code>./sstd/include/sstd/./src/c2py.hpp: operator_brackets(234): ERROR: &quot;c2py.py&quot; is not found.a = 2
+arrB[3] = [ 3 4 5 ]
+vecC = [6 7 8]
 </code></pre></div></li>
 </ul>
 <h3 id="sample4-types-conversion-of-numpy-to-built-in">Sample4: Types conversion of numpy to built-in</h3>
@@ -1457,10 +1457,7 @@ vecC = [36 49 64]
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>&lt;class &#39;numpy.ndarray&#39;&gt; [0]
-&lt;class &#39;list&#39;&gt; [0]
-&lt;class &#39;list&#39;&gt; [array([0], dtype=int32)]
-&lt;class &#39;list&#39;&gt; [[0]]
+<div class="highlight"><pre><span></span><code>./sstd/include/sstd/./src/c2py.hpp: operator_brackets(234): ERROR: &quot;c2py.py&quot; is not found.
 </code></pre></div></li>
 </ul>
 <h3 id="sample5-writing-back-with-changing-the-length-of-stdvectort">Sample5: Writing back with changing the length of std::vector&lt;T&gt;</h3>
@@ -1491,8 +1488,8 @@ vecC = [36 49 64]
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>vec1 = [1 2 3 4]
-vec2 = [1 2 3 4]
+<div class="highlight"><pre><span></span><code>./sstd/include/sstd/./src/c2py.hpp: operator_brackets(234): ERROR: &quot;c2py.py&quot; is not found.vec1 = [1 2 3]
+vec2 = [1 2 3]
 </code></pre></div></li>
 </ul>
 <h3 id="sample6">Sample6</h3>
@@ -1525,10 +1522,10 @@ Python 側から複数の戻り値を受け取る．(※ 戻り値記号 "ret" �
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>ret0 = 9
-ret1 = 9
-ret2[3] = [ 1 2 3 ]
-ret3 = [4 5 6]
+<div class="highlight"><pre><span></span><code>./sstd/include/sstd/./src/c2py.hpp: operator_brackets(234): ERROR: &quot;c2py.py&quot; is not found.ret0 = 0
+ret1 = 0
+ret2[3] = [ 0 0 0 ]
+ret3 = []
 </code></pre></div></li>
 </ul>
 <h2 id="appendix">Appendix</h2>
