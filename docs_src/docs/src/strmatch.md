@@ -77,5 +77,3 @@ int main(){
 - Source: [sstd/src/strmatch.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/strmatch.cpp)
 - Header: [sstd/src/strmatch.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/strmatch.hpp)
 - Test: [test/strmatch.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/strmatch.hpp)
-  (Not implemented yet)
-
