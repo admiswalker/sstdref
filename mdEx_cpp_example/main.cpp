@@ -10,16 +10,6 @@ std::string vStr2str_n(const std::vector<std::string>& vStr){
     return s;
 }
 
-bool sstd__save2file(const std::string& savePath, const std::string& s){
-    sstd::file fp;
-    if(! fp.fopen(savePath, "wb") ){ sstd::pdbg("ERROR: fopen() was failed.\n"); return false; }
-    
-    size_t w_size = fp.fwrite(&s[0], sizeof(char), s.size());
-    if(w_size != s.size()){ sstd::pdbg("ERROR: fopen() was failed.\n"); return false; }
-    
-    return true;
-}
-
 std::string cpp2exe(const std::string& exe_path, const std::string& cpp_path){
     std::string CXX = R"(g++)";
     std::string CFLAG;
@@ -54,7 +44,7 @@ int main(int argc, char *argv[]){
     std::string path_in  = argv[2];
     std::string path_out = argv[3];
     
-    std::string strIn = sstd::readAll(path_in);
+    std::string strIn = sstd::read(path_in);
     std::vector<std::string> vStrIn = sstd::splitByLine(strIn);
     std::vector<std::string> vStrOut;
     
@@ -83,7 +73,7 @@ int main(int argc, char *argv[]){
             sstd::mkdir(tmpDir_exe);
             
             std::string cpp_path = tmpDir+'/'+file_name+'/'+file_name;
-            sstd__save2file(cpp_path, cpp_code);
+            sstd::write(cpp_path, cpp_code);
             cpp_out = cpp2out(tmpDir_exe, cpp_path); // cpp_file to output
             
             sstd::rm(tmpDir_exe);
@@ -94,7 +84,7 @@ int main(int argc, char *argv[]){
         }
     }
     std::string strOut = vStr2str_n(vStrOut);
-    if(! sstd__save2file(path_out, strOut) ){ sstd::pdbg("ERROR: sstd__save2file() was failed.\n"); return false; }
+    if(sstd::write(path_out, strOut)!=strOut.size()){ sstd::pdbg("ERROR: sstd::write() was failed.\n"); return false; }
     
 	return 0;
 }
