@@ -54,8 +54,8 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/file.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file.cpp)
-- Header: [sstd/src/file.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file.hpp)
-- Test: [test/file.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file.hpp)
+- Source: [sstd/src/file/file.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/file.cpp)
+- Header: [sstd/src/file/file.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/file.hpp)
+- Test: [test/file/file.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/file.hpp)
   (Not implemented yet)
 
