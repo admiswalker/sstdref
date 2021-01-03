@@ -721,6 +721,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#charin-strin" class="md-nav__link">
+    charIn(), strIn()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -912,6 +919,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#charin-strin" class="md-nav__link">
+    charIn(), strIn()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -957,6 +971,14 @@
     <span class="kt">bool</span> <span class="nf">isAlphabet</span>          <span class="p">(</span><span class="kt">char</span> <span class="n">rhs</span><span class="p">);</span>
     <span class="kt">bool</span> <span class="nf">isAlphabet_onlyUpper</span><span class="p">(</span><span class="kt">char</span> <span class="n">rhs</span><span class="p">);</span>
     <span class="kt">bool</span> <span class="nf">isAlphabet_onlyLower</span><span class="p">(</span><span class="kt">char</span> <span class="n">rhs</span><span class="p">);</span>
+
+    <span class="kt">bool</span> <span class="nf">charIn</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span>        <span class="kt">char</span><span class="o">*</span> <span class="n">rhs</span><span class="p">);</span> <span class="c1">// Is lhs in rhs ?</span>
+    <span class="kt">bool</span> <span class="nf">charIn</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span> <span class="c1">// Is lhs in rhs ?</span>
+
+    <span class="kt">bool</span> <span class="nf">strIn</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span>        <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span>        <span class="n">rhs</span><span class="p">);</span> <span class="c1">// is lhs in rhs ? (is rhs include lhs ?)</span>
+    <span class="kt">bool</span> <span class="nf">strIn</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span>        <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">strIn</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span>        <span class="n">rhs</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">strIn</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
@@ -1019,6 +1041,27 @@ sstd::isAlphabet_onlyUpper(&#39;a&#39;) = false
 sstd::isAlphabet_onlyLower(&#39;0&#39;) = false
 sstd::isAlphabet_onlyLower(&#39;A&#39;) = false
 sstd::isAlphabet_onlyLower(&#39;a&#39;) = true
+</code></pre></div></li>
+</ul>
+<h3 id="charin-strin">charIn(), strIn()</h3>
+<ul>
+<li>input
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span> <span class="n">sstd</span><span class="o">::</span><span class="n">charIn</span><span class="p">(</span><span class="sc">&#39;c&#39;</span><span class="p">,</span> <span class="s">&quot;abcdef&quot;</span><span class="p">)</span> <span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span> <span class="n">sstd</span><span class="o">::</span><span class="n">charIn</span><span class="p">(</span><span class="sc">&#39;x&#39;</span><span class="p">,</span> <span class="s">&quot;abcdef&quot;</span><span class="p">)</span> <span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span> <span class="n">sstd</span><span class="o">::</span><span class="n">strIn</span><span class="p">(</span><span class="s">&quot;def&quot;</span><span class="p">,</span> <span class="s">&quot;abcdefgh&quot;</span><span class="p">)</span> <span class="p">);</span>
+    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span> <span class="n">sstd</span><span class="o">::</span><span class="n">strIn</span><span class="p">(</span><span class="s">&quot;defx&quot;</span><span class="p">,</span> <span class="s">&quot;abcdefgh&quot;</span><span class="p">)</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>output<br />
+<div class="highlight"><pre><span></span><code>sstd::charIn(&#39;c&#39;, &quot;abcdef&quot;) = true
+sstd::charIn(&#39;x&#39;, &quot;abcdef&quot;) = false
+
+sstd::strIn(&quot;def&quot;, &quot;abcdefgh&quot;) = true
+sstd::strIn(&quot;defx&quot;, &quot;abcdefgh&quot;) = false
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
