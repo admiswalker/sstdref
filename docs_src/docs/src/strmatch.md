@@ -20,6 +20,14 @@ namespace sstd{
     bool isAlphabet          (char rhs);
     bool isAlphabet_onlyUpper(char rhs);
     bool isAlphabet_onlyLower(char rhs);
+    
+    bool charIn(const char lhs, const        char* rhs); // Is lhs in rhs ?
+    bool charIn(const char lhs, const std::string& rhs); // Is lhs in rhs ?
+    
+    bool strIn(const char*        lhs, const char*        rhs); // is lhs in rhs ? (is rhs include lhs ?)
+    bool strIn(const char*        lhs, const std::string& rhs);
+    bool strIn(const std::string& lhs, const char*        rhs);
+    bool strIn(const std::string& lhs, const std::string& rhs);
 }
 ```
 
@@ -66,6 +74,25 @@ int main(){
     sstd::printn( sstd::isAlphabet_onlyLower('0') );
     sstd::printn( sstd::isAlphabet_onlyLower('A') );
     sstd::printn( sstd::isAlphabet_onlyLower('a') ); printf("\n");
+}
+```
+- output  
+```
+#mdEx: cpp example (out)
+```
+
+### charIn(), strIn()
+- input
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::printn( sstd::charIn('c', "abcdef") );
+    sstd::printn( sstd::charIn('x', "abcdef") ); printf("\n");
+    
+    sstd::printn( sstd::strIn("def", "abcdefgh") );
+    sstd::printn( sstd::strIn("defx", "abcdefgh") );
 }
 ```
 - output  
