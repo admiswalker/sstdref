@@ -972,17 +972,17 @@ sstd::getExtension(path.c_str()) = &quot;txt&quot;
 sstd::parsePath(path.c_str()) = [&quot;.&quot; &quot;abc&quot; &quot;DEF&quot; &quot;example.txt&quot;]
 sstd::parsePath_withBase(path.c_str()) = [&quot;.&quot; &quot;./abc&quot; &quot;./abc/DEF&quot; &quot;./abc/DEF/example.txt&quot;]
 
-sstd::isFile(path_dir.c_str()) = false
-sstd::isFile(path_file.c_str()) = true
+sstd::isFile(path_dir.c_str()) = F
+sstd::isFile(path_file.c_str()) = T
 
-sstd::isDir(path_dir.c_str()) = true
-sstd::isDir(path_file.c_str()) = false
+sstd::isDir(path_dir.c_str()) = T
+sstd::isDir(path_file.c_str()) = F
 
-sstd::fileExist(path_file.c_str()) = true
-sstd::dirExist(path_dir.c_str()) = true
+sstd::fileExist(path_file.c_str()) = T
+sstd::dirExist(path_dir.c_str()) = T
 
-sstd::fileExist(path_file.c_str()) = false
-sstd::dirExist(path_dir.c_str()) = false
+sstd::fileExist(path_file.c_str()) = F
+sstd::dirExist(path_dir.c_str()) = F
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>

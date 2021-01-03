@@ -997,8 +997,8 @@
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>sstd::strmatch(s, &quot;??KYOTO*&quot;) = true
-sstd::strmatch_getWC(s, &quot;TO*...&quot;, ret) = true
+<div class="highlight"><pre><span></span><code>sstd::strmatch(s, &quot;??KYOTO*&quot;) = T
+sstd::strmatch_getWC(s, &quot;TO*...&quot;, ret) = T
 ret = &quot;KYOTO&quot;
 </code></pre></div></li>
 </ul>
@@ -1026,21 +1026,21 @@ ret = &quot;KYOTO&quot;
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>sstd::isNum(&#39;0&#39;) = true
-sstd::isNum(&#39;A&#39;) = false
-sstd::isNum(&#39;a&#39;) = false
+<div class="highlight"><pre><span></span><code>sstd::isNum(&#39;0&#39;) = T
+sstd::isNum(&#39;A&#39;) = F
+sstd::isNum(&#39;a&#39;) = F
 
-sstd::isAlphabet(&#39;0&#39;) = false
-sstd::isAlphabet(&#39;A&#39;) = true
-sstd::isAlphabet(&#39;a&#39;) = true
+sstd::isAlphabet(&#39;0&#39;) = F
+sstd::isAlphabet(&#39;A&#39;) = T
+sstd::isAlphabet(&#39;a&#39;) = T
 
-sstd::isAlphabet_onlyUpper(&#39;0&#39;) = false
-sstd::isAlphabet_onlyUpper(&#39;A&#39;) = true
-sstd::isAlphabet_onlyUpper(&#39;a&#39;) = false
+sstd::isAlphabet_onlyUpper(&#39;0&#39;) = F
+sstd::isAlphabet_onlyUpper(&#39;A&#39;) = T
+sstd::isAlphabet_onlyUpper(&#39;a&#39;) = F
 
-sstd::isAlphabet_onlyLower(&#39;0&#39;) = false
-sstd::isAlphabet_onlyLower(&#39;A&#39;) = false
-sstd::isAlphabet_onlyLower(&#39;a&#39;) = true
+sstd::isAlphabet_onlyLower(&#39;0&#39;) = F
+sstd::isAlphabet_onlyLower(&#39;A&#39;) = F
+sstd::isAlphabet_onlyLower(&#39;a&#39;) = T
 </code></pre></div></li>
 </ul>
 <h3 id="charin-strin">charIn(), strIn()</h3>
@@ -1057,11 +1057,11 @@ sstd::isAlphabet_onlyLower(&#39;a&#39;) = true
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>sstd::charIn(&#39;c&#39;, &quot;abcdef&quot;) = true
-sstd::charIn(&#39;x&#39;, &quot;abcdef&quot;) = false
+<div class="highlight"><pre><span></span><code>sstd::charIn(&#39;c&#39;, &quot;abcdef&quot;) = T
+sstd::charIn(&#39;x&#39;, &quot;abcdef&quot;) = F
 
-sstd::strIn(&quot;def&quot;, &quot;abcdefgh&quot;) = true
-sstd::strIn(&quot;defx&quot;, &quot;abcdefgh&quot;) = false
+sstd::strIn(&quot;def&quot;, &quot;abcdefgh&quot;) = T
+sstd::strIn(&quot;defx&quot;, &quot;abcdefgh&quot;) = F
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>

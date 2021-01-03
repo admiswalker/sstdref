@@ -933,9 +933,14 @@
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>/tmp/ccp68Gtd.o: 関数 `main&#39; 内:
-.._._docs_src_docs_src_hashFunction_md5.md_36.cpp:(.text.startup+0x4d): `sstd::readAll_bin(char const*)&#39; に対する定義されていない参照です
-collect2: error: ld returned 1 exit status
+<div class="highlight"><pre><span></span><code>.././tmp/.._._docs_src_docs_src_hashFunction_md5.md_36.cpp/.._._docs_src_docs_src_hashFunction_md5.md_36.cpp: In function ‘int main()’:
+.././tmp/.._._docs_src_docs_src_hashFunction_md5.md_36.cpp/.._._docs_src_docs_src_hashFunction_md5.md_36.cpp:14:37: error: ‘readAll_bin’ is not a member of ‘sstd’
+     std::vector&lt;uint8&gt; vBin = sstd::readAll_bin(&quot;./tmp/rand.txt&quot;); // read all as a binary
+                                     ^~~~~~~~~~~
+.././tmp/.._._docs_src_docs_src_hashFunction_md5.md_36.cpp/.._._docs_src_docs_src_hashFunction_md5.md_36.cpp:14:37: note: suggested alternative: ‘read_bin’
+     std::vector&lt;uint8&gt; vBin = sstd::readAll_bin(&quot;./tmp/rand.txt&quot;); // read all as a binary
+                                     ^~~~~~~~~~~
+                                     read_bin
 sh: 1: ./.._._docs_src_docs_src_hashFunction_md5.md_36.exe: not found
 </code></pre></div></li>
 </ul>
