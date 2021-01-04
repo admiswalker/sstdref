@@ -69,6 +69,44 @@ int main(){
 ```
 #mdEx: cpp example (out)
 ```
+#### any depth vector × scalar
+- input
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<std::vector<std::vector<int>>> v = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}};
+    sstd::printn( v * 2 );
+    
+    v *= 3;
+    sstd::printn( v );
+}
+```
+- output  
+```
+#mdEx: cpp example (out)
+```
+#### any depth vector × vector
+- input
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<std::vector<std::vector<int>>> v1 = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}};
+    std::vector<std::vector<std::vector<int>>> v2 = {{{9, 10}, {11, 12}}, {{13, 14}, {15, 16}}};
+    sstd::printn( v1 * v2 );
+    
+    v1 *= v2;
+    sstd::printn( v1 );
+    sstd::printn( v2 );
+}
+```
+- output  
+```
+#mdEx: cpp example (out)
+```
 
 ### Linking <<
 #### vector << scalar
