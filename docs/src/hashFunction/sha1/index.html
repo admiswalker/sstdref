@@ -925,7 +925,7 @@
     <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;head -c 5m /dev/urandom &gt; ./tmp/rand.txt&quot;</span><span class="p">);</span> <span class="c1">// generate 5 MB random file</span>
     <span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;sha1sum ./tmp/rand.txt&quot;</span><span class="p">);</span>
 
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">uint8</span><span class="o">&gt;</span> <span class="n">vBin</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">readAll_bin</span><span class="p">(</span><span class="s">&quot;./tmp/rand.txt&quot;</span><span class="p">);</span> <span class="c1">// read all as a binary</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">uint8</span><span class="o">&gt;</span> <span class="n">vBin</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">read_bin</span><span class="p">(</span><span class="s">&quot;./tmp/rand.txt&quot;</span><span class="p">);</span> <span class="c1">// read all as a binary</span>
     <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">md5_str</span> <span class="o">=</span> <span class="n">uint8_to_str</span><span class="p">(</span> <span class="n">sstd</span><span class="o">::</span><span class="n">sha1</span><span class="p">(</span> <span class="n">vBin</span> <span class="p">)</span> <span class="p">);</span>
     <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span> <span class="n">md5_str</span> <span class="p">);</span>
 
@@ -933,15 +933,8 @@
 <span class="p">}</span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>.././tmp/.._._docs_src_docs_src_hashFunction_sha1.md_36.cpp/.._._docs_src_docs_src_hashFunction_sha1.md_36.cpp: In function ‘int main()’:
-.././tmp/.._._docs_src_docs_src_hashFunction_sha1.md_36.cpp/.._._docs_src_docs_src_hashFunction_sha1.md_36.cpp:14:37: error: ‘readAll_bin’ is not a member of ‘sstd’
-     std::vector&lt;uint8&gt; vBin = sstd::readAll_bin(&quot;./tmp/rand.txt&quot;); // read all as a binary
-                                     ^~~~~~~~~~~
-.././tmp/.._._docs_src_docs_src_hashFunction_sha1.md_36.cpp/.._._docs_src_docs_src_hashFunction_sha1.md_36.cpp:14:37: note: suggested alternative: ‘read_bin’
-     std::vector&lt;uint8&gt; vBin = sstd::readAll_bin(&quot;./tmp/rand.txt&quot;); // read all as a binary
-                                     ^~~~~~~~~~~
-                                     read_bin
-sh: 1: ./.._._docs_src_docs_src_hashFunction_sha1.md_36.exe: not found
+<div class="highlight"><pre><span></span><code>1363f465edc5cab001f973604896d20d7e7c76f9  ./tmp/rand.txt
+md5_str = &quot;1363f465edc5cab001f973604896d20d7e7c76f9&quot;
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
