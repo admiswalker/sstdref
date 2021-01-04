@@ -35,7 +35,7 @@ int main(){
     sstd::system("head -c 5m /dev/urandom > ./tmp/rand.txt"); // generate 5 MB random file
     sstd::system("sha224sum ./tmp/rand.txt");
     
-    std::vector<uint8> vBin = sstd::readAll_bin("./tmp/rand.txt"); // read all as a binary
+    std::vector<uint8> vBin = sstd::read_bin("./tmp/rand.txt"); // read all as a binary
     std::string sha224_str = uint8_to_str( sstd::sha224( vBin ) );
     sstd::printn( sha224_str );
     

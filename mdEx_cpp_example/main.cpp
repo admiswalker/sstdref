@@ -29,6 +29,12 @@ std::string cpp2out(const std::string& tmpDir, const std::string& cpp_path){
     std::string fileName = sstd::getFileName_withoutExtension(cpp_path.c_str()) + ".exe";
     std::string exe_path = tmpDir + '/' + fileName;
     ret += cpp2exe(exe_path, cpp_path);
+    if(ret.size()!=0){
+        printf("\u001b[31m"); // set output red
+        printf("Compile ERROR or WARNING: "); // set output red
+        printf("%s\n", ret.c_str());
+        printf("\u001b[0m"); // reset color
+    }
     
     // get output
     sstd::system( sstd::ssprintf("cp -r ./sstd ./%s", tmpDir.c_str()) );
