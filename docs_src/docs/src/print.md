@@ -6,25 +6,6 @@
 ## Header file
 ```cpp
 namespace sstd{
-    // woLF: without line feed code ('\n')
-    void print_woLF(const  bool  rhs);
-    void print_woLF(const  char  rhs);
-    void print_woLF(const  int8  rhs);
-    void print_woLF(const  int16 rhs);
-    void print_woLF(const  int32 rhs);
-    void print_woLF(const  int64 rhs);
-    void print_woLF(const uint8  rhs);
-    void print_woLF(const uint16 rhs);
-    void print_woLF(const uint32 rhs);
-    void print_woLF(const uint64 rhs);
-    void print_woLF(const float  rhs);
-    void print_woLF(const double  rhs); // Note: Prioritize readability and do not display all effective digits of double-precision type.
-    void print_woLF(const        char* rhs);
-    void print_woLF(const std::string& rhs);
-    template <typename T>
-    void print_woLF(const std::vector<T>& rhs);
-    
-    // with line feed code ('\n')
     void print(const  bool  rhs);
     void print(const  char  rhs);
     void print(const  int8  rhs);
@@ -60,7 +41,7 @@ namespace sstd{
     void for_printn(const std::vector<T>& rhs);
 
     //---
-    
+
     // for #define
     inline void printn_dummy(){}
     inline void printn(...){}
