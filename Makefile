@@ -69,6 +69,9 @@ updateDocs:
 	@(git commit -m 'Update docs')
 	@(git push origin main)
 
+updateLib:
+	@(cd ./mdEx_cpp_example; make updateLib)
+
 clean:
 	@(rm -rf $(TEMP))
 	@(cd ./mdEx_cpp_example; make clean)
