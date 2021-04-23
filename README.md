@@ -4,24 +4,56 @@ sstdref is the documentation files for SSTD.
 URL: https://admiswalker.github.io/sstdref/
 
 # Installation
-- mkdocs
+- update
   ```
-  $ pip install mkdocs
-  $ pip install mkdocs-material
-  $ pip install mkdocs-awesome-pages-plugin
+  $ sudo apt-get update
   ```
-- init mkdocs
+- curl
   ```
-  $ mkdocs new src
+  $ sudo apt-get install curl
   ```
-
+- Docker
+  - Docker engine
+    ```
+    $ curl -fsSL https://get.docker.com/ | sh
+    ```
+  - Creation of docker group and adding a user, in order not to required sudo.
+    - Creation of docker group
+      ```
+      $ sudo groupadd docker
+      ```
+    - Adding a user who want to use docker. In this example, we will add login-user ($USER)
+      ```
+      $ sudo gpasswd -a $USER docker
+      ```
+    - Rebooting PC
+      ```
+      $ reboot
+      ```
+- In the case without docker
+  - mkdocs
+    ```
+    $ pip install mkdocs
+    $ pip install mkdocs-material
+    $ pip install mkdocs-awesome-pages-plugin
+    ```
+  - init mkdocs
+    ```
+    $ mkdocs new src
+    ```
 # Development cycle
 - Running the local server
   ```
-  $ make run
+  $ ./make.sh run  # with Docker
+  $ make run  # without Docker
   ```
 - Editting documentation under ```sstdref/src/docs```
-- Checking the local server (http://127.0.0.1:8000/).
+- Compiling files
+  ```
+  $ ./make.sh  # with Docker
+  $ make -j  # without Docker
+  ```
+- Checking the local server (http://localhost:8000/).
 - Adding the changes to git repository.
   ```
   $ git add .
@@ -30,13 +62,15 @@ URL: https://admiswalker.github.io/sstdref/
   ```
 - Updating the github.io
   ```
-  $ make updateDocs
+  $ ./make.sh updateDocs  # with Docker
+  $ make updateDocs # without Docker
   ```
 
 # File and Directory descriptions
 
 | File or directory name | Description Origin |
 | ---------------------- | ------------------ |
+| docker/                | Dockerfile and the other required files |
 | docs/                  | Static files for github.io |
 | docs_src/              | Markdown files for editing and generating static site |
 | docs_src/custom_dir/   | Custom CSS and JavaScripts |
@@ -46,5 +80,6 @@ URL: https://admiswalker.github.io/sstdref/
 | .git/                  | git files          |
 | Makefile               | ```$ make run``` for running preview server. ```$ make``` for rebuild preview. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
 | README.me              | This file          |
+| make.sh                | Makefile wrapper using Docker |
 | template.md            | Template markdown file for docs_src/ |
 | .gitignore             | Registering files to ignore in order not to track files on git |
