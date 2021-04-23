@@ -4,37 +4,38 @@ sstdref is the documentation files for SSTD.
 URL: https://admiswalker.github.io/sstdref/
 
 # Installation
-- update
-  ```
-  $ sudo apt-get update
-  ```
-- curl
-  ```
-  $ sudo apt-get install curl
-  ```
-- Docker
-  - Docker engine
+- In the case with docker
+  - update
     ```
-    $ curl -fsSL https://get.docker.com/ | sh
+    $ sudo apt-get update
     ```
-  - Creation of docker group and adding a user, in order not to required sudo.
-    - Creation of docker group
-      ```
-      $ sudo groupadd docker
-      ```
-    - Adding a user who want to use docker. In this example, we will add login-user ($USER)
-      ```
-      $ sudo gpasswd -a $USER docker
-      ```
-    - Rebooting PC
-      ```
-      $ reboot
-      ```
-  - Building the Dockerfile
+  - curl
     ```
-    $ cd docker
-    $ sh docker_build.sh
+    $ sudo apt-get install curl
     ```
+  - Docker
+    - Docker engine
+      ```
+      $ curl -fsSL https://get.docker.com/ | sh
+      ```
+    - Creation of docker group and adding a user, in order not to required sudo.
+      - Creation of docker group
+        ```
+        $ sudo groupadd docker
+        ```
+      - Adding a user who want to use docker. In this example, we will add login-user ($USER)
+        ```
+        $ sudo gpasswd -a $USER docker
+        ```
+      - Rebooting PC
+        ```
+        $ reboot
+        ```
+    - Building the Dockerfile
+      ```
+      $ cd docker
+      $ sh docker_build.sh
+      ```
 - In the case without docker
   - mkdocs
     ```
