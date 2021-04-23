@@ -30,6 +30,11 @@ URL: https://admiswalker.github.io/sstdref/
       ```
       $ reboot
       ```
+  - Building the Dockerfile
+    ```
+    $ cd docker
+    $ sh docker_build.sh
+    ```
 - In the case without docker
   - mkdocs
     ```
