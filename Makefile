@@ -69,14 +69,9 @@ updateDocs02:
 	@(git add ./docs)
 	@(git commit -m 'Update docs')
 	@(git push origin main)
-
 updateDocs:
-	@(cd ./$(TEMP); mkdocs build)
-	@(mkdir -p ./docs)
-	@(cp -r ./$(TEMP)/site/* ./docs)
-	@(git add ./docs)
-	@(git commit -m 'Update docs')
-	@(git push origin main)
+	@(make updateDocs01)
+	@(make updateDocs02)
 
 updateLib:
 	@(cd ./mdEx_cpp_example; make updateLib)
