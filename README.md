@@ -78,7 +78,7 @@ URL: https://admiswalker.github.io/sstdref/
 | ---------------------- | ------------------ |
 | docker/                | Dockerfile and the other required files |
 | docs/                  | Static files for github.io |
-| docs_src/              | Markdown files **for editing** and generating static site |
+| docs_src/              | Markdown files ***for editing*** and generating static site |
 | docs_src/custom_dir/   | Custom CSS and JavaScripts |
 | mdEx_cpp_example/      | Markdown expansion to run cpp example code by ```#mdEx: cpp example (in)``` and ```#mdEx: cpp example (out)``` |
 | mdEx_title/            | Markdown extension to automatically generate titles |
