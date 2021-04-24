@@ -82,7 +82,7 @@ URL: https://admiswalker.github.io/sstdref/
 | docs_src/custom_dir/   | Custom CSS and JavaScripts |
 | mdEx_cpp_example/      | Markdown expansion to run cpp example code by ```#mdEx: cpp example (in)``` and ```#mdEx: cpp example (out)``` |
 | mdEx_title/            | Markdown extension to automatically generate titles |
-| tmp/                   | Tempolary files to generate docs/ files |
+| tmp/                   | Temporary files to generate docs/ files and previewing by httpd |
 | .git/                  | git files          |
 | Makefile               | ```$ make run``` for running preview server. ```$ make``` for rebuild preview. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
 | README.me              | This file          |

@@ -71,6 +71,6 @@ struct tm{
 - ref: [localtime - 初心者のためのポイント学習 C 言語](http://www9.plala.or.jp/sgwr-t/lib/localtime.html)
 
 ## Implementation
-- Source: [sstd/src/time.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time.cpp)
-- Header: [sstd/src/time.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time.hpp)
-- Test: [test/time.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/time.hpp) (Not implemented yet)
+- Source: [sstd/src/time/time.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time/time.cpp)
+- Header: [sstd/src/time/time.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time/time.hpp)
+- Test: [test/time/time.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/time/time.hpp)
