@@ -16,7 +16,7 @@ fi
 
 dRun="docker run --rm -it --name run_sstdref -w /home"
 opt1="-v $PWD:/home"
-opt2="-v $PWD/tmp/site:/home -p 8000:8000"
+opt2="-v $PWD/docs:/home -p 8000:8000"
 dImg="sstdref_gen:latest"
 
 case "$1" in
