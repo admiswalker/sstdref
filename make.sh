@@ -23,7 +23,7 @@ case "$1" in
     ""           ) eval "$dRun $opt1 $dImg make -j";;
     "clean"      ) eval "$dRun $opt1 $dImg make clean";;
     "run"        ) eval "$dRun $opt1 $dImg make -j"; xdg-open http://localhost:8000/; eval "$dRun $opt2 $dImg python -m http.server 8000";;
-    "updateDocs" ) eval "$dRun $opt1 $dImg make updateDocs";;
+    "updateDocs" ) eval "$dRun $opt1 $dImg make updateDocs01"; make updateDocs02 ;;
     "help"       ) showHelp; exit 1;;
     *            ) showHelp; exit 1;;
 esac
