@@ -86,6 +86,6 @@ URL: https://admiswalker.github.io/sstdref/
 | .git/                  | git files          |
 | Makefile               | ```$ make run``` for running preview server. ```$ make``` for rebuild preview. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
 | README.me              | This file          |
-| make.sh                | Makefile wrapper using Docker |
+| make.sh                | Makefile wrapper for running in Docker |
 | template.md            | Template markdown file for docs_src/ |
 | .gitignore             | Registering files to ignore in order not to track files on git |
