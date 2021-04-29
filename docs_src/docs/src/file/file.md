@@ -8,21 +8,27 @@ The ```file``` class is used to manage file pointers.
 namespace sstd{ class file; }
 class sstd::file{
 private:
-public:
     FILE* fp;
-    file(){ fp=0; }
-//  file(const char*& fileName, const char*& mode){ fopen(&fp, fileName, mode); } // コンストラクタでは，fopen の失敗を検知できないので，これは実装しないように!!!
-    ~file(){ if(fp!=0){ ::fclose(fp); } }
+    int type; // 0: fopen(), 1: popen().
     
-    bool fopen(const char* fileName, const char* mode);
+public:
+    file();
+    ~file();
+    
+    bool fopen(const        char* fileName, const char* mode);
     bool fopen(const std::string& fileName, const char* mode);
-    bool fclose();
-    size_t fread(void* ptr, const size_t& size, const size_t& nmemb);
-    size_t fwrite(const void* ptr, const size_t& size, const size_t& nmemb);
-    int fseek(const long& offset, const int& whence);
-    long ftell();
-
+    bool popen(const        char* fileName, const char* mode);
+    bool popen(const std::string& fileName, const char* mode);
+    bool close();
+    
+    char*  fgets (char* s, int size);
+    size_t fread (void* ptr, const size_t& size, const size_t& nmemb);
+    template <typename... Args>
+    int    fscanf(const char* format, Args const&... args){ return ::fscanf(this->fp, format, args...); }
+    int    fseek (const long& offset, const int& whence);
     size_t fsize();
+    long   ftell();
+    size_t fwrite(const void* ptr, const size_t& size, const size_t& nmemb);
 };
 ```
 
@@ -57,5 +63,4 @@ int main(){
 - Source: [sstd/src/file/file.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/file.cpp)
 - Header: [sstd/src/file/file.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/file.hpp)
 - Test: [test/file/file.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/file.hpp)
-  (Not implemented yet)
 
