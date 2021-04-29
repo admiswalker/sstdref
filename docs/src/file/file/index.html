@@ -921,21 +921,27 @@
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span> <span class="k">class</span> <span class="nc">file</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">class</span> <span class="nc">sstd</span><span class="o">::</span><span class="n">file</span><span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
-<span class="k">public</span><span class="o">:</span>
     <span class="kt">FILE</span><span class="o">*</span> <span class="n">fp</span><span class="p">;</span>
-    <span class="n">file</span><span class="p">(){</span> <span class="n">fp</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-<span class="c1">//  file(const char*&amp; fileName, const char*&amp; mode){ fopen(&amp;fp, fileName, mode); } // コンストラクタでは，fopen の失敗を検知できないので，これは実装しないように!!!</span>
-    <span class="o">~</span><span class="n">file</span><span class="p">(){</span> <span class="k">if</span><span class="p">(</span><span class="n">fp</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span> <span class="o">::</span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">type</span><span class="p">;</span> <span class="c1">// 0: fopen(), 1: popen().</span>
 
-    <span class="kt">bool</span> <span class="n">fopen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fileName</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">mode</span><span class="p">);</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">file</span><span class="p">();</span>
+    <span class="o">~</span><span class="n">file</span><span class="p">();</span>
+
+    <span class="kt">bool</span> <span class="nf">fopen</span><span class="p">(</span><span class="k">const</span>        <span class="kt">char</span><span class="o">*</span> <span class="n">fileName</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">mode</span><span class="p">);</span>
     <span class="kt">bool</span> <span class="nf">fopen</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">fileName</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">mode</span><span class="p">);</span>
-    <span class="kt">bool</span> <span class="nf">fclose</span><span class="p">();</span>
-    <span class="kt">size_t</span> <span class="nf">fread</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span><span class="o">&amp;</span> <span class="n">nmemb</span><span class="p">);</span>
-    <span class="kt">size_t</span> <span class="nf">fwrite</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span><span class="o">&amp;</span> <span class="n">nmemb</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="nf">fseek</span><span class="p">(</span><span class="k">const</span> <span class="kt">long</span><span class="o">&amp;</span> <span class="n">offset</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">whence</span><span class="p">);</span>
-    <span class="kt">long</span> <span class="nf">ftell</span><span class="p">();</span>
+    <span class="kt">bool</span> <span class="nf">popen</span><span class="p">(</span><span class="k">const</span>        <span class="kt">char</span><span class="o">*</span> <span class="n">fileName</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">mode</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">popen</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">fileName</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">mode</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">close</span><span class="p">();</span>
 
+    <span class="kt">char</span><span class="o">*</span>  <span class="nf">fgets</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+    <span class="kt">size_t</span> <span class="nf">fread</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span><span class="o">&amp;</span> <span class="n">nmemb</span><span class="p">);</span>
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+    <span class="kt">int</span>    <span class="n">fscanf</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">format</span><span class="p">,</span> <span class="n">Args</span> <span class="k">const</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">){</span> <span class="k">return</span> <span class="o">::</span><span class="n">fscanf</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">fp</span><span class="p">,</span> <span class="n">format</span><span class="p">,</span> <span class="n">args</span><span class="p">...);</span> <span class="p">}</span>
+    <span class="kt">int</span>    <span class="n">fseek</span> <span class="p">(</span><span class="k">const</span> <span class="kt">long</span><span class="o">&amp;</span> <span class="n">offset</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">whence</span><span class="p">);</span>
     <span class="kt">size_t</span> <span class="nf">fsize</span><span class="p">();</span>
+    <span class="kt">long</span>   <span class="nf">ftell</span><span class="p">();</span>
+    <span class="kt">size_t</span> <span class="nf">fwrite</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span><span class="o">&amp;</span> <span class="n">nmemb</span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
@@ -968,8 +974,7 @@ def
 <ul>
 <li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/file.cpp">sstd/src/file/file.cpp</a></li>
 <li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/file.hpp">sstd/src/file/file.hpp</a></li>
-<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/file.hpp">test/file/file.hpp</a>
-  (Not implemented yet)</li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/file.hpp">test/file/file.hpp</a></li>
 </ul>
                 
               
