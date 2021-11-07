@@ -44,6 +44,12 @@ sstd::c2py<戻り値の型> 関数名(
     "Python 関数の型指定");                      // 第 4 引数
 ```
 
+## Requirements
+`c2py()` requires the `importlib`, `inspect`, `itertools`, `numpy`, `os` and `sys` Python packages. See [sstd/src/c2py.py](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.py) for details.
+
+`c2py()` は，`importlib`, `inspect`, `itertools`, `numpy`, `os`, `sys` の Python パッケージを必要とします．詳細は [sstd/src/c2py.py](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.py) を参照すること．
+
+
 ## List of corresponding types. (対応する型の一覧)
 Table 1. shows the correspondence between the types on the C ++ side and the types on the Python side.
 Table 2. shows a list of type names given when specifying a type on the C ++ side.
