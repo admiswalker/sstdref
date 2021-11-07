@@ -54,7 +54,7 @@ URL: https://admiswalker.github.io/sstdref/
    $ ./make.sh run  # with Docker
    $ make run  # without Docker
    ```
-1. Editting documentation under ```sstdref/src/docs```
+1. Editting documentation under ```sstdref/docs_src```
 1. Compiling files
    ```
    $ ./make.sh  # with Docker
@@ -105,21 +105,21 @@ Usages:
 
 ## File and Directory descriptions
 
-| File or directory name | Description Origin |
-| ---------------------- | ------------------ |
-| docker/                | Dockerfile and the other required files |
-| docs/                  | Static files for github.io |
-| docs_src/              | Markdown files ***for editing*** and generating static site |
-| docs_src/custom_dir/   | Custom CSS and JavaScripts |
-| mdEx_cpp_example/      | Markdown expansion to run cpp example code by ```#mdEx: cpp example (in)``` and ```#mdEx: cpp example (out)``` |
-| mdEx_title/            | Markdown extension to automatically generate titles |
-| tmp/                   | Temporary files to generate docs/ files and previewing by httpd |
-| .git/                  | git files          |
-| Makefile               | ```$ make run``` for running preview server. ```$ make``` for rebuild preview. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
-| README.me              | This file          |
-| make.sh                | Makefile wrapper for running in Docker |
-| template.md            | Template markdown file for docs_src/ |
-| .gitignore             | Registering files to ignore in order not to track files on git |
+| File or directory name      | Description Origin |
+| --------------------------- | ------------------ |
+| docker/                     | Dockerfile and the other required files |
+| docs/                       | Static files for github.io |
+| docs_src/                   | Markdown files ***for editing*** and generating static site |
+| docs_src/docs/custom_dir/   | Custom CSS and JavaScripts |
+| mdEx_cpp_example/           | Markdown expansion to run cpp example code by ```#mdEx: cpp example (in)``` and ```#mdEx: cpp example (out)``` |
+| mdEx_title/                 | Markdown extension to automatically generate titles |
+| tmp/                        | Temporary files to generate docs/ files and previewing by httpd |
+| .git/                       | git files          |
+| Makefile                    | ```$ make run``` for running preview server. ```$ make``` for rebuild preview. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
+| README.me                   | This file          |
+| make.sh                     | Makefile wrapper for running in Docker |
+| template.md                 | Template markdown file for docs_src/ |
+| .gitignore                  | Registering files to ignore in order not to track files on git |
 
 ## Trouble shooting
 ### Case1. Unable to find image 'sstdref_gen:latest' locally
@@ -128,5 +128,3 @@ You need to build dockerfile using below commands, if docker image is not found 
 $ cd docker
 $ sh docker_build.sh
 ```
-
-
