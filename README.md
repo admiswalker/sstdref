@@ -111,7 +111,7 @@ Usages:
 | docs/                       | Static files for github.io |
 | docs_src/                   | Markdown files ***for editing*** and generating static site |
 | docs_src/docs/custom_dir/   | Custom CSS and JavaScripts |
-| mdEx_cpp_example/           | Markdown expansion to run cpp example code by ```#mdEx: cpp example (in)``` and ```#mdEx: cpp example (out)``` |
+| mdEx_cpp_example/           | Markdown expansion to run cpp example code by `#mdEx: cpp example (in)` and `#mdEx: cpp example (out)`. `SubStandardLibrary-SSTD--master.zip` file under mdEx_cpp_example/ is used to generate the execution sample of SSTD. To update SSTD to the latest version, run `$ make updateLib`. |
 | mdEx_title/                 | Markdown extension to automatically generate titles |
 | tmp/                        | Temporary files to generate docs/ files and previewing by httpd |
 | .git/                       | git files          |
