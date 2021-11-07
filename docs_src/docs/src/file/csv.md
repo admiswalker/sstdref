@@ -28,7 +28,7 @@ namespace sstd{
 
 int main(){
     sstd::mkdir("./tmp");
-    sstd::system(R"(echo 'a, bcd\n"hello, world", "efg"' > ./tmp/example.csv)");
+    sstd::system("echo 'a, bcd\n\"hello, world\", \"efg\"' > ./tmp/example.csv");
     printf("$ cat ./tmp/example.csv\n"); fflush(stdout); sstd::system("cat ./tmp/example.csv");
     printf("\n");
     
