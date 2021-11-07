@@ -906,36 +906,36 @@ SSTD における型の定義．<code>#include &lt;sstd/sstd.hpp&gt;</code> に�
 
 
 <span class="cp">#ifdef _WIN32</span>
-    <span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">uchar</span><span class="p">;</span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">uchar</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">typedef</span> <span class="kr">__int8</span> <span class="n">int8</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kr">__int16</span> <span class="n">int16</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kr">__int32</span> <span class="n">int32</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kr">__int64</span> <span class="n">int64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kr">__int8</span><span class="w"> </span><span class="n">int8</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kr">__int16</span><span class="w"> </span><span class="n">int16</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kr">__int32</span><span class="w"> </span><span class="n">int32</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kr">__int64</span><span class="w"> </span><span class="n">int64</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kr">__int8</span> <span class="n">uint8</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kr">__int16</span> <span class="n">uint16</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kr">__int32</span> <span class="n">uint32</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">uint64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kr">__int8</span><span class="w"> </span><span class="n">uint8</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kr">__int16</span><span class="w"> </span><span class="n">uint16</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kr">__int32</span><span class="w"> </span><span class="n">uint32</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kr">__int64</span><span class="w"> </span><span class="n">uint64</span><span class="p">;</span><span class="w"></span>
 <span class="cp">#else</span>
-    <span class="cp">#include</span> <span class="cpf">&lt;stdint.h&gt;</span><span class="c1">        // intXX_t, uintXX_t が定義されている</span><span class="cp"></span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span><span class="c1">        // intXX_t, uintXX_t が定義されている</span><span class="cp"></span>
 
-    <span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">uchar</span><span class="p">;</span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">uchar</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">typedef</span> <span class="kt">int8_t</span> <span class="n">int8</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">int16_t</span> <span class="n">int16</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">int32_t</span> <span class="n">int32</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">int64_t</span> <span class="n">int64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">int8_t</span><span class="w"> </span><span class="n">int8</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">int16_t</span><span class="w"> </span><span class="n">int16</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">int32</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">int64</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">typedef</span> <span class="kt">uint8_t</span> <span class="n">uint8</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">uint16_t</span> <span class="n">uint16</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">uint32_t</span> <span class="n">uint32</span><span class="p">;</span>
-    <span class="k">typedef</span> <span class="kt">uint64_t</span> <span class="n">uint64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">uint8</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">uint16</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">uint32</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">uint64</span><span class="p">;</span><span class="w"></span>
 <span class="cp">#endif</span>
 
 
 <span class="cp">#ifndef uint</span>
-    <span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">uint</span><span class="p">;</span>
+<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">uint</span><span class="p">;</span><span class="w"></span>
 <span class="cp">#endif</span>
 </code></pre></div>
 <h2 id="implementation">Implementation</h2>

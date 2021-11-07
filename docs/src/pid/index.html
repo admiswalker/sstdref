@@ -916,21 +916,21 @@
 <p><code>getpid</code> returns the PID of its own process.<br />
 <code>getpid</code> は自プロセスの PID を返します．</p>
 <h2 id="header-file">Header file</h2>
-<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span>
-    <span class="n">int32</span> <span class="nf">getpid</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">int32</span><span class="w"> </span><span class="nf">getpid</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
 <ul>
 <li>input
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span> <span class="n">sstd</span><span class="o">::</span><span class="n">getpid</span><span class="p">()</span> <span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getpid</span><span class="p">()</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li>output<br />
-<div class="highlight"><pre><span></span><code>sstd::getpid() = 1013
+<div class="highlight"><pre><span></span><code>sstd::getpid() = 997
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>

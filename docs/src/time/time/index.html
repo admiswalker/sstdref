@@ -931,66 +931,66 @@
 <h2 id="abstract">Abstract</h2>
 <p><code>struct tm</code> と <code>time_t</code> (unixtime) および，その他の時刻を相互変換する．</p>
 <h2 id="header-file">Header file</h2>
-<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">sstd</span><span class="p">{</span>
-    <span class="k">struct</span> <span class="nc">tm</span> <span class="n">time2tm</span>       <span class="p">(</span><span class="kt">time_t</span> <span class="n">unixtime</span><span class="p">);</span>
-    <span class="kt">time_t</span>    <span class="nf">tm2time</span>       <span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
-    <span class="k">struct</span> <span class="nc">tm</span> <span class="n">timeGm2tmLocal</span><span class="p">(</span><span class="kt">time_t</span> <span class="n">unixtime</span><span class="p">);</span>
-    <span class="kt">time_t</span>    <span class="nf">tmLocal2timeGm</span><span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">time2str</span>    <span class="p">(</span><span class="kt">time_t</span> <span class="n">unixtime</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>   <span class="n">tm2str</span>    <span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
-    <span class="kt">double</span>      <span class="nf">time2unixday</span><span class="p">(</span><span class="kt">time_t</span> <span class="n">unixtime</span><span class="p">);</span>
-    <span class="kt">double</span>        <span class="nf">tm2unixday</span><span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="n">time2tm</span><span class="w">       </span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">unixtime</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">time_t</span><span class="w">    </span><span class="nf">tm2time</span><span class="w">       </span><span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="n">timeGm2tmLocal</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">unixtime</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">time_t</span><span class="w">    </span><span class="nf">tmLocal2timeGm</span><span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">time2str</span><span class="w">    </span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">unixtime</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">   </span><span class="nf">tm2str</span><span class="w">    </span><span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w">      </span><span class="nf">time2unixday</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">unixtime</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w">        </span><span class="nf">tm2unixday</span><span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
 
-    <span class="kt">time_t</span>    <span class="nf">yday2time</span><span class="p">(</span><span class="n">uint</span> <span class="n">year</span><span class="p">,</span> <span class="n">uint</span> <span class="n">yday</span><span class="p">);</span>
-    <span class="k">struct</span> <span class="nc">tm</span> <span class="n">yday2tm</span>  <span class="p">(</span><span class="n">uint</span> <span class="n">year</span><span class="p">,</span> <span class="n">uint</span> <span class="n">yday</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">time_t</span><span class="w">    </span><span class="nf">yday2time</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">yday</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="n">yday2tm</span><span class="w">  </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">yday</span><span class="p">);</span><span class="w"></span>
 
-    <span class="k">struct</span> <span class="nc">timeval</span> <span class="n">getTimeval</span><span class="p">();</span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">timeval</span><span class="w"> </span><span class="n">getTimeval</span><span class="p">();</span><span class="w"></span>
 
-    <span class="kt">double</span> <span class="nf">unixtime2JulianDate</span><span class="p">(</span><span class="kt">time_t</span> <span class="n">unixtime</span><span class="p">);</span>
-    <span class="kt">double</span> <span class="nf">Julius_T</span><span class="p">(</span><span class="kt">time_t</span> <span class="n">unixtime</span><span class="p">);</span>
-    <span class="kt">double</span> <span class="nf">JulianDate2Julius_T</span><span class="p">(</span><span class="kt">double</span> <span class="n">JulianDate</span><span class="p">);</span>
-    <span class="kt">double</span> <span class="nf">TJuliusD</span><span class="p">(</span><span class="kt">time_t</span> <span class="n">unixtime</span><span class="p">);</span>
-    <span class="kt">double</span> <span class="nf">JulianDate2TJuliusD</span><span class="p">(</span><span class="kt">double</span> <span class="n">JulianDate</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">unixtime2JulianDate</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">unixtime</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">Julius_T</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">unixtime</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">JulianDate2Julius_T</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">JulianDate</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">TJuliusD</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">unixtime</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">JulianDate2TJuliusD</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">JulianDate</span><span class="p">);</span><span class="w"></span>
 
-    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
-    <span class="kt">void</span> <span class="nf">for_printn</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">for_printn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">tm</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
 <ul>
 <li>input
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="c1"> // for time()</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span><span class="c1"> // for time()</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="kt">time_t</span> <span class="n">unixtime_UTC</span><span class="p">;</span> <span class="n">time</span><span class="p">(</span><span class="o">&amp;</span><span class="n">unixtime_UTC</span><span class="p">);</span> <span class="c1">// get current unixtime (UTC)</span>
-    <span class="k">struct</span> <span class="nc">tm</span> <span class="n">tm_UTC</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">time2tm</span><span class="p">(</span><span class="n">unixtime_UTC</span><span class="p">);</span>
-    <span class="k">struct</span> <span class="nc">tm</span> <span class="n">tm_Local</span> <span class="o">=</span> <span class="n">sstd</span><span class="o">::</span><span class="n">timeGm2tmLocal</span><span class="p">(</span><span class="n">unixtime_UTC</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">time_t</span><span class="w"> </span><span class="n">unixtime_UTC</span><span class="p">;</span><span class="w"> </span><span class="n">time</span><span class="p">(</span><span class="o">&amp;</span><span class="n">unixtime_UTC</span><span class="p">);</span><span class="w"> </span><span class="c1">// get current unixtime (UTC)</span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="n">tm_UTC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">time2tm</span><span class="p">(</span><span class="n">unixtime_UTC</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="n">tm_Local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">timeGm2tmLocal</span><span class="p">(</span><span class="n">unixtime_UTC</span><span class="p">);</span><span class="w"></span>
 
-    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">unixtime_UTC</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">tm_UTC</span><span class="p">);</span>
-    <span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">tm_Local</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">unixtime_UTC</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">tm_UTC</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">tm_Local</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li>output<br />
 Below is the result on Japanese local time (UTC+9hour).
-<div class="highlight"><pre><span></span><code>unixtime_UTC = 1619692501
-tm_UTC = 2021-04-29 10:35:01
-tm_Local = 2021-04-29 10:35:01
+<div class="highlight"><pre><span></span><code>unixtime_UTC = 1636287353
+tm_UTC = 2021-11-07 12:15:53
+tm_Local = 2021-11-07 12:15:53
 </code></pre></div></li>
 </ul>
 <h2 id="appendix">Appendix</h2>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">tm</span><span class="p">{</span>
-  <span class="kt">int</span> <span class="n">tm_sec</span><span class="p">;</span>      <span class="cm">/* 秒 [0-61] 最大2秒までのうるう秒を考慮 */</span>
-  <span class="kt">int</span> <span class="n">tm_min</span><span class="p">;</span>      <span class="cm">/* 分 [0-59] */</span>
-  <span class="kt">int</span> <span class="n">tm_hour</span><span class="p">;</span>     <span class="cm">/* 時 [0-23] */</span>
-  <span class="kt">int</span> <span class="n">tm_mday</span><span class="p">;</span>     <span class="cm">/* 日 [1-31] */</span>
-  <span class="kt">int</span> <span class="n">tm_mon</span><span class="p">;</span>      <span class="cm">/* 月 [0-11] 0から始まることに注意 */</span>
-  <span class="kt">int</span> <span class="n">tm_year</span><span class="p">;</span>     <span class="cm">/* 年 [1900からの経過年数] */</span>
-  <span class="kt">int</span> <span class="n">tm_wday</span><span class="p">;</span>     <span class="cm">/* 曜日 [0:日 1:月 ... 6:土] */</span>
-  <span class="kt">int</span> <span class="n">tm_yday</span><span class="p">;</span>     <span class="cm">/* 年内の通し日数 [0-365] 0から始まることに注意*/</span>
-  <span class="kt">int</span> <span class="n">tm_isdst</span><span class="p">;</span>    <span class="cm">/* 夏時間が無効であれば 0 */</span>
-<span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">tm</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_sec</span><span class="p">;</span><span class="w">      </span><span class="cm">/* 秒 [0-61] 最大2秒までのうるう秒を考慮 */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_min</span><span class="p">;</span><span class="w">      </span><span class="cm">/* 分 [0-59] */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_hour</span><span class="p">;</span><span class="w">     </span><span class="cm">/* 時 [0-23] */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_mday</span><span class="p">;</span><span class="w">     </span><span class="cm">/* 日 [1-31] */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_mon</span><span class="p">;</span><span class="w">      </span><span class="cm">/* 月 [0-11] 0から始まることに注意 */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_year</span><span class="p">;</span><span class="w">     </span><span class="cm">/* 年 [1900からの経過年数] */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_wday</span><span class="p">;</span><span class="w">     </span><span class="cm">/* 曜日 [0:日 1:月 ... 6:土] */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_yday</span><span class="p">;</span><span class="w">     </span><span class="cm">/* 年内の通し日数 [0-365] 0から始まることに注意*/</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tm_isdst</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 夏時間が無効であれば 0 */</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>ref: <a href="http://www9.plala.or.jp/sgwr-t/lib/localtime.html">localtime - 初心者のためのポイント学習 C 言語</a></li>
