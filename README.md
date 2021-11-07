@@ -48,6 +48,7 @@ URL: https://admiswalker.github.io/sstdref/
   $ mkdocs new src
   ```
 ## Development cycle
+### documents developing cycle
 - Running the local server
   ```
   $ ./make.sh run  # with Docker
@@ -71,6 +72,10 @@ URL: https://admiswalker.github.io/sstdref/
   $ ./make.sh updateDocs  # with Docker
   $ make updateDocs # without Docker
   ```
+### dockerfile developing cycle
+```
+$ docker run --rm -it --name run_sstdref -v $PWD:/home -w /home sstdref_gen:latest sh
+```
 
 ## Commands help
 ### In the case with docker
