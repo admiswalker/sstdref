@@ -80,7 +80,7 @@ URL: https://admiswalker.github.io/sstdref/
 1. Testing the build process in the command line
 1. Dropping the build process into the dockerfile
 
-## Commands help
+## Commands description
 ### In the case with docker
 ```
 $ ./make.sh help
