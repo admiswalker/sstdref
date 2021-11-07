@@ -54,7 +54,7 @@ URL: https://admiswalker.github.io/sstdref/
    $ ./make.sh run  # with Docker
    $ make run  # without Docker
    ```
-1. Editting documentation under ```sstdref/docs_src```
+1. Editting documentation under `sstdref/docs_src`
 1. Compiling files
    ```
    $ ./make.sh  # with Docker
@@ -115,7 +115,7 @@ Usages:
 | mdEx_title/                 | Markdown extension to automatically generate titles |
 | tmp/                        | Temporary files to generate docs/ files and previewing by httpd |
 | .git/                       | git files          |
-| Makefile                    | ```$ make run``` for running preview server. ```$ make``` for rebuild preview. ```$ make updateDocs``` for build under ```src``` and update pages on ```github.io``` |
+| Makefile                    | `$ make run` for running preview server. `$ make` for rebuild preview. `$ make updateDocs` for build under `src` and update pages on `github.io` |
 | README.me                   | This file          |
 | make.sh                     | Makefile wrapper for running in Docker |
 | template.md                 | Template markdown file for docs_src/ |
