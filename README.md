@@ -115,8 +115,7 @@ Usages:
 
 ## Trouble shooting
 ### Case1. Unable to find image 'sstdref_gen:latest' locally
-You need to build dockerdile if docker image is not found when running "$ ./make.sh run", using below commands.
-
+You need to build dockerfile using below commands, if docker image is not found when running "$ ./make.sh run".
 ```
 $ cd docker
 $ sh docker_build.sh
