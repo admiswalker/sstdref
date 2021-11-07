@@ -1,7 +1,7 @@
 # MD5
 ## Abstract
-```md5()``` calculate MD5 cryptographic hash function.  
-```md5()``` は暗号学的ハッシュ関数である MD5 を計算します．
+`md5()` calculate MD5 cryptographic hash function.  
+`md5()` は暗号学的ハッシュ関数である MD5 を計算します．
 
 ## Header file
 ```cpp

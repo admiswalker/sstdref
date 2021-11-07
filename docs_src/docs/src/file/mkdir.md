@@ -1,7 +1,7 @@
 # mkdir
 ## Abstract
-```mkdir``` creates directories recursively.  
-```mkdir``` はディレクトリを再帰的に作成します．
+`mkdir` creates directories recursively.  
+`mkdir` はディレクトリを再帰的に作成します．
 
 ## Header file
 ```cpp

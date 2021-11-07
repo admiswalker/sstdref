@@ -1,7 +1,7 @@
 # rm
 ## Abstract
-```rm.cpp``` / ```rm.hpp``` contains the processing related to deletion.  
-```rm.cpp``` / ```rm.hpp``` にはディレクトリ削除に関する処理を収録します．
+`rm.cpp` / `rm.hpp` contains the processing related to deletion.  
+`rm.cpp` / `rm.hpp` にはディレクトリ削除に関する処理を収録します．
 
 ## Header file
 ```cpp

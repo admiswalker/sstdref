@@ -1,7 +1,7 @@
 # mat_r (Row-major)
 ## Abstract
-```mat_r``` is a row-major matrix container.  
-```mat_r``` は行優先の行列コンテナです.
+`mat_r` is a row-major matrix container.  
+`mat_r` は行優先の行列コンテナです.
 
 ## Header file
 ```cpp

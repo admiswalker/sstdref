@@ -1,7 +1,7 @@
 # file
 ## Abstract
-The ```file``` class is used to manage file pointers.  
-```file``` クラスは，file ポインタの管理に利用します．
+The `file` class is used to manage file pointers.  
+`file` クラスは，file ポインタの管理に利用します．
 
 ## Header file
 ```cpp

@@ -1,7 +1,7 @@
 # system
 ## Abstract
-```system()``` executes the specified command.  
-```system()``` は指定されたコマンドを実行します．
+`system()` executes the specified command.  
+`system()` は指定されたコマンドを実行します．
 
 ## Header file
 ```cpp
@@ -38,7 +38,7 @@ int main(){
 ```
 
 ### system_stdout_stderr
-Acquires the ```stdout``` and ```stderr``` that accompany the execution result.  
+Acquires the `stdout` and `stderr` that accompany the execution result.  
 実行結果に伴う標準出力と標準エラー出力を取得します．
 
 - input

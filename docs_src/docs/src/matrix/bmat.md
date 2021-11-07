@@ -1,7 +1,7 @@
 # bmat (binary-matrix)
 ## Abstract
-```bmat``` is a binary matrix calculation container.  
-```bmat``` はバイナリ行列計算コンテナです．
+`bmat` is a binary matrix calculation container.  
+`bmat` はバイナリ行列計算コンテナです．
 
 ## Header file
 ```cpp

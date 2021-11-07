@@ -1,7 +1,7 @@
 # itr
 ## Abstract
-```sstd::begin()``` and ```sstd::end()``` are the definitions for SSTD iterator.  
-```sstd::begin()``` と ```sstd::end()``` は SSTD のイテレータに利用するための定義です．
+`sstd::begin()` and `sstd::end()` are the definitions for SSTD iterator.  
+`sstd::begin()` と `sstd::end()` は SSTD のイテレータに利用するための定義です．
 
 ## Header file
 ```cpp

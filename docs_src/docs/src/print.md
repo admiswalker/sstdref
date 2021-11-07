@@ -1,7 +1,7 @@
 # print / printn
 ## Abstract
-```print``` and ```printn``` print values of variables.  
-```print``` と ```printn``` は変数の値を出力します．
+`print` and `printn` print values of variables.  
+`print` と `printn` は変数の値を出力します．
 
 ## Header file
 ```cpp

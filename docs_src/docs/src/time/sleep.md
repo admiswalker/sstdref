@@ -1,7 +1,7 @@
 # sleep
 ## Abstract
-```sleep``` waits for the specified time.  
-```sleep``` は指定時間待機します．
+`sleep` waits for the specified time.  
+`sleep` は指定時間待機します．
 
 ## Header file
 ```cpp

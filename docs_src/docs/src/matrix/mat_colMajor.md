@@ -1,7 +1,7 @@
 # mat_c (Col-major)
 ## Abstract
-```mat_c``` is a column-major matrix container.  
-```mat_c``` は列優先の行列コンテナです.
+`mat_c` is a column-major matrix container.  
+`mat_c` は列優先の行列コンテナです.
 
 ## Header file
 ```cpp

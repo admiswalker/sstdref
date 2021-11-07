@@ -1,7 +1,7 @@
 # strmatch
 ## Abstract
-```strmatch.hpp``` contains string comparision functions.  
-```strmatch.hpp``` は文字列比較関数を収録しています．
+`strmatch.hpp` contains string comparision functions.  
+`strmatch.hpp` は文字列比較関数を収録しています．
 
 ## Header file
 ```cpp

@@ -1,7 +1,7 @@
 # Tr (Transpose)
 ## Abstract
-```Tr()``` are the transpose functions for ```std::vector<std::vector<T>>```.  
-```Tr()``` は ```std::vector<std::vector<T>>``` を転置するための関数です.
+`Tr()` are the transpose functions for `std::vector<std::vector<T>>`.  
+`Tr()` は `std::vector<std::vector<T>>` を転置するための関数です.
 
 ## Header file
 ```cpp

@@ -1,7 +1,7 @@
 # pid
 ## Abstract
-```getpid``` returns the PID of its own process.  
-```getpid``` は自プロセスの PID を返します．
+`getpid` returns the PID of its own process.  
+`getpid` は自プロセスの PID を返します．
 
 ## Header file
 ```cpp

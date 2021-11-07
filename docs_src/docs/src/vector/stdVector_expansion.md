@@ -1,8 +1,8 @@
 title: Ope. Exp. for std::vector&lt;T&gt;
 # Operator expansions for std::vector&lt;T&gt;
 ## Abstract
-Operator definitions on SSTD. These definitions are read by ```#include <sstd/sstd.hpp>```.  
-SSTD における演算子の定義．```#include <sstd/sstd.hpp>``` により定義が読み込まれる．
+Operator definitions on SSTD. These definitions are read by `#include <sstd/sstd.hpp>`.  
+SSTD における演算子の定義．`#include <sstd/sstd.hpp>` により定義が読み込まれる．
 
 ## Header file
 ```cpp

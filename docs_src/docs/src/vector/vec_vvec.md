@@ -1,7 +1,7 @@
 # vec / vvec
 ## Abstract
-Type definitions on SSTD. These definitions are read by ```#include <sstd/sstd.hpp>```.  
-SSTD における型の定義．```#include <sstd/sstd.hpp>``` により定義が読み込まれる．
+Type definitions on SSTD. These definitions are read by `#include <sstd/sstd.hpp>`.  
+SSTD における型の定義．`#include <sstd/sstd.hpp>` により定義が読み込まれる．
 
 ## Header file
 ```cpp

@@ -1,10 +1,10 @@
 # c2py
 ## Abstract
-```c2py()``` calls any Python functions with built-in, ```std::vector<T>```, ```sstd::mat_c<T>``` and ```sstd::mat_r<T>``` (```T``` is limitted by built-in types.) types of arguments from 2 lines of C++ codes.  
-Data is sharing by the ```tmp``` directory.
+`c2py()` calls any Python functions with built-in, `std::vector<T>`, `sstd::mat_c<T>` and `sstd::mat_r<T>` (`T` is limitted by built-in types.) types of arguments from 2 lines of C++ codes.  
+Data is sharing by the `tmp` directory.
 
-```c2py()``` は built-in 型，```std::vector<T>``` 型, ```sstd::mat_c<T>``` 型，および ```sstd::mat_r<T>``` 型 (ただし，```T``` は built-in 型に制限される．) を引数に持つ Python 関数を 2 行の C++ コードで呼び出します．
-データは ```tmp``` ディレクトリにより共有されます．
+`c2py()` は built-in 型，`std::vector<T>` 型, `sstd::mat_c<T>` 型，および `sstd::mat_r<T>` 型 (ただし，`T` は built-in 型に制限される．) を引数に持つ Python 関数を 2 行の C++ コードで呼び出します．
+データは `tmp` ディレクトリにより共有されます．
 
 ## Header file
 ```cpp
@@ -54,13 +54,13 @@ sstd::c2py<戻り値の型> 関数名(
 Table 1. shows the correspondence between the types on the C ++ side and the types on the Python side.
 Table 2. shows a list of type names given when specifying a type on the C ++ side.
 If not specifying type on the Python side, numpy will be selected.
-And selecting the conversion symbol ```~```, the numpy type will be converted to the built-in type.
+And selecting the conversion symbol `~`, the numpy type will be converted to the built-in type.
 The c2py is basically processed by numpy, because of the binary compatibility between C++ and Python, 
 type conversion of numpy to built-in type will be overhead.
 
 表 1. に C++ 側の型と，Python 側の型との対応を示す．
 表 2. に C++ 側の型を指定する際に与える型名の一覧を示す．
-Python 側の型について，何も指定しない場合は，numpy 型が選択され，変換記号 ```~``` を指定することで，built-in 型に変換される．
+Python 側の型について，何も指定しない場合は，numpy 型が選択され，変換記号 `~` を指定することで，built-in 型に変換される．
 c2py 上の処理は，C++ とのバイナリ互換性の問題から，基本的に numpy 型で行われるため，built-in 型への変換は，オーバーヘッドとなる．
 
 <!-- ---------------------------------------------------------- -->
@@ -450,8 +450,8 @@ int main(){
 #mdEx: cpp example (out)
 ```
 ### Sample5: Writing back with changing the length of std::vector&lt;T&gt;
-Writing back with changing the length of ```std::vector<T>```. (In order to get value from function, sending address is needed.)  
-配列長の変化を含む ```std::vector<T>``` の書き戻し．(関数から値を受け取るため，アドレスを受け渡している)
+Writing back with changing the length of `std::vector<T>`. (In order to get value from function, sending address is needed.)  
+配列長の変化を含む `std::vector<T>` の書き戻し．(関数から値を受け取るため，アドレスを受け渡している)
 
 - <u>**pyFunction.py**</u>
 ```python
@@ -586,9 +586,9 @@ int main(){
 
 
 ### Application sample 2
-An example of the additional implementation of ```vvec<T>```. Currently, only vvec<double> is available.
+An example of the additional implementation of `vvec<T>`. Currently, only vvec<double> is available.
 
-追加実装された ```vvec<T>``` の使用例．現状では，```vvec<double>``` のみ利用可能．
+追加実装された `vvec<T>` の使用例．現状では，`vvec<double>` のみ利用可能．
 
 - <u>**Python**</u>
 ```python

@@ -1,7 +1,7 @@
 # measureTime
 ## Abstract
-```measureTime``` measures the execution time.  
-```measureTime``` は実行時間を計測します．
+`measureTime` measures the execution time.  
+`measureTime` は実行時間を計測します．
 
 ## Header file
 ```cpp

@@ -1,6 +1,6 @@
 # time
 ## Abstract
-```struct tm``` と ```time_t``` (unixtime) および，その他の時刻を相互変換する．
+`struct tm` と `time_t` (unixtime) および，その他の時刻を相互変換する．
 
 ## Header file
 ```cpp

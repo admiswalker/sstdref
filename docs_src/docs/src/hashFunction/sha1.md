@@ -1,7 +1,7 @@
 # SHA-1
 ## Abstract
-```sha1()``` calculate SHA-1 cryptographic hash function.  
-```sha1()``` は暗号学的ハッシュ関数である SHA-1 を計算します．
+`sha1()` calculate SHA-1 cryptographic hash function.  
+`sha1()` は暗号学的ハッシュ関数である SHA-1 を計算します．
 
 ## Header file
 ```cpp

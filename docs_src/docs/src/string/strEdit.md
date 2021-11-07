@@ -1,6 +1,6 @@
 # strEdit
 ## Abstract
-```strEdit.hpp``` / ```strEdit.cpp``` は，文字列を編集するための関数を収録している．
+`strEdit.hpp` / `strEdit.cpp` は，文字列を編集するための関数を収録している．
 
 ## Header file
 ```cpp
@@ -36,11 +36,11 @@ namespace sstd{
 | Name | Description |
 | --- | --- |
 | lstrip    | Removing head spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去します． |
-| lstrip_ow | Removing head spaces and tabs. ```_ow``` means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．```_ow``` は overwrite の意味で，引数に結果を上書きします． |
+| lstrip_ow | Removing head spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
 | rstrip    | Removing tail spaces and tabs.<br/>文字列の末尾にある半角スペースとタブ文字を除去します． |
-| rstrip_ow | Removing tail spaces and tabs. ```_ow``` means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．```_ow``` は overwrite の意味で，引数に結果を上書きします． |
+| rstrip_ow | Removing tail spaces and tabs. `_ow` means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
 | strip     | Removing head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します． |
-| strip_ow  | Removing head and tail spaces and tabs. ```_ow``` means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．```_ow``` は overwrite の意味で，引数に結果を上書きします． |
+| strip_ow  | Removing head and tail spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
 
 - String comparison  
   文字列の比較．引数の型の違いにより複数定義されている．

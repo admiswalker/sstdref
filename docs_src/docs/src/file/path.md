@@ -1,7 +1,7 @@
 # path
 ## Abstract
-```path.hpp``` contains functions for path editing.  
-```path.hpp``` はパス編集用の関数を収録します．
+`path.hpp` contains functions for path editing.  
+`path.hpp` はパス編集用の関数を収録します．
 
 ## Header file
 ```cpp

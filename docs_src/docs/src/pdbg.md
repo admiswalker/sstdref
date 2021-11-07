@@ -1,7 +1,7 @@
 # pdbg
 ## Abstract
-```pdbg``` prints debug information.  
-```pdbg``` はデバッグ情報を出力します．
+`pdbg` prints debug information.  
+`pdbg` はデバッグ情報を出力します．
 
 ## Header file
 ```cpp

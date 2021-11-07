@@ -1,7 +1,7 @@
 # encode / decode
 ## Abstract
-```encode_decode.hpp``` contains functions for encoding and decoding operations.
-```encode_decode.hpp``` はエンコード・デコードにまつわる関数を収録します．
+`encode_decode.hpp` contains functions for encoding and decoding operations.
+`encode_decode.hpp` はエンコード・デコードにまつわる関数を収録します．
 
 ## Header file
 ```cpp
