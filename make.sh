@@ -2,11 +2,11 @@
 
 showHelp(){
     echo "Usages:"
-    echo "  $ $0"
-    echo "  $ $0 clean"
-    echo "  $ $0 help"
-    echo "  $ $0 run"
-    echo "  $ $0 updateDocs"
+    echo "  $ $0            : Building the documents"
+    echo "  $ $0 clean      : Removing the temporary files"
+    echo "  $ $0 help       : Showing the help (This messages)"
+    echo "  $ $0 run        : Running the previewing server on a local machine"
+    echo "  $ $0 updateDocs : Updating the documents at github.io"
 }
 
 if [ $# -gt 1 ]; then

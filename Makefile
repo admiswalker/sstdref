@@ -79,3 +79,13 @@ updateLib:
 clean:
 	@(rm -rf $(TEMP))
 	@(cd ./mdEx_cpp_example; make clean)
+
+help:
+	@(echo "Usages:")
+	@(echo "  $ make -j         : Building the documents")
+	@(echo "  $ make clean      : Removing the temporary files")
+	@(echo "  $ make help       : Showing the help (This messages)")
+	@(echo "  $ make run        : Running the previewing server on a local machine")
+	@(echo "  $ make updateDocs : Updating the documents at github.io")
+	@(echo "  $ make updateLib  : Updating the SSTD at \"./mdEx_cpp_example\"")
+

@@ -3,51 +3,51 @@ sstdref is the documentation files for SSTD.
 
 URL: https://admiswalker.github.io/sstdref/
 
-# Installation
-- In the case with docker
-  - update
+## Installation
+### In the case with docker
+- update
+  ```
+  $ sudo apt-get update
+  ```
+- curl
+  ```
+  $ sudo apt-get install curl
+  ```
+- Docker
+  - Docker engine
     ```
-    $ sudo apt-get update
+    $ curl -fsSL https://get.docker.com/ | sh
     ```
-  - curl
-    ```
-    $ sudo apt-get install curl
-    ```
-  - Docker
-    - Docker engine
+  - Creation of docker group and adding a user, in order not to required sudo.
+    - Creation of docker group
       ```
-      $ curl -fsSL https://get.docker.com/ | sh
+      $ sudo groupadd docker
       ```
-    - Creation of docker group and adding a user, in order not to required sudo.
-      - Creation of docker group
-        ```
-        $ sudo groupadd docker
-        ```
-      - Adding a user who want to use docker. In this example, we will add login-user ($USER)
-        ```
-        $ sudo gpasswd -a $USER docker
-        ```
-      - Rebooting PC
-        ```
-        $ reboot
-        ```
-    - Building the Dockerfile
+    - Adding a user who want to use docker. In this example, we will add login-user ($USER)
       ```
-      $ cd docker
-      $ sh docker_build.sh
+      $ sudo gpasswd -a $USER docker
       ```
-- In the case without docker
-  - mkdocs
+    - Rebooting PC
+      ```
+      $ reboot
+      ```
+  - Building the Dockerfile
     ```
-    $ pip install mkdocs
-    $ pip install mkdocs-material
-    $ pip install mkdocs-awesome-pages-plugin
+    $ cd docker
+    $ sh docker_build.sh
     ```
-  - init mkdocs
-    ```
-    $ mkdocs new src
-    ```
-# Development cycle
+### In the case without docker
+- mkdocs
+  ```
+  $ pip install mkdocs
+  $ pip install mkdocs-material
+  $ pip install mkdocs-awesome-pages-plugin
+  ```
+- init mkdocs
+  ```
+  $ mkdocs new src
+  ```
+## Development cycle
 - Running the local server
   ```
   $ ./make.sh run  # with Docker
@@ -72,7 +72,30 @@ URL: https://admiswalker.github.io/sstdref/
   $ make updateDocs # without Docker
   ```
 
-# File and Directory descriptions
+## Commands help
+### In the case with docker
+```
+$ ./make.sh help
+Usages:
+  $ ./make.sh            : Building the documents
+  $ ./make.sh clean      : Removing the temporary files
+  $ ./make.sh help       : Showing the help (This messages)
+  $ ./make.sh run        : Running the previewing server on a local machine
+  $ ./make.sh updateDocs : Updating the documents at github.io
+```
+### In the case without docker
+```
+$ make help
+Usages:
+  make -j         : Building the documents
+  make clean      : Removing the temporary files
+  make help       : Showing the help (This messages)
+  make run        : Running the previewing server on a local machine
+  make updateDocs : Updating the documents at github.io
+  make updateLib  : Updating the SSTD at "./mdEx_cpp_example"
+```
+
+## File and Directory descriptions
 
 | File or directory name | Description Origin |
 | ---------------------- | ------------------ |
@@ -89,3 +112,14 @@ URL: https://admiswalker.github.io/sstdref/
 | make.sh                | Makefile wrapper for running in Docker |
 | template.md            | Template markdown file for docs_src/ |
 | .gitignore             | Registering files to ignore in order not to track files on git |
+
+## Trouble shooting
+### Case1. Unable to find image 'sstdref_gen:latest' locally
+You need to build dockerdile if docker image is not found when running "$ ./make.sh run", using below commands.
+
+```
+$ cd docker
+$ sh docker_build.sh
+```
+
+
