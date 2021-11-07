@@ -47,30 +47,38 @@ URL: https://admiswalker.github.io/sstdref/
   ```
   $ mkdocs new src
   ```
-## Development cycle
-- Running the local server
-  ```
-  $ ./make.sh run  # with Docker
-  $ make run  # without Docker
-  ```
-- Editting documentation under ```sstdref/src/docs```
-- Compiling files
-  ```
-  $ ./make.sh  # with Docker
-  $ make -j  # without Docker
-  ```
-- Checking the local server (http://localhost:8000/).
-- Adding the changes to git repository.
-  ```
-  $ git add .
-  $ git commit -m 'comments'
-  $ git push origin main
-  ```
-- Updating the github.io
-  ```
-  $ ./make.sh updateDocs  # with Docker
-  $ make updateDocs # without Docker
-  ```
+## Development
+### documents development cycle
+1. Running the local server
+   ```
+   $ ./make.sh run  # with Docker
+   $ make run  # without Docker
+   ```
+1. Editting documentation under ```sstdref/src/docs```
+1. Compiling files
+   ```
+   $ ./make.sh  # with Docker
+   $ make -j  # without Docker
+   ```
+1. Checking the local server (http://localhost:8000/).
+1. Adding the changes to git repository.
+   ```
+   $ git add .
+   $ git commit -m 'comments'
+   $ git push origin main
+   ```
+1. Updating the github.io
+   ```
+   $ ./make.sh updateDocs  # with Docker
+   $ make updateDocs # without Docker
+   ```
+### docker image development cycle
+1. Entering the docker container
+   ```
+   $ docker run --rm -it --name run_sstdref -v $PWD:/home -w /home sstdref_gen:latest sh
+   ```
+1. Testing the build process in the command line
+1. Dropping the build process into the dockerfile
 
 ## Commands help
 ### In the case with docker
