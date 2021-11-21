@@ -1,7 +1,8 @@
 # sstdref
-sstdref is the documentation files for SSTD.
+sstdref is the document files for SSTD.
 
-URL: https://admiswalker.github.io/sstdref/
+- Documents URL: https://admiswalker.github.io/sstdref/
+- SSTD repository URL: https://github.com/admiswalker/SubStandardLibrary-SSTD-
 
 ## Installation
 ### In the case with docker
@@ -37,16 +38,16 @@ URL: https://admiswalker.github.io/sstdref/
        $ sh docker_build.sh
        ```
 ### In the case without docker
-- mkdocs
-  ```
-  $ pip install mkdocs
-  $ pip install mkdocs-material
-  $ pip install mkdocs-awesome-pages-plugin
-  ```
-- init mkdocs
-  ```
-  $ mkdocs new src
-  ```
+1. installing mkdocs
+   ```
+   $ pip install mkdocs
+   $ pip install mkdocs-material
+   $ pip install mkdocs-awesome-pages-plugin
+   ```
+2. init mkdocs
+   ```
+   $ mkdocs new src
+   ```
 ## Development
 ### documents development cycle
 1. Running the local server
