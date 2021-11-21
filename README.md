@@ -5,37 +5,37 @@ URL: https://admiswalker.github.io/sstdref/
 
 ## Installation
 ### In the case with docker
-- update
-  ```
-  $ sudo apt-get update
-  ```
-- curl
-  ```
-  $ sudo apt-get install curl
-  ```
-- Docker
-  - Docker engine
-    ```
-    $ curl -fsSL https://get.docker.com/ | sh
-    ```
-  - Creation of docker group and adding a user, in order not to required sudo.
-    - Creation of docker group
+1. update
+   ```
+   $ sudo apt-get update
+   ```
+2. installing curl
+   ```
+   $ sudo apt-get install curl
+   ```
+3. installing Docker
+   1. installing Docker engine
       ```
-      $ sudo groupadd docker
+      $ curl -fsSL https://get.docker.com/ | sh
       ```
-    - Adding a user who want to use docker. In this example, we will add login-user ($USER)
-      ```
-      $ sudo gpasswd -a $USER docker
-      ```
-    - Rebooting PC
-      ```
-      $ reboot
-      ```
-  - Building the Dockerfile
-    ```
-    $ cd docker
-    $ sh docker_build.sh
-    ```
+   2. Creation of docker group and adding a user, in order not to required sudo.
+      1. Creation of docker group
+         ```
+         $ sudo groupadd docker
+         ```
+      2. Adding a user who want to use docker. In this example, we will add login-user ($USER)
+         ```
+         $ sudo gpasswd -a $USER docker
+         ```
+      3. Rebooting PC
+         ```
+         $ reboot
+         ```
+    3. Building the Dockerfile
+       ```
+       $ cd docker
+       $ sh docker_build.sh
+       ```
 ### In the case without docker
 - mkdocs
   ```
