@@ -455,7 +455,7 @@ Writing back with changing the length of `std::vector<T>`. (In order to get valu
 
 - <u>**pyFunction.py**</u>
 ```python
-import numpy as np
+import numpy as npa
 def changeLen(pVec1, vec2):
     pVec1[0]=np.append(pVec1[0], 4) # numpy    # numpy is not able to add values without changing address of variables. so we need to treat as a pointer like objects (self inclusion list).
     vec2.append(4)                  # built-in

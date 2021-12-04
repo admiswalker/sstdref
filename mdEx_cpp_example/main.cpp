@@ -44,6 +44,31 @@ std::string cpp2out(const std::string& tmpDir, const std::string& cpp_path){
     return ret;
 }
 
+
+bool errCheck_Cpp(const std::string& s){
+    return false;
+}
+bool errCheck_PythonERRORsAndWarnings(const std::string& s){
+    bool TF = false;
+//  TF ^= sstd::strmatch(s, "*ModuleNotFoundError*");
+//  TF ^= sstd::strmatch(s, "*ImportError*");
+    TF ^= sstd::strmatch(s, "*Error*");
+    TF ^= sstd::strmatch(s, "*Warning*");
+    return TF;
+}
+void runTimeErrCheck(const std::string& s){
+    bool TF = false;
+    TF ^= errCheck_Cpp(s);
+    TF ^= errCheck_PythonERRORsAndWarnings(s);
+    
+    if(TF){
+	printf("\u001b[31m"); // set output red
+	printf("Compile ERROR or WARNING: "); // set output red
+	printf("%s\n", s.c_str());
+	printf("\u001b[0m"); // reset color
+    }
+}
+
 int main(int argc, char *argv[]){
     if(argc != 1+3){ sstd::pdbg("ERROR: input args != 3.\n"); return -1; }
     std::string tmpDir   = argv[1];
@@ -81,6 +106,7 @@ int main(int argc, char *argv[]){
             std::string cpp_path = tmpDir+'/'+file_name+'/'+file_name;
             sstd::write(cpp_path, cpp_code);
             cpp_out = cpp2out(tmpDir_exe, cpp_path); // cpp_file to output
+	    runTimeErrCheck(cpp_out);
             
             sstd::rm(tmpDir_exe);
             
@@ -92,5 +118,5 @@ int main(int argc, char *argv[]){
     std::string strOut = vStr2str_n(vStrOut);
     if(sstd::write(path_out, strOut)!=strOut.size()){ sstd::pdbg("ERROR: sstd::write() was failed.\n"); return false; }
     
-	return 0;
+    return 0;
 }
