@@ -21,21 +21,20 @@ namespace sstd{
 
 ## Usage
 ### csv2vvec()
+- <u>**example.csv**</u>
+```
+#mdEx: cpp example (in:attachment:example.csv)
+a, bcd
+"hello, world", "efg"
+```
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::mkdir("./tmp");
-    sstd::system("echo 'a, bcd\n\"hello, world\", \"efg\"' > ./tmp/example.csv");
-    printf("$ cat ./tmp/example.csv\n"); fflush(stdout); sstd::system("cat ./tmp/example.csv");
-    printf("\n");
-    
-    std::vector<std::vector<std::string>> vv = sstd::csv2vvec("./tmp/example.csv");
+    std::vector<std::vector<std::string>> vv = sstd::csv2vvec("example.csv");
     sstd::printn( vv );
-    
-    sstd::rm("./tmp");
 }
 ```
 - <u>**Execution result**</u>
