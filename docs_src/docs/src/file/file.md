@@ -33,28 +33,30 @@ public:
 ```
 
 ## Usage
-- input
+- <u>**example.txt**</u>
+```
+#mdEx: cpp example (in:attachment:example.txt)
+abc
+def
+```
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::mkdir("./tmp");
-    sstd::system("echo 'abc\ndef' > ./tmp/example.txt");
-    
     sstd::file fp;
-    if(!fp.fopen("./tmp/example.txt", "rb")){ sstd::pdbg("ERROR: fopen was failed.\n"); return -1; }
+    if(!fp.fopen("example.txt", "rb")){ sstd::pdbg("ERROR: fopen was failed.\n"); return -1; }
     size_t size = fp.fsize();
     std::vector<char> raw(size+1, 0);
     if(fp.fread((uchar*)&raw[0], sizeof(char), size)!=size){ sstd::pdbg("ERROR: fread was failed.\n"); return -1; }
     
     printf("&raw[0] = %s\n", &raw[0]);
     
-    sstd::rm("./tmp");
     return 0; // fp is automatically closed by RAII.
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
