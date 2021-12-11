@@ -2,12 +2,21 @@
 #include <regex>
 #include <sstd/sstd.hpp>
 
+
 std::string vStr2str_n(const std::vector<std::string>& vStr){
     std::string s;
     for(uint i=0; i<vStr.size(); ++i){
         s += vStr[i]+'\n';
     }
     return s;
+}
+
+void gen_attachment_files(const std::string& dir_path, const std::vector<std::string>& v_filename, const std::vector<std::string>& v_txt){
+    uint l = v_filename.size();
+    for(uint i=0; i<l; ++i){
+	std::string filepath = dir_path+'/'+v_filename[i];
+	sstd::write(filepath, v_txt[i]);
+    }
 }
 
 std::string cpp2exe(const std::string& exe_path, const std::string& cpp_path){
@@ -81,12 +90,31 @@ int main(int argc, char *argv[]){
     
     std::string cpp_out;
     
+    std::vector<std::string> vAttachment_filename;
+    std::vector<std::string> vAttachment_txt;
+    
     uint l = vStrIn.size(); // num of lines
     for(uint i=0; i<l; ++i){
         vStrOut <<= vStrIn[i];
         sstd::strip_ow(vStrIn[i]);
-        
-        if(vStrIn[i] == "#mdEx: cpp example (in)"){
+	
+	std::string filename;
+        if(sstd::strmatch_getWC(vStrIn[i], "#mdEx: cpp example (in:attachment:*)", filename)){
+            ++i;
+            vStrOut.pop_back(); // rm "#mdEx: cpp example (in:attachment)"
+            
+            std::string attachment;
+            while(vStrIn[i]!="```" && i<l){
+                vStrOut <<= vStrIn[i];
+                attachment += vStrIn[i] + '\n';
+                ++i;
+            }
+            vStrOut <<= vStrIn[i]; // add "```"
+            
+            vAttachment_filename <<= filename;
+            vAttachment_txt      <<= attachment;
+	    
+	}else if(vStrIn[i] == "#mdEx: cpp example (in)"){
             ++i;
             vStrOut.pop_back(); // rm "#mdEx: cpp example (in)"
             
@@ -102,6 +130,8 @@ int main(int argc, char *argv[]){
             std::string file_name = std::regex_replace(path_in.c_str(), std::regex("/"), "_")+'_'+sstd::ssprintf("%d",i)+".cpp";
             std::string tmpDir_exe = tmpDir+'/'+file_name;
             sstd::mkdir(tmpDir_exe);
+
+	    gen_attachment_files(tmpDir_exe, vAttachment_filename, vAttachment_txt);
             
             std::string cpp_path = tmpDir+'/'+file_name+'/'+file_name;
             sstd::write(cpp_path, cpp_code);
@@ -113,6 +143,9 @@ int main(int argc, char *argv[]){
         }else if(vStrIn[i] == "#mdEx: cpp example (out)"){
             vStrOut.pop_back(); // rm "#mdEx: cpp example (in)"
             vStrOut <<= cpp_out;
+	    
+	    vAttachment_filename.clear();
+	    vAttachment_txt.clear();
         }
     }
     std::string strOut = vStr2str_n(vStrOut);

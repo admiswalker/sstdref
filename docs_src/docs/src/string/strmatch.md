@@ -101,6 +101,6 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/strmatch.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/strmatch.cpp)
-- Header: [sstd/src/strmatch.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/strmatch.hpp)
-- Test: [test/strmatch.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/strmatch.hpp)
+- Source: [sstd/src/string/strmatch.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/strmatch.cpp)
+- Header: [sstd/src/string/strmatch.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/strmatch.hpp)
+- Test: [test/string/strmatch.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/string/strmatch.hpp)
