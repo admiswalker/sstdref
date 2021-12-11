@@ -1012,7 +1012,7 @@
 <h2 id="usage">Usage</h2>
 <h3 id="strmatch-strmatch_getwc">strmatch(), strmatch_getWC()</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1024,7 +1024,7 @@
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">ret</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd::strmatch(s, &quot;??KYOTO*&quot;) = true
 sstd::strmatch_getWC(s, &quot;TO*...&quot;, ret) = true
 ret = &quot;KYOTO&quot;
@@ -1032,7 +1032,7 @@ ret = &quot;KYOTO&quot;
 </ul>
 <h3 id="isnum-isalphabet-isalphabet_onlyupper-isalphabet_onlylower">isNum(), isAlphabet(), isAlphabet_onlyUpper(), isAlphabet_onlyLower()</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1053,7 +1053,7 @@ ret = &quot;KYOTO&quot;
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd::isNum(&#39;0&#39;) = true
 sstd::isNum(&#39;A&#39;) = false
 sstd::isNum(&#39;a&#39;) = false
@@ -1073,7 +1073,7 @@ sstd::isAlphabet_onlyLower(&#39;a&#39;) = true
 </ul>
 <h3 id="charin-strin">charIn(), strIn()</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1084,7 +1084,7 @@ sstd::isAlphabet_onlyLower(&#39;a&#39;) = true
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">strIn</span><span class="p">(</span><span class="s">&quot;defx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdefgh&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd::charIn(&#39;c&#39;, &quot;abcdef&quot;) = true
 sstd::charIn(&#39;x&#39;, &quot;abcdef&quot;) = false
 

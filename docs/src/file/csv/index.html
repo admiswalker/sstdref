@@ -1097,27 +1097,20 @@
 <h2 id="usage">Usage</h2>
 <h3 id="csv2vvec">csv2vvec()</h3>
 <ul>
+<li><u><strong>example.csv</strong></u>
+<div class="highlight"><pre><span></span><code>a, bcd
+&quot;hello, world&quot;, &quot;efg&quot;
+</code></pre></div></li>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;echo &#39;a, bcd</span><span class="se">\n\&quot;</span><span class="s">hello, world</span><span class="se">\&quot;</span><span class="s">, </span><span class="se">\&quot;</span><span class="s">efg</span><span class="se">\&quot;</span><span class="s">&#39; &gt; ./tmp/example.csv&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;$ cat ./tmp/example.csv</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;cat ./tmp/example.csv&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">vv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">csv2vvec</span><span class="p">(</span><span class="s">&quot;./tmp/example.csv&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">vv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">csv2vvec</span><span class="p">(</span><span class="s">&quot;example.csv&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">vv</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>$ cat ./tmp/example.csv
-a, bcd
-&quot;hello, world&quot;, &quot;efg&quot;
-
-vv = [[&quot;a&quot; &quot;bcd&quot;] [&quot;hello, world&quot; &quot;efg&quot;]]
+<div class="highlight"><pre><span></span><code>vv = [[&quot;a&quot; &quot;bcd&quot;] [&quot;hello, world&quot; &quot;efg&quot;]]
 </code></pre></div></li>
 </ul>
 <h3 id="vvec2csv">vvec2csv()</h3>

@@ -1084,7 +1084,7 @@
 <h2 id="usage">Usage</h2>
 <h3 id="one-arg-copy">one arg (copy)</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1097,7 +1097,7 @@
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced02</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v = [1 2 3 4 5]
 v_sliced01 = [2]
 v_sliced02 = [5]
@@ -1105,7 +1105,7 @@ v_sliced02 = [5]
 </ul>
 <h3 id="two-args-copy">two args (copy)</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1116,14 +1116,14 @@ v_sliced02 = [5]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v = [1 2 3 4 5]
 v_sliced = [2 3]
 </code></pre></div></li>
 </ul>
 <h3 id="begin-to-end-copy">begin to end (copy)</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1134,14 +1134,14 @@ v_sliced = [2 3]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v = [1 2 3 4 5]
 v_sliced = [1 2 3 4 5]
 </code></pre></div></li>
 </ul>
 <h3 id="one-arg-move">one arg (move)</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1154,7 +1154,7 @@ v_sliced = [1 2 3 4 5]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced02</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v = [&quot;1&quot; &quot;&quot; &quot;3&quot; &quot;4&quot; &quot;&quot;]
 v_sliced01 = [&quot;2&quot;]
 v_sliced02 = [&quot;5&quot;]
@@ -1162,7 +1162,7 @@ v_sliced02 = [&quot;5&quot;]
 </ul>
 <h3 id="two-args-move">two args (move)</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1173,14 +1173,14 @@ v_sliced02 = [&quot;5&quot;]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v = [&quot;1&quot; &quot;&quot; &quot;&quot; &quot;4&quot; &quot;5&quot;]
 v_sliced = [&quot;2&quot; &quot;3&quot;]
 </code></pre></div></li>
 </ul>
 <h3 id="begin-to-end-move">begin to end (move)</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1191,7 +1191,7 @@ v_sliced = [&quot;2&quot; &quot;3&quot;]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_sliced</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v = [&quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;]
 v_sliced = [&quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;]
 </code></pre></div></li>

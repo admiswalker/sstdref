@@ -1266,7 +1266,7 @@ SSTD における演算子の定義．<code>#include &lt;sstd/sstd.hpp&gt;</code
 <h3 id="ope-and">Ope. * and *=</h3>
 <h4 id="vector-scalar">vector × scalar</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1277,14 +1277,14 @@ SSTD における演算子の定義．<code>#include &lt;sstd/sstd.hpp&gt;</code
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v * 2 = [2 4 6]
 v = [3 6 9]
 </code></pre></div></li>
 </ul>
 <h4 id="vector-vector">vector × vector</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1297,7 +1297,7 @@ v = [3 6 9]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v1 * v2 = [2 6 12]
 v1 = [2 6 12]
 v2 = [2 3 4]
@@ -1305,7 +1305,7 @@ v2 = [2 3 4]
 </ul>
 <h4 id="any-depth-vector-scalar">any depth vector × scalar</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1316,14 +1316,14 @@ v2 = [2 3 4]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v * 2 = [[[2 4] [6 8]] [[10 12] [14 16]]]
 v = [[[3 6] [9 12]] [[15 18] [21 24]]]
 </code></pre></div></li>
 </ul>
 <h4 id="any-depth-vector-vector">any depth vector × vector</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1336,7 +1336,7 @@ v = [[[3 6] [9 12]] [[15 18] [21 24]]]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v1 * v2 = [[[9 20] [33 48]] [[65 84] [105 128]]]
 v1 = [[[9 20] [33 48]] [[65 84] [105 128]]]
 v2 = [[[9 10] [11 12]] [[13 14] [15 16]]]
@@ -1345,7 +1345,7 @@ v2 = [[[9 10] [11 12]] [[13 14] [15 16]]]
 <h3 id="linking">Linking &lt;&lt;</h3>
 <h4 id="vector-scalar_1">vector &lt;&lt; scalar</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1356,7 +1356,7 @@ v2 = [[[9 10] [11 12]] [[13 14] [15 16]]]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v &lt;&lt; s = [1 2 3 4]
 v = [1 2 3]
 s = 4
@@ -1364,7 +1364,7 @@ s = 4
 </ul>
 <h4 id="vector-vector_1">vector &lt;&lt; vector</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1375,7 +1375,7 @@ s = 4
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v1 &lt;&lt; v2 = [1 2 3 4 5 6]
 v1 = [1 2 3]
 v2 = [4 5 6]
@@ -1384,7 +1384,7 @@ v2 = [4 5 6]
 <h3 id="push_back">push_back()</h3>
 <h4 id="vector-scalar_2">vector &lt;&lt;= scalar</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1396,13 +1396,13 @@ v2 = [4 5 6]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v = [1 2 3]
 </code></pre></div></li>
 </ul>
 <h4 id="vector-vector_2">vector &lt;&lt;= vector</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1414,7 +1414,7 @@ v2 = [4 5 6]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v1 = [1 2 3 4 5 6]
 v2 = [4 5 6]
 </code></pre></div></li>
@@ -1422,7 +1422,7 @@ v2 = [4 5 6]
 <h3 id="linking_1">Linking &gt;&gt;</h3>
 <h4 id="vector-scalar_3">vector &gt;&gt; scalar</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1433,7 +1433,7 @@ v2 = [4 5 6]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v &gt;&gt; s = [0 1 2 3]
 v = [1 2 3]
 s = 0
@@ -1441,7 +1441,7 @@ s = 0
 </ul>
 <h4 id="vector-vector_3">vector &gt;&gt; vector</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1452,7 +1452,7 @@ s = 0
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v1 &gt;&gt; v2 = [-2 -1 0 1 2 3]
 v1 = [1 2 3]
 v2 = [-2 -1 0]
@@ -1461,7 +1461,7 @@ v2 = [-2 -1 0]
 <h3 id="push_front">push_front()</h3>
 <h4 id="vector-scalar_4">vector &gt;&gt;= scalar</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1471,13 +1471,13 @@ v2 = [-2 -1 0]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v = [0 1 2 3]
 </code></pre></div></li>
 </ul>
 <h4 id="vector-vector_4">vector &gt;&gt;= vector</h4>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1489,7 +1489,7 @@ v2 = [-2 -1 0]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>v1 = [-2 -1 0 1 2 3]
 v2 = [-2 -1 0]
 </code></pre></div></li>

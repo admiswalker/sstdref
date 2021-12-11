@@ -1168,7 +1168,7 @@
 <h2 id="usage">Usage</h2>
 <h3 id="rounding">Rounding</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1179,7 +1179,7 @@
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">round2odd</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd::round2even(1.5) = 2.
 sstd::round2even(2.5) = 2.
 sstd::round2odd(1.5) = 1.
@@ -1188,7 +1188,7 @@ sstd::round2odd(2.5) = 3.
 </ul>
 <h3 id="statistical-processing">Statistical processing</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1215,7 +1215,7 @@ sstd::round2odd(2.5) = 3.
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">argmax_abs</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd::sum( v ) = -5.
 sstd::sum_abs( v ) = 25.
 sstd::ave( v ) = -0.5
@@ -1238,7 +1238,7 @@ sstd::argmax_abs( v ) = 0
 </ul>
 <h3 id="searching">Searching</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1251,7 +1251,7 @@ sstd::argmax_abs( v ) = 0
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">argnearest_up</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd::nearest_down(v, 0.5) = 0.
 sstd::nearest_up(v, 0.5) = 1.
 
@@ -1261,7 +1261,7 @@ sstd::argnearest_up(v, 0.5) = 6
 </ul>
 <h3 id="sorting">Sorting</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1280,7 +1280,7 @@ sstd::argnearest_up(v, 0.5) = 6
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v_gr</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd::sorted( v_base ) = [-5. -4. -3. -2. -1. 0. 1. 2. 3. 4.]
 sstd::sorted_gr( v_base ) = [4. 3. 2. 1. 0. -1. -2. -3. -4. -5.]
 
@@ -1290,7 +1290,7 @@ v_gr = [4. 3. 2. 1. 0. -1. -2. -3. -4. -5.]
 </ul>
 <h3 id="preprocessing">Preprocessing</h3>
 <ul>
-<li>input
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1310,7 +1310,7 @@ v_gr = [4. 3. 2. 1. 0. -1. -2. -3. -4. -5.]
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>output<br />
+<li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd::nonzero(v) = [1. 2. 3.]
 in1 = [1. 2. 3.]
 in2 = [1. 2. 3.]
