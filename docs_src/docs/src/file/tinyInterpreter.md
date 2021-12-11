@@ -44,8 +44,8 @@ cmd09, cmd10, cmd11, cmd12;
 int main(){
     // reading "tinyInterpreter.txt" to vv_ret
     std::vector<std::string> v_line = sstd::getCommandList(R"(./tinyInterpreter.txt)");
-    sstd::vvec<std::string> vv_ret(v_line.size());
     
+    sstd::vvec<std::string> vv_ret(v_line.size());
     for(uint i=0; i<v_line.size(); i++){
         std::vector<std::string> v_cmd = sstd::splitByComma(v_line[i]);
         for(uint n=0; n<v_cmd.size(); ++n){
