@@ -15,7 +15,7 @@ namespace sstd{
 ```
 
 ## Usage
-- tinyInterpreter.txt
+- <u>**tinyInterpreter.txt**</u>
 ```
 #mdEx: cpp example (in:attachment:tinyInterpreter.txt)
 // - In this file, middle of "/*~*/" and before "//" mean commnets.
@@ -36,7 +36,7 @@ cmd01, cmd02,      , cmd04; // comment
 cmd05, cmd06, cmd07;        // comment
 cmd09, cmd10, cmd11, cmd12;
 ```
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -55,7 +55,7 @@ int main(){
     sstd::printn(vv_ret);
 }
 ```
-- output
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
