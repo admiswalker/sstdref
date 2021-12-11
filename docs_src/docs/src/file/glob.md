@@ -4,13 +4,13 @@
 `glob` は，正規表現 `*` や `?` により，ファイルやディレクトリを探索します．  
 ※その他の正規表現については，現状未実装です．
 
-Options can take `d`, `f` and `r`. There options can be specified independently or simultaneously, in no particular order.
-オプションには `d`, `f`, `r` があり，それぞれ独立または同時に，順不同で指定できます．
+Options can take `d`, `f` and `r`. There options can be specified independently in no particular order.
+オプションには `d`, `f`, `r` があり，それぞれ独立に，順不同で指定できます．
 
 - Options
-  - `d`: directory
-  - `f`: file
-  - `r`: recursive
+    - `d`: getting directory name option
+    - `f`: getting file name option
+    - `r`: recursive directory option
 
 ## Header file
 ```cpp
@@ -22,7 +22,7 @@ namespace sstd{
 }
 ```
 
-## Usage01: getting only file wihtout recursive option
+## Usage01: getting only file without recursive option
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -45,7 +45,7 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-## Usage02: getting file and directory wiht recursive option
+## Usage02: getting file and directory with recursive option
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
