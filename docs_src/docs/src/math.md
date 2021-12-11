@@ -164,7 +164,7 @@ namespace sstd{
 
 ## Usage
 ### Rounding
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -177,14 +177,14 @@ int main(){
     sstd::printn( sstd::round2odd(2.5) );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 
 ### Statistical processing
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -213,13 +213,13 @@ int main(){
     sstd::printn( sstd::argmax_abs( v ) );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### Searching
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -234,14 +234,14 @@ int main(){
     sstd::printn( sstd::argnearest_up(v, 0.5) );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 
 ### Sorting
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -262,14 +262,14 @@ int main(){
     sstd::printn( v_gr );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 
 ### Preprocessing
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -291,7 +291,7 @@ int main(){
     sstd::printn( in4 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

@@ -69,7 +69,7 @@ public:
 
 ## Usage
 ### Init
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -85,14 +85,14 @@ int main(){
     sstd::printn(m_zeros);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### Access to elements
 #### As a matrix
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -110,12 +110,12 @@ int main(){
     sstd::printn(m);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 #### As a vector
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -130,13 +130,13 @@ int main(){
     sstd::printn(m);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### Tr (Transpose)
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -152,14 +152,14 @@ int main(){
     sstd::printn( m2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### Operator
 #### matrix × scalar
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -170,12 +170,12 @@ int main(){
     sstd::printn( m * 2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 #### matrix × matrix
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -188,12 +188,12 @@ int main(){
     sstd::printn( m1 * m2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 #### matrix (as a vector) × matrix (as a vector)
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -206,7 +206,7 @@ int main(){
     sstd::printn( m1() * m2() );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

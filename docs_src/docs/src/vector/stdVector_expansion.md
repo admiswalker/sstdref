@@ -32,7 +32,7 @@ namespace sstd_stdVecEx{
 ## Usage
 ### Ope. * and *=
 #### vector × scalar
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -45,12 +45,12 @@ int main(){
     sstd::printn( v );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 #### vector × vector
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -65,12 +65,12 @@ int main(){
     sstd::printn( v2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 #### any depth vector × scalar
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -83,12 +83,12 @@ int main(){
     sstd::printn( v );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 #### any depth vector × vector
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -103,14 +103,14 @@ int main(){
     sstd::printn( v2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### Linking <<
 #### vector << scalar
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -123,12 +123,12 @@ int main(){
     sstd::printn( s );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 #### vector << vector
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -141,14 +141,14 @@ int main(){
     sstd::printn( v2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### push_back()
 #### vector <<= scalar
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -162,13 +162,13 @@ int main(){
     sstd::printn( v );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 #### vector <<= vector
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -182,14 +182,14 @@ int main(){
     sstd::printn( v2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### Linking >>
 #### vector >> scalar
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -202,12 +202,12 @@ int main(){
     sstd::printn( s );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 #### vector >> vector
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -220,14 +220,14 @@ int main(){
     sstd::printn( v2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### push_front()
 #### vector >>= scalar
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -239,13 +239,13 @@ int main(){
     sstd::printn( v );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 #### vector >>= vector
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -259,7 +259,7 @@ int main(){
     sstd::printn( v2 );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

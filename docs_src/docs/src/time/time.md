@@ -31,7 +31,7 @@ namespace sstd{
 ```
 
 ## Usage
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <time.h> // for time()
@@ -47,7 +47,7 @@ int main(){
     sstd::printn(tm_Local);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 Below is the result on Japanese local time (UTC+9hour).
 ```
 #mdEx: cpp example (out)

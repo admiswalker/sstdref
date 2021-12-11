@@ -11,7 +11,7 @@ namespace sstd{
 ```
 
 ## Usage
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -21,7 +21,7 @@ int main(){
     sstd::printn(s);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

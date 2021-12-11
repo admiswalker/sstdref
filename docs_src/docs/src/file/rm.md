@@ -28,7 +28,7 @@ namespace sstd{
 
 ## Usage
 ### Removing directories recursively (ディレクトリの再帰的な削除)
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -44,7 +44,7 @@ int main(){
     sstd::system("tree ./tmp");
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

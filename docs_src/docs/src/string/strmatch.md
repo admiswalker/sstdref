@@ -33,7 +33,7 @@ namespace sstd{
 
 ## Usage
 ### strmatch(), strmatch_getWC()
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -47,13 +47,13 @@ int main(){
     sstd::printn(ret);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### isNum(), isAlphabet(), isAlphabet_onlyUpper(), isAlphabet_onlyLower()
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -76,13 +76,13 @@ int main(){
     sstd::printn( sstd::isAlphabet_onlyLower('a') ); printf("\n");
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### charIn(), strIn()
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -95,7 +95,7 @@ int main(){
     sstd::printn( sstd::strIn("defx", "abcdefgh") );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

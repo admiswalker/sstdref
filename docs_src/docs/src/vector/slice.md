@@ -65,7 +65,7 @@ namespace sstd{
 ## Usage
 
 ### one arg (copy)
-- input
+- <u>**main.cpp**</u>
 ```c++
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -80,13 +80,13 @@ int main(){
     sstd::printn(v_sliced02);
 }
 ```
-- output
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### two args (copy)
-- input
+- <u>**main.cpp**</u>
 ```c++
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -99,13 +99,13 @@ int main(){
     sstd::printn(v_sliced);
 }
 ```
-- output
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### begin to end (copy)
-- input
+- <u>**main.cpp**</u>
 ```c++
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -118,13 +118,13 @@ int main(){
     sstd::printn(v_sliced);
 }
 ```
-- output
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### one arg (move)
-- input
+- <u>**main.cpp**</u>
 ```c++
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -139,13 +139,13 @@ int main(){
     sstd::printn(v_sliced02);
 }
 ```
-- output
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### two args (move)
-- input
+- <u>**main.cpp**</u>
 ```c++
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -158,13 +158,13 @@ int main(){
     sstd::printn(v_sliced);
 }
 ```
-- output
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### begin to end (move)
-- input
+- <u>**main.cpp**</u>
 ```c++
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -177,7 +177,7 @@ int main(){
     sstd::printn(v_sliced);
 }
 ```
-- output
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

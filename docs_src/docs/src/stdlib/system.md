@@ -22,7 +22,7 @@ namespace sstd{
 
 ## Usage
 ### system
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -32,7 +32,7 @@ int main(){
     sstd::system("tree ./tmp");
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
@@ -41,7 +41,7 @@ int main(){
 Acquires the `stdout` and `stderr` that accompany the execution result.  
 実行結果に伴う標準出力と標準エラー出力を取得します．
 
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -54,7 +54,7 @@ int main(){
     sstd::printn( s );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

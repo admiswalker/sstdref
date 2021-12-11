@@ -13,7 +13,7 @@ namespace sstd{
 
 ## Usage
 ### Transpose. Ex: 1
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -28,13 +28,13 @@ int main(){
     sstd::printn(vvecTr);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### Transpose. Ex: 2
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -51,13 +51,13 @@ int main(){
     sstd::printn(vvecTr);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
 
 ### Transpose. Ex: 3
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -74,7 +74,7 @@ int main(){
     sstd::printn(vvecTr);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

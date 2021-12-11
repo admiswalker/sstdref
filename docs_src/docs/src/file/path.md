@@ -29,7 +29,7 @@ namespace sstd{
 ```
 
 ## Usage
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -68,7 +68,7 @@ int main(){
     sstd::printn( sstd::dirExist(path_dir.c_str()) );
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```

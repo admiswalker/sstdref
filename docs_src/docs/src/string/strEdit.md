@@ -50,7 +50,7 @@ namespace sstd{
 | strcmp | Comparing two strings given as input arguments and returns true if they are equal, false otherwise.<br/>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す． |
 
 ## Usage
-- input
+- <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
@@ -64,7 +64,7 @@ int main(){
     sstd::strip_ow(s); sstd::printn(s);
 }
 ```
-- output  
+- <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
