@@ -78,6 +78,6 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/measureTime.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/measureTime.cpp)
-- Header: [sstd/src/measureTime.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/measureTime.hpp)
-- Test: [test/measureTime.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/measureTime.hpp)
+- Source: [sstd/src/time/measureTime.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time/measureTime.cpp)
+- Header: [sstd/src/time/measureTime.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time/measureTime.hpp)
+- Test: [test/time/measureTime.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/time/measureTime.hpp)
