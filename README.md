@@ -1,8 +1,15 @@
 # sstdref
-sstdref is the document files for SSTD.
+sstdref is the document files for SSTD ([repository](https://github.com/admiswalker/SubStandardLibrary-SSTD-)).
 
-- Documents URL: https://admiswalker.github.io/sstdref/
-- SSTD repository URL: https://github.com/admiswalker/SubStandardLibrary-SSTD-
+## View the documents
+- Web Viewing  
+  https://admiswalker.github.io/sstdref/
+- Local Viewing
+  1. Copying this repository to your local device.
+     ```
+     $ git clone git@github.com:admiswalker/sstdref.git
+     ```
+  2. Clicking the `sstdref/index.html` in your blouser.
 
 ## Installation
 ### In the case with docker
