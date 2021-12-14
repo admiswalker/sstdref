@@ -65,13 +65,13 @@ genDocs:
 	@(cd ./$(TEMP); mkdocs build)
 	@(mkdir -p ./docs)
 	@(cp -r ./$(TEMP)/site/* ./docs)
-uploadDocs:
+upDocs:
 	@(git add ./docs)
 	@(git commit -m 'Update docs')
 	@(git push origin main)
 updateDocs:
 	@(make genDocs)
-	@(make uploadDocs)
+	@(make upDocs)
 
 updateLib:
 	@(cd ./mdEx_cpp_example; make updateLib)
