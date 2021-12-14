@@ -1,4 +1,9 @@
 site_name: SSTD documentation
+site_description: 'This is a documentation for SubStandardLibrary (SSTD), a library providing convenient functions set for C++, works on GCC (g++).'
+site_author: 'ADMIS_Walker'
+site_url: 'https://admiswalker.github.io/sstdref/index.html'
+use_directory_urls: false
+
 theme:
     name: material
     palette:

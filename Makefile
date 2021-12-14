@@ -61,17 +61,17 @@ run: $(TARGET_all)
 	@(xdg-open http://127.0.0.1:8000/)
 	@(cd ./$(TEMP); mkdocs serve)
 
-updateDocs01:
+genDocs:
 	@(cd ./$(TEMP); mkdocs build)
 	@(mkdir -p ./docs)
 	@(cp -r ./$(TEMP)/site/* ./docs)
-updateDocs02:
+uploadDocs:
 	@(git add ./docs)
 	@(git commit -m 'Update docs')
 	@(git push origin main)
 updateDocs:
-	@(make updateDocs01)
-	@(make updateDocs02)
+	@(make genDocs)
+	@(make uploadDocs)
 
 updateLib:
 	@(cd ./mdEx_cpp_example; make updateLib)
@@ -86,6 +86,8 @@ help:
 	@(echo "  $ make clean      : Removing the temporary files")
 	@(echo "  $ make help       : Showing the help (This messages)")
 	@(echo "  $ make run        : Running the previewing server on a local machine")
-	@(echo "  $ make updateDocs : Updating the documents at github.io")
+	@(echo "  $ make genDocs    : Generating the documents in local ./docs")
+	@(echo "  $ make upDocs     : Uploading the documents in local ./docs to github repository")
+	@(echo "  $ make updateDocs : Updating the documents on github.io (same as a '$ make genDocs; make upDocs')")
 	@(echo "  $ make updateLib  : Updating the SSTD at \"./mdEx_cpp_example\"")
 
