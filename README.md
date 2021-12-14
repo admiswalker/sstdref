@@ -11,7 +11,7 @@ sstdref is the document files for SSTD ([repository](https://github.com/admiswal
      ```
   2. Clicking the `sstdref/index.html` and opening in your blouser.
 
-## Installation
+## Installation for development
 ### In the case with docker
 1. update
    ```
