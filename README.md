@@ -9,7 +9,7 @@ sstdref is the document files for SSTD ([repository](https://github.com/admiswal
      ```
      $ git clone git@github.com:admiswalker/sstdref.git
      ```
-  2. Clicking the `sstdref/index.html` in your blouser.
+  2. Clicking the `sstdref/index.html` and opening in your blouser.
 
 ## Installation
 ### In the case with docker
