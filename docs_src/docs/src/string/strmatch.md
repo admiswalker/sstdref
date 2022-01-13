@@ -63,14 +63,13 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-### isNum(), isAlphabet(), isAlphabet_onlyUpper(), isAlphabet_onlyLower()
+### isNum()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    // isNum()
     sstd::printn( sstd::isNum('0') );
     sstd::printn( sstd::isNum('A') );
     sstd::printn( sstd::isNum('a') ); printf("\n");
@@ -82,8 +81,20 @@ int main(){
     sstd::printn( sstd::isNum(std::string("0123456789")) );
     sstd::printn( sstd::isNum(std::string("012345678a")) );
     sstd::printn( sstd::isNum(std::string("abcdeABCDE")) ); printf("\n");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
 
-    // isAlphabet()
+### isAlphabet()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
     sstd::printn( sstd::isAlphabet('0') );
     sstd::printn( sstd::isAlphabet('A') );
     sstd::printn( sstd::isAlphabet('a') ); printf("\n");
@@ -95,8 +106,20 @@ int main(){
     sstd::printn( sstd::isAlphabet(std::string("0123456789")) );
     sstd::printn( sstd::isAlphabet(std::string("ABCDEFTGI9")) );
     sstd::printn( sstd::isAlphabet(std::string("abcdeABCDE")) ); printf("\n");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
 
-    // isAlphabet_onlyUpper()
+### isAlphabet_onlyUpper()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
     sstd::printn( sstd::isAlphabet_onlyUpper('0') );
     sstd::printn( sstd::isAlphabet_onlyUpper('A') );
     sstd::printn( sstd::isAlphabet_onlyUpper('a') ); printf("\n");
@@ -108,8 +131,20 @@ int main(){
     sstd::printn( sstd::isAlphabet_onlyUpper(std::string("0123456789")) );
     sstd::printn( sstd::isAlphabet_onlyUpper(std::string("ABCDEFGHIJ")) );
     sstd::printn( sstd::isAlphabet_onlyUpper(std::string("abcdeABCDE")) ); printf("\n");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
 
-    // isAlphabet_onlyLower()
+### isAlphabet_onlyLower()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
     sstd::printn( sstd::isAlphabet_onlyLower('0') );
     sstd::printn( sstd::isAlphabet_onlyLower('A') );
     sstd::printn( sstd::isAlphabet_onlyLower('a') ); printf("\n");
