@@ -712,15 +712,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#isalphabet_onlyupper" class="md-nav__link">
-    isAlphabet_onlyUpper()
+  <a href="#isalphabet_upper" class="md-nav__link">
+    isAlphabet_upper()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#isalphabet_onlylower" class="md-nav__link">
-    isAlphabet_onlyLower()
+  <a href="#isalphabet_lower" class="md-nav__link">
+    isAlphabet_lower()
   </a>
   
 </li>
@@ -982,15 +982,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#isalphabet_onlyupper" class="md-nav__link">
-    isAlphabet_onlyUpper()
+  <a href="#isalphabet_upper" class="md-nav__link">
+    isAlphabet_upper()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#isalphabet_onlylower" class="md-nav__link">
-    isAlphabet_onlyLower()
+  <a href="#isalphabet_lower" class="md-nav__link">
+    isAlphabet_lower()
   </a>
   
 </li>
@@ -1043,21 +1043,21 @@
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strmatch_getWC</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">wildCard</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">retWC</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strmatch_getWC</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">wildCard</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">retWC</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isNum</span><span class="w">               </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isNum</span><span class="w">               </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isNum</span><span class="w">               </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isNum</span><span class="w">           </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isNum</span><span class="w">           </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isNum</span><span class="w">           </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet</span><span class="w">          </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet</span><span class="w">          </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet</span><span class="w">          </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet</span><span class="w">      </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet</span><span class="w">      </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet</span><span class="w">      </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_onlyUpper</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_onlyUpper</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_onlyUpper</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_upper</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_upper</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_upper</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_onlyLower</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_onlyLower</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_onlyLower</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_lower</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_lower</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isAlphabet_lower</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is lhs in rhs ?</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is lhs in rhs ?</span>
@@ -1155,70 +1155,70 @@ sstd::isAlphabet(std::string(&quot;ABCDEFTGI9&quot;)) = false
 sstd::isAlphabet(std::string(&quot;abcdeABCDE&quot;)) = true
 </code></pre></div></li>
 </ul>
-<h3 id="isalphabet_onlyupper">isAlphabet_onlyUpper()</h3>
+<h3 id="isalphabet_upper">isAlphabet_upper()</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="s">&quot;ABCDEFGHIJ&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="s">&quot;abcdeABCDE&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="s">&quot;ABCDEFGHIJ&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="s">&quot;abcdeABCDE&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;ABCDEFGHIJ&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyUpper</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;abcdeABCDE&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;ABCDEFGHIJ&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_upper</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;abcdeABCDE&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>sstd::isAlphabet_onlyUpper(&#39;0&#39;) = false
-sstd::isAlphabet_onlyUpper(&#39;A&#39;) = true
-sstd::isAlphabet_onlyUpper(&#39;a&#39;) = false
+<div class="highlight"><pre><span></span><code>sstd::isAlphabet_upper(&#39;0&#39;) = false
+sstd::isAlphabet_upper(&#39;A&#39;) = true
+sstd::isAlphabet_upper(&#39;a&#39;) = false
 
-sstd::isAlphabet_onlyUpper(&quot;0123456789&quot;) = false
-sstd::isAlphabet_onlyUpper(&quot;ABCDEFGHIJ&quot;) = true
-sstd::isAlphabet_onlyUpper(&quot;abcdeABCDE&quot;) = false
+sstd::isAlphabet_upper(&quot;0123456789&quot;) = false
+sstd::isAlphabet_upper(&quot;ABCDEFGHIJ&quot;) = true
+sstd::isAlphabet_upper(&quot;abcdeABCDE&quot;) = false
 
-sstd::isAlphabet_onlyUpper(std::string(&quot;0123456789&quot;)) = false
-sstd::isAlphabet_onlyUpper(std::string(&quot;ABCDEFGHIJ&quot;)) = true
-sstd::isAlphabet_onlyUpper(std::string(&quot;abcdeABCDE&quot;)) = false
+sstd::isAlphabet_upper(std::string(&quot;0123456789&quot;)) = false
+sstd::isAlphabet_upper(std::string(&quot;ABCDEFGHIJ&quot;)) = true
+sstd::isAlphabet_upper(std::string(&quot;abcdeABCDE&quot;)) = false
 </code></pre></div></li>
 </ul>
-<h3 id="isalphabet_onlylower">isAlphabet_onlyLower()</h3>
+<h3 id="isalphabet_lower">isAlphabet_lower()</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="s">&quot;abcdeABCDE&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="s">&quot;abcdefghij&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="s">&quot;abcdeABCDE&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="s">&quot;abcdefghij&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;abcdeABCDE&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_onlyLower</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;abcdefghij&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;abcdeABCDE&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isAlphabet_lower</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;abcdefghij&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>sstd::isAlphabet_onlyLower(&#39;0&#39;) = false
-sstd::isAlphabet_onlyLower(&#39;A&#39;) = false
-sstd::isAlphabet_onlyLower(&#39;a&#39;) = true
+<div class="highlight"><pre><span></span><code>sstd::isAlphabet_lower(&#39;0&#39;) = false
+sstd::isAlphabet_lower(&#39;A&#39;) = false
+sstd::isAlphabet_lower(&#39;a&#39;) = true
 
-sstd::isAlphabet_onlyLower(&quot;0123456789&quot;) = false
-sstd::isAlphabet_onlyLower(&quot;abcdeABCDE&quot;) = false
-sstd::isAlphabet_onlyLower(&quot;abcdefghij&quot;) = true
+sstd::isAlphabet_lower(&quot;0123456789&quot;) = false
+sstd::isAlphabet_lower(&quot;abcdeABCDE&quot;) = false
+sstd::isAlphabet_lower(&quot;abcdefghij&quot;) = true
 
-sstd::isAlphabet_onlyLower(std::string(&quot;0123456789&quot;)) = false
-sstd::isAlphabet_onlyLower(std::string(&quot;abcdeABCDE&quot;)) = false
-sstd::isAlphabet_onlyLower(std::string(&quot;abcdefghij&quot;)) = true
+sstd::isAlphabet_lower(std::string(&quot;0123456789&quot;)) = false
+sstd::isAlphabet_lower(std::string(&quot;abcdeABCDE&quot;)) = false
+sstd::isAlphabet_lower(std::string(&quot;abcdefghij&quot;)) = true
 </code></pre></div></li>
 </ul>
 <h3 id="charin-strin">charIn(), strIn()</h3>
