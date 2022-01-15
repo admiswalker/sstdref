@@ -1,7 +1,18 @@
 # print / printn
 ## Abstract
-`print` and `printn` print values of variables.  
-`print` と `printn` は変数の値を出力します．
+`print()`, `printn()`, `printn_all()` and `printn_fflv()` print values of variable.  
+`printn()`, `printn_all()` and `printn_fflv()` are macro functions and able to apply variables can print by `for_printn()`.
+
+`print()`, `printn()`, `printn_all()` and `printn_fflv()` は変数の値を表示する．  
+`printn()`, `printn_all()` and `printn_fflv()` はマクロ関数で，`for_printn()` で表示できる変数に適用できる．
+
+| name of macro function | descriptions |
+| ---------------------- | ------------ |
+| `print()`              | print values of variable. <br>変数の値を出力します． |
+| `printn()`             | print values of variable with variable name. <br>変数の値を，変数名を付与して出力します． |
+| `printn_all()`         | print values of variable with variable name, function name and function line number. <br>変数の値を，変数名と関数名，関数の行番号を付与して出力します． |
+| `printn_fflv()`        | print values of variable with variable name, function name, function line number, path to the function and implimented file name. <br>変数の値を，変数名と関数名，関数の行番号，実装のファイルのファイル名とパス，を付与して出力します． |
+
 
 ## Header file
 ```cpp
@@ -22,6 +33,8 @@ namespace sstd{
     void print(const std::string& rhs);
     template <typename T>
     void print(const std::vector<T>& rhs);
+    template <typename T_lhs, typename T_rhs>
+    void print(const std::unordered_map<T_lhs, T_rhs>& rhs);
     
     void for_printn( bool  rhs);
     void for_printn( char  rhs);
@@ -39,6 +52,8 @@ namespace sstd{
     void for_printn(const std::string& rhs);
     template <typename T>
     void for_printn(const std::vector<T>& rhs);
+    template <typename T_lhs, typename T_rhs>
+    void for_printn(const std::unordered_map<T_lhs, T_rhs>& rhs);
 
     //---
 
@@ -54,6 +69,7 @@ namespace sstd{
 ```
 
 ## Usage
+### print(), printn(), printn_all(), printn_fflv()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -65,16 +81,36 @@ int main(){
     sstd::printn(i);
     sstd::printn_all(i);
     sstd::printn_fflv(i);
-    printf("\n");
-    
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### print bool type
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
     bool TF_t = true;  sstd::printn(TF_t);
     bool TF_f = false; sstd::printn(TF_f);
-    printf("\n");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
 
-    std::vector<char> vC = {'a', 'b', 'c'};
-    sstd::printn(vC);
-    printf("\n");
-    
+### print std::vector&lt;T&gt; type
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
     std::vector<std::string> vS = {"a", "b", "c"};
     sstd::printn(vS);
     std::vector<std::vector<std::string>> vvS = {{"a", "b", "c"}, {"d", "e", "f"}};
@@ -84,8 +120,38 @@ int main(){
     // any depth vector<T>. T is bool, char, (u)int8-16-32-64, float, double, char* and std::string.
     std::vector<std::vector<std::vector<std::vector<int>>>> v4_int = {{{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}}, {{{9, 10}, {11, 12}}, {{13, 14}, {15, 16}}}};
     sstd::printn(v4_int);
-    printf("\n");
-    
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### print std::unordered_map&lt;T_lhs, T_rhs&gt; type
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::unordered_map<std::string, std::vector<uint>> table;
+    table["abc"] = {123, 456};
+    table["def"] = {456, 789};
+    sstd::printn(table);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### print sstd::mat_r&lt;T&gt; type
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
     sstd::mat_r<double> m = {{1,2,3}, {4,5,6}, {7,8,9}};
     sstd::printn(m);
 }
