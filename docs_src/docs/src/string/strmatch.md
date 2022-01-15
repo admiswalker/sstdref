@@ -16,21 +16,21 @@ namespace sstd{
     bool strmatch_getWC(const std::string& str, const        char* wildCard, std::string& retWC);
     bool strmatch_getWC(const std::string& str, const std::string& wildCard, std::string& retWC);
     
-    bool isNum               (const char rhs);
-    bool isNum               (const char* rhs);
-    bool isNum               (const std::string& rhs);
+    bool isNum           (const char rhs);
+    bool isNum           (const char* rhs);
+    bool isNum           (const std::string& rhs);
     
-    bool isAlphabet          (const char rhs);
-    bool isAlphabet          (const char* rhs);
-    bool isAlphabet          (const std::string& rhs);
+    bool isAlphabet      (const char rhs);
+    bool isAlphabet      (const char* rhs);
+    bool isAlphabet      (const std::string& rhs);
     
-    bool isAlphabet_onlyUpper(const char rhs);
-    bool isAlphabet_onlyUpper(const char* rhs);
-    bool isAlphabet_onlyUpper(const std::string& rhs);
+    bool isAlphabet_upper(const char rhs);
+    bool isAlphabet_upper(const char* rhs);
+    bool isAlphabet_upper(const std::string& rhs);
     
-    bool isAlphabet_onlyLower(const char rhs);
-    bool isAlphabet_onlyLower(const char* rhs);
-    bool isAlphabet_onlyLower(const std::string& rhs);
+    bool isAlphabet_lower(const char rhs);
+    bool isAlphabet_lower(const char* rhs);
+    bool isAlphabet_lower(const std::string& rhs);
     
     bool charIn(const char lhs, const        char* rhs); // Is lhs in rhs ?
     bool charIn(const char lhs, const std::string& rhs); // Is lhs in rhs ?
@@ -113,24 +113,24 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-### isAlphabet_onlyUpper()
+### isAlphabet_upper()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::printn( sstd::isAlphabet_onlyUpper('0') );
-    sstd::printn( sstd::isAlphabet_onlyUpper('A') );
-    sstd::printn( sstd::isAlphabet_onlyUpper('a') ); printf("\n");
+    sstd::printn( sstd::isAlphabet_upper('0') );
+    sstd::printn( sstd::isAlphabet_upper('A') );
+    sstd::printn( sstd::isAlphabet_upper('a') ); printf("\n");
     
-    sstd::printn( sstd::isAlphabet_onlyUpper("0123456789") );
-    sstd::printn( sstd::isAlphabet_onlyUpper("ABCDEFGHIJ") );
-    sstd::printn( sstd::isAlphabet_onlyUpper("abcdeABCDE") ); printf("\n");
+    sstd::printn( sstd::isAlphabet_upper("0123456789") );
+    sstd::printn( sstd::isAlphabet_upper("ABCDEFGHIJ") );
+    sstd::printn( sstd::isAlphabet_upper("abcdeABCDE") ); printf("\n");
     
-    sstd::printn( sstd::isAlphabet_onlyUpper(std::string("0123456789")) );
-    sstd::printn( sstd::isAlphabet_onlyUpper(std::string("ABCDEFGHIJ")) );
-    sstd::printn( sstd::isAlphabet_onlyUpper(std::string("abcdeABCDE")) ); printf("\n");
+    sstd::printn( sstd::isAlphabet_upper(std::string("0123456789")) );
+    sstd::printn( sstd::isAlphabet_upper(std::string("ABCDEFGHIJ")) );
+    sstd::printn( sstd::isAlphabet_upper(std::string("abcdeABCDE")) ); printf("\n");
 }
 ```
 - <u>**Execution result**</u>
@@ -138,24 +138,24 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-### isAlphabet_onlyLower()
+### isAlphabet_lower()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::printn( sstd::isAlphabet_onlyLower('0') );
-    sstd::printn( sstd::isAlphabet_onlyLower('A') );
-    sstd::printn( sstd::isAlphabet_onlyLower('a') ); printf("\n");
+    sstd::printn( sstd::isAlphabet_lower('0') );
+    sstd::printn( sstd::isAlphabet_lower('A') );
+    sstd::printn( sstd::isAlphabet_lower('a') ); printf("\n");
     
-    sstd::printn( sstd::isAlphabet_onlyLower("0123456789") );
-    sstd::printn( sstd::isAlphabet_onlyLower("abcdeABCDE") );
-    sstd::printn( sstd::isAlphabet_onlyLower("abcdefghij") ); printf("\n");
+    sstd::printn( sstd::isAlphabet_lower("0123456789") );
+    sstd::printn( sstd::isAlphabet_lower("abcdeABCDE") );
+    sstd::printn( sstd::isAlphabet_lower("abcdefghij") ); printf("\n");
     
-    sstd::printn( sstd::isAlphabet_onlyLower(std::string("0123456789")) );
-    sstd::printn( sstd::isAlphabet_onlyLower(std::string("abcdeABCDE")) );
-    sstd::printn( sstd::isAlphabet_onlyLower(std::string("abcdefghij")) ); printf("\n");
+    sstd::printn( sstd::isAlphabet_lower(std::string("0123456789")) );
+    sstd::printn( sstd::isAlphabet_lower(std::string("abcdeABCDE")) );
+    sstd::printn( sstd::isAlphabet_lower(std::string("abcdefghij")) ); printf("\n");
 }
 ```
 - <u>**Execution result**</u>
