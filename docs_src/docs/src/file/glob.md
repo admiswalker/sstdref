@@ -1,8 +1,10 @@
 # glob
 ## Abstract
 `glob` can search file and directory with `*` and `?`. (The other regular expressions are not implimented).
-`glob` は，正規表現 `*` や `?` により，ファイルやディレクトリを探索します．  
-※その他の正規表現については，現状未実装です．
+And `glob_pt` is a type of `glob` with a variable indicating the file type in the returning value.
+
+`glob` は，正規表現 `*` や `?` により，ファイルやディレクトリを探索します．（※その他の正規表現については，現状未実装です）．
+また，`glob_pt` は，`glob` の戻り値にファイルタイプを示す変数が追加されたバージョンです．
 
 Options can take `d`, `f` and `r`. There options can be specified independently in no particular order.
 オプションには `d`, `f`, `r` があり，それぞれ独立に，順不同で指定できます．
@@ -15,10 +17,24 @@ Options can take `d`, `f` and `r`. There options can be specified independently 
 ## Header file
 ```cpp
 namespace sstd{
+    struct pathAndType{
+        std::string path;
+        char type; // 'f': file, 'd': directory
+        
+        bool operator < (const struct pathAndType& rhs){
+            return (*this).path < rhs.path;
+        }
+    };
+    
     std::vector<std::string> glob(const        char* path, const char* opt);
     std::vector<std::string> glob(const std::string& path, const char* opt);
     std::vector<std::string> glob(const        char* path);
     std::vector<std::string> glob(const std::string& path);
+    
+    std::vector<struct pathAndType> glob_pt(const        char* path, const char* opt); // _pt: with path type
+    std::vector<struct pathAndType> glob_pt(const std::string& path, const char* opt);
+    std::vector<struct pathAndType> glob_pt(const        char* path);
+    std::vector<struct pathAndType> glob_pt(const std::string& path);
 }
 ```
 
@@ -36,7 +52,10 @@ int main(){
     
     std::vector<std::string> vStr = sstd::glob("./tmp/*.txt");
     sstd::printn(vStr);
-    
+
+    std::vector<struct sstd::pathAndType> vPt = sstd::glob_pt("./tmp/*.txt");
+    sstd::printn(vPt);
+
     sstd::rm("./tmp");
 }
 ```
@@ -62,6 +81,9 @@ int main(){
     
     std::vector<std::string> vStr = sstd::glob("./tmp/*", "dfr");
     sstd::printn(vStr);
+    
+    std::vector<struct sstd::pathAndType> vPt = sstd::glob_pt("./tmp/*", "dfr");
+    sstd::printn(vPt);
     
     sstd::rm("./tmp");
 }
