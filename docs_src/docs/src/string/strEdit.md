@@ -29,25 +29,25 @@ namespace sstd{
 }
 ```
 
-## Functions
+## Description
 - Removing spaces and tabs.  
   空白 (半角スペース) とタブ文字の除去．
 
-| Name | Description |
+| Function name | Description |
 | --- | --- |
-| lstrip    | Removing head spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去します． |
-| lstrip_ow | Removing head spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
-| rstrip    | Removing tail spaces and tabs.<br/>文字列の末尾にある半角スペースとタブ文字を除去します． |
-| rstrip_ow | Removing tail spaces and tabs. `_ow` means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
-| strip     | Removing head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します． |
-| strip_ow  | Removing head and tail spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+| lstrip()    | Removing head spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去します． |
+| lstrip_ow() | Removing head spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+| rstrip()    | Removing tail spaces and tabs.<br/>文字列の末尾にある半角スペースとタブ文字を除去します． |
+| rstrip_ow() | Removing tail spaces and tabs. `_ow` means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+| strip()     | Removing head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します． |
+| strip_ow()  | Removing head and tail spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
 
 - String comparison  
   文字列の比較．引数の型の違いにより複数定義されている．
 
-| Name | Description |
+| Function name | Description |
 | --- | --- |
-| strcmp | Comparing two strings given as input arguments and returns true if they are equal, false otherwise.<br/>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す． |
+| strcmp() | Comparing two strings given as input arguments and returns true if they are equal, false otherwise.<br/>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す． |
 
 ## Usage
 - <u>**main.cpp**</u>

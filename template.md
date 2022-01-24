@@ -7,7 +7,7 @@ This is a documentation template.
 ```
 
 ## Description
-| Function Name | Description |
+| Function name | Description |
 | ------------- | ----------- |
 | function01()  | en-xxxxxxx<br>ja-xxxxxxx |
 | function02()  | en-xxxxxxx<br>ja-xxxxxxx |

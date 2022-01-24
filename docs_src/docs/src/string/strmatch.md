@@ -48,7 +48,7 @@ namespace sstd{
 ```
 
 ## Description
-| Function Name | Description |
+| Function name | Description |
 | ------------- | ----------- |
 | strmatch()    | A function to compare strings. The return value returns the match / mismatch of the strings passed to the 1st argument and the 2nd argument. And the string of the 2nd argument can contain wild card (`*` or `?`).<br/>文字列比較用の関数．戻り値は，第一引数と第二引数に渡された文字列の一致・不一致を返却します．また，第二引数の文字列には wild card (`*` または `?`) を含めることができます． |
 | strmatch_getWC() | A function to get a substring. In the 3rd argument, the part of the 1st argument string that matches the wild card (`*` or `?`) of 2nd argument is returned. The other handling of the return value, the 1st argument, and the 2nd argument is the same as `strmatch ()`.<br/>部分文字列取得用の関数．第三引数が，第一引数の文字列のうち，第二引数の wild card (`*` または `?`) と一致する部分を返却します．戻り値と第一引数，第二引数の扱いは `strmatch()` と同じです． |
