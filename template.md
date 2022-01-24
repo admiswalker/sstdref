@@ -6,6 +6,12 @@ This is a documentation template.
 ```cpp
 ```
 
+## Description
+| Function Name | Description |
+| ------------- | ----------- |
+| function01()  | en-xxxxxxx<br>ja-xxxxxxx |
+| function02()  | en-xxxxxxx<br>ja-xxxxxxx |
+
 ## Usage
 - <u>**main.cpp**</u>
 ```cpp
