@@ -698,6 +698,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#strcmp" class="md-nav__link">
+    strcmp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#strmatch-strmatch_getwc" class="md-nav__link">
     strmatch(), strmatch_getWC()
   </a>
@@ -982,6 +989,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#strcmp" class="md-nav__link">
+    strcmp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#strmatch-strmatch_getwc" class="md-nav__link">
     strmatch(), strmatch_getWC()
   </a>
@@ -1061,6 +1075,11 @@
 <code>strmatch.hpp</code> は文字列比較関数を収録しています．</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str2</span><span class="p">);</span><span class="w"></span>
+
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strmatch</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">wildCard</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strmatch</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">wildCard</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strmatch</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">wildCard</span><span class="p">);</span><span class="w"></span>
@@ -1111,6 +1130,10 @@
 </thead>
 <tbody>
 <tr>
+<td>strcmp()</td>
+<td>A function that compares whether two input strings match exactly.<br/>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す．</td>
+</tr>
+<tr>
 <td>strmatch()</td>
 <td>A function to compare strings. The return value returns the match / mismatch of the strings passed to the 1st argument and the 2nd argument. And the string of the 2nd argument can contain wild card (<code>*</code> or <code>?</code>).<br/>文字列比較用の関数．戻り値は，第一引数と第二引数に渡された文字列の一致・不一致を返却します．また，第二引数の文字列には wild card (<code>*</code> または <code>?</code>) を含めることができます．</td>
 </tr>
@@ -1149,6 +1172,21 @@
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
+<h3 id="strcmp">strcmp()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">strcmp</span><span class="p">(</span><span class="s">&quot;abc def&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc def&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">strcmp</span><span class="p">(</span><span class="s">&quot;abc def&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc  ef&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::strcmp(&quot;abc def&quot;, &quot;abc def&quot;) = true
+sstd::strcmp(&quot;abc def&quot;, &quot;abc  ef&quot;) = false
+</code></pre></div></li>
+</ul>
 <h3 id="strmatch-strmatch_getwc">strmatch(), strmatch_getWC()</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
