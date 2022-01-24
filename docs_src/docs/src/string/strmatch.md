@@ -37,6 +37,11 @@ namespace sstd{
     bool isAlphabet_lower(const char* rhs);
     bool isAlphabet_lower(const std::string& rhs);
     
+    bool strcmp(const char*        str1, const char*        str2);
+    bool strcmp(const char*        str1, const std::string& str2);
+    bool strcmp(const std::string& str1, const char*        str2);
+    bool strcmp(const std::string& str1, const std::string& str2);
+    
     bool charIn(const char lhs, const        char* rhs); // Is lhs in rhs ?
     bool charIn(const char lhs, const std::string& rhs); // Is lhs in rhs ?
     
@@ -57,6 +62,7 @@ namespace sstd{
 | isAlphabet()  | A function that judges if a string is configured by alphabet. Determine if a character or all of the string passed to the 1st argument are in the range of `A` to `Z` or `a` to `z` as a ASCII Code.<br/>文字列がアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` または `a` ~ `z` の範囲にあるかどうかを判定します． |
 | isAlphabet_upper() | A function that judges if a string is configured by uppercase. Determine if a character or all of the string passed to the 1st argument are in the range of `A` to `Z` as a ASCII Code.<br/>文字列が大文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` の範囲にあるかどうかを判定します． |
 | isAlphabet_lower() | A function that judges if a string is configured by lowercase. Determine if a character or all of the string passed to the 1st argument are in the range of `a` to `z` as a ASCII Code.<br/>文字列が小文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `a` ~ `z` の範囲にあるかどうかを判定します． |
+| strcmp()      | A function that compares whether two input strings match exactly.<br/>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す． |
 | charIn()      | A function that judges the inclusion of a particular character. Determine if the character of the 1st argument is included in the string of the 2nd argument.<br>特定の文字を内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれるを判定します． |
 | strIn()       | A function that judges the inclusion of a particular string. Determine if the string of the 1st argument is included in the string of the 2nd argument.<br>特定の文字列を内包するか判定する関数．第一引数の文字列が，第二引数の文字列に含まれるかを判定します． |
 
