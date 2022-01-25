@@ -6,20 +6,25 @@
 ## Header file
 ```cpp
 namespace sstd{
-    bool strmatch(const        char* str, const        char* wildCard);
-    bool strmatch(const        char* str, const std::string& wildCard);
-    bool strmatch(const std::string& str, const        char* wildCard);
-    bool strmatch(const std::string& str, const std::string& wildCard);
+    bool strcmp(const        char* str1, const        char* str2);
+    bool strcmp(const        char* str1, const std::string& str2);
+    bool strcmp(const std::string& str1, const        char* str2);
+    bool strcmp(const std::string& str1, const std::string& str2);
     
-    bool strmatch_getWC(const        char* str, const        char* wildCard, std::string& retWC);
-    bool strmatch_getWC(const        char* str, const std::string& wildCard, std::string& retWC);
-    bool strmatch_getWC(const std::string& str, const        char* wildCard, std::string& retWC);
-    bool strmatch_getWC(const std::string& str, const std::string& wildCard, std::string& retWC);
+    bool strmatch(const        char* str, const        char* wildcard);
+    bool strmatch(const        char* str, const std::string& wildcard);
+    bool strmatch(const std::string& str, const        char* wildcard);
+    bool strmatch(const std::string& str, const std::string& wildcard);
     
-    bool pathmatch(const        char* str, const        char* wildCard);
-    bool pathmatch(const        char* str, const std::string& wildCard);
-    bool pathmatch(const std::string& str, const        char* wildCard);
-    bool pathmatch(const std::string& str, const std::string& wildCard);
+    bool strmatch_getWC(const        char* str, const        char* wildcard, std::string& retWC);
+    bool strmatch_getWC(const        char* str, const std::string& wildcard, std::string& retWC);
+    bool strmatch_getWC(const std::string& str, const        char* wildcard, std::string& retWC);
+    bool strmatch_getWC(const std::string& str, const std::string& wildcard, std::string& retWC);
+    
+    bool pathmatch(const        char* str, const        char* wildcard);
+    bool pathmatch(const        char* str, const std::string& wildcard);
+    bool pathmatch(const std::string& str, const        char* wildcard);
+    bool pathmatch(const std::string& str, const std::string& wildcard);
     
     bool isNum           (const char rhs);
     bool isNum           (const char* rhs);
@@ -37,11 +42,6 @@ namespace sstd{
     bool isAlphabet_lower(const char* rhs);
     bool isAlphabet_lower(const std::string& rhs);
     
-    bool strcmp(const char*        str1, const char*        str2);
-    bool strcmp(const char*        str1, const std::string& str2);
-    bool strcmp(const std::string& str1, const char*        str2);
-    bool strcmp(const std::string& str1, const std::string& str2);
-    
     bool charIn(const char lhs, const        char* rhs); // Is lhs in rhs ?
     bool charIn(const char lhs, const std::string& rhs); // Is lhs in rhs ?
     
@@ -55,18 +55,34 @@ namespace sstd{
 ## Description
 | Function name | Description |
 | ------------- | ----------- |
-| strmatch()    | A function to compare strings. The return value returns the match / mismatch of the strings passed to the 1st argument and the 2nd argument. And the string of the 2nd argument can contain wild card (`*` or `?`).<br/>文字列比較用の関数．戻り値は，第一引数と第二引数に渡された文字列の一致・不一致を返却します．また，第二引数の文字列には wild card (`*` または `?`) を含めることができます． |
-| strmatch_getWC() | A function to get a substring. In the 3rd argument, the part of the 1st argument string that matches the wild card (`*` or `?`) of 2nd argument is returned. The other handling of the return value, the 1st argument, and the 2nd argument is the same as `strmatch ()`.<br/>部分文字列取得用の関数．第三引数が，第一引数の文字列のうち，第二引数の wild card (`*` または `?`) と一致する部分を返却します．戻り値と第一引数，第二引数の扱いは `strmatch()` と同じです． |
-| pathmatch()   | A function to compare a paths of strings. The splitter string (`/` or `\\`) does not accept wild card exclusions. The other handlings work the same as `strmatch ()`.<br/>パスの比較用関数．スプリッタとなる文字列 (`/` または `\\`) が wild card による除外を受付ません．それ以外は，`strmatch()` と同様に動作します． |
-| isNum()       | A function that judges if a string is configured by numerical string. Determine if a character or all of the string passed to the 1st argument are in the range of `0` to `9` as a ASCII Code.<br/>文字列が数値で構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `0` ~ `9` の範囲にあるかどうかを判定します． |
-| isAlphabet()  | A function that judges if a string is configured by alphabet. Determine if a character or all of the string passed to the 1st argument are in the range of `A` to `Z` or `a` to `z` as a ASCII Code.<br/>文字列がアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` または `a` ~ `z` の範囲にあるかどうかを判定します． |
-| isAlphabet_upper() | A function that judges if a string is configured by uppercase. Determine if a character or all of the string passed to the 1st argument are in the range of `A` to `Z` as a ASCII Code.<br/>文字列が大文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` の範囲にあるかどうかを判定します． |
-| isAlphabet_lower() | A function that judges if a string is configured by lowercase. Determine if a character or all of the string passed to the 1st argument are in the range of `a` to `z` as a ASCII Code.<br/>文字列が小文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `a` ~ `z` の範囲にあるかどうかを判定します． |
-| strcmp()      | A function that compares whether two input strings match exactly.<br/>入力引数に与えられる 2 つの文字列を比較し，等しい場合は true を，それ以外は false を返す． |
-| charIn()      | A function that judges the inclusion of a particular character. Determine if the character of the 1st argument is included in the string of the 2nd argument.<br>特定の文字を内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれるを判定します． |
-| strIn()       | A function that judges the inclusion of a particular string. Determine if the string of the 1st argument is included in the string of the 2nd argument.<br>特定の文字列を内包するか判定する関数．第一引数の文字列が，第二引数の文字列に含まれるかを判定します． |
+| strcmp()      | A function that compares whether two input strings exactly the same or not. When two arguments of strings are exactly the same, true is returned. Otherwise false is returned.<br/>2 つの入力引数が完全に一致するかどうか判定する関数．2 つの入力引数が完全に一致する場合は，true を，それ以外は false を返します． |
+| strmatch()    | A function that judges whether a string and a string using wildcard are considered equivalent or not. When a string of 1st argument and a string of the 2nd argument can use wildcard considered equivalent, true is returned. Otherwise false is returned. Charactors of `*` or `?` can use as wildcards.<br/>文字列とワイルドカード付き文字列が等価と見なせるか判定する関数．第一引数の文字列と，ワイルドカードを使える第二引数の文字列が等価と見なせる場合は，true を，それ以外は false を返します．また，wildcard には，`*` と `?` を使うことができます． |
+| strmatch_getWC() | A function to get a substring indicated by a wildcard. The 3rd argument will return the substring of the 1st argument that matches for the wildcard (`*` or `?`) of the 2nd argument. The other handlings work the same as `strmatch()`.<br/>ワイルドカードが示す部分文字列を取得する関数．第三引数は，第一引数の文字列の内，第二引数の wildcard (`*` または `?`) と一致する部分を返却します．それ以外は，`strmatch()` と同様に動作します． |
+| pathmatch()   | A function that judges whether a path string and a path string using wildcard are considered equivalent or not. The splitter string (`/` or `\\`) cannot be excluded with wildcards. The other handlings work the same as `strmatch()`.<br/>パスの比較用関数．スプリッタとなる文字列 (`/` または `\\`) が wildcard による除外を受付ません．それ以外は，`strmatch()` と同様に動作します． |
+| isNum()       | A function that judges whether a whole string is configured by numerical string or not. When all the character or string of the 1st argument is in the range of `0` to `9` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が数値で構成されているか判定する関数．第一引数に渡される全ての文字または文字列が ASCII Code での `0` ~ `9` の範囲にある場合は，true を，それ以外は false を返します． |
+| isAlphabet()  | A function that judges whether a whole string is configured by alphabet or not. When a character or whole string of the 1st argument are in the range of `A` to `Z` or `a` to `z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列がアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` または `a` ~ `z` の範囲にある場合は，true を，それ以外は false を返します． |
+| isAlphabet_upper() | A function that judges whether a whole string is configured by uppercase or not. When all the character or string of the 1st argument is in the range of `A` to `Z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が大文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` の範囲にある場合は，true を，それ以外は false を返します． |
+| isAlphabet_lower() | A function that judges whether a whole string is configured by lowercase or not. When all the character or string of the 1st argument is in the range of `a` to `z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が小文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `a` ~ `z` の範囲にある場合は，true を，それ以外は false を返します． |
+| charIn()      | A function that judges whether a particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
+| strIn()       | A function that judges whether a particular string is included in a string or not. When the string of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字列を内包するか判定する関数．第一引数の文字列が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
 
 ## Usage
+### strcmp()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::printn( sstd::strcmp("abc def", "abc def") );
+    sstd::printn( sstd::strcmp("abc def", "abc  ef") );
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
 ### strmatch(), strmatch_getWC()
 - <u>**main.cpp**</u>
 ```cpp
