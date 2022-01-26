@@ -7,8 +7,16 @@
 ```cpp
 namespace sstd{
     std::string  getPath                     (const char* pPath);
+    std::string  getPath_owWC                (const char* pPath); // _owWC: without wild card
+    
+    std::string  getDirName                  (const char* pPath);
+    uint         getDirName_begin_idx        (const char* pPath);
+    uint         getDirName_end_idx          (const char* pPath);
+    uint         getDirName_end_idx_owWC     (const char* pPath); // _owWC: without wild card
+    
            char* getFileName                 (const char* pPath);
     std::string  getFileName_withoutExtension(const char* pPath);
+    
            char* getExtension                (const char* pPath);
 
     std::vector<std::string> parsePath         (const char* pPath);
@@ -27,6 +35,28 @@ namespace sstd{
     bool pathExist(const std::string&  path);
 }
 ```
+
+
+## Description
+| Function name | Description |
+| ------------- | ----------- |
+| getPath()      | A function to get the path from string include path and file name. When a path like `/abc/def/example.txt`, `/abc/def` is returned.<br> |
+| getPath_owWC() | <br> |
+| getDirName()              | <br> |
+| getDirName_begin_idx()    | <br> |
+| getDirName_end_idx()      | <br> |
+| getDirName_end_idx_owWC() | <br> |
+| getFileName()                  | <br> |
+| getFileName_withoutExtension() | <br> |
+| getExtension()                 | <br> |
+| parsePath()          | <br> |
+| parsePath_withBase() | <br> |
+| isFile()      | <br> |
+| isDir()       | <br> |
+| fileExist()   | <br> |
+| dirExist()    | <br> |
+| pathExist()   | <br> |
+
 
 ## Usage
 - <u>**main.cpp**</u>
