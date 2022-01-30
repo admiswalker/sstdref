@@ -335,6 +335,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage01-getting-only-file-without-recursive-option" class="md-nav__link">
     Usage01: getting only file without recursive option
   </a>
@@ -912,6 +919,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage01-getting-only-file-without-recursive-option" class="md-nav__link">
     Usage01: getting only file without recursive option
   </a>
@@ -947,20 +961,7 @@
                 
                 <h1 id="glob">glob</h1>
 <h2 id="abstract">Abstract</h2>
-<p><code>glob</code> can search file and directory with <code>*</code> and <code>?</code>. (The other regular expressions are not implimented).
-And <code>glob_pt</code> is a type of <code>glob</code> with a variable indicating the file type in the returning value.</p>
-<p><code>glob</code> は，正規表現 <code>*</code> や <code>?</code> により，ファイルやディレクトリを探索します．（※その他の正規表現については，現状未実装です）．
-また，<code>glob_pt</code> は，<code>glob</code> の戻り値にファイルタイプを示す変数が追加されたバージョンです．</p>
-<p>Options can take <code>d</code>, <code>f</code> and <code>r</code>. There options can be specified independently in no particular order.
-オプションには <code>d</code>, <code>f</code>, <code>r</code> があり，それぞれ独立に，順不同で指定できます．</p>
-<ul>
-<li>Options<ul>
-<li><code>d</code>: getting directory name option</li>
-<li><code>f</code>: getting file name option</li>
-<li><code>r</code>: recursive directory option</li>
-</ul>
-</li>
-</ul>
+<p>Functions to search files and directories</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">struct</span> <span class="nc">pathAndType</span><span class="p">{</span><span class="w"></span>
@@ -983,6 +984,25 @@ And <code>glob_pt</code> is a type of <code>glob</code> with a variable indicati
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">struct</span> <span class="nc">pathAndType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">glob_pt</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<h2 id="description">Description</h2>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>glob()</td>
+<td><code>glob</code> can search file and directory with wildcard (<code>*</code> and <code>?</code>).<br><br><code>glob</code> は，wildcard (<code>*</code> と <code>?</code>) を用いた，ファイルとディレクトリを探索できます．</td>
+</tr>
+<tr>
+<td>glob_pt()</td>
+<td><code>glob_pt</code> is a type of <code>glob</code> with a variable indicating the file type in the returning value. Options can take <code>d</code>, <code>f</code>, <code>r</code> and <code>p</code>. There options can be specified independently in no particular order.<br>Options:<br>- <code>d</code>: getting directory name<br>- <code>f</code>: getting file name<br>- <code>r</code>: recursive directory<br>- <code>p</code>: useing <code>sstd::pathmatch()</code> instead of <code>sstd::strmatch()</code> internally<br><br><code>glob_pt</code> は，<code>glob</code> の戻り値にファイルタイプを示す変数が追加されたバージョンです．オプションには <code>d</code>, <code>f</code>, <code>r</code>, <code>p</code> があり，それぞれ独立に，順不同で指定できます．</td>
+</tr>
+</tbody>
+</table>
 <h2 id="usage01-getting-only-file-without-recursive-option">Usage01: getting only file without recursive option</h2>
 <ul>
 <li><u><strong>main.cpp</strong></u>
