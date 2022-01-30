@@ -1,18 +1,6 @@
 # glob
 ## Abstract
-`glob` can search file and directory with `*` and `?`. (The other regular expressions are not implimented).
-And `glob_pt` is a type of `glob` with a variable indicating the file type in the returning value.
-
-`glob` は，正規表現 `*` や `?` により，ファイルやディレクトリを探索します．（※その他の正規表現については，現状未実装です）．
-また，`glob_pt` は，`glob` の戻り値にファイルタイプを示す変数が追加されたバージョンです．
-
-Options can take `d`, `f` and `r`. There options can be specified independently in no particular order.
-オプションには `d`, `f`, `r` があり，それぞれ独立に，順不同で指定できます．
-
-- Options
-    - `d`: getting directory name option
-    - `f`: getting file name option
-    - `r`: recursive directory option
+Functions to search files and directories
 
 ## Header file
 ```cpp
@@ -37,6 +25,12 @@ namespace sstd{
     std::vector<struct pathAndType> glob_pt(const std::string& path);
 }
 ```
+
+## Description
+| Function name | Description |
+| ------------- | ----------- |
+| glob()  | `glob` can search file and directory with wildcard (`*` and `?`).<br><br>`glob` は，wildcard (`*` と `?`) を用いた，ファイルとディレクトリを探索できます． |
+| glob_pt()  | `glob_pt` is a type of `glob` with a variable indicating the file type in the returning value. Options can take `d`, `f`, `r` and `p`. There options can be specified independently in no particular order.<br>Options:<br>- `d`: getting directory name<br>- `f`: getting file name<br>- `r`: recursive directory<br>- `p`: useing `sstd::pathmatch()` instead of `sstd::strmatch()` internally<br><br>`glob_pt` は，`glob` の戻り値にファイルタイプを示す変数が追加されたバージョンです．オプションには `d`, `f`, `r`, `p` があり，それぞれ独立に，順不同で指定できます． |
 
 ## Usage01: getting only file without recursive option
 - <u>**main.cpp**</u>
