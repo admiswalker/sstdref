@@ -40,22 +40,22 @@ namespace sstd{
 ## Description
 | Function name | Description |
 | ------------- | ----------- |
-| getPath()      | A function to get a path when a string of 1st arg is consisted of a path and a file name. For example, when a 1st argument has `/abc/def/example.txt`, `/abc/def` is returned.<br> |
-| getPath_woWC() | A function to get a path without wildcard (`*` or `?`). For example, when a 1st argument has `/abc/d??/*.txt`, `/abc` is returned. And when a 1st argument has `/abc/def/example.txt`, `/abc/def` is returned. (_woWC means without wildcard).<br> |
-| getDirName()              | A function to get a nearest directory name from file name when a string of 1st arg which is consisted of a path and a file name. For example, when a 1st argument has `/abc/def/example.txt`, `def` is returned. <br> |
+| getPath()      | A function to get a path when a string of 1st arg is consisted of a path and a file name.<br> |
+| getPath_woWC() | A function to get a path without wildcard (`*` or `?`). (_woWC means without wildcard).<br> |
+| getDirName()              | A function to get a nearest directory name from file name when a string of 1st arg which is consisted of a path and a file name.<br> |
 | getDirName_begin_idx()    | A function to get a beginning index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name.<br> |
-| getDirName_end_idx()      | A function to get a ending index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name.<br> |
-| getDirName_end_idx_owWC() | A function to get a ending index number of the nearest directory name from file name without wildcard when a string of 1st arg which is consisted of a path and a file name.<br> |
-| getFileName()                  | A function to get a file name when a string of 1st arg is consisted of a path and a file name. For example, when a 1st argument has `/abc/def/example.txt`, `example.txt` is returned.<br> |
-| getFileName_withoutExtension() | A function to get a file name without file extension when a string of 1st arg is consisted of a path and a file name. For example, when a 1st argument has `/abc/def/example.txt`, `example` is returned. And when a 1st argument has `/abc/def/example.txt.zip`, `example.txt` is returned.<br> |
-| getExtension()                 | <br> |
-| parsePath()          | <br> |
-| parsePath_withBase() | <br> |
-| isFile()      | <br> |
-| isDir()       | <br> |
-| fileExist()   | <br> |
-| dirExist()    | <br> |
-| pathExist()   | <br> |
+| getDirName_end_idx()      | A function to get a ending index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br> |
+| getDirName_end_idx_owWC() | A function to get a ending index number of the nearest directory name from file name without wildcard when a string of 1st arg which is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br> |
+| getFileName()                  | A function to get a file name when a string of 1st arg is consisted of a path and a file name.<br> |
+| getFileName_withoutExtension() | A function to get a file name without file extension when a string of 1st arg is consisted of a path and a file name.<br> |
+| getExtension()                 | A function to get a file extension. When a string of 1st arg does not have a file extention, 0 length string is returned.<br> |
+| parsePath()          | A function to parse a path by `/` or `\\`.<br> |
+| parsePath_withBase() | A function to parse a path by `/` or `\\` and return with the base path from the 1st arg.<br> |
+| isFile()      | Exactory same as the `fileExist()`<br> |
+| isDir()       | Exactory same as the `dirExist()`<br> |
+| fileExist()   | A function to judge whether a file is exist or not.<br> |
+| dirExist()    | A function to judge whether a directory is exist or not.<br> |
+| pathExist()   | A function to judge whether a path is exist or not.<br> |
 
 
 ## Usage
@@ -66,43 +66,20 @@ namespace sstd{
 #include <sstd/sstd.hpp>
 
 int main(){
-    std::string path = "./abc/DEF/example.txt";
-    sstd::printn( sstd::getPath(path.c_str()) );
-    sstd::printn( sstd::getFileName(path.c_str()) );
-    sstd::printn( sstd::getFileName_withoutExtension(path.c_str()) );
-    sstd::printn( sstd::getExtension(path.c_str()) );
+    sstd::printn( sstd::getPath("./abc/def/example.txt") );
     printf("\n");
     
-    sstd::printn( sstd::parsePath(path.c_str()) );
-    sstd::printn( sstd::parsePath_withBase(path.c_str()) );
-    printf("\n");
-    
-    std::string path_dir  = "./tmp";
-    std::string path_file = "./tmp/example.txt";
-    sstd::system(sstd::ssprintf("mkdir %s", path_dir.c_str()));
-    sstd::system(sstd::ssprintf("touch %s", path_file.c_str()));
-    
-    sstd::printn( sstd::isFile(path_dir.c_str()) );
-    sstd::printn( sstd::isFile(path_file.c_str()) );
-    printf("\n");
-    
-    sstd::printn( sstd::isDir(path_dir.c_str()) );
-    sstd::printn( sstd::isDir(path_file.c_str()) );
-    printf("\n");
-
-    sstd::printn( sstd::fileExist(path_file.c_str()) );
-    sstd::printn( sstd::dirExist(path_dir.c_str()) );
-    printf("\n");
-    
-    sstd::rm(path_dir);
-    sstd::printn( sstd::fileExist(path_file.c_str()) );
-    sstd::printn( sstd::dirExist(path_dir.c_str()) );
+    sstd::printn( sstd::getPath_woWC("./abc/def/example.txt") );
+    sstd::printn( sstd::getPath_woWC(R"(./abc/d??/*.txt)") );
 }
 ```
+NOTE: This sample use `raw string literals R"()"` to avoid `unknown escape sequence: '\*'` error.
+
 - <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
 ```
+
 
 ### getDirName(), getDirName_begin_idx(), getDirName_end_idx(), getDirName_end_idx_owWC()
 - <u>**main.cpp**</u>
@@ -111,37 +88,15 @@ int main(){
 #include <sstd/sstd.hpp>
 
 int main(){
-    std::string path = "./abc/def/example.txt";
-    sstd::printn( sstd::getPath(path.c_str()) );
-    sstd::printn( sstd::getFileName(path.c_str()) );
-    sstd::printn( sstd::getFileName_withoutExtension(path.c_str()) );
-    sstd::printn( sstd::getExtension(path.c_str()) );
+    sstd::printn( sstd::getDirName("./abc/def/example.txt") );
     printf("\n");
     
-    sstd::printn( sstd::parsePath(path.c_str()) );
-    sstd::printn( sstd::parsePath_withBase(path.c_str()) );
+    sstd::printn( sstd::getDirName_begin_idx("./abc/def/example.txt") );
     printf("\n");
     
-    std::string path_dir  = "./tmp";
-    std::string path_file = "./tmp/example.txt";
-    sstd::system(sstd::ssprintf("mkdir %s", path_dir.c_str()));
-    sstd::system(sstd::ssprintf("touch %s", path_file.c_str()));
-    
-    sstd::printn( sstd::isFile(path_dir.c_str()) );
-    sstd::printn( sstd::isFile(path_file.c_str()) );
-    printf("\n");
-    
-    sstd::printn( sstd::isDir(path_dir.c_str()) );
-    sstd::printn( sstd::isDir(path_file.c_str()) );
-    printf("\n");
-
-    sstd::printn( sstd::fileExist(path_file.c_str()) );
-    sstd::printn( sstd::dirExist(path_dir.c_str()) );
-    printf("\n");
-    
-    sstd::rm(path_dir);
-    sstd::printn( sstd::fileExist(path_file.c_str()) );
-    sstd::printn( sstd::dirExist(path_dir.c_str()) );
+    sstd::printn( sstd::getDirName_end_idx("./abc/def/example.txt") );
+    sstd::printn( sstd::getDirName_end_idx_woWC("./abc/def/example.txt") );
+    sstd::printn( sstd::getDirName_end_idx_woWC(R"(./abc/d??/*.txt)") );
 }
 ```
 - <u>**Execution result**</u>
@@ -150,21 +105,93 @@ int main(){
 ```
 
 ### getFileName(), getFileName_withoutExtension()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
 
+int main(){
+    sstd::printn( sstd::getFileName("./abc/def/example.txt") );
+    sstd::printn( sstd::getFileName("./abc/def/example") );
+    printf("\n");
+    
+    sstd::printn( sstd::getFileName_withoutExtension("./abc/def/example.txt") );
+    sstd::printn( sstd::getFileName_withoutExtension("./abc/def/example") );
+    sstd::printn( sstd::getFileName_withoutExtension("./abc/def/example.txt.zip") );
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
 
 ### getExtension()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
 
+int main(){
+    sstd::printn( sstd::getExtension("./abc/def/example.txt") );
+    sstd::printn( sstd::getExtension("./abc/def/example") );
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
 
 ### parsePath(), parsePath_withBase()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
 
+int main(){
+    sstd::printn( sstd::parsePath("./abc/def/example.txt") );
+    sstd::printn( sstd::parsePath_withBase("./abc/def/example") );
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
 
 ### isFile(), isDir(), fileExist(), dirExist(), pathExist()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
 
+int main(){
+    // sstd::isFile() is exactory same as the `sstd::fileExist()`.
+    // sstd::isDir() is exactory same as the `sstd::dirExist()`.
+    
+    sstd::printn( sstd::fileExist("./tmp/abc/def/example.txt") );
+    sstd::printn( sstd::dirExist("./tmp/abc/def") );
+    sstd::printn( sstd::pathExist("./tmp/abc/def") );
+    sstd::printn( sstd::pathExist("./tmp/abc/def/example.txt") );
+    printf("\n");
 
+    sstd::mkdir("tmp");
+    sstd::mkdir("./tmp/abc/def");
+    sstd::system("touch ./tmp/abc/def/example.txt");
+    
+    sstd::printn( sstd::fileExist("./tmp/abc/def/example.txt") );
+    sstd::printn( sstd::dirExist("./tmp/abc/def") );
+    sstd::printn( sstd::pathExist("./tmp/abc/def") );
+    sstd::printn( sstd::pathExist("./tmp/abc/def/example.txt") );
+    
+    sstd::rm("tmp");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
 
 ## Implementation
-- Source: [sstd/src/path.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/path.cpp)
-- Header: [sstd/src/path.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/path.hpp)
-- Test: [test/path.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/path.hpp)
-  (Not implemented yet)
+- Source: [sstd/src/file/path.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/path.cpp)
+- Header: [sstd/src/file/path.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/path.hpp)
+- Test: [test/file/path.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/path.hpp)
 
