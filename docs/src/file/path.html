@@ -359,9 +359,64 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getpath-getpath_wowc" class="md-nav__link">
+    getPath(), getPath_woWC()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdirname-getdirname_begin_idx-getdirname_end_idx-getdirname_end_idx_owwc" class="md-nav__link">
+    getDirName(), getDirName_begin_idx(), getDirName_end_idx(), getDirName_end_idx_owWC()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfilename-getfilename_withoutextension" class="md-nav__link">
+    getFileName(), getFileName_withoutExtension()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getextension" class="md-nav__link">
+    getExtension()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsepath-parsepath_withbase" class="md-nav__link">
+    parsePath(), parsePath_withBase()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isfile-isdir-fileexist-direxist-pathexist" class="md-nav__link">
+    isFile(), isDir(), fileExist(), dirExist(), pathExist()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -905,9 +960,64 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getpath-getpath_wowc" class="md-nav__link">
+    getPath(), getPath_woWC()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdirname-getdirname_begin_idx-getdirname_end_idx-getdirname_end_idx_owwc" class="md-nav__link">
+    getDirName(), getDirName_begin_idx(), getDirName_end_idx(), getDirName_end_idx_owWC()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfilename-getfilename_withoutextension" class="md-nav__link">
+    getFileName(), getFileName_withoutExtension()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getextension" class="md-nav__link">
+    getExtension()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsepath-parsepath_withbase" class="md-nav__link">
+    parsePath(), parsePath_withBase()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isfile-isdir-fileexist-direxist-pathexist" class="md-nav__link">
+    isFile(), isDir(), fileExist(), dirExist(), pathExist()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -938,8 +1048,16 @@
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">  </span><span class="nf">getPath</span><span class="w">                     </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">  </span><span class="nf">getPath_woWC</span><span class="w">                </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"> </span><span class="c1">// _woWC: without wildcard</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">  </span><span class="nf">getDirName</span><span class="w">                  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint</span><span class="w">         </span><span class="nf">getDirName_begin_idx</span><span class="w">        </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint</span><span class="w">         </span><span class="nf">getDirName_end_idx</span><span class="w">          </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint</span><span class="w">         </span><span class="nf">getDirName_end_idx_woWC</span><span class="w">     </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"> </span><span class="c1">// _woWC: without wildcard</span>
+
 <span class="w">           </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">getFileName</span><span class="w">                 </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">  </span><span class="nf">getFileName_withoutExtension</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+
 <span class="w">           </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">getExtension</span><span class="w">                </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parsePath</span><span class="w">         </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
@@ -958,73 +1076,232 @@
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">pathExist</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<h2 id="description">Description</h2>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getPath()</td>
+<td>A function to get a path when a string of 1st arg is consisted of a path and a file name.<br></td>
+</tr>
+<tr>
+<td>getPath_woWC()</td>
+<td>A function to get a path without wildcard (<code>*</code> or <code>?</code>). (_woWC means without wildcard).<br></td>
+</tr>
+<tr>
+<td>getDirName()</td>
+<td>A function to get a nearest directory name from file name when a string of 1st arg which is consisted of a path and a file name.<br></td>
+</tr>
+<tr>
+<td>getDirName_begin_idx()</td>
+<td>A function to get a beginning index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name.<br></td>
+</tr>
+<tr>
+<td>getDirName_end_idx()</td>
+<td>A function to get a ending index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br></td>
+</tr>
+<tr>
+<td>getDirName_end_idx_owWC()</td>
+<td>A function to get a ending index number of the nearest directory name from file name without wildcard when a string of 1st arg which is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br></td>
+</tr>
+<tr>
+<td>getFileName()</td>
+<td>A function to get a file name when a string of 1st arg is consisted of a path and a file name.<br></td>
+</tr>
+<tr>
+<td>getFileName_withoutExtension()</td>
+<td>A function to get a file name without file extension when a string of 1st arg is consisted of a path and a file name.<br></td>
+</tr>
+<tr>
+<td>getExtension()</td>
+<td>A function to get a file extension. When a string of 1st arg does not have a file extention, 0 length string is returned.<br></td>
+</tr>
+<tr>
+<td>parsePath()</td>
+<td>A function to parse a path by <code>/</code> or <code>\\</code>.<br></td>
+</tr>
+<tr>
+<td>parsePath_withBase()</td>
+<td>A function to parse a path by <code>/</code> or <code>\\</code> and return with the base path from the 1st arg.<br></td>
+</tr>
+<tr>
+<td>isFile()</td>
+<td>Exactory same as the <code>fileExist()</code><br></td>
+</tr>
+<tr>
+<td>isDir()</td>
+<td>Exactory same as the <code>dirExist()</code><br></td>
+</tr>
+<tr>
+<td>fileExist()</td>
+<td>A function to judge whether a file is exist or not.<br></td>
+</tr>
+<tr>
+<td>dirExist()</td>
+<td>A function to judge whether a directory is exist or not.<br></td>
+</tr>
+<tr>
+<td>pathExist()</td>
+<td>A function to judge whether a path is exist or not.<br></td>
+</tr>
+</tbody>
+</table>
 <h2 id="usage">Usage</h2>
+<h3 id="getpath-getpath_wowc">getPath(), getPath_woWC()</h3>
+<ul>
+<li>
+<p><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getPath</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getPath_woWC</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getPath_woWC</span><span class="p">(</span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s">./abc/d??/*.txt</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+NOTE: This sample use <code>raw string literals R"()"</code> to avoid <code>unknown escape sequence: '\*'</code> error.</p>
+</li>
+<li>
+<p><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::getPath(&quot;./abc/def/example.txt&quot;) = &quot;./abc/def&quot;
+
+sstd::getPath_woWC(&quot;./abc/def/example.txt&quot;) = &quot;./abc/def&quot;
+sstd::getPath_woWC(R&quot;(./abc/d??/*.txt)&quot;) = &quot;./abc&quot;
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="getdirname-getdirname_begin_idx-getdirname_end_idx-getdirname_end_idx_owwc">getDirName(), getDirName_begin_idx(), getDirName_end_idx(), getDirName_end_idx_owWC()</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;./abc/DEF/example.txt&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getPath</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getFileName</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getFileName_withoutExtension</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getExtension</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getDirName</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">parsePath</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">parsePath_withBase</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getDirName_begin_idx</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">path_dir</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;./tmp&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">path_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;./tmp/example.txt&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">ssprintf</span><span class="p">(</span><span class="s">&quot;mkdir %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path_dir</span><span class="p">.</span><span class="n">c_str</span><span class="p">()));</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">ssprintf</span><span class="p">(</span><span class="s">&quot;touch %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path_file</span><span class="p">.</span><span class="n">c_str</span><span class="p">()));</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isFile</span><span class="p">(</span><span class="n">path_dir</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isFile</span><span class="p">(</span><span class="n">path_file</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isDir</span><span class="p">(</span><span class="n">path_dir</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">isDir</span><span class="p">(</span><span class="n">path_file</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">fileExist</span><span class="p">(</span><span class="n">path_file</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">dirExist</span><span class="p">(</span><span class="n">path_dir</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="n">path_dir</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">fileExist</span><span class="p">(</span><span class="n">path_file</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">dirExist</span><span class="p">(</span><span class="n">path_dir</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getDirName_end_idx</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getDirName_end_idx_woWC</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getDirName_end_idx_woWC</span><span class="p">(</span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s">./abc/d??/*.txt</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>sstd::getPath(path.c_str()) = &quot;./abc/DEF/&quot;
-sstd::getFileName(path.c_str()) = &quot;example.txt&quot;
-sstd::getFileName_withoutExtension(path.c_str()) = &quot;example&quot;
-sstd::getExtension(path.c_str()) = &quot;txt&quot;
+<div class="highlight"><pre><span></span><code>sstd::getDirName(&quot;./abc/def/example.txt&quot;) = &quot;example.txt&quot;
 
-sstd::parsePath(path.c_str()) = [&quot;.&quot; &quot;abc&quot; &quot;DEF&quot; &quot;example.txt&quot;]
-sstd::parsePath_withBase(path.c_str()) = [&quot;.&quot; &quot;./abc&quot; &quot;./abc/DEF&quot; &quot;./abc/DEF/example.txt&quot;]
+sstd::getDirName_begin_idx(&quot;./abc/def/example.txt&quot;) = 10
 
-sstd::isFile(path_dir.c_str()) = false
-sstd::isFile(path_file.c_str()) = true
+sstd::getDirName_end_idx(&quot;./abc/def/example.txt&quot;) = 10
+sstd::getDirName_end_idx_woWC(&quot;./abc/def/example.txt&quot;) = 10
+sstd::getDirName_end_idx_woWC(R&quot;(./abc/d??/*.txt)&quot;) = 6
+</code></pre></div></li>
+</ul>
+<h3 id="getfilename-getfilename_withoutextension">getFileName(), getFileName_withoutExtension()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
-sstd::isDir(path_dir.c_str()) = true
-sstd::isDir(path_file.c_str()) = false
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getFileName</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getFileName</span><span class="p">(</span><span class="s">&quot;./abc/def/example&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 
-sstd::fileExist(path_file.c_str()) = true
-sstd::dirExist(path_dir.c_str()) = true
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getFileName_withoutExtension</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getFileName_withoutExtension</span><span class="p">(</span><span class="s">&quot;./abc/def/example&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getFileName_withoutExtension</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt.zip&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::getFileName(&quot;./abc/def/example.txt&quot;) = &quot;example.txt&quot;
+sstd::getFileName(&quot;./abc/def/example&quot;) = &quot;example&quot;
 
-sstd::fileExist(path_file.c_str()) = false
-sstd::dirExist(path_dir.c_str()) = false
+sstd::getFileName_withoutExtension(&quot;./abc/def/example.txt&quot;) = &quot;example&quot;
+sstd::getFileName_withoutExtension(&quot;./abc/def/example&quot;) = &quot;example&quot;
+sstd::getFileName_withoutExtension(&quot;./abc/def/example.txt.zip&quot;) = &quot;example.txt&quot;
+</code></pre></div></li>
+</ul>
+<h3 id="getextension">getExtension()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getExtension</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">getExtension</span><span class="p">(</span><span class="s">&quot;./abc/def/example&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::getExtension(&quot;./abc/def/example.txt&quot;) = &quot;txt&quot;
+sstd::getExtension(&quot;./abc/def/example&quot;) = &quot;(null)&quot;
+</code></pre></div></li>
+</ul>
+<h3 id="parsepath-parsepath_withbase">parsePath(), parsePath_withBase()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">parsePath</span><span class="p">(</span><span class="s">&quot;./abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">parsePath_withBase</span><span class="p">(</span><span class="s">&quot;./abc/def/example&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::parsePath(&quot;./abc/def/example.txt&quot;) = [&quot;.&quot; &quot;abc&quot; &quot;def&quot; &quot;example.txt&quot;]
+sstd::parsePath_withBase(&quot;./abc/def/example&quot;) = [&quot;.&quot; &quot;./abc&quot; &quot;./abc/def&quot; &quot;./abc/def/example&quot;]
+</code></pre></div></li>
+</ul>
+<h3 id="isfile-isdir-fileexist-direxist-pathexist">isFile(), isDir(), fileExist(), dirExist(), pathExist()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// sstd::isFile() is exactory same as the `sstd::fileExist()`.</span>
+<span class="w">    </span><span class="c1">// sstd::isDir() is exactory same as the `sstd::dirExist()`.</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">fileExist</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">dirExist</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pathExist</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pathExist</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;tmp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/abc/def/example.txt&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">fileExist</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">dirExist</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pathExist</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pathExist</span><span class="p">(</span><span class="s">&quot;./tmp/abc/def/example.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;tmp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::fileExist(&quot;./tmp/abc/def/example.txt&quot;) = false
+sstd::dirExist(&quot;./tmp/abc/def&quot;) = false
+sstd::pathExist(&quot;./tmp/abc/def&quot;) = false
+sstd::pathExist(&quot;./tmp/abc/def/example.txt&quot;) = false
+
+sstd::fileExist(&quot;./tmp/abc/def/example.txt&quot;) = true
+sstd::dirExist(&quot;./tmp/abc/def&quot;) = true
+sstd::pathExist(&quot;./tmp/abc/def&quot;) = true
+sstd::pathExist(&quot;./tmp/abc/def/example.txt&quot;) = true
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
-<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/path.cpp">sstd/src/path.cpp</a></li>
-<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/path.hpp">sstd/src/path.hpp</a></li>
-<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/path.hpp">test/path.hpp</a>
-  (Not implemented yet)</li>
+<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/path.cpp">sstd/src/file/path.cpp</a></li>
+<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/path.hpp">sstd/src/file/path.hpp</a></li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/path.hpp">test/file/path.hpp</a></li>
 </ul>
                 
               
