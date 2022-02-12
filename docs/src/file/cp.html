@@ -326,22 +326,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#copy" class="md-nav__link">
-    copy
+  <a href="#copy-copy-a-file" class="md-nav__link">
+    copy(): copy a file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cp-case01" class="md-nav__link">
-    cp (case01)
+  <a href="#cp-copy-a-directory" class="md-nav__link">
+    cp(): copy a directory
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cp-case02" class="md-nav__link">
-    cp (case02)
+  <a href="#cp-copy-under-the-directory" class="md-nav__link">
+    cp(): copy under the directory
   </a>
   
 </li>
@@ -966,22 +966,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#copy" class="md-nav__link">
-    copy
+  <a href="#copy-copy-a-file" class="md-nav__link">
+    copy(): copy a file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cp-case01" class="md-nav__link">
-    cp (case01)
+  <a href="#cp-copy-a-directory" class="md-nav__link">
+    cp(): copy a directory
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cp-case02" class="md-nav__link">
-    cp (case02)
+  <a href="#cp-copy-under-the-directory" class="md-nav__link">
+    cp(): copy under the directory
   </a>
   
 </li>
@@ -1016,11 +1016,19 @@
 <p>Functions to copy files and direcotries</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_dst</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_dst</span><span class="p">);</span><span class="w"></span>
 
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">cp</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">cp</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">cp</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">cp</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">cp</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">cp</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">cp</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path_dst</span><span class="p">);</span><span class="w"></span>
@@ -1038,69 +1046,73 @@
 <tbody>
 <tr>
 <td>copy()</td>
-<td>A function to copy a single file. <br>1 つのファイルをコピーする関数．</td>
+<td>A function to copy a single file, and give the same permission as the source.<br>1 つのファイルをコピーする関数．コピー元のファイルと同一のパーミッションを付与します．</td>
 </tr>
 <tr>
 <td>cp()</td>
-<td>A function to copy files and directories. <br>複数のファイルやディレクトリをコピーする関数．</td>
+<td>A function to copy files and directories, and give the same permission as the source.<br>複数のファイルやディレクトリをコピーする関数．コピー元のファイルやディレクトリと同一のパーミッションを付与します．</td>
 </tr>
 </tbody>
 </table>
+<p><strong>options</strong><br>
+- <code>n</code>: (n: no overwrite) do not to overwrite the existing file.<br>
+- <code>p</code>: (p: permission) copy file with the same permission and timestamp.<br>
+- <code>u</code>: (u: update) update the file only when the dst file is older than src file.<br></p>
 <h2 id="usage">Usage</h2>
-<h3 id="copy">copy</h3>
+<h3 id="copy-copy-a-file">copy(): copy a file</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;dd if=/dev/urandom of=./tmpDir_cp/test_rand.bin bs=1M count=10 &gt; /dev/null 2&gt;&amp;1&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;dd if=/dev/urandom of=./tmp/rand.bin bs=1M count=10 &gt; /dev/null 2&gt;&amp;1&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="s">&quot;./tmpDir_cp/test_rand.bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmpDir_cp/test_rand_copy.bin&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;sha256sum ./tmpDir_cp/test_rand.bin | cut -d </span><span class="se">\&quot;</span><span class="s"> </span><span class="se">\&quot;</span><span class="s"> -f 1&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;sha256sum ./tmpDir_cp/test_rand_copy.bin | cut -d </span><span class="se">\&quot;</span><span class="s"> </span><span class="se">\&quot;</span><span class="s"> -f 1&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="s">&quot;./tmp/rand.bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp/rand_copy.bin&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;sha256sum ./tmp/rand.bin | cut -d </span><span class="se">\&quot;</span><span class="s"> </span><span class="se">\&quot;</span><span class="s"> -f 1&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;sha256sum ./tmp/rand_copy.bin | cut -d </span><span class="se">\&quot;</span><span class="s"> </span><span class="se">\&quot;</span><span class="s"> -f 1&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>test_rand.bin
-test_rand_copy.bin
-2f7eaf61177bf25915eed2712703d065034a988506837983886d1e52a78f59aa
-2f7eaf61177bf25915eed2712703d065034a988506837983886d1e52a78f59aa
+<div class="highlight"><pre><span></span><code>rand.bin
+rand_copy.bin
+553f9ba5602c8ee723e53f4e60a7af33f225b65ca2833dbf3146c0213b3add04
+553f9ba5602c8ee723e53f4e60a7af33f225b65ca2833dbf3146c0213b3add04
 </code></pre></div></li>
 </ul>
-<h3 id="cp-case01">cp (case01)</h3>
+<h3 id="cp-copy-a-directory">cp(): copy a directory</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">cp</span><span class="p">(</span><span class="s">&quot;./sstd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">cp</span><span class="p">(</span><span class="s">&quot;./sstd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>sstd
 </code></pre></div></li>
 </ul>
-<h3 id="cp-case02">cp (case02)</h3>
+<h3 id="cp-copy-under-the-directory">cp(): copy under the directory</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">cp</span><span class="p">(</span><span class="s">&quot;./sstd/*&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">cp</span><span class="p">(</span><span class="s">&quot;./sstd/*&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmpDir_cp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
