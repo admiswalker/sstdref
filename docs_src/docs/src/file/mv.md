@@ -1,0 +1,94 @@
+# mv
+## Abstract
+Funtion to move file and directory
+
+## Header file
+```cpp
+namespace sstd{
+    bool mv  (const char*        pPath_src, const char*        pPath_dst);
+    bool mv  (const std::string&  path_src, const char*        pPath_dst);
+    bool mv  (const char*        pPath_src, const std::string&  path_dst);
+    bool mv  (const std::string&  path_src, const std::string&  path_dst);
+}
+```
+
+## Description
+| Function name | Description |
+| ------------- | ----------- |
+| mv()  | A function to move file and directory from src-path to dst-path.<br>ファイルやディレクトリを src-path から dst-path へ移動させる関数． |
+
+## Usage
+### move file to file
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::mkdir("./tmp/01");
+    sstd::mkdir("./tmp/02");
+    sstd::system("touch ./tmp/01/exmaple.txt");
+    
+    sstd::mv("./tmp/01/exmaple.txt", "./tmp/02/exmaple.txt");
+    
+    printf("./tmp/01: \n    "); fflush(stdout); sstd::system("ls ./tmp/01"); printf("\n");
+    printf("./tmp/02: \n    "); fflush(stdout); sstd::system("ls ./tmp/02");
+    sstd::rm("./tmp");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### move file to directory
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::mkdir("./tmp/01");
+    sstd::mkdir("./tmp/02");
+    sstd::system("touch ./tmp/01/exmaple.txt");
+    
+    sstd::mv("./tmp/01/exmaple.txt", "./tmp/02");
+    
+    printf("./tmp/01: \n    "); fflush(stdout); sstd::system("ls ./tmp/01"); printf("\n");
+    printf("./tmp/02: \n    "); fflush(stdout); sstd::system("ls ./tmp/02");
+    sstd::rm("./tmp");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### move directory to directory
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::mkdir("./tmp/01");
+    sstd::mkdir("./tmp/02");
+    sstd::system("touch ./tmp/01/exmaple.txt");
+    
+    sstd::mv("./tmp/01", "./tmp/02");
+    
+    printf("./tmp/01: \n    "); fflush(stdout); sstd::system("ls ./tmp/01"); printf("\n");
+    printf("./tmp/02: \n    "); fflush(stdout); sstd::system("ls ./tmp/02");
+    sstd::rm("./tmp");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+## Implementation
+- Source: [sstd/src/XXXXXX.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/mv.cpp)
+- Header: [sstd/src/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/mv.hpp)
+- Test: [test/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/mv.hpp)
+
