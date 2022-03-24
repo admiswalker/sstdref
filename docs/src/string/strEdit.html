@@ -699,12 +699,66 @@
     Description
   </a>
   
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-string" class="md-nav__link">
+    split string / 文字列の分割
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-spaces-and-tabs" class="md-nav__link">
+    Remove spaces and tabs / 空白 (半角スペース) とタブ文字の除去
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#splitbyline" class="md-nav__link">
+    splitByLine()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    split()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstrip-rstrip-strip" class="md-nav__link">
+    lstrip(), rstrip(), strip()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stripall" class="md-nav__link">
+    stripAll()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -940,12 +994,66 @@
     Description
   </a>
   
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-string" class="md-nav__link">
+    split string / 文字列の分割
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-spaces-and-tabs" class="md-nav__link">
+    Remove spaces and tabs / 空白 (半角スペース) とタブ文字の除去
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#splitbyline" class="md-nav__link">
+    splitByLine()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    split()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstrip-rstrip-strip" class="md-nav__link">
+    lstrip(), rstrip(), strip()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stripall" class="md-nav__link">
+    stripAll()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -990,13 +1098,37 @@
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">               </span><span class="nf">strip</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// removing head and tail tab and spaces</span>
 <span class="w">    </span><span class="kt">void</span><span class="w">                      </span><span class="nf">strip_ow</span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// removing head and tail tab and spaces. ow: overwrite</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w">  </span><span class="n">strip</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">vec</span><span class="p">);</span><span class="w"> </span><span class="c1">// -&gt; strip(str) // removing head and tail spaces</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">               </span><span class="nf">stripAll</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">stripList</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">               </span><span class="nf">stripAll</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">stripList</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">               </span><span class="nf">stripAll</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">stripList</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">               </span><span class="nf">stripAll</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">stripList</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w">                      </span><span class="nf">stripAll_ow</span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">stripList</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w">                      </span><span class="nf">stripAll_ow</span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">stripList</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="description">Description</h2>
-<ul>
-<li>Removing spaces and tabs.<br />
-  空白 (半角スペース) とタブ文字の除去．</li>
-</ul>
+<h3 id="split-string">split string / 文字列の分割</h3>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>splitByLine()</td>
+<td>split the string with a line feed code.<br/>文字列を改行コードごとに分割します．</td>
+</tr>
+<tr>
+<td>split()</td>
+<td>split the string by a charactor of arg 2.<br/>第 2 引数の文字で文字列を分割します．</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remove-spaces-and-tabs">Remove spaces and tabs / 空白 (半角スペース) とタブ文字の除去</h3>
 <table>
 <thead>
 <tr>
@@ -1007,31 +1139,80 @@
 <tbody>
 <tr>
 <td>lstrip()</td>
-<td>Removing head spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．</td>
+<td>remove head spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．</td>
 </tr>
 <tr>
 <td>lstrip_ow()</td>
-<td>Removing head spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+<td>remove head spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
 </tr>
 <tr>
 <td>rstrip()</td>
-<td>Removing tail spaces and tabs.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．</td>
+<td>remove tail spaces and tabs.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．</td>
 </tr>
 <tr>
 <td>rstrip_ow()</td>
-<td>Removing tail spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+<td>remove tail spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
 </tr>
 <tr>
 <td>strip()</td>
-<td>Removing head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．</td>
+<td>remove head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．</td>
 </tr>
 <tr>
 <td>strip_ow()</td>
-<td>Removing head and tail spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+<td>remove head and tail spaces and tabs. <code>_ow</code> means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
+</tr>
+<tr>
+<td>stripAll()</td>
+<td>remove all types of charactors in arg 2.<br/>第 2 引数にある全ての種類の文字を除去します．</td>
+</tr>
+<tr>
+<td>stripAll_ow()</td>
+<td>remove all types of charactors in arg 2. <code>_ow</code> means overwrite.<br/>第 2 引数にある全ての種類の文字を除去します．<code>_ow</code> は overwrite の意味で，引数に結果を上書きします．</td>
 </tr>
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
+<h3 id="splitbyline">splitByLine()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc</span><span class="se">\n</span><span class="s">def</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vS1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">splitByLine</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vS1</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">abc</span><span class="se">\n</span><span class="s">def</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vS2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">splitByLine</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vS2</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>vS1 = [&quot;abc&quot; &quot;def&quot;]
+vS2 = [&quot;&quot; &quot;abc&quot; &quot;def&quot; &quot;&quot;]
+</code></pre></div></li>
+</ul>
+<h3 id="split">split()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc|def|&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vS1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">split</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;|&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vS1</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;|abc|def||&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vS2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">split</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;|&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vS2</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>vS1 = [&quot;abc&quot; &quot;def&quot;]
+vS2 = [&quot;&quot; &quot;abc&quot; &quot;def&quot; &quot;&quot;]
+</code></pre></div></li>
+</ul>
+<h3 id="lstrip-rstrip-strip">lstrip(), rstrip(), strip()</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
@@ -1050,6 +1231,22 @@
 sstd::rstrip(s) = &quot;   abc&quot;
 sstd::strip(s) = &quot;abc&quot;
 s = &quot;abc&quot;
+</code></pre></div></li>
+</ul>
+<h3 id="stripall">stripAll()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;   a x b x c   &quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">stripAll_ow</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; x&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>s = &quot;abc&quot;
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
