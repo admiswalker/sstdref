@@ -585,9 +585,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdbg_1" class="md-nav__link">
+    pdbg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdbg_if" class="md-nav__link">
+    pdbg_if
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -927,9 +954,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdbg_1" class="md-nav__link">
+    pdbg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdbg_if" class="md-nav__link">
+    pdbg_if
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -967,27 +1021,93 @@
 <span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ndbg</span><span class="p">(...){}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<h2 id="description">Description</h2>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pdbg()</td>
+<td>A function to print debug messages with file name, function name and line number.<br>デバッグメッセージ出力用の関数．呼び出したファイルの名前，関数名，行数とエラーメッセージを出力する．</td>
+</tr>
+<tr>
+<td>pdbg_if()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>pdbg_if_exit()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>pdbg_if_stop_exit()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>dbg()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>ndbg()</td>
+<td><br></td>
+</tr>
+</tbody>
+</table>
 <h2 id="usage">Usage</h2>
+<h3 id="pdbg_1">pdbg</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg</span><span class="p">(</span><span class="s">&quot;ERROR: printing error reasons.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg</span><span class="p">(</span><span class="s">&quot;ERROR: printing error message.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;True: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg_if</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ERROR: printing error reasons.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;False: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg_if</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ERROR: printing error reasons.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;NotExistingFile.txt&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">file</span><span class="w"> </span><span class="n">fp</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">.</span><span class="n">fopen</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rb&quot;</span><span class="p">)){</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg</span><span class="p">(</span><span class="s">&quot;ERROR: fopen is failed. </span><span class="se">\&quot;</span><span class="s">%s</span><span class="se">\&quot;</span><span class="s"> is not exist!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>.././tmp/.._._docs_src_docs_src_pdbg.md_32.cpp/.._._docs_src_docs_src_pdbg.md_32.cpp: main(4): [31mERROR: printing error reasons.
+<div class="highlight"><pre><span></span><code>.././tmp/.._._docs_src_docs_src_pdbg.md_44.cpp/.._._docs_src_docs_src_pdbg.md_44.cpp: main(4): [31mERROR: printing error message.
 [0m
-True: .././tmp/.._._docs_src_docs_src_pdbg.md_32.cpp/.._._docs_src_docs_src_pdbg.md_32.cpp: main(7): [31mERROR: printing error reasons.
-[0mFalse: 
+.././tmp/.._._docs_src_docs_src_pdbg.md_44.cpp/.._._docs_src_docs_src_pdbg.md_44.cpp: main(9): [31mERROR: fopen is failed. &quot;NotExistingFile.txt&quot; is not exist!
+[0m
+</code></pre></div>
+<strong>NOTE1:</strong><br>
+The above output path is complex because the compile path for this file is complex.<br>
+上記で複雑なパスが出力されるのは，このファイルをコンパイルするパスが複雑なためです．<br>
+<strong>NOTE2:</strong><br>
+<code>[31m</code> treat as red on the terminal.<br>
+<code>[31m</code> は端末上で赤色として扱われます．</li>
+</ul>
+<h3 id="pdbg_if">pdbg_if</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;True: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg_if</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ERROR: printing error message.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;False: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg_if</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ERROR: printing error message.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>True: .././tmp/.._._docs_src_docs_src_pdbg.md_69.cpp/.._._docs_src_docs_src_pdbg.md_69.cpp: main(4): [31mERROR: printing error message.
+[0mFalse: 
+</code></pre></div>
+<strong>NOTE1:</strong><br>
+The above output path is complex because the compile path for this file is complex.<br>
+上記で複雑なパスが出力されるのは，このファイルをコンパイルするパスが複雑なためです．<br>
+<strong>NOTE2:</strong><br>
+<code>[31m</code> treat as red on the terminal.<br>
+<code>[31m</code> は端末上で赤色として扱われます．</li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
