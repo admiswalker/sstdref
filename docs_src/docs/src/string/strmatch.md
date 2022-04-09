@@ -45,6 +45,16 @@ namespace sstd{
     bool charIn(const char lhs, const        char* rhs); // Is lhs in rhs ?
     bool charIn(const char lhs, const std::string& rhs); // Is lhs in rhs ?
     
+    bool charIn(const        char* lhs, const        char* rhs); // Is lhs in rhs ?
+    bool charIn(const        char* lhs, const std::string& rhs); // Is lhs in rhs ?
+    bool charIn(const std::string& lhs, const        char* rhs); // Is lhs in rhs ?
+    bool charIn(const std::string& lhs, const std::string& rhs); // Is lhs in rhs ?
+    
+    bool charIn_all(const        char* lhs, const        char* rhs); // Is all lhs char(s) in rhs ?
+    bool charIn_all(const        char* lhs, const std::string& rhs); // Is all lhs char(s) in rhs ?
+    bool charIn_all(const std::string& lhs, const        char* rhs); // Is all lhs char(s) in rhs ?
+    bool charIn_all(const std::string& lhs, const std::string& rhs); // Is all lhs char(s) in rhs ?
+    
     bool strIn(const char*        lhs, const char*        rhs); // is lhs in rhs ? (is rhs include lhs ?)
     bool strIn(const char*        lhs, const std::string& rhs);
     bool strIn(const std::string& lhs, const char*        rhs);
@@ -64,6 +74,7 @@ namespace sstd{
 | isAlphabet_upper() | A function that judges whether a whole string is configured by uppercase or not. When all the character or string of the 1st argument is in the range of `A` to `Z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が大文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` の範囲にある場合は，true を，それ以外は false を返します． |
 | isAlphabet_lower() | A function that judges whether a whole string is configured by lowercase or not. When all the character or string of the 1st argument is in the range of `a` to `z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が小文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `a` ~ `z` の範囲にある場合は，true を，それ以外は false を返します． |
 | charIn()      | A function that judges whether a particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
+| charIn_all()  | A function that judges whether all of particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を全て内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
 | strIn()       | A function that judges whether a particular string is included in a string or not. When the string of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字列を内包するか判定する関数．第一引数の文字列が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
 
 ## Usage
@@ -220,16 +231,31 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-### charIn(), strIn()
+### charIn()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::printn( sstd::charIn('c', "abcdef") );
-    sstd::printn( sstd::charIn('x', "abcdef") ); printf("\n");
-    
+    sstd::printn( sstd::charIn('c', "abcdef") ); // 'c' exists in "abcdef".
+    sstd::printn( sstd::charIn("abc", "abcdef") ); // 'a', 'b' or 'c' exist in "abcdef".
+    sstd::printn( sstd::charIn_all("abx", "abcdef") ); // 'x' dose not exist in "abcdef".
+    sstd::printn( sstd::charIn_all("cba", "abcdef") ); // 'a', 'b' and 'c' exist in "abcdef".
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### strIn()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
     sstd::printn( sstd::strIn("def", "abcdefgh") );
     sstd::printn( sstd::strIn("defx", "abcdefgh") );
 }
