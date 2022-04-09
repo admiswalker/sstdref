@@ -771,8 +771,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#charin-strin" class="md-nav__link">
-    charIn(), strIn()
+  <a href="#charin" class="md-nav__link">
+    charIn()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strin" class="md-nav__link">
+    strIn()
   </a>
   
 </li>
@@ -1062,8 +1069,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#charin-strin" class="md-nav__link">
-    charIn(), strIn()
+  <a href="#charin" class="md-nav__link">
+    charIn()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strin" class="md-nav__link">
+    strIn()
   </a>
   
 </li>
@@ -1138,6 +1152,16 @@
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is lhs in rhs ?</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is lhs in rhs ?</span>
 
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is lhs in rhs ?</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is lhs in rhs ?</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is lhs in rhs ?</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is lhs in rhs ?</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn_all</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is all lhs char(s) in rhs ?</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn_all</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is all lhs char(s) in rhs ?</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn_all</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is all lhs char(s) in rhs ?</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">charIn_all</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// Is all lhs char(s) in rhs ?</span>
+
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// is lhs in rhs ? (is rhs include lhs ?)</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
@@ -1188,6 +1212,10 @@
 <tr>
 <td>charIn()</td>
 <td>A function that judges whether a particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します．</td>
+</tr>
+<tr>
+<td>charIn_all()</td>
+<td>A function that judges whether all of particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を全て内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します．</td>
 </tr>
 <tr>
 <td>strIn()</td>
@@ -1379,24 +1407,37 @@ sstd::isAlphabet_lower(std::string(&quot;abcdeABCDE&quot;)) = false
 sstd::isAlphabet_lower(std::string(&quot;abcdefghij&quot;)) = true
 </code></pre></div></li>
 </ul>
-<h3 id="charin-strin">charIn(), strIn()</h3>
+<h3 id="charin">charIn()</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">charIn</span><span class="p">(</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdef&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">charIn</span><span class="p">(</span><span class="sc">&#39;x&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdef&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">charIn</span><span class="p">(</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdef&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// &#39;c&#39; exists in &quot;abcdef&quot;.</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">charIn</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdef&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// &#39;a&#39;, &#39;b&#39; or &#39;c&#39; exist in &quot;abcdef&quot;.</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">charIn_all</span><span class="p">(</span><span class="s">&quot;abx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdef&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// &#39;x&#39; dose not exist in &quot;abcdef&quot;.</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">charIn_all</span><span class="p">(</span><span class="s">&quot;cba&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdef&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// &#39;a&#39;, &#39;b&#39; and &#39;c&#39; exist in &quot;abcdef&quot;.</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::charIn(&#39;c&#39;, &quot;abcdef&quot;) = true
+sstd::charIn(&quot;abc&quot;, &quot;abcdef&quot;) = true
+sstd::charIn_all(&quot;abx&quot;, &quot;abcdef&quot;) = false
+sstd::charIn_all(&quot;cba&quot;, &quot;abcdef&quot;) = true
+</code></pre></div></li>
+</ul>
+<h3 id="strin">strIn()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
 
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">strIn</span><span class="p">(</span><span class="s">&quot;def&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdefgh&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">strIn</span><span class="p">(</span><span class="s">&quot;defx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abcdefgh&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>sstd::charIn(&#39;c&#39;, &quot;abcdef&quot;) = true
-sstd::charIn(&#39;x&#39;, &quot;abcdef&quot;) = false
-
-sstd::strIn(&quot;def&quot;, &quot;abcdefgh&quot;) = true
+<div class="highlight"><pre><span></span><code>sstd::strIn(&quot;def&quot;, &quot;abcdefgh&quot;) = true
 sstd::strIn(&quot;defx&quot;, &quot;abcdefgh&quot;) = false
 </code></pre></div></li>
 </ul>
