@@ -144,6 +144,7 @@ namespace sstd{
     template<typename T> uint argnearest_up  (const std::vector<T>& v, const T& value);
     
     //-----------------------------------------------------------------------------------------------------------------------------------------------
+    // sort
     
     template <typename T> inline void           sort     (      std::vector<T>&  rhs   ){                            std::sort(rhs.begin(), rhs.end());             }                    // Ascending: 昇順: 0, 1, 2, ...
     template <typename T> inline std::vector<T> sorted   (const std::vector<T>&  rhs_in){ std::vector<T> rhs=rhs_in; std::sort(rhs.begin(), rhs.end()); return rhs; }                    // Ascending: 昇順: 0, 1, 2, ...
@@ -153,6 +154,12 @@ namespace sstd{
     template <typename T> inline std::vector<T> sorted_gr(      std::vector<T>&& rhs   ){                            std::sort(rhs.begin(), rhs.end(), std::greater<T>()); return rhs; } // Descending: 降順: 9, 8, 7, ...
     
     //-----------------------------------------------------------------------------------------------------------------------------------------------
+    // sort for multiple vector
+    
+    template<typename Head, typename... Tail> inline void sort   (Head&& head, Tail&&... tail); // Ascending: 昇順: 0, 1, 2, ...
+    template<typename Head, typename... Tail> inline void sort_gr(Head&& head, Tail&&... tail); // Descending: 降順: 9, 8, 7, ...
+    
+    //-----------------------------------------------------------------------------------------------------------------------------------------------
     
     template <typename T> std::vector<T> nonzero(const std::vector<T>& rhs);
 //  template <typename T> void padding (std::vector<T>& vecLhs, std::vector<T>& vecRhs); // <--> sstd::suppress();
@@ -160,6 +167,66 @@ namespace sstd{
     template <typename... Args> void suppress(Args&... args);
 }
 ```
+
+## Description
+### Numerical calculation
+| Function name | Description |
+| ------------- | ----------- |
+| round2even()  | <br> |
+| round2odd()  | <br> |
+| sum()  | <br> |
+| sum_abs()  | <br> |
+| ave()  | <br> |
+| med()  | <br> |
+| var()  | <br> |
+| var_p()  | <br> |
+| stdev()  | <br> |
+| stdev_p()  | <br> |
+| sumK()  | <br> |
+| sumK_abs()  | <br> |
+| aveK()  | <br> |
+| varK()  | <br> |
+| varK_p()  | <br> |
+| stdevK()  | <br> |
+| stdevK_p()  | <br> |
+| pow()  | <br> |
+
+### prime number calculation
+| Function name | Description |
+| ------------- | ----------- |
+| prime()  | <br> |
+| factor()  | <br> |
+| divisor()  | <br> |
+
+### search
+| Function name | Description |
+| ------------- | ----------- |
+| min()  | <br> |
+| min_abs()  | <br> |
+| max()  | <br> |
+| max_abs()  | <br> |
+| argmin()  | <br> |
+| argmin_abs()  | <br> |
+| argmax()  | <br> |
+| argmax_abs()  | <br> |
+| nearest_down()  | <br> |
+| nearest_up()  | <br> |
+| argnearest_down()  | <br> |
+| argnearest_up()  | <br> |
+
+### sort
+| Function name | Description |
+| ------------- | ----------- |
+| sort()        | sorts arg(s) value directly in ascending order. When multiple `std::vector<T>`s are specified to arg, all `std::vector<T>`s will be sorted according to the 1st arg. There is no limit to the number or type of `std::vector<T>` specified in the argument.<br>引数の値を直接ソートする．値は昇順にソートされる．引数に `std::vector<T>` が複数与えられた場合は，第１引数の順序に従って他の引数をソートする．引数に指定する `std::vector<T>` の数や型に制限はない． |
+| sorted()      | returns sorted value of arg(s) in ascending order, and arg(s) will not changed.<br>ソート結果を昇順で返す．引数は変更されない． |
+| sort_gr()     | sorts arg(s) value directly in descending order. When multiple `std::vector<T>`s are specified to arg, all `std::vector<T>`s will be sorted according to the 1st arg. There is no limit to the number or type of `std::vector<T>` specified in the argument.<br>引数の値を直接ソートする．値は降順にソートされる．引数に `std::vector<T>` が複数与えられた場合は，第１引数の順序に従って他の引数をソートする．引数に指定する `std::vector<T>` の数や型に制限はない． |
+| sorted_gr()   | returns sorted value of arg(s) in descending order, and arg(s) will not changed.<br>ソート結果を降順で返す．引数は変更されない． |
+
+### preprocess
+| Function name | Description |
+| ------------- | ----------- |
+| nonzero()  | <br> |
+| suppress()  | <br> |
 
 
 ## Usage
@@ -241,6 +308,80 @@ int main(){
 
 
 ### Sorting
+#### sort(), sort_gr()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<double> v_base = {-1,-5,2,-3,3,4,-2,0,1,-4};
+
+    sstd::sort(v_base);
+    sstd::printn(v_base);
+    
+    sstd::sort_gr(v_base);
+    sstd::printn(v_base);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+#### sort() for multiple vector
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<int>         v1_sorting_seed = {1, 3, 5, 2, 4};
+    std::vector<std::string> v2              = {"one", "three", "five", "two", "four"};
+    std::vector<std::string> v3              = {"1", "3", "5", "2", "4"};
+    std::vector<std::string> v4              = {"a", "c", "e", "b", "d"};
+    std::vector<std::string> v5              = {"A", "C", "E", "B", "D"};
+    
+    sstd::sort(v1_sorting_seed, v2, v3, v4, v5);
+
+    sstd::printn(v1_sorting_seed);
+    sstd::printn(v2);
+    sstd::printn(v3);
+    sstd::printn(v4);
+    sstd::printn(v5);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+#### sort_gr() for multiple vector
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    std::vector<int>         v1_sorting_seed = {1, 3, 5, 2, 4};
+    std::vector<std::string> v2              = {"one", "three", "five", "two", "four"};
+    std::vector<std::string> v3              = {"1", "3", "5", "2", "4"};
+    std::vector<std::string> v4              = {"a", "c", "e", "b", "d"};
+    std::vector<std::string> v5              = {"A", "C", "E", "B", "D"};
+    
+    sstd::sort_gr(v1_sorting_seed, v2, v3, v4, v5);
+
+    sstd::printn(v1_sorting_seed);
+    sstd::printn(v2);
+    sstd::printn(v3);
+    sstd::printn(v4);
+    sstd::printn(v5);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### sorted(), sorted_gr()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -253,13 +394,7 @@ int main(){
     sstd::printn( sstd::sorted_gr( v_base ) );
     printf("\n");
     
-    std::vector<double> v = v_base;
-    sstd::sort( v );
-    sstd::printn( v );
-    
-    std::vector<double> v_gr = v_base;
-    sstd::sort_gr( v_gr );
-    sstd::printn( v_gr );
+    sstd::printn( v_base );
 }
 ```
 - <u>**Execution result**</u>
