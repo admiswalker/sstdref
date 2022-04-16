@@ -201,18 +201,18 @@ namespace sstd{
 ### search
 | Function name | Description |
 | ------------- | ----------- |
-| min()  | <br> |
-| min_abs()  | <br> |
-| max()  | <br> |
-| max_abs()  | <br> |
-| argmin()  | <br> |
+| min()         | returns minimum value of given arg(s). min() can specifies multiple args while args have the same type and is defined < operator.<br>与えられた値の内，最も小さい値を返します．同一型で operator < が定義されている型であれば，複数の引数を指定できます． |
+| min_abs()     | <br> |
+| max()         | returns minimum value of given arg(s). min() can specifies multiple args while args have the same type and is defined < operator.<br>与えられた値の内，最も大きい値を返します．同一型で operator < が定義されている型であれば，複数の引数を指定できます． |
+| max_abs()     | <br> |
+| argmin()      | <br> |
 | argmin_abs()  | <br> |
-| argmax()  | <br> |
+| argmax()      | <br> |
 | argmax_abs()  | <br> |
-| nearest_down()  | <br> |
+| nearest_down()    | <br> |
 | nearest_up()  | <br> |
-| argnearest_down()  | <br> |
-| argnearest_up()  | <br> |
+| argnearest_down() | <br> |
+| argnearest_up()   | <br> |
 
 ### sort
 | Function name | Description |
@@ -251,6 +251,7 @@ int main(){
 
 
 ### Statistical processing
+#### sum(), sum_abs(), ave(), med(), var(), var_p(), min(), min_abs(), max(), max_abs(), argmin(), argmin_abs(), argmax() and argmax_abs()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -278,6 +279,21 @@ int main(){
     sstd::printn( sstd::argmin_abs( v ) );
     sstd::printn( sstd::argmax( v ) );
     sstd::printn( sstd::argmax_abs( v ) );
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+#### min() and max() for equal or more than three args
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::printn( sstd::min(-5,-4,-3,-2,-1,0,1,2,3,4) );
+    sstd::printn( sstd::max(-5,-4,-3,-2,-1,0,1,2,3,4) );
 }
 ```
 - <u>**Execution result**</u>
