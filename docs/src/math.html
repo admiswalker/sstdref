@@ -577,6 +577,26 @@
     Statistical processing
   </a>
   
+    <nav class="md-nav" aria-label="Statistical processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sum-sum_abs-ave-med-var-var_p-min-min_abs-max-max_abs-argmin-argmin_abs-argmax-and-argmax_abs" class="md-nav__link">
+    sum(), sum_abs(), ave(), med(), var(), var_p(), min(), min_abs(), max(), max_abs(), argmin(), argmin_abs(), argmax() and argmax_abs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-and-max-for-equal-or-more-than-three-args" class="md-nav__link">
+    min() and max() for equal or more than three args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1117,6 +1137,26 @@
     Statistical processing
   </a>
   
+    <nav class="md-nav" aria-label="Statistical processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sum-sum_abs-ave-med-var-var_p-min-min_abs-max-max_abs-argmin-argmin_abs-argmax-and-argmax_abs" class="md-nav__link">
+    sum(), sum_abs(), ave(), med(), var(), var_p(), min(), min_abs(), max(), max_abs(), argmin(), argmin_abs(), argmax() and argmax_abs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-and-max-for-equal-or-more-than-three-args" class="md-nav__link">
+    min() and max() for equal or more than three args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1484,7 +1524,7 @@
 <tbody>
 <tr>
 <td>min()</td>
-<td><br></td>
+<td>returns minimum value of given arg(s). min() can specifies multiple args while args have the same type and is defined &lt; operator.<br>与えられた値の内，最も小さい値を返します．同一型で operator &lt; が定義されている型であれば，複数の引数を指定できます．</td>
 </tr>
 <tr>
 <td>min_abs()</td>
@@ -1492,7 +1532,7 @@
 </tr>
 <tr>
 <td>max()</td>
-<td><br></td>
+<td>returns minimum value of given arg(s). min() can specifies multiple args while args have the same type and is defined &lt; operator.<br>与えられた値の内，最も大きい値を返します．同一型で operator &lt; が定義されている型であれば，複数の引数を指定できます．</td>
 </tr>
 <tr>
 <td>max_abs()</td>
@@ -1600,6 +1640,7 @@ sstd::round2odd(2.5) = 3.
 </code></pre></div></li>
 </ul>
 <h3 id="statistical-processing">Statistical processing</h3>
+<h4 id="sum-sum_abs-ave-med-var-var_p-min-min_abs-max-max_abs-argmin-argmin_abs-argmax-and-argmax_abs">sum(), sum_abs(), ave(), med(), var(), var_p(), min(), min_abs(), max(), max_abs(), argmin(), argmin_abs(), argmax() and argmax_abs()</h4>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
@@ -1647,6 +1688,21 @@ sstd::argmin( v ) = 0
 sstd::argmin_abs( v ) = 5
 sstd::argmax( v ) = 9
 sstd::argmax_abs( v ) = 0
+</code></pre></div></li>
+</ul>
+<h4 id="min-and-max-for-equal-or-more-than-three-args">min() and max() for equal or more than three args</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="mi">-5</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="mi">-5</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::min(-5,-4,-3,-2,-1,0,1,2,3,4) = -5
+sstd::max(-5,-4,-3,-2,-1,0,1,2,3,4) = 4
 </code></pre></div></li>
 </ul>
 <h3 id="searching">Searching</h3>
