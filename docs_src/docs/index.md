@@ -28,9 +28,8 @@ title: What is SSTD ?
 
 # What is SSTD ?
 <div style="margin-top:-30px;"></div>
-SubStandardLibrary (SSTD) is a convenient function set for C++, works on Ubuntu OS with GCC (g++).  
-SubStandardLibrary (SSTD) は，C++ 向けの便利な関数セットです．OS は Ubuntu，コンパイラ環境は GCC (g++) を想定しています．
-
+SubStandardLibrary (SSTD) is a convenient functions-set for the C++ which the author wished that the standard library has these convenient functions. This library works on the GCC (g++) on the Ubuntu OS.  
+SubStandardLibrary (SSTD) は，著者が標準ライブラリにあって欲しかったと思う便利な関数群を収録した C++ 向けのライブラリです．Ubuntu OS 上の GCC (g++) で動作します．
 
 
 ## Installation
