@@ -8,31 +8,32 @@ Functions compatible with the hashSum commands.
 namespace sstd{
     std::string vecUint8_to_hexString(const std::vector<uint8>& hash);
     
-    bool md5sum   (std::string& ret, const char*        pPath);
-    bool sha1sum  (std::string& ret, const char*        pPath);
-    bool sha224sum(std::string& ret, const char*        pPath);
-    bool sha256sum(std::string& ret, const char*        pPath);
-    bool sha384sum(std::string& ret, const char*        pPath);
-    bool sha512sum(std::string& ret, const char*        pPath);
+    std::string md5sum   (const char*        pPath);
+    std::string sha1sum  (const char*        pPath);
+    std::string sha224sum(const char*        pPath);
+    std::string sha256sum(const char*        pPath);
+    std::string sha384sum(const char*        pPath);
+    std::string sha512sum(const char*        pPath);
     
-    bool md5sum   (std::string& ret, const std::string&  path);
-    bool sha1sum  (std::string& ret, const std::string&  path);
-    bool sha224sum(std::string& ret, const std::string&  path);
-    bool sha256sum(std::string& ret, const std::string&  path);
-    bool sha384sum(std::string& ret, const std::string&  path);
-    bool sha512sum(std::string& ret, const std::string&  path);
+    std::string md5sum   (const std::string&  path);
+    std::string sha1sum  (const std::string&  path);
+    std::string sha224sum(const std::string&  path);
+    std::string sha256sum(const std::string&  path);
+    std::string sha384sum(const std::string&  path);
+    std::string sha512sum(const std::string&  path);
 }
 ```
 
 ## Description
 | Function name | Description |
 | ------------- | ----------- |
-| md5sum()      |  |
-| sha1sum()     |  |
-| sha224sum()   |  |
-| sha256sum()   |  |
-| sha384sum()   |  |
-| sha512sum()   |  |
+| vecUint8_to_hexString() | converts the input binary to to a hexadecimal string.<br>入力されたバイナリを，16 進数表記の文字列に変換します． |
+| md5sum()      | returns the result of md5sum calculation as a string. And returns 0 length std::string object when the md5sum() function failed.<br>md5sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します． |
+| sha1sum()     | returns the result of sha1sum calculation as a string. And returns 0 length std::string object when the sha1sum() function failed.<br>sha1sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します． |
+| sha224sum()   | returns the result of sha224sum calculation as a string. And returns 0 length std::string object when the sha224sum() function failed.<br>sha224sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します． |
+| sha256sum()   | returns the result of sha256sum calculation as a string. And returns 0 length std::string object when the sha256sum() function failed.<br>sha256sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します． |
+| sha384sum()   | returns the result of sha384sum calculation as a string. And returns 0 length std::string object when the sha384sum() function failed.<br>sha384sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します． |
+| sha512sum()   | returns the result of sha512sum calculation as a string. And returns 0 length std::string object when the sha512sum() function failed.<br>sha512sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します． |
 
 
 ## Usage
@@ -45,12 +46,10 @@ int main(){
     sstd::mkdir("./tmp");
     sstd::system("head -c 5m /dev/urandom > ./tmp/rand.bin"); // generate 5 MB random file
     
-    bool tf; std::string s; tf = sstd::sha256sum(s, "./tmp/rand.bin");
-    sstd::printn( tf );
-    sstd::printn( s );
+    sstd::printn( sstd::sha256sum("./tmp/rand.bin") );
+    
     printf("\n");
     fflush(stdout);
-    
     sstd::system("sha256sum ./tmp/rand.bin");
     sstd::rm("./tmp");
 }
