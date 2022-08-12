@@ -1001,19 +1001,19 @@
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">vecUint8_to_hexString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">uint8</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">hash</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">md5sum</span><span class="w">   </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha1sum</span><span class="w">  </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha224sum</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha256sum</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha384sum</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha512sum</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">md5sum</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha1sum</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha224sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha256sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha384sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha512sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">md5sum</span><span class="w">   </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha1sum</span><span class="w">  </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha224sum</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha256sum</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha384sum</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">sha512sum</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">md5sum</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha1sum</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha224sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha256sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha384sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">sha512sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w">  </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="description">Description</h2>
@@ -1026,28 +1026,32 @@
 </thead>
 <tbody>
 <tr>
+<td>vecUint8_to_hexString()</td>
+<td>converts the input binary to to a hexadecimal string.<br>入力されたバイナリを，16 進数表記の文字列に変換します．</td>
+</tr>
+<tr>
 <td>md5sum()</td>
-<td></td>
+<td>returns the result of md5sum calculation as a string. And returns 0 length std::string object when the md5sum() function failed.<br>md5sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します．</td>
 </tr>
 <tr>
 <td>sha1sum()</td>
-<td></td>
+<td>returns the result of sha1sum calculation as a string. And returns 0 length std::string object when the sha1sum() function failed.<br>sha1sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します．</td>
 </tr>
 <tr>
 <td>sha224sum()</td>
-<td></td>
+<td>returns the result of sha224sum calculation as a string. And returns 0 length std::string object when the sha224sum() function failed.<br>sha224sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します．</td>
 </tr>
 <tr>
 <td>sha256sum()</td>
-<td></td>
+<td>returns the result of sha256sum calculation as a string. And returns 0 length std::string object when the sha256sum() function failed.<br>sha256sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します．</td>
 </tr>
 <tr>
 <td>sha384sum()</td>
-<td></td>
+<td>returns the result of sha384sum calculation as a string. And returns 0 length std::string object when the sha384sum() function failed.<br>sha384sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します．</td>
 </tr>
 <tr>
 <td>sha512sum()</td>
-<td></td>
+<td>returns the result of sha512sum calculation as a string. And returns 0 length std::string object when the sha512sum() function failed.<br>sha512sum の計算結果を文字列で返します．関数が失敗した場合は，長さ 0 の std::string オブジェクトを返却します．</td>
 </tr>
 </tbody>
 </table>
@@ -1060,21 +1064,18 @@
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;head -c 5m /dev/urandom &gt; ./tmp/rand.bin&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// generate 5 MB random file</span>
 
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">tf</span><span class="p">;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"> </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">sha256sum</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp/rand.bin&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">tf</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">sha256sum</span><span class="p">(</span><span class="s">&quot;./tmp/rand.bin&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span><span class="w"></span>
-
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;sha256sum ./tmp/rand.bin&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">rm</span><span class="p">(</span><span class="s">&quot;./tmp&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>tf = true
-s = &quot;b0e36d948ad86cd7431afcaf53c1dbd034536bdac75ce57f082d08d5e4bb28de&quot;
+<div class="highlight"><pre><span></span><code>sstd::sha256sum(&quot;./tmp/rand.bin&quot;) = &quot;01a9fc1a87df9791cfca8204ef4cc6bd39ad3a0cb8748fbd81db9a1041a013e4&quot;
 
-b0e36d948ad86cd7431afcaf53c1dbd034536bdac75ce57f082d08d5e4bb28de  ./tmp/rand.bin
+01a9fc1a87df9791cfca8204ef4cc6bd39ad3a0cb8748fbd81db9a1041a013e4  ./tmp/rand.bin
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
