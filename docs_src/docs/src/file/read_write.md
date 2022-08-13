@@ -6,6 +6,8 @@ Functions for reading and writing files.
 ## Header file
 ```cpp
 namespace sstd{
+    bool read_bin(std::vector<uint8>& ret, const char*        path);
+    bool read_bin(std::vector<uint8>& ret, const std::string& path);
     std::vector<uint8> read_bin(const char*        path);
     std::vector<uint8> read_bin(const std::string& path);
     
