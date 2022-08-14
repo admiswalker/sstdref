@@ -6,7 +6,8 @@ RUN set -ex \
   && apk add --no-cache \
     gcc \
     g++ \
-    make
+    make \
+    tree
 
 RUN set -ex \
   && pip install -r requirements.txt
