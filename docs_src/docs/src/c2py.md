@@ -1,6 +1,6 @@
 # c2py
 ## Abstract
-`c2py()` calls any Python functions with built-in, `std::vector<T>`, `sstd::mat_c<T>` and `sstd::mat_r<T>` (`T` is limitted by built-in types.) types of arguments from 2 lines of C++ codes.  
+`c2py()` calls any Python functions with built-in, `std::vector<T>`, `sstd::mat_c<T>` and `sstd::mat_r<T>` (`T` is limited by built-in types.) types of arguments from 2 lines of C++ codes.  
 Data is sharing by the `tmp` directory.
 
 `c2py()` は built-in 型，`std::vector<T>` 型, `sstd::mat_c<T>` 型，および `sstd::mat_r<T>` 型 (ただし，`T` は built-in 型に制限される．) を引数に持つ Python 関数を 2 行の C++ コードで呼び出します．

@@ -1,7 +1,7 @@
 # csv
 ## Abstract
 - `csv2vvec()`  
-  Parseing CSV file to `std::vector<std::vector<std::string>>`.  
+  Parsing CSV file to `std::vector<std::vector<std::string>>`.  
   CSV ファイルをパースして `std::vector<std::vector<std::string>>` に変換します.
 
 - `vvec2csv()`  

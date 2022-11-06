@@ -1,6 +1,6 @@
 # mv
 ## Abstract
-Funtion to move file and directory
+Function to move file and directory
 
 ## Header file
 ```cpp
@@ -27,9 +27,9 @@ namespace sstd{
 int main(){
     sstd::mkdir("./tmp/01");
     sstd::mkdir("./tmp/02");
-    sstd::system("touch ./tmp/01/exmaple.txt");
+    sstd::system("touch ./tmp/01/example.txt");
     
-    sstd::mv("./tmp/01/exmaple.txt", "./tmp/02/exmaple.txt");
+    sstd::mv("./tmp/01/example.txt", "./tmp/02/example.txt");
     
     printf("./tmp/01: \n    "); fflush(stdout); sstd::system("ls ./tmp/01"); printf("\n");
     printf("./tmp/02: \n    "); fflush(stdout); sstd::system("ls ./tmp/02");
@@ -50,9 +50,9 @@ int main(){
 int main(){
     sstd::mkdir("./tmp/01");
     sstd::mkdir("./tmp/02");
-    sstd::system("touch ./tmp/01/exmaple.txt");
+    sstd::system("touch ./tmp/01/example.txt");
     
-    sstd::mv("./tmp/01/exmaple.txt", "./tmp/02");
+    sstd::mv("./tmp/01/example.txt", "./tmp/02");
     
     printf("./tmp/01: \n    "); fflush(stdout); sstd::system("ls ./tmp/01"); printf("\n");
     printf("./tmp/02: \n    "); fflush(stdout); sstd::system("ls ./tmp/02");
@@ -73,7 +73,7 @@ int main(){
 int main(){
     sstd::mkdir("./tmp/01");
     sstd::mkdir("./tmp/02");
-    sstd::system("touch ./tmp/01/exmaple.txt");
+    sstd::system("touch ./tmp/01/example.txt");
     
     sstd::mv("./tmp/01", "./tmp/02");
     

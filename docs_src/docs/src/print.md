@@ -11,7 +11,7 @@
 | `print()`              | print values of variable. <br>変数の値を出力します． |
 | `printn()`             | print values of variable with variable name. <br>変数の値を，変数名を付与して出力します． |
 | `printn_all()`         | print values of variable with variable name, function name and function line number. <br>変数の値を，変数名と関数名，関数の行番号を付与して出力します． |
-| `printn_fflv()`        | print values of variable with variable name, function name, function line number, path to the function and implimented file name. <br>変数の値を，変数名と関数名，関数の行番号，実装のファイルのファイル名とパス，を付与して出力します． |
+| `printn_fflv()`        | print values of variable with variable name, function name, function line number, path to the function and implemented file name. <br>変数の値を，変数名と関数名，関数の行番号，実装のファイルのファイル名とパス，を付与して出力します． |
 
 
 ## Header file

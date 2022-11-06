@@ -47,7 +47,7 @@ namespace sstd{
 | Function name | Description |
 | --- | --- |
 | splitByLine() | split the string with a line feed code.<br/>文字列を改行コードごとに分割します． |
-| split() | split the string by a charactor of arg 2.<br/>第 2 引数の文字で文字列を分割します． |
+| split() | split the string by a character of arg 2.<br/>第 2 引数の文字で文字列を分割します． |
 
 ### Remove spaces and tabs / 空白 (半角スペース) とタブ文字の除去
 
@@ -59,8 +59,8 @@ namespace sstd{
 | rstrip_ow() | remove tail spaces and tabs. `_ow` means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
 | strip()     | remove head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します． |
 | strip_ow()  | remove head and tail spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
-| stripAll()    | remove all types of charactors in arg 2.<br/>第 2 引数にある全ての種類の文字を除去します． |
-| stripAll_ow() | remove all types of charactors in arg 2. `_ow` means overwrite.<br/>第 2 引数にある全ての種類の文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+| stripAll()    | remove all types of characters in arg 2.<br/>第 2 引数にある全ての種類の文字を除去します． |
+| stripAll_ow() | remove all types of characters in arg 2. `_ow` means overwrite.<br/>第 2 引数にある全ての種類の文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
 
 ## Usage
 ### splitByLine()

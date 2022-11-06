@@ -48,7 +48,7 @@ namespace sstd{
 | getDirName_end_idx_owWC() | A function to get a ending index number of the nearest directory name from file name without wildcard when a string of 1st arg which is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br> |
 | getFileName()                  | A function to get a file name when a string of 1st arg is consisted of a path and a file name.<br> |
 | getFileName_withoutExtension() | A function to get a file name without file extension when a string of 1st arg is consisted of a path and a file name.<br> |
-| getExtension()                 | A function to get a file extension. When a string of 1st arg does not have a file extention, 0 length string is returned.<br> |
+| getExtension()                 | A function to get a file extension. When a string of 1st arg does not have a file extension, 0 length string is returned.<br> |
 | parsePath()          | A function to parse a path by `/` or `\\`.<br> |
 | parsePath_withBase() | A function to parse a path by `/` or `\\` and return with the base path from the 1st arg.<br> |
 | isFile()      | Exactory same as the `fileExist()`<br> |

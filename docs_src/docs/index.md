@@ -35,7 +35,7 @@ SubStandardLibrary (SSTD) は，著者が標準ライブラリにあって欲し
 ## Installation
 1. Downloading source code from [github.com/admiswalker/SubStandardLibrary](https://github.com/admiswalker/SubStandardLibrary).  
    ソースコードを [github.com/admiswalker/SubStandardLibrary](https://github.com/admiswalker/SubStandardLibrary) からダウンロードします．
-2. Copying the `./sstd` directory to the project direcotry  
+2. Copying the `./sstd` directory to the project directory  
    `./sstd` ディレクトリを対象のプロジェクトディレクトリ下へコピーします．
 3. Compilling the sstd according to the commands below.  
    下記のコマンドに従い sstd をコンパイルします．

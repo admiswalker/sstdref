@@ -1,6 +1,6 @@
 # strmatch
 ## Abstract
-`strmatch.hpp` contains string comparision functions.  
+`strmatch.hpp` contains string comparison functions.  
 `strmatch.hpp` は文字列比較関数を収録しています．
 
 ## Header file
@@ -66,7 +66,7 @@ namespace sstd{
 | Function name | Description |
 | ------------- | ----------- |
 | strcmp()      | A function that compares whether two input strings exactly the same or not. When two arguments of strings are exactly the same, true is returned. Otherwise false is returned.<br/>2 つの入力引数が完全に一致するかどうか判定する関数．2 つの入力引数が完全に一致する場合は，true を，それ以外は false を返します． |
-| strmatch()    | A function that judges whether a string and a string using wildcard are considered equivalent or not. When a string of 1st argument and a string of the 2nd argument can use wildcard considered equivalent, true is returned. Otherwise false is returned. Charactors of `*` or `?` can use as wildcards.<br/>文字列とワイルドカード付き文字列が等価と見なせるか判定する関数．第一引数の文字列と，ワイルドカードを使える第二引数の文字列が等価と見なせる場合は，true を，それ以外は false を返します．また，wildcard には，`*` と `?` を使うことができます． |
+| strmatch()    | A function that judges whether a string and a string using wildcard are considered equivalent or not. When a string of 1st argument and a string of the 2nd argument can use wildcard considered equivalent, true is returned. Otherwise false is returned. Characters of `*` or `?` can use as wildcards.<br/>文字列とワイルドカード付き文字列が等価と見なせるか判定する関数．第一引数の文字列と，ワイルドカードを使える第二引数の文字列が等価と見なせる場合は，true を，それ以外は false を返します．また，wildcard には，`*` と `?` を使うことができます． |
 | strmatch_getWC() | A function to get a substring indicated by a wildcard. The 3rd argument will return the substring of the 1st argument that matches for the wildcard (`*` or `?`) of the 2nd argument. The other handlings work the same as `strmatch()`.<br/>ワイルドカードが示す部分文字列を取得する関数．第三引数は，第一引数の文字列の内，第二引数の wildcard (`*` または `?`) と一致する部分を返却します．それ以外は，`strmatch()` と同様に動作します． |
 | pathmatch()   | A function that judges whether a path string and a path string using wildcard are considered equivalent or not. The splitter string (`/` or `\\`) cannot be excluded with wildcards. The other handlings work the same as `strmatch()`.<br/>パスの比較用関数．スプリッタとなる文字列 (`/` または `\\`) が wildcard による除外を受付ません．それ以外は，`strmatch()` と同様に動作します． |
 | isNum()       | A function that judges whether a whole string is configured by numerical string or not. When all the character or string of the 1st argument is in the range of `0` to `9` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が数値で構成されているか判定する関数．第一引数に渡される全ての文字または文字列が ASCII Code での `0` ~ `9` の範囲にある場合は，true を，それ以外は false を返します． |
