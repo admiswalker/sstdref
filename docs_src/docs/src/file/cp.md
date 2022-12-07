@@ -1,6 +1,6 @@
 # cp
 ## Abstract
-Functions to copy files and direcotries
+Functions to copy files and directories
 
 ## Header file
 ```cpp

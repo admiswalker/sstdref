@@ -1,6 +1,6 @@
 # math
 ## Abstract
-`math.hpp` contains functions for mathmatical and statistical calculations.  
+`math.hpp` contains functions for mathematical and statistical calculations.  
 `math.hpp` は数学・統計計算用の関数を収録します．
 
 ## Header file
