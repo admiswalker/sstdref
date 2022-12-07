@@ -1049,7 +1049,7 @@
                 
                 <h1 id="mv">mv</h1>
 <h2 id="abstract">Abstract</h2>
-<p>Funtion to move file and directory</p>
+<p>Function to move file and directory</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">mv</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">pPath_dst</span><span class="p">);</span><span class="w"></span>
@@ -1082,9 +1082,9 @@
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/01&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/02&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/01/exmaple.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/01/example.txt&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mv</span><span class="p">(</span><span class="s">&quot;./tmp/01/exmaple.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp/02/exmaple.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mv</span><span class="p">(</span><span class="s">&quot;./tmp/01/example.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp/02/example.txt&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;./tmp/01: </span><span class="se">\n</span><span class="s">    &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmp/01&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;./tmp/02: </span><span class="se">\n</span><span class="s">    &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmp/02&quot;</span><span class="p">);</span><span class="w"></span>
@@ -1095,7 +1095,7 @@
 <div class="highlight"><pre><span></span><code>./tmp/01: 
 
 ./tmp/02: 
-    exmaple.txt
+    example.txt
 </code></pre></div></li>
 </ul>
 <h3 id="move-file-to-directory">move file to directory</h3>
@@ -1106,9 +1106,9 @@
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/01&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/02&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/01/exmaple.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/01/example.txt&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mv</span><span class="p">(</span><span class="s">&quot;./tmp/01/exmaple.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp/02&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mv</span><span class="p">(</span><span class="s">&quot;./tmp/01/example.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp/02&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;./tmp/01: </span><span class="se">\n</span><span class="s">    &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmp/01&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;./tmp/02: </span><span class="se">\n</span><span class="s">    &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls ./tmp/02&quot;</span><span class="p">);</span><span class="w"></span>
@@ -1119,7 +1119,7 @@
 <div class="highlight"><pre><span></span><code>./tmp/01: 
 
 ./tmp/02: 
-    exmaple.txt
+    example.txt
 </code></pre></div></li>
 </ul>
 <h3 id="move-directory-to-directory">move directory to directory</h3>
@@ -1130,7 +1130,7 @@
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/01&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;./tmp/02&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/01/exmaple.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;touch ./tmp/01/example.txt&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">mv</span><span class="p">(</span><span class="s">&quot;./tmp/01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./tmp/02&quot;</span><span class="p">);</span><span class="w"></span>
 
