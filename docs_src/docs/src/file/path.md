@@ -6,21 +6,22 @@
 ## Header file
 ```cpp
 namespace sstd{
-    std::string  getPath                     (const char* pPath);
-    std::string  getPath_woWC                (const char* pPath); // _woWC: without wildcard
+    std::string  path2basePath            (const char* pPath);
+    std::string  path2basePath_woWC       (const char* pPath); // _woWC: without wild card
     
-    std::string  getDirName                  (const char* pPath);
-    uint         getDirName_begin_idx        (const char* pPath);
-    uint         getDirName_end_idx          (const char* pPath);
-    uint         getDirName_end_idx_woWC     (const char* pPath); // _woWC: without wildcard
+    std::string  path2dirName             (const char* pPath);
+    uint         path2dirName_begin_idx   (const char* pPath);
+    uint         path2dirName_end_idx     (const char* pPath);
+    uint         path2dirName_end_idx_woWC(const char* pPath); // _woWC: without wild card
     
-           char* getFileName                 (const char* pPath);
-    std::string  getFileName_withoutExtension(const char* pPath);
+           char* path2fileName            (const        char* pPath);
+    std::string  path2fileName            (const std::string&  path);
+    std::string  path2fileName_woExt      (const        char* pPath);
+           char* path2fileExt             (const        char* pPath);
+    std::string  path2fileExt             (const std::string&  path);
     
-           char* getExtension                (const char* pPath);
-
-    std::vector<std::string> parsePath         (const char* pPath);
-    std::vector<std::string> parsePath_withBase(const char* pPath);
+    std::vector<std::string> parsePath          (const char* pPath);
+    std::vector<std::string> parsePath_wBasePath(const char* pPath); // _wBasePath: with base path
     
     bool isFile(const char*        pPath);
     bool isFile(const std::string&  path);
@@ -34,23 +35,46 @@ namespace sstd{
     bool pathExist(const char*        pPath);
     bool pathExist(const std::string&  path);
 }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+// Below functions are the not recommended to use. (Below functions will be delete on sstd ver 3.x.x).
+
+namespace sstd{
+    
+    std::string  getPath                     (const char* pPath); // new name: path2basePath()
+    std::string  getPath_woWC                (const char* pPath); // new name: path2basePath_woWC()
+    
+    std::string  getDirName                  (const char* pPath); // new name: path2dirName()
+    uint         getDirName_begin_idx        (const char* pPath); // new name: path2dirName_begin_idx()
+    uint         getDirName_end_idx          (const char* pPath); // new name: path2dirName_end_idx()
+    uint         getDirName_end_idx_woWC     (const char* pPath); // new name: path2dirName_end_idx_woWC()
+    
+           char* getFileName                 (const char* pPath); // new name: path2fileName()
+    std::string  getFileName_withoutExtension(const char* pPath); // new name: path2fileName_woExt()
+    
+           char* getExtension                (const char* pPath); // new name: path2fileExt()
+    
+    std::vector<std::string> parsePath_withBase(const char* pPath); // new name: parsePath_wBasePath()
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------
 ```
 
 
 ## Description
 | Function name | Description |
 | ------------- | ----------- |
-| getPath()      | A function to get a path when a string of 1st arg is consisted of a path and a file name.<br> |
-| getPath_woWC() | A function to get a path without wildcard (`*` or `?`). (_woWC means without wildcard).<br> |
-| getDirName()              | A function to get a nearest directory name from file name when a string of 1st arg which is consisted of a path and a file name.<br> |
-| getDirName_begin_idx()    | A function to get a beginning index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name.<br> |
-| getDirName_end_idx()      | A function to get a ending index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br> |
-| getDirName_end_idx_owWC() | A function to get a ending index number of the nearest directory name from file name without wildcard when a string of 1st arg which is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br> |
-| getFileName()                  | A function to get a file name when a string of 1st arg is consisted of a path and a file name.<br> |
-| getFileName_withoutExtension() | A function to get a file name without file extension when a string of 1st arg is consisted of a path and a file name.<br> |
-| getExtension()                 | A function to get a file extension. When a string of 1st arg does not have a file extension, 0 length string is returned.<br> |
-| parsePath()          | A function to parse a path by `/` or `\\`.<br> |
-| parsePath_withBase() | A function to parse a path by `/` or `\\` and return with the base path from the 1st arg.<br> |
+| path2basePath()<br/><s>getPath()</s> will be delete           | A function to get a path when a string of 1st arg is consisted of a path and a file name.<br> |
+| path2basePath_woWC()<br/><s>getPath_woWC()</s> will be delete | A function to get a path without wildcard (`*` or `?`). (_woWC means without wildcard).<br> |
+| path2dirName()<br/><s>getDirName()</s> will be delete         | A function to get a nearest directory name from file name when a string of 1st arg which is consisted of a path and a file name.<br> |
+| path2dirName_begin_idx()<br/><s>getDirName_begin_idx()</s> will be delete       | A function to get a beginning index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name.<br> |
+| path2dirName_end_idx()<br/><s>getDirName_end_idx()</s> will be delete           | A function to get a ending index number of the nearest directory name from file name when a string of 1st arg is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br> |
+| path2dirName_end_idx_woWC()<br/><s>getDirName_end_idx_owWC()</s> will be delete | A function to get a ending index number of the nearest directory name from file name without wildcard when a string of 1st arg which is consisted of a path and a file name. In detail, the ending index number is defined next to the ending character.<br> |
+| path2fileName()<br/><s>getFileName()</s> will be delete               | A function to get a file name when a string of 1st arg is consisted of a path and a file name.<br> |
+| path2fileName_woExt()<br/><s>getFileName_withoutExtension()</s> will be delete  | A function to get a file name without file extension when a string of 1st arg is consisted of a path and a file name.<br> |
+| path2fileExt()<br/><s>getExtension()</s> will be delete               | A function to get a file extension. When a string of 1st arg does not have a file extension, 0 length string is returned.<br> |
+| parsePath()                                                           | A function to parse a path by `/` or `\\`.<br> |
+| parsePath_wBasePath()<br/><s>parsePath_withBase()</s> will be delete  | A function to parse a path by `/` or `\\` and return with the base path from the 1st arg.<br> |
 | isFile()      | Exactory same as the `fileExist()`<br> |
 | isDir()       | Exactory same as the `dirExist()`<br> |
 | fileExist()   | A function to judge whether a file is exist or not.<br> |
@@ -59,18 +83,20 @@ namespace sstd{
 
 
 ## Usage
-### getPath(), getPath_woWC()
+### path2basePath(), path2basePath_woWC()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::printn( sstd::getPath("./abc/def/example.txt") );
+    sstd::printn( sstd::path2basePath("./abc/def/example.txt") );
+    sstd::printn( sstd::path2basePath("./abc/def/") );
+    sstd::printn( sstd::path2basePath("./abc/def") );
     printf("\n");
     
-    sstd::printn( sstd::getPath_woWC("./abc/def/example.txt") );
-    sstd::printn( sstd::getPath_woWC(R"(./abc/d??/*.txt)") );
+    sstd::printn( sstd::path2basePath_woWC("./abc/def/example.txt") );
+    sstd::printn( sstd::path2basePath_woWC(R"(./abc/d??/*.txt)") );
 }
 ```
 NOTE: This sample use `raw string literals R"()"` to avoid `unknown escape sequence: '\*'` error.
@@ -81,22 +107,27 @@ NOTE: This sample use `raw string literals R"()"` to avoid `unknown escape seque
 ```
 
 
-### getDirName(), getDirName_begin_idx(), getDirName_end_idx(), getDirName_end_idx_owWC()
+### path2dirName(), path2dirName_begin_idx(), path2dirName_end_idx(), path2dirName_end_idx_owWC()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::printn( sstd::getDirName("./abc/def/example.txt") );
+    sstd::printn( sstd::path2dirName("./abc/def") );
+    sstd::printn( sstd::path2dirName("./abc/def/") );
     printf("\n");
     
-    sstd::printn( sstd::getDirName_begin_idx("./abc/def/example.txt") );
+    sstd::printn( sstd::path2dirName("./abc/def/example.txt") ); // NOTE: path2dirName() treats end name as a direcotry name. If you want to parse this type of path, write like bolow line.
+    sstd::printn( sstd::path2dirName(sstd::path2basePath("./abc/def/example.txt")) );
     printf("\n");
     
-    sstd::printn( sstd::getDirName_end_idx("./abc/def/example.txt") );
-    sstd::printn( sstd::getDirName_end_idx_woWC("./abc/def/example.txt") );
-    sstd::printn( sstd::getDirName_end_idx_woWC(R"(./abc/d??/*.txt)") );
+    sstd::printn( sstd::path2dirName_begin_idx("./abc/def/") );
+    printf("\n");
+    
+    sstd::printn( sstd::path2dirName_end_idx("./abc/def/") );
+    sstd::printn( sstd::path2dirName_end_idx_woWC("./abc/def/") );
+    sstd::printn( sstd::path2dirName_end_idx_woWC(R"(./abc/d??/)") );
 }
 ```
 - <u>**Execution result**</u>
@@ -104,20 +135,20 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-### getFileName(), getFileName_withoutExtension()
+### path2fileName(), path2fileName_woExt()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::printn( sstd::getFileName("./abc/def/example.txt") );
-    sstd::printn( sstd::getFileName("./abc/def/example") );
+    sstd::printn( sstd::path2fileName("./abc/def/example.txt") );
+    sstd::printn( sstd::path2fileName("./abc/def/example") );
     printf("\n");
     
-    sstd::printn( sstd::getFileName_withoutExtension("./abc/def/example.txt") );
-    sstd::printn( sstd::getFileName_withoutExtension("./abc/def/example") );
-    sstd::printn( sstd::getFileName_withoutExtension("./abc/def/example.txt.zip") );
+    sstd::printn( sstd::path2fileName_woExt("./abc/def/example.txt") );
+    sstd::printn( sstd::path2fileName_woExt("./abc/def/example") );
+    sstd::printn( sstd::path2fileName_woExt("./abc/def/example.txt.zip") );
 }
 ```
 - <u>**Execution result**</u>
@@ -125,15 +156,15 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-### getExtension()
+### path2fileExt()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    sstd::printn( sstd::getExtension("./abc/def/example.txt") );
-    sstd::printn( sstd::getExtension("./abc/def/example") );
+    sstd::printn( sstd::path2fileExt("./abc/def/example.txt") );
+    sstd::printn( sstd::path2fileExt("./abc/def/example") );
 }
 ```
 - <u>**Execution result**</u>
@@ -141,7 +172,7 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-### parsePath(), parsePath_withBase()
+### parsePath(), parsePath_wBasePath()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -149,7 +180,7 @@ int main(){
 
 int main(){
     sstd::printn( sstd::parsePath("./abc/def/example.txt") );
-    sstd::printn( sstd::parsePath_withBase("./abc/def/example") );
+    sstd::printn( sstd::parsePath_wBasePath("./abc/def/example") );
 }
 ```
 - <u>**Execution result**</u>
