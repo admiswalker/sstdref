@@ -5,6 +5,7 @@
 ## Header file
 ```cpp
 namespace sstd{
+    std::vector<std::string> splitByLine(const        char* str);
     std::vector<std::string> splitByLine(const std::string& str);
     
     std::vector<std::string> split(const char*        str, const char X);
@@ -74,9 +75,13 @@ int main(){
     std::vector<std::string> vS1 = sstd::splitByLine(s1);
     sstd::printn(vS1);
     
-    std::string s2 = "\nabc\ndef\n\n";
+    std::string s2 = "abc\r\ndef\r\n";
     std::vector<std::string> vS2 = sstd::splitByLine(s2);
     sstd::printn(vS2);
+    
+    std::string s3 = "\nabc\ndef\n\n";
+    std::vector<std::string> vS3 = sstd::splitByLine(s3);
+    sstd::printn(vS3);
 }
 ```
 - <u>**Execution result**</u>
