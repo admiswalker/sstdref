@@ -82,7 +82,6 @@ The above output path is complex because the compile path for this file is compl
 
 ## Implementation
 - Source: header only
-- Header: [sstd/src/pdbg.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/pdbg.hpp)
-- Test: [test/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/XXXXXX.hpp)
-  (Not implemented yet)
+- Header: [sstd/src/print/pdbg.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/print/pdbg.hpp)
+- Test: [test/print/pdbg.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/print/pdbg.hpp)
 
