@@ -26,8 +26,8 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/pid.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/pid.hpp)
-- Header: [sstd/src/pid.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/pid.hpp)
-- Test: [test/pid.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/pid.hpp)
+- Source: [sstd/src/sys/pid.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/sys/pid.hpp)
+- Header: [sstd/src/sys/pid.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/sys/pid.hpp)
+- Test: [test/sys/pid.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/sys/pid.hpp)
   (Not implemented yet)
 
