@@ -162,6 +162,6 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/print.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/print.cpp)
-- Header: [sstd/src/print.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/print.hpp)
-- Test: [test/print_printn_printn_all.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/print_printn_printn_all.hpp)
+- Source: [sstd/src/print/print.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/print/print.cpp)
+- Header: [sstd/src/print/print.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/print/print.hpp)
+- Test: [test/print/print_printn_printn_all.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/print/print_printn_printn_all.hpp)
