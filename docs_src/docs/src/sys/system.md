@@ -60,6 +60,6 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/sys/stdlib.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/sys/stdlib.cpp)
-- Header: [sstd/src/sys/stdlib.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/sys/stdlib.hpp)
-- Test: [test/sys/stdlib.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/sys/stdlib.hpp)
+- Source: [sstd/src/sys/system.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/sys/system.cpp)
+- Header: [sstd/src/sys/system.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/sys/system.hpp)
+- Test: [test/sys/system.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/sys/system.hpp)
