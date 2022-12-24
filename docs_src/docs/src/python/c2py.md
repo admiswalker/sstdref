@@ -45,9 +45,9 @@ sstd::c2py<戻り値の型> 関数名(
 ```
 
 ## Requirements
-`c2py()` requires the `importlib`, `inspect`, `itertools`, `numpy`, `os` and `sys` Python packages. See [sstd/src/c2py.py](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.py) for details.
+`c2py()` requires the `importlib`, `inspect`, `itertools`, `numpy`, `os` and `sys` Python packages. See [sstd/src/python/c2py.py](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/python/c2py.py) for details.
 
-`c2py()` は，`importlib`, `inspect`, `itertools`, `numpy`, `os`, `sys` の Python パッケージを必要とします．詳細は [sstd/src/c2py.py](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.py) を参照すること．
+`c2py()` は，`importlib`, `inspect`, `itertools`, `numpy`, `os`, `sys` の Python パッケージを必要とします．詳細は [sstd/src/python/c2py.py](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/python/c2py.py) を参照すること．
 
 
 ## List of corresponding types. (対応する型の一覧)
@@ -582,7 +582,7 @@ int main(){
 }
 ```
 - <u>**Execution result**</u>  
-![sin.png](../contents/c2py/sin.png)
+![sin.png](../../contents/python/c2py/sin.png)
 
 
 ### Application sample 2
@@ -648,7 +648,7 @@ int main(){
 }
 ```
 - <u>**Execution result**</u>  
-![sin_cos.png](../contents/c2py/sin_cos.png)
+![sin_cos.png](../../contents/python/c2py/sin_cos.png)
 
 ### Application sample 3
 In the code below, reading png image from Python, editing on C++ and writing to png file by Python again.
@@ -695,16 +695,16 @@ int main(){
 }
 ```
 - <u>**Execution result**</u>  
-![sample.png](../contents/c2py/sample.png)
-![markerRight.png](../contents/c2py/markerRight.png)
-![sample_reCombined.png](../contents/c2py/sample_reCombined.png)  
+![sample.png](../../contents/python/c2py/sample.png)
+![markerRight.png](../../contents/python/c2py/markerRight.png)
+![sample_reCombined.png](../../contents/python/c2py/sample_reCombined.png)  
 Input image (sample.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Output image (sample_reCombined.png)
 
 
 ## Implementation
-- Source: [sstd/src/c2py.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.cpp)
-- Header: [sstd/src/c2py.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.hpp)
-- Python: [sstd/src/c2py.py](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/c2py.py) 
-- Test: [test/c2py.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/c2py.hpp)
+- Source: [sstd/src/python/c2py.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/python/c2py.cpp)
+- Header: [sstd/src/python/c2py.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/python/c2py.hpp)
+- Python: [sstd/src/python/c2py.py](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/python/c2py.py) 
+- Test: [test/python/c2py.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/python/c2py.hpp)
