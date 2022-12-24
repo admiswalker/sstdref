@@ -64,8 +64,7 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/encode_decode.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/encode_decode.cpp)
-- Header: [sstd/src/encode_decode.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/encode_decode.hpp)
-- Test: [test/encode_decode.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/encode_decode.hpp)
-  (Not implemented yet)
+- Source: [sstd/src/string/encode_decode.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/encode_decode.cpp)
+- Header: [sstd/src/string/encode_decode.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/encode_decode.hpp)
+- Test: [test/string/encode_decode.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/string/encode_decode.hpp)
 
