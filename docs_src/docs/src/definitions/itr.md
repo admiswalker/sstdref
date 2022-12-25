@@ -31,5 +31,6 @@ int main(){
 ```
 
 ## Implementation
-- Header: [sstd/src/itr.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/itr.hpp)
+- Source: header only
+- Header: [sstd/src/definitions/itr.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/definitions/itr.hpp)
 

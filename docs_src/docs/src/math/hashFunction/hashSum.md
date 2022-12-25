@@ -60,8 +60,7 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/hashFnc_of_MD5_SHA1_SHA2/hashSum.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/hashFnc_of_MD5_SHA1_SHA2/hashSum.cpp)
-- Header: [sstd/src/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp)
-- Test: [test/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp)
-  (Not implemented yet)
+- Source: [sstd/src/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.cpp)
+- Header: [sstd/src/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp)
+- Test: [test/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp)
 

@@ -184,6 +184,7 @@ int main(){
 
 
 ## Implementation
-- Header: [sstd/src/vector/slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/vector/slice.hpp)
-- Test: [test/vector_slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/vector_slice.hpp)
+- Source: [sstd/src/container/vector/slice.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/vector/slice.cpp)
+- Header: [sstd/src/container/vector/slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/vector/slice.hpp)
+- Test: [test/container/vector/slice.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/vector/slice.hpp)
 

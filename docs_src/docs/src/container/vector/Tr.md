@@ -83,5 +83,6 @@ int main(){
 
 
 ## Implementation
-- Header: [sstd/src/vector/vvec.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/vector/vvec.hpp)
-- Test: [test/vector_vvec.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/vector_vvec.hpp)
+- Source: header only
+- Header: [sstd/src/container/vector/vvec.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/vector/vvec.hpp)
+- Test: [test/container/vector/vvec.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/vector/vvec.hpp)

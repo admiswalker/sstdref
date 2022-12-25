@@ -31,7 +31,8 @@ int main(){
 ```
 
 ## Implementation
-- Header: [sstd/src/vector/typeDef.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/vector/typeDef.hpp)
-- Test: [test/vector/typeDef.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/vector/typeDef.hpp)
+- Source: header only
+- Header: [sstd/src/container/vector/typeDef.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/vector/typeDef.hpp)
+- Test: [test/container/vector/typeDef.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/vector/typeDef.hpp)
   (Not implemented yet)
 

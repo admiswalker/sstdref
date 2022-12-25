@@ -167,8 +167,8 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/matrixContainer_binary/bmat.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/matrixContainer_binary/bmat.cpp)
-- Header: [sstd/src/matrixContainer_binary/bmat.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/matrixContainer_binary/bmat.hpp)
-- Test: [test/bmat.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/bmat.hpp)
+- Source: [sstd/src/container/matrixContainer_binary/bmat.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/matrixContainer_binary/bmat.cpp)
+- Header: [sstd/src/container/matrixContainer_binary/bmat.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/matrixContainer_binary/bmat.hpp)
+- Test: [test/container/bmat.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/bmat.hpp)
   (Not implemented yet)
 

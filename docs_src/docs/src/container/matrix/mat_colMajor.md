@@ -212,8 +212,8 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/matrixContainer_rowMajor/mat_c.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/matrixContainer_rowMajor/mat_c.cpp)
-- Header: [sstd/src/matrixContainer_rowMajor/mat_c.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/matrixContainer_rowMajor/mat_c.hpp)
-- Test: [test/mat_c.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/mat_c.hpp)
+- Source: [sstd/src/container/matrixContainer_colMajor/mat_c.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/matrixContainer_colMajor/mat_c.cpp)
+- Header: [sstd/src/container/matrixContainer_colMajor/mat_c.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/matrixContainer_colMajor/mat_c.hpp)
+- Test: [test/container/mat_c.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/mat_c.hpp)
   (Not implemented yet)
 
