@@ -46,7 +46,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://admiswalker.github.io/sstdref/index.html/src/definitions/typeDef.h.html</loc>
+         <loc>https://admiswalker.github.io/sstdref/index.html/src/definitions/typeDef.html</loc>
+         <lastmod>2022-12-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://admiswalker.github.io/sstdref/index.html/src/definitions/typeNum.html</loc>
          <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -1,0 +1,1414 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is a documentation for SubStandardLibrary (SSTD), a library providing convenient functions set for C++, works on GCC (g++).">
+      
+      
+      
+        <meta name="author" content="ADMIS_Walker">
+      
+      
+        <link rel="canonical" href="https://admiswalker.github.io/sstdref/index.html/src/definitions/typeNum.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>typeNum - SSTD documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../custom_dir/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#typenum" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="SSTD documentation" class="md-header__button md-logo" aria-label="SSTD documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SSTD documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              typeNum
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="SSTD documentation" class="md-nav__button md-logo" aria-label="SSTD documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    SSTD documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        What is SSTD ?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        src
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="src" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          src
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        container
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="container" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          container
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1_1">
+        matrix
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="matrix" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          matrix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/matrix/bmat.html" class="md-nav__link">
+        bmat (binary-matrix)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/matrix/mat_colMajor.html" class="md-nav__link">
+        mat_c (Col-major)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/matrix/mat_rowMajor.html" class="md-nav__link">
+        mat_r (Row-major)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_2" type="checkbox" id="__nav_2_1_2" >
+      
+      <label class="md-nav__link" for="__nav_2_1_2">
+        vector
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="vector" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          vector
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/vector/Tr.html" class="md-nav__link">
+        Tr (Transpose)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/vector/slice.html" class="md-nav__link">
+        slice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/vector/stdVector_expansion.html" class="md-nav__link">
+        Ope. Exp. for std::vector&lt;T&gt;
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/vector/vec_vvec.html" class="md-nav__link">
+        vec / vvec
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        definitions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="definitions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          definitions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="itr.html" class="md-nav__link">
+        itr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="typeDef.html" class="md-nav__link">
+        typeDef
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          typeNum
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="typeNum.html" class="md-nav__link md-nav__link--active">
+        typeNum
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        file
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="file" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          file
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/cp.html" class="md-nav__link">
+        cp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/csv.html" class="md-nav__link">
+        csv
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/file.html" class="md-nav__link">
+        file
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/file_operations.html" class="md-nav__link">
+        file_operations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/glob.html" class="md-nav__link">
+        glob
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/mkdir.html" class="md-nav__link">
+        mkdir
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/mv.html" class="md-nav__link">
+        mv
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/path.html" class="md-nav__link">
+        path
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/read_write.html" class="md-nav__link">
+        read / write
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/rm.html" class="md-nav__link">
+        rm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/tinyInterpreter.html" class="md-nav__link">
+        tinyInterpreter
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        math
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="math" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          math
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_1" type="checkbox" id="__nav_2_4_1" >
+      
+      <label class="md-nav__link" for="__nav_2_4_1">
+        hashFunction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="hashFunction" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          hashFunction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/hashFunction/hashSum.html" class="md-nav__link">
+        hashSum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/hashFunction/md5.html" class="md-nav__link">
+        MD5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/hashFunction/sha1.html" class="md-nav__link">
+        SHA-1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/hashFunction/sha2.html" class="md-nav__link">
+        SHA-2<br/>(224, 256, 384, 512 bits)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/math.html" class="md-nav__link">
+        math
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      <label class="md-nav__link" for="__nav_2_5">
+        print
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="print" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          print
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print/pdbg.html" class="md-nav__link">
+        pdbg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print/print.html" class="md-nav__link">
+        print / printn
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      <label class="md-nav__link" for="__nav_2_6">
+        python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/c2py.html" class="md-nav__link">
+        c2py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        string
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="string" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          string
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/encode_decode.html" class="md-nav__link">
+        encode / decode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/ssprintf.html" class="md-nav__link">
+        ssprintf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/strEdit.html" class="md-nav__link">
+        strEdit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/strmatch.html" class="md-nav__link">
+        strmatch
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      <label class="md-nav__link" for="__nav_2_8">
+        sys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="sys" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          sys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sys/pid.html" class="md-nav__link">
+        pid
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sys/system.html" class="md-nav__link">
+        system
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      <label class="md-nav__link" for="__nav_2_9">
+        time
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="time" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          time
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time/measureTime.html" class="md-nav__link">
+        measureTime
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time/sleep.html" class="md-nav__link">
+        sleep
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time/time.html" class="md-nav__link">
+        time
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="typenum">typeNum</h1>
+<h2 id="abstract">Abstract</h2>
+<p><code>typeNum</code> defines the ID for the SSTD internal process according to the C++ type.
+<code>typeNum</code> では C++ の型に応じた ID を SSTD の内部処理向けに定義します．</p>
+<h2 id="header-file">Header file</h2>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_void</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_len</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">201</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_bool</span><span class="w">   </span><span class="o">=</span><span class="w">   </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_char</span><span class="w">   </span><span class="o">=</span><span class="w">   </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_uchar</span><span class="w">  </span><span class="o">=</span><span class="w">   </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_int8</span><span class="w">   </span><span class="o">=</span><span class="w">   </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_int16</span><span class="w">  </span><span class="o">=</span><span class="w">   </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_int32</span><span class="w">  </span><span class="o">=</span><span class="w">   </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_int64</span><span class="w">  </span><span class="o">=</span><span class="w">   </span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_uint8</span><span class="w">  </span><span class="o">=</span><span class="w">   </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_uint16</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="mi">8</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_uint32</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="mi">9</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_uint64</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_float</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">11</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_double</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_str</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mi">13</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">NUM_VEC_BASE</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">14</span><span class="p">;</span><span class="w"> </span><span class="c1">// std::vector&lt;T&gt; // num_vec_bool = NUM_VEC_BASE + num_bool</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_bool</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">14</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_char</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">15</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_uchar</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">16</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_int8</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">17</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_int16</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">18</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_int32</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">19</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_int64</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_uint8</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_uint16</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">22</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_uint32</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">23</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_uint64</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">24</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_float</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">25</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_double</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">26</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">    </span><span class="n">num_vec_str</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mi">27</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">NUM_VVEC_BASE</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">28</span><span class="p">;</span><span class="w"> </span><span class="c1">// std::vector&lt;std::vector&lt;T&gt;&gt; // num_vvec_bool = NUM_VVEC_BASE + num_bool</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_bool</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">28</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_char</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">29</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_uchar</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">30</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_int8</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">31</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_int16</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">32</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_int32</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">33</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_int64</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">34</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_uint8</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">35</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_uint16</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">36</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_uint32</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">37</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_uint64</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">38</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_float</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">39</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_double</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">40</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">   </span><span class="n">num_vvec_str</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mi">41</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">NUM_MAT_C_BASE</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// sstd::mat_c&lt;T&gt; // num_mat_c_bool = NUM_MAT_C_BASE + num_bool</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_bool</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_char</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">43</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_uchar</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">44</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_int8</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">45</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_int16</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">46</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_int32</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">47</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_int64</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">48</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_uint8</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">49</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_uint16</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">50</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_uint32</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">51</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_uint64</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">52</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_float</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">53</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_double</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">54</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_c_str</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mi">55</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">NUM_MAT_R_BASE</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">56</span><span class="p">;</span><span class="w"> </span><span class="c1">// sstd::mat_r&lt;T&gt; // num_mat_r_bool = NUM_MAT_R_BASE + num_bool</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_bool</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">56</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_char</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">57</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_uchar</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">58</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_int8</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">59</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_int16</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_int32</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">61</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_int64</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">62</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_uint8</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">63</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_uint16</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">64</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_uint32</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">65</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_uint64</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">66</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_float</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">67</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_double</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">68</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">  </span><span class="n">num_mat_r_str</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mi">69</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">NUM_VMAT_C_BASE</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">70</span><span class="p">;</span><span class="w"> </span><span class="c1">// std::vector&lt;sstd::mat_c&lt;T&gt;&gt; // num_vmat_c_bool = NUM_VMAT_C_BASE + num_bool</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_bool</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">70</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_char</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">71</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_uchar</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">72</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_int8</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">73</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_int16</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">74</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_int32</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">75</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_int64</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">76</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_uint8</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">77</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_uint16</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">78</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_uint32</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">79</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_uint64</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">80</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_float</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">81</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_double</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">82</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_c_str</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mi">83</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">NUM_VMAT_R_BASE</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">84</span><span class="p">;</span><span class="w"> </span><span class="c1">// std::vector&lt;sstd::mat_r&lt;T&gt;&gt; // num_vmat_r_bool = NUM_VMAT_R_BASE + num_bool</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_bool</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">84</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_char</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">85</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_uchar</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">86</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_int8</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">87</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_int16</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">88</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_int32</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">89</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_int64</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">90</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_uint8</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">91</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_uint16</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">92</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_uint32</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">93</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_uint64</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">94</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_float</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">95</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_double</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">96</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_str</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mi">97</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//---</span>
+
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">       </span><span class="kt">bool</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">       </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//uchar type2num(      uchar rhs); // same as uint8</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">       </span><span class="n">int8</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="n">int16</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="n">int32</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="n">int64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="n">uint8</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">     </span><span class="n">uint16</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">     </span><span class="n">uint32</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">     </span><span class="n">uint64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="kt">float</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">     </span><span class="kt">double</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//uchar type2num(std::vector&lt;      uchar&gt; rhs); // same as uint8</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">       </span><span class="n">int8</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int16</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int64</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="n">uint8</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint16</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint64</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="description">Description</h2>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type2num()</td>
+<td>returns the ID according to the C++ type.<br>C++ の型に応じた ID を返します．</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">type2num</span><span class="p">(</span><span class="n">tmp</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">type2num</span><span class="p">(</span><span class="kt">bool</span><span class="p">()));</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">type2num</span><span class="p">(</span><span class="n">int64</span><span class="p">()));</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">int64</span><span class="o">&gt;</span><span class="p">()));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::type2num(tmp) = 0
+sstd::type2num(bool()) = 0
+sstd::type2num(int64()) = 6
+sstd::type2num(std::vector&lt;int64&gt;()) = 20
+</code></pre></div></li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/definitions/typeNum.cpp">sstd/src/definitions/typeNum.cpp</a></li>
+<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/definitions/typeNum.hpp">sstd/src/definitions/typeNum.hpp</a></li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/definitions/typeNum.hpp">test/definitions/typeNum.hpp</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="typeDef.html" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              typeDef
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../file/cp.html" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              cp
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+        <script src="../../custom_dir/custom.js"></script>
+      
+    
+  </body>
+</html>
