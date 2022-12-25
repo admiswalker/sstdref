@@ -1,0 +1,2106 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is a documentation for SubStandardLibrary (SSTD), a library providing convenient functions set for C++, works on GCC (g++).">
+      
+      
+      
+        <meta name="author" content="ADMIS_Walker">
+      
+      
+        <link rel="canonical" href="https://admiswalker.github.io/sstdref/index.html/src/math/math.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>math - SSTD documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../custom_dir/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#math" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="SSTD documentation" class="md-header__button md-logo" aria-label="SSTD documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SSTD documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              math
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="SSTD documentation" class="md-nav__button md-logo" aria-label="SSTD documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    SSTD documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        What is SSTD ?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        src
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="src" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          src
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        container
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="container" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          container
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1_1">
+        matrix
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="matrix" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          matrix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/matrix/bmat.html" class="md-nav__link">
+        bmat (binary-matrix)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/matrix/mat_colMajor.html" class="md-nav__link">
+        mat_c (Col-major)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/matrix/mat_rowMajor.html" class="md-nav__link">
+        mat_r (Row-major)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_2" type="checkbox" id="__nav_2_1_2" >
+      
+      <label class="md-nav__link" for="__nav_2_1_2">
+        vector
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="vector" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          vector
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/vector/Tr.html" class="md-nav__link">
+        Tr (Transpose)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/vector/slice.html" class="md-nav__link">
+        slice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/vector/stdVector_expansion.html" class="md-nav__link">
+        Ope. Exp. for std::vector&lt;T&gt;
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/vector/vec_vvec.html" class="md-nav__link">
+        vec / vvec
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        definitions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="definitions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          definitions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../definitions/itr.html" class="md-nav__link">
+        itr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../definitions/typeDef.h.html" class="md-nav__link">
+        typeDef.h
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        file
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="file" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          file
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/cp.html" class="md-nav__link">
+        cp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/csv.html" class="md-nav__link">
+        csv
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/file.html" class="md-nav__link">
+        file
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/file_operations.html" class="md-nav__link">
+        file_operations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/glob.html" class="md-nav__link">
+        glob
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/mkdir.html" class="md-nav__link">
+        mkdir
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/mv.html" class="md-nav__link">
+        mv
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/path.html" class="md-nav__link">
+        path
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/read_write.html" class="md-nav__link">
+        read / write
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/rm.html" class="md-nav__link">
+        rm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/tinyInterpreter.html" class="md-nav__link">
+        tinyInterpreter
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        math
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="math" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          math
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_1" type="checkbox" id="__nav_2_4_1" >
+      
+      <label class="md-nav__link" for="__nav_2_4_1">
+        hashFunction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="hashFunction" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          hashFunction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hashFunction/hashSum.html" class="md-nav__link">
+        hashSum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hashFunction/md5.html" class="md-nav__link">
+        MD5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hashFunction/sha1.html" class="md-nav__link">
+        SHA-1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hashFunction/sha2.html" class="md-nav__link">
+        SHA-2<br/>(224, 256, 384, 512 bits)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          math
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="math.html" class="md-nav__link md-nav__link--active">
+        math
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerical-calculation" class="md-nav__link">
+    Numerical calculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prime-number-calculation" class="md-nav__link">
+    prime number calculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocess" class="md-nav__link">
+    preprocess
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rounding" class="md-nav__link">
+    Rounding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistical-processing" class="md-nav__link">
+    Statistical processing
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistical processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sum-sum_abs-ave-med-var-var_p-min-min_abs-max-max_abs-argmin-argmin_abs-argmax-and-argmax_abs" class="md-nav__link">
+    sum(), sum_abs(), ave(), med(), var(), var_p(), min(), min_abs(), max(), max_abs(), argmin(), argmin_abs(), argmax() and argmax_abs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-and-max-for-equal-or-more-than-three-args" class="md-nav__link">
+    min() and max() for equal or more than three args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    Searching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    Sorting
+  </a>
+  
+    <nav class="md-nav" aria-label="Sorting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort-sort_gr" class="md-nav__link">
+    sort(), sort_gr()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort-for-multiple-vector" class="md-nav__link">
+    sort() for multiple vector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort_gr-for-multiple-vector" class="md-nav__link">
+    sort_gr() for multiple vector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorted-sorted_gr" class="md-nav__link">
+    sorted(), sorted_gr()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessing" class="md-nav__link">
+    Preprocessing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      <label class="md-nav__link" for="__nav_2_5">
+        print
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="print" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          print
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print/pdbg.html" class="md-nav__link">
+        pdbg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print/print.html" class="md-nav__link">
+        print / printn
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      <label class="md-nav__link" for="__nav_2_6">
+        python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/c2py.html" class="md-nav__link">
+        c2py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        string
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="string" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          string
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/encode_decode.html" class="md-nav__link">
+        encode / decode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/ssprintf.html" class="md-nav__link">
+        ssprintf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/strEdit.html" class="md-nav__link">
+        strEdit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/strmatch.html" class="md-nav__link">
+        strmatch
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      <label class="md-nav__link" for="__nav_2_8">
+        sys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="sys" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          sys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sys/pid.html" class="md-nav__link">
+        pid
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sys/system.html" class="md-nav__link">
+        system
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      <label class="md-nav__link" for="__nav_2_9">
+        time
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="time" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          time
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time/measureTime.html" class="md-nav__link">
+        measureTime
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time/sleep.html" class="md-nav__link">
+        sleep
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time/time.html" class="md-nav__link">
+        time
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerical-calculation" class="md-nav__link">
+    Numerical calculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prime-number-calculation" class="md-nav__link">
+    prime number calculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocess" class="md-nav__link">
+    preprocess
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rounding" class="md-nav__link">
+    Rounding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistical-processing" class="md-nav__link">
+    Statistical processing
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistical processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sum-sum_abs-ave-med-var-var_p-min-min_abs-max-max_abs-argmin-argmin_abs-argmax-and-argmax_abs" class="md-nav__link">
+    sum(), sum_abs(), ave(), med(), var(), var_p(), min(), min_abs(), max(), max_abs(), argmin(), argmin_abs(), argmax() and argmax_abs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-and-max-for-equal-or-more-than-three-args" class="md-nav__link">
+    min() and max() for equal or more than three args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    Searching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    Sorting
+  </a>
+  
+    <nav class="md-nav" aria-label="Sorting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort-sort_gr" class="md-nav__link">
+    sort(), sort_gr()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort-for-multiple-vector" class="md-nav__link">
+    sort() for multiple vector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort_gr-for-multiple-vector" class="md-nav__link">
+    sort_gr() for multiple vector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorted-sorted_gr" class="md-nav__link">
+    sorted(), sorted_gr()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessing" class="md-nav__link">
+    Preprocessing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="math">math</h1>
+<h2 id="abstract">Abstract</h2>
+<p><code>math.hpp</code> contains functions for mathematical and statistical calculations.<br />
+<code>math.hpp</code> は数学・統計計算用の関数を収録します．</p>
+<h2 id="header-file">Header file</h2>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">round2even</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">round2even</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">round2odd</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">round2odd</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Itr</span><span class="o">&gt;</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">std</span><span class="o">::</span><span class="n">iterator_traits</span><span class="o">&lt;</span><span class="n">Itr</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Itr</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Itr</span><span class="w"> </span><span class="n">last</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// using Pairwise summation algorithm.</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">sum</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">last</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">sum</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 配列の a 番目から b 番目までの合計. sum of the a th to b th of array.</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">sum</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">sum_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">ave</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 平均値: average</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">med</span><span class="w">    </span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w">  </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 中央値: median // copy rhs // If rhs.size () is even, average of the two median values is returned.</span>
+<span class="c1">//  float  mod    (const std::vector&lt;float&gt;&amp; rhs); // 最頻値: mode</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">var</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 不偏分散/標本分散 (variance): u^2 = (1/(n-1))*Σ(x_i-μ)^2</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">var_p</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 母分散 (variance population): σ^2 = (1/n)*Σ(x_i-μ)^2</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">stdev</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 標本標準偏差 (sample standard deviation): u = SQRT( (1/(n-1))*Σ(x_i-μ)^2 )</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">stdev_p</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 標準偏差 (standard deviation): σ = SQRT( (1/n)*Σ(x_i-μ)^2 )</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">last</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 配列の a 番目から b 番目までの合計. sum of the a th to b th of array.</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sum_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">ave</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 平均値: average</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">med</span><span class="w">    </span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w">  </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 中央値: median // copy rhs // If rhs.size () is even, average of the two median values is returned.</span>
+<span class="c1">//  double mod    (const std::vector&lt;double&gt;&amp; rhs); // 最頻値: mode</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">var</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 不偏分散/標本分散 (variance): u^2 = (1/(n-1))*Σ(x_i-μ)^2</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">var_p</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 母分散 (variance population): σ^2 = (1/n)*Σ(x_i-μ)^2</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">stdev</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 標本標準偏差 (sample standard deviation): u = SQRT( (1/(n-1))*Σ(x_i-μ)^2 )</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">stdev_p</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 標準偏差 (standard deviation): σ = SQRT( (1/n)*Σ(x_i-μ)^2 )</span>
+
+<span class="w">    </span><span class="c1">// K: using Kahan summation algorithm</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">sumK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 配列の a 番目から b 番目までの合計. sum of the a th to b th of array.</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">sumK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">sumK_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">aveK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w">           </span><span class="c1">// 平均値: average</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">aveK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// 平均値: average in the first num elements.</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">varK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 不偏分散/標本分散 (variance): u^2 = (1/(n-1))*Σ(x_i-μ)^2</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">varK_p</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 母分散 (variance population): σ^2 = (1/n)*Σ(x_i-μ)^2</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">stdevK</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 標本標準偏差 (sample standard deviation): u = SQRT( (1/(n-1))*Σ(x_i-μ)^2 )</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">  </span><span class="nf">stdevK_p</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 標準偏差 (standard deviation): σ = SQRT( (1/n)*Σ(x_i-μ)^2 )</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sumK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sumK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 配列の a 番目から b 番目までの合計. sum of the a th to b th of array.</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sumK_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">aveK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w">           </span><span class="c1">// 平均値: average</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">aveK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// 平均値: average in the first num elements.</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">varK</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 不偏分散/標本分散 (variance): u^2 = (1/(n-1))*Σ(x_i-μ)^2</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">varK_p</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 母分散 (variance population): σ^2 = (1/n)*Σ(x_i-μ)^2</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">stdevK</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 標本標準偏差 (sample standard deviation): u = SQRT( (1/(n-1))*Σ(x_i-μ)^2 )</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">stdevK_p</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 標準偏差 (standard deviation): σ = SQRT( (1/n)*Σ(x_i-μ)^2 )</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">uint64</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prime</span><span class="p">(</span><span class="n">uint64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w">                                  </span><span class="c1">// get a list of prime number under rhs.</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">fact</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">uint64</span><span class="w"> </span><span class="n">prime</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">uint64</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">struct</span><span class="w"> </span><span class="nc">fact</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">uint64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w">                            </span><span class="c1">// get a list of prime factorization</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">uint64</span><span class="o">&gt;</span><span class="w"> </span><span class="n">divisor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">struct</span><span class="w"> </span><span class="nc">sstd</span><span class="o">::</span><span class="n">fact</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// get a list of all divisors</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">uint64</span><span class="o">&gt;</span><span class="w"> </span><span class="n">divisor</span><span class="p">(</span><span class="n">uint64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w">                                </span><span class="c1">// get a list of all of the divisors.</span>
+
+<span class="w">    </span><span class="n">uint8</span><span class="w">  </span><span class="nf">pow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">uint8</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">uint8</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">exp</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint16</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">uint16</span><span class="o">&amp;</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">uint16</span><span class="o">&amp;</span><span class="w"> </span><span class="n">exp</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint32</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">uint32</span><span class="o">&amp;</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">uint32</span><span class="o">&amp;</span><span class="w"> </span><span class="n">exp</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint64</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">uint64</span><span class="o">&amp;</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">uint64</span><span class="o">&amp;</span><span class="w"> </span><span class="n">exp</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="kt">float</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="k">const</span><span class="w">  </span><span class="kt">float</span><span class="o">&amp;</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">  </span><span class="kt">float</span><span class="o">&amp;</span><span class="w"> </span><span class="n">exp</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">exp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">max</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">max_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">max</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">max_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">max</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">max_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head1</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head2</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tail</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Head</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Tail</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="n">Head</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">Head</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head1</span><span class="p">,</span><span class="w"> </span><span class="n">Head</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head2</span><span class="p">,</span><span class="w"> </span><span class="n">Tail</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">tail</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head1</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head2</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tail</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Head</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Tail</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="n">Head</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">Head</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head1</span><span class="p">,</span><span class="w"> </span><span class="n">Head</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head2</span><span class="p">,</span><span class="w"> </span><span class="n">Tail</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">tail</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmin</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmin_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmax</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmax_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmin</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmin_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmax</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmax_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmin</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmin_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmax</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argmax_abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    // TODO: argmin</span>
+<span class="cm">    // TODO: argmax</span>
+
+<span class="cm">    template&lt;typename T&gt; std::tuple&lt;uint,uint&gt; argminXY    (const sstd::mat_c&lt;T&gt;&amp; rhs);</span>
+<span class="cm">    template&lt;typename T&gt; std::tuple&lt;uint,uint&gt; argminXY_abs(const sstd::mat_c&lt;T&gt;&amp; rhs);</span>
+<span class="cm">    template&lt;typename T&gt; std::tuple&lt;uint,uint&gt; argmaxXY    (const sstd::mat_c&lt;T&gt;&amp; rhs);</span>
+<span class="cm">    template&lt;typename T&gt; std::tuple&lt;uint,uint&gt; argmaxXY_abs(const sstd::mat_c&lt;T&gt;&amp; rhs);</span>
+
+<span class="cm">    template&lt;typename T&gt; std::tuple&lt;uint,uint&gt; argminXY    (const sstd::mat_r&lt;T&gt;&amp; rhs);</span>
+<span class="cm">    template&lt;typename T&gt; std::tuple&lt;uint,uint&gt; argminXY_abs(const sstd::mat_r&lt;T&gt;&amp; rhs);</span>
+<span class="cm">    template&lt;typename T&gt; std::tuple&lt;uint,uint&gt; argmaxXY    (const sstd::mat_r&lt;T&gt;&amp; rhs);</span>
+<span class="cm">    template&lt;typename T&gt; std::tuple&lt;uint,uint&gt; argmaxXY_abs(const sstd::mat_r&lt;T&gt;&amp; rhs);</span>
+<span class="cm">    //*/</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c1">// binary search</span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w">       </span><span class="n">nearest_down</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w">       </span><span class="n">nearest_up</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argnearest_down</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">argnearest_up</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c1">// sort</span>
+
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w">           </span><span class="n">sort</span><span class="w">     </span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w">  </span><span class="n">rhs</span><span class="w">   </span><span class="p">){</span><span class="w">                            </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">rhs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w">             </span><span class="p">}</span><span class="w">                    </span><span class="c1">// Ascending: 昇順: 0, 1, 2, ...</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sorted</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w">  </span><span class="n">rhs_in</span><span class="p">){</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="o">=</span><span class="n">rhs_in</span><span class="p">;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">rhs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">                    </span><span class="c1">// Ascending: 昇順: 0, 1, 2, ...</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sorted</span><span class="w">   </span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="w">   </span><span class="p">){</span><span class="w">                            </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">rhs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">                    </span><span class="c1">// Ascending: 昇順: 0, 1, 2, ...</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w">           </span><span class="n">sort_gr</span><span class="w">  </span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w">  </span><span class="n">rhs</span><span class="w">   </span><span class="p">){</span><span class="w">                            </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">rhs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">greater</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">());</span><span class="w">             </span><span class="p">}</span><span class="w"> </span><span class="c1">// Descending: 降順: 9, 8, 7, ...</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sorted_gr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w">  </span><span class="n">rhs_in</span><span class="p">){</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="o">=</span><span class="n">rhs_in</span><span class="p">;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">rhs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">greater</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">());</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Descending: 降順: 9, 8, 7, ...</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sorted_gr</span><span class="p">(</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="w">   </span><span class="p">){</span><span class="w">                            </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">rhs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">greater</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">());</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Descending: 降順: 9, 8, 7, ...</span>
+
+<span class="w">    </span><span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c1">// sort for multiple vector</span>
+
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Head</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Tail</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">sort</span><span class="w">   </span><span class="p">(</span><span class="n">Head</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">Tail</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">tail</span><span class="p">);</span><span class="w"> </span><span class="c1">// Ascending: 昇順: 0, 1, 2, ...</span>
+<span class="w">    </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Head</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Tail</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">sort_gr</span><span class="p">(</span><span class="n">Head</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">Tail</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">tail</span><span class="p">);</span><span class="w"> </span><span class="c1">// Descending: 降順: 9, 8, 7, ...</span>
+
+<span class="w">    </span><span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nonzero</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="c1">//  template &lt;typename T&gt; void padding (std::vector&lt;T&gt;&amp; vecLhs, std::vector&lt;T&gt;&amp; vecRhs); // &lt;--&gt; sstd::suppress();</span>
+<span class="c1">//  template &lt;typename T&gt; void suppress(std::vector&lt;T&gt;&amp; vecLhs, std::vector&lt;T&gt;&amp; vecRhs); // &lt;--&gt; sstd::padding(); or zfill</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">suppress</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="description">Description</h2>
+<h3 id="numerical-calculation">Numerical calculation</h3>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round2even()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>round2odd()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>sum()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>sum_abs()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>ave()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>med()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>var()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>var_p()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>stdev()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>stdev_p()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>sumK()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>sumK_abs()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>aveK()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>varK()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>varK_p()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>stdevK()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>stdevK_p()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>pow()</td>
+<td><br></td>
+</tr>
+</tbody>
+</table>
+<h3 id="prime-number-calculation">prime number calculation</h3>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prime()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>factor()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>divisor()</td>
+<td><br></td>
+</tr>
+</tbody>
+</table>
+<h3 id="search">search</h3>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min()</td>
+<td>returns minimum value of given arg(s). min() can specifies multiple args while args have the same type and is defined &lt; operator.<br>与えられた値の内，最も小さい値を返します．同一型で operator &lt; が定義されている型であれば，複数の引数を指定できます．</td>
+</tr>
+<tr>
+<td>min_abs()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>max()</td>
+<td>returns minimum value of given arg(s). min() can specifies multiple args while args have the same type and is defined &lt; operator.<br>与えられた値の内，最も大きい値を返します．同一型で operator &lt; が定義されている型であれば，複数の引数を指定できます．</td>
+</tr>
+<tr>
+<td>max_abs()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>argmin()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>argmin_abs()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>argmax()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>argmax_abs()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>nearest_down()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>nearest_up()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>argnearest_down()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>argnearest_up()</td>
+<td><br></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sort">sort</h3>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sort()</td>
+<td>sorts arg(s) value directly in ascending order. When multiple <code>std::vector&lt;T&gt;</code>s are specified to arg, all <code>std::vector&lt;T&gt;</code>s will be sorted according to the 1st arg. There is no limit to the number or type of <code>std::vector&lt;T&gt;</code> specified in the argument.<br>引数の値を直接ソートする．値は昇順にソートされる．引数に <code>std::vector&lt;T&gt;</code> が複数与えられた場合は，第１引数の順序に従って他の引数をソートする．引数に指定する <code>std::vector&lt;T&gt;</code> の数や型に制限はない．</td>
+</tr>
+<tr>
+<td>sorted()</td>
+<td>returns sorted value of arg(s) in ascending order, and arg(s) will not changed.<br>ソート結果を昇順で返す．引数は変更されない．</td>
+</tr>
+<tr>
+<td>sort_gr()</td>
+<td>sorts arg(s) value directly in descending order. When multiple <code>std::vector&lt;T&gt;</code>s are specified to arg, all <code>std::vector&lt;T&gt;</code>s will be sorted according to the 1st arg. There is no limit to the number or type of <code>std::vector&lt;T&gt;</code> specified in the argument.<br>引数の値を直接ソートする．値は降順にソートされる．引数に <code>std::vector&lt;T&gt;</code> が複数与えられた場合は，第１引数の順序に従って他の引数をソートする．引数に指定する <code>std::vector&lt;T&gt;</code> の数や型に制限はない．</td>
+</tr>
+<tr>
+<td>sorted_gr()</td>
+<td>returns sorted value of arg(s) in descending order, and arg(s) will not changed.<br>ソート結果を降順で返す．引数は変更されない．</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preprocess">preprocess</h3>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nonzero()</td>
+<td><br></td>
+</tr>
+<tr>
+<td>suppress()</td>
+<td><br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<h3 id="rounding">Rounding</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">round2even</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">round2even</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">round2odd</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">round2odd</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::round2even(1.5) = 2.
+sstd::round2even(2.5) = 2.
+sstd::round2odd(1.5) = 1.
+sstd::round2odd(2.5) = 3.
+</code></pre></div></li>
+</ul>
+<h3 id="statistical-processing">Statistical processing</h3>
+<h4 id="sum-sum_abs-ave-med-var-var_p-min-min_abs-max-max_abs-argmin-argmin_abs-argmax-and-argmax_abs">sum(), sum_abs(), ave(), med(), var(), var_p(), min(), min_abs(), max(), max_abs(), argmin(), argmin_abs(), argmax() and argmax_abs()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">-5</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">sum</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">sum_abs</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">ave</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">med</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">var</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">var_p</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">stdev</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">stdev_p</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">min_abs</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">max_abs</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">argmin</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">argmin_abs</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">argmax</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">argmax_abs</span><span class="p">(</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::sum( v ) = -5.
+sstd::sum_abs( v ) = 25.
+sstd::ave( v ) = -0.5
+sstd::med( v ) = -0.5
+sstd::var( v ) = 9.16667
+sstd::var_p( v ) = 8.25
+sstd::stdev( v ) = 3.02765
+sstd::stdev_p( v ) = 2.87228
+
+sstd::min( v ) = -5.
+sstd::min_abs( v ) = 0.
+sstd::max( v ) = 4.
+sstd::max_abs( v ) = -5.
+
+sstd::argmin( v ) = 0
+sstd::argmin_abs( v ) = 5
+sstd::argmax( v ) = 9
+sstd::argmax_abs( v ) = 0
+</code></pre></div></li>
+</ul>
+<h4 id="min-and-max-for-equal-or-more-than-three-args">min() and max() for equal or more than three args</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="mi">-5</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="mi">-5</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::min(-5,-4,-3,-2,-1,0,1,2,3,4) = -5
+sstd::max(-5,-4,-3,-2,-1,0,1,2,3,4) = 4
+</code></pre></div></li>
+</ul>
+<h3 id="searching">Searching</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">-5</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">nearest_down</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">nearest_up</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">argnearest_down</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">argnearest_up</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::nearest_down(v, 0.5) = 0.
+sstd::nearest_up(v, 0.5) = 1.
+
+sstd::argnearest_down(v, 0.5) = 5
+sstd::argnearest_up(v, 0.5) = 6
+</code></pre></div></li>
+</ul>
+<h3 id="sorting">Sorting</h3>
+<h4 id="sort-sort_gr">sort(), sort_gr()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="mi">-5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">-4</span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">v_base</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_base</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sort_gr</span><span class="p">(</span><span class="n">v_base</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v_base</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>v_base = [-5. -4. -3. -2. -1. 0. 1. 2. 3. 4.]
+v_base = [4. 3. 2. 1. 0. -1. -2. -3. -4. -5.]
+</code></pre></div></li>
+</ul>
+<h4 id="sort-for-multiple-vector">sort() for multiple vector</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w">         </span><span class="n">v1_sorting_seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v2</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;three&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;five&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;four&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v3</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v4</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;d&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v5</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;D&quot;</span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">v1_sorting_seed</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">,</span><span class="w"> </span><span class="n">v3</span><span class="p">,</span><span class="w"> </span><span class="n">v4</span><span class="p">,</span><span class="w"> </span><span class="n">v5</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v1_sorting_seed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v4</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v5</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>v1_sorting_seed = [1 2 3 4 5]
+v2 = [&quot;one&quot; &quot;two&quot; &quot;three&quot; &quot;four&quot; &quot;five&quot;]
+v3 = [&quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;]
+v4 = [&quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;]
+v5 = [&quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot;]
+</code></pre></div></li>
+</ul>
+<h4 id="sort_gr-for-multiple-vector">sort_gr() for multiple vector</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w">         </span><span class="n">v1_sorting_seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v2</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;three&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;five&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;four&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v3</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v4</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;d&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v5</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;D&quot;</span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sort_gr</span><span class="p">(</span><span class="n">v1_sorting_seed</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">,</span><span class="w"> </span><span class="n">v3</span><span class="p">,</span><span class="w"> </span><span class="n">v4</span><span class="p">,</span><span class="w"> </span><span class="n">v5</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v1_sorting_seed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v4</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">v5</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>v1_sorting_seed = [5 4 3 2 1]
+v2 = [&quot;five&quot; &quot;four&quot; &quot;three&quot; &quot;two&quot; &quot;one&quot;]
+v3 = [&quot;5&quot; &quot;4&quot; &quot;3&quot; &quot;2&quot; &quot;1&quot;]
+v4 = [&quot;e&quot; &quot;d&quot; &quot;c&quot; &quot;b&quot; &quot;a&quot;]
+v5 = [&quot;E&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;A&quot;]
+</code></pre></div></li>
+</ul>
+<h4 id="sorted-sorted_gr">sorted(), sorted_gr()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="mi">-5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">-4</span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">sorted</span><span class="p">(</span><span class="w"> </span><span class="n">v_base</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">sorted_gr</span><span class="p">(</span><span class="w"> </span><span class="n">v_base</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">v_base</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::sorted( v_base ) = [-5. -4. -3. -2. -1. 0. 1. 2. 3. 4.]
+sstd::sorted_gr( v_base ) = [4. 3. 2. 1. 0. -1. -2. -3. -4. -5.]
+
+v_base = [-1. -5. 2. -3. 3. 4. -2. 0. 1. -4.]
+</code></pre></div></li>
+</ul>
+<h3 id="preprocessing">Preprocessing</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">nonzero</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// suppressing vector to the same length before 0.</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">in1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">in2</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span><span class="w">   </span><span class="n">in3</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">in4</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">suppress</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="n">in2</span><span class="p">,</span><span class="w"> </span><span class="n">in3</span><span class="p">,</span><span class="w"> </span><span class="n">in4</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">in1</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">in2</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">in3</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">in4</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::nonzero(v) = [1. 2. 3.]
+in1 = [1. 2. 3.]
+in2 = [1. 2. 3.]
+in3 = [1 2 3]
+in4 = [1. 2. 3.]
+</code></pre></div></li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/math/math.cpp">sstd/src/math/math.cpp</a></li>
+<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/math/math.hpp">sstd/src/math/math.hpp</a></li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/math/math.hpp">test/math/math.hpp</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="hashFunction/sha2.html" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              SHA-2<br/>(224, 256, 384, 512 bits)
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../print/pdbg.html" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              pdbg
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+        <script src="../../custom_dir/custom.js"></script>
+      
+    
+  </body>
+</html>
