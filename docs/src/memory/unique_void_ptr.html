@@ -799,12 +799,25 @@
     Usage
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#appendix" class="md-nav__link">
-    Appendix
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construction-and-destruction" class="md-nav__link">
+    Construction and destruction
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move" class="md-nav__link">
+    move
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1164,12 +1177,25 @@
     Usage
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#appendix" class="md-nav__link">
-    Appendix
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construction-and-destruction" class="md-nav__link">
+    Construction and destruction
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move" class="md-nav__link">
+    move
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1207,7 +1233,9 @@ Note that the type that can be passed as a pointer is limited to the type provid
 <span class="w">        </span><span class="n">uint</span><span class="w"> </span><span class="n">typeNumber</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pData</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">unique_void_ptr</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">unique_void_ptr</span><span class="p">();</span><span class="w">                                           </span><span class="c1">// default constructor</span>
+<span class="w">        </span><span class="n">unique_void_ptr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">unique_void_ptr</span><span class="o">&amp;</span><span class="w">  </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">// copy constructor (Note: disabled)</span>
+<span class="w">        </span><span class="n">unique_void_ptr</span><span class="p">(</span><span class="w">      </span><span class="k">class</span><span class="w"> </span><span class="nc">unique_void_ptr</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w">          </span><span class="c1">// move constructor</span>
 
 <span class="w">        </span><span class="n">unique_void_ptr</span><span class="p">(</span><span class="w">       </span><span class="kt">bool</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">unique_void_ptr</span><span class="p">(</span><span class="w">       </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
@@ -1277,6 +1305,7 @@ Note that the type that can be passed as a pointer is limited to the type provid
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
+<h3 id="construction-and-destruction">Construction and destruction</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
@@ -1300,7 +1329,44 @@ Note that the type that can be passed as a pointer is limited to the type provid
 void_ptr.typeNum() = 13
 </code></pre></div></li>
 </ul>
-<h2 id="appendix">Appendix</h2>
+<h3 id="move">move</h3>
+<p>The <code>sstd::unique_void_ptr</code> object can not copy itself in order not to increase the owner of the memory, but can move the object and its owner.
+This example shows that how to move the <code>sstd::unique_void_ptr</code> object.</p>
+<p><code>sstd::unique_void_ptr</code> オブジェクトは，メモリーの所有権を増加させないために，自分自身のコピーを作成できません．しかし，オブジェクトとオブジェクトの所有権はムーブできます．
+このサンプルでは，<code>sstd::unique_void_ptr</code> オブジェクトのムーブについて説明します．</p>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Init unique_void_ptr:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">unique_void_ptr</span><span class="w"> </span><span class="n">void_ptr_01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">unique_void_ptr</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// allocates the memory</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">void_ptr_01</span><span class="p">.</span><span class="n">typeNum</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">void_ptr_01</span><span class="p">.</span><span class="n">ptr</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Move the object and its owner:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">unique_void_ptr</span><span class="w"> </span><span class="n">void_ptr_02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">void_ptr_01</span><span class="p">);</span><span class="w"> </span><span class="c1">// move the object and its owner</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">void_ptr_01</span><span class="p">.</span><span class="n">typeNum</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">void_ptr_01</span><span class="p">.</span><span class="n">ptr</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">void_ptr_02</span><span class="p">.</span><span class="n">typeNum</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">void_ptr_02</span><span class="p">.</span><span class="n">ptr</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>Init unique_void_ptr:
+void_ptr_01.typeNum() = 13
+void_ptr_01.ptr() = 0x55ad1dbf3c40
+
+Move the object and its owner:
+void_ptr_01.typeNum() = 255
+void_ptr_01.ptr() = 0
+void_ptr_02.typeNum() = 13
+void_ptr_02.ptr() = 0x55ad1dbf3c40
+</code></pre></div>
+Note: typeNum is defined at <a href="../definitions/typeNum.html">../definitions/typeNum.hpp</a>.</li>
+</ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
 <li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/memory/unique_void_ptr.cpp">sstd/src/memory/unique_void_ptr.cpp</a></li>
