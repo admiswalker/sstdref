@@ -17,6 +17,7 @@
 ## Header file
 ```cpp
 namespace sstd{
+    void print(const  void* rhs);
     void print(const  bool  rhs);
     void print(const  char  rhs);
     void print(const  int8  rhs);
@@ -36,6 +37,7 @@ namespace sstd{
     template <typename T_lhs, typename T_rhs>
     void print(const std::unordered_map<T_lhs, T_rhs>& rhs);
     
+    void for_printn( void* rhs);
     void for_printn( bool  rhs);
     void for_printn( char  rhs);
     void for_printn( int8  rhs);
@@ -81,6 +83,40 @@ int main(){
     sstd::printn(i);
     sstd::printn_all(i);
     sstd::printn_fflv(i);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### print void* (pointer) type
+#### Normal case
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    int num = 123;
+    sstd::printn(&num);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+#### char* case
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    const char *pC = "abc";
+    sstd::printn((void*)pC); // To print a pointer address, sstd::print requires to cast char* to void*.
+    
+    sstd::printn(pC); // when the case not cast to void*, sstd::print treats the variable as a string.
 }
 ```
 - <u>**Execution result**</u>

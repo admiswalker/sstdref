@@ -16,7 +16,9 @@ namespace sstd{
         uint typeNumber;
         void* pData;
     public:
-        unique_void_ptr();
+        unique_void_ptr();                                           // default constructor
+        unique_void_ptr(const class unique_void_ptr&  rhs) = delete; // copy constructor (Note: disabled)
+        unique_void_ptr(      class unique_void_ptr&& rhs);          // move constructor
         
         unique_void_ptr(       bool* ptr);
         unique_void_ptr(       char* ptr);
@@ -63,6 +65,9 @@ namespace sstd{
 | unique_void_ptr() | typeNum() | returns the type number defined on ["src/definitions/typeNum.hpp"](../definitions/typeNum.md).<br>["src/definitions/typeNum.hpp"](../definitions/typeNum.md) で定義された型の番号を返却します． |
 
 ## Usage
+
+### Construction and destruction
+
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -86,6 +91,41 @@ int main(){
 ```
 #mdEx: cpp example (out)
 ```
+
+### move
+
+The `sstd::unique_void_ptr` object can not copy itself in order not to increase the owner of the memory, but can move the object and its owner.
+This example shows that how to move the `sstd::unique_void_ptr` object.
+
+`sstd::unique_void_ptr` オブジェクトは，メモリーの所有権を増加させないために，自分自身のコピーを作成できません．しかし，オブジェクトとオブジェクトの所有権はムーブできます．
+このサンプルでは，`sstd::unique_void_ptr` オブジェクトのムーブについて説明します．
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    printf("Init unique_void_ptr:\n");
+    sstd::unique_void_ptr void_ptr_01 = sstd::unique_void_ptr(new std::string("abc")); // allocates the memory
+    sstd::printn(void_ptr_01.typeNum());
+    sstd::printn(void_ptr_01.ptr());
+    printf("\n");
+
+    printf("Move the object and its owner:\n");
+    sstd::unique_void_ptr void_ptr_02 = std::move(void_ptr_01); // move the object and its owner
+    sstd::printn(void_ptr_01.typeNum());
+    sstd::printn(void_ptr_01.ptr());
+    sstd::printn(void_ptr_02.typeNum());
+    sstd::printn(void_ptr_02.ptr());
+    printf("\n");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+Note: typeNum is defined at [../definitions/typeNum.hpp](../definitions/typeNum.md).
 
 ## Implementation
 - Source: [sstd/src/memory/unique_void_ptr.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/memory/unique_void_ptr.cpp)
