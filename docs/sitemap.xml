@@ -2,202 +2,202 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/index.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/container/matrix/bmat.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/container/matrix/mat_colMajor.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/container/matrix/mat_rowMajor.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/container/vector/Tr.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/container/vector/slice.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/container/vector/stdVector_expansion.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/container/vector/vec_vvec.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/definitions/itr.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/definitions/typeDef.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/definitions/typeNum.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/cp.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/csv.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/file.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/file_operations.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/glob.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/mkdir.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/mv.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/path.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/read_write.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/rm.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/file/tinyInterpreter.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/math/math.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/math/hashFunction/hashSum.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/math/hashFunction/md5.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/math/hashFunction/sha1.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/math/hashFunction/sha2.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/memory/unique_void_ptr.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/print/pdbg.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/print/print.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/python/c2py.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/string/encode_decode.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/string/ssprintf.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/string/strEdit.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/string/strmatch.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/sys/pid.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/sys/system.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/time/measureTime.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/time/sleep.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://admiswalker.github.io/sstdref/index.html/src/time/time.html</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
