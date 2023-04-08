@@ -27,8 +27,8 @@ int main(){
 ```
 
 ## Implementation
-- Source: [sstd/src/ssprintf.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/ssprintf.cpp)
-- Header: [sstd/src/ssprintf.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/ssprintf.hpp)
-- Test: [test/ssprintf.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/ssprintf.hpp)
+- Source: [sstd/src/string/ssprintf.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/ssprintf.cpp)
+- Header: [sstd/src/string/ssprintf.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/ssprintf.hpp)
+- Test: [test/string/ssprintf.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/string/ssprintf.hpp)
   (Not implemented yet)
 
