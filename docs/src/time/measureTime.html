@@ -1210,43 +1210,43 @@
 <p><code>measureTime</code> measures the execution time.<br />
 <code>measureTime</code> は実行時間を計測します．</p>
 <h2 id="header-file">Header file</h2>
-<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w">        </span><span class="nf">measureTime_start</span><span class="w">     </span><span class="p">(</span><span class="w">      </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">        </span><span class="nf">measureTime_start</span><span class="w">     </span><span class="p">(</span><span class="w">      </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span>
 <span class="w">    </span><span class="kt">double</span><span class="w">      </span><span class="nf">measureTime_stop_s</span><span class="w">    </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span><span class="w"> </span><span class="c1">// sec</span>
 <span class="w">    </span><span class="kt">double</span><span class="w">      </span><span class="nf">measureTime_stop_ms</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span><span class="w"> </span><span class="c1">// milli sec</span>
 <span class="w">    </span><span class="kt">double</span><span class="w">      </span><span class="nf">measureTime_stop_us</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span><span class="w"> </span><span class="c1">// micro sec</span>
 <span class="w">    </span><span class="kt">double</span><span class="w">      </span><span class="nf">measureTime_stop_ns</span><span class="w">   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span><span class="w"> </span><span class="c1">// nano sec</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">measureTime_ms2str</span><span class="w">    </span><span class="p">(</span><span class="n">uint64</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">measureTime_stop_str</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w">        </span><span class="nf">measureTime_stop_print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">measureTime_ms2str</span><span class="w">    </span><span class="p">(</span><span class="n">uint64</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">measureTime_stop_str</span><span class="w">  </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">        </span><span class="nf">measureTime_stop_print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">time_m</span><span class="o">&amp;</span><span class="w"> </span><span class="n">startTime</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
 <h3 id="measurement-of-execution-time">Measurement of execution time. (実行時間の計測)</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;+---------------------------------------------------+</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;|                                                   |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;|     Welcome to Sub Standard Library (SSTD) !      |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;|                                                   |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;+---------------------------------------------------+</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;■ measureTime_start---------------</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">time_m</span><span class="w"> </span><span class="n">timem</span><span class="p">;</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;+---------------------------------------------------+</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;|                                                   |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;|     Welcome to Sub Standard Library (SSTD) !      |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;|                                                   |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;+---------------------------------------------------+</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;■ measureTime_start---------------</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">time_m</span><span class="w"> </span><span class="n">timem</span><span class="p">;</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_s</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_us</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_s</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_us</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;■ measureTime_stop----------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_print</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">pauseIfWin32</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;■ measureTime_stop----------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_print</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">pauseIfWin32</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>+---------------------------------------------------+
@@ -1267,23 +1267,23 @@
 <h3 id="lap-time-measurement">Lap time measurement. (ラップタイムの測定)</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vLT_ms</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vLT_ms</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">time_m</span><span class="w"> </span><span class="n">timem</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">vLT_ms</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_ms</span><span class="p">(</span><span class="n">timem</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">time_m</span><span class="w"> </span><span class="n">timem</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vLT_ms</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_ms</span><span class="p">(</span><span class="n">timem</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">vLT_ms</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_ms</span><span class="p">(</span><span class="n">timem</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+<span class="w">        </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">        </span><span class="n">vLT_ms</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_ms</span><span class="p">(</span><span class="n">timem</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vLT_ms</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">vLT_ms</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>vLT_ms = [0. 10.065 20.155 30.236 40.311 50.39]

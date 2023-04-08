@@ -1170,30 +1170,30 @@
 <p><code>sleep</code> waits for the specified time.<br />
 <code>sleep</code> は指定時間待機します．</p>
 <h2 id="header-file">Header file</h2>
-<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_hour</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_min</span><span class="w"> </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_s</span><span class="w">   </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_ms</span><span class="w">  </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_us</span><span class="w">  </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_ns</span><span class="w">  </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_hour</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_min</span><span class="w"> </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_s</span><span class="w">   </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_ms</span><span class="w">  </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_us</span><span class="w">  </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep_ns</span><span class="w">  </span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="usage">Usage</h2>
 <ul>
 <li><u><strong>main.cpp</strong></u>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">time_m</span><span class="w"> </span><span class="n">timem</span><span class="p">;</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">time_m</span><span class="w"> </span><span class="n">timem</span><span class="p">;</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_start</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_s</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_us</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_s</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">sleep_us</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_print</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">measureTime_stop_print</span><span class="p">(</span><span class="n">timem</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>--------------------------------
