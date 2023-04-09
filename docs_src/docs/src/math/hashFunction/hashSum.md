@@ -62,5 +62,5 @@ int main(){
 ## Implementation
 - Source: [sstd/src/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.cpp)
 - Header: [sstd/src/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp)
-- Test: [test/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.hpp)
+- Test: [test/src_test/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/math/hashFnc_of_MD5_SHA1_SHA2/hashSum.cpp)
 

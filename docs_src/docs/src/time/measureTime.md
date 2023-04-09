@@ -80,4 +80,4 @@ int main(){
 ## Implementation
 - Source: [sstd/src/time/measureTime.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time/measureTime.cpp)
 - Header: [sstd/src/time/measureTime.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time/measureTime.hpp)
-- Test: [test/time/measureTime.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/time/measureTime.hpp)
+- Test: [test/src_test/time/measureTime.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/time/measureTime.cpp)

@@ -268,4 +268,4 @@ int main(){
 ## Implementation
 - Source: [sstd/src/string/strmatch.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/strmatch.cpp)
 - Header: [sstd/src/string/strmatch.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/strmatch.hpp)
-- Test: [test/string/strmatch.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/string/strmatch.hpp)
+- Test: [test/src_test/string/strmatch.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/string/strmatch.cpp)

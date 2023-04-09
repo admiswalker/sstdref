@@ -267,5 +267,4 @@ int main(){
 ## Implementation
 - Source: header only
 - Header: [sstd/src/container/vector/stdVector_expansion.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/vector/stdVector_expansion.hpp)
-- Test: [test/container/vector/stdVector_expansion.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/vector/stdVector_expansion.hpp)
-
+- Test: [test/src_test/container/vector/stdVector_expansion.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/container/vector/stdVector_expansion.cpp)

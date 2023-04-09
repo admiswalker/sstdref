@@ -182,5 +182,5 @@ int main(){
 ## Implementation
 - Source: [sstd/src/definitions/typeNum.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/definitions/typeNum.cpp)
 - Header: [sstd/src/definitions/typeNum.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/definitions/typeNum.hpp)
-- Test: [test/definitions/typeNum.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/definitions/typeNum.hpp)
+- Test: [test/src_test/definitions/typeNum.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/definitions/typeNum.cpp)
 

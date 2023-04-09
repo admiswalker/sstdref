@@ -73,4 +73,4 @@ struct tm{
 ## Implementation
 - Source: [sstd/src/time/time.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time/time.cpp)
 - Header: [sstd/src/time/time.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/time/time.hpp)
-- Test: [test/time/time.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/time/time.hpp)
+- Test: [test/src_test/time/time.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/time/time.cpp)

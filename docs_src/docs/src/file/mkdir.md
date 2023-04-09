@@ -32,6 +32,6 @@ int main(){
 ## Implementation
 - Source: [sstd/src/mkdir.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/mkdir.cpp)
 - Header: [sstd/src/mkdir.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/mkdir.hpp)
-- Test: [test/mkdir.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/mkdir.hpp)
+- Test: [test/src_test/file/mkdir.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/file/mkdir.cpp)
   (Not implemented yet)
 

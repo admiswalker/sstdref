@@ -29,6 +29,6 @@ int main(){
 ## Implementation
 - Source: [sstd/src/string/ssprintf.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/ssprintf.cpp)
 - Header: [sstd/src/string/ssprintf.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/string/ssprintf.hpp)
-- Test: [test/string/ssprintf.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/string/ssprintf.hpp)
+- Test: [test/src_test/string/strEdit.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/string/strEdit.cpp)
   (Not implemented yet)
 

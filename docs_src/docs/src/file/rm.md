@@ -48,6 +48,6 @@ int main(){
 ## Implementation
 - Source: [sstd/src/rm.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/rm.cpp)
 - Header: [sstd/src/rm.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/rm.hpp)
-- Test: [test/rm.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/rm.hpp)
+- Test: [test/src_test/file/rm.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/file/rm.cpp)
   (Not implemented yet)
 

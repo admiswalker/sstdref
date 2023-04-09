@@ -39,6 +39,5 @@ int main(){
 
 ## Implementation
 - Header: [sstd/src/sleep.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/sleep.hpp)
-- Test: [test/sleep.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/sleep.hpp)
+- Test: [test/src_test/time/sleep.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/time/sleep.hpp)
   (Not implemented yet)
-

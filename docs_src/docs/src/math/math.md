@@ -451,4 +451,4 @@ int main(){
 ## Implementation
 - Source: [sstd/src/math/math.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/math/math.cpp)
 - Header: [sstd/src/math/math.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/math/math.hpp)
-- Test: [test/math/math.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/math/math.hpp)
+- Test: [test/src_test/math/math.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/math/math.cpp)

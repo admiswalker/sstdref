@@ -130,5 +130,5 @@ Note: typeNum is defined at [../definitions/typeNum.hpp](../definitions/typeNum.
 ## Implementation
 - Source: [sstd/src/memory/unique_void_ptr.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/memory/unique_void_ptr.cpp)
 - Header: [sstd/src/memory/unique_void_ptr.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/memory/unique_void_ptr.hpp)
-- Test: [test/memory/unique_void_ptr.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/memory/unique_void_ptr.hpp)
+- Test: [test/src_test/memory/unique_void_ptr.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/memory/unique_void_ptr.cpp)
 

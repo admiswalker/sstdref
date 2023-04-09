@@ -200,4 +200,4 @@ int main(){
 ## Implementation
 - Source: [sstd/src/print/print.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/print/print.cpp)
 - Header: [sstd/src/print/print.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/print/print.hpp)
-- Test: [test/print/print_printn_printn_all.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/print/print_printn_printn_all.hpp)
+- Test: [test/src_test/print/print_printn_printn_all.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/print/print_printn_printn_all.cpp)

@@ -224,5 +224,5 @@ int main(){
 ## Implementation
 - Source: [sstd/src/file/path.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/path.cpp)
 - Header: [sstd/src/file/path.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/path.hpp)
-- Test: [test/file/path.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/path.hpp)
+- Test: [test/src_test/file/path.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/file/path.cpp)
 

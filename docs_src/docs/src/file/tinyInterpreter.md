@@ -63,5 +63,5 @@ int main(){
 ## Implementation
 - Source: [sstd/src/file/tinyInterpreter.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/tinyInterpreter.cpp)
 - Header: [sstd/src/file/tinyInterpreter.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/tinyInterpreter.hpp)
-- Test: [test/file/tinyInterpreter.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/tinyInterpreter.hpp)
+- Test: [test/src_test/file/tinyInterpreter.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/file/tinyInterpreter.cpp)
 

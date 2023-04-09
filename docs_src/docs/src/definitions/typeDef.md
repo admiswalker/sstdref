@@ -45,4 +45,4 @@ SSTD における型の定義．`#include <sstd/sstd.hpp>` により定義が読
 ## Implementation
 - Source: header only
 - Header: [sstd/src/definitions/typeDef.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/definitions/typeDef.h)
-
+- Test: [test/src_test/definitions/typeDef.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/definitions/typeDef.cpp)

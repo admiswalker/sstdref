@@ -90,5 +90,5 @@ int main(){
 ## Implementation
 - Source: [sstd/src/file/glob.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/glob.cpp)
 - Header: [sstd/src/file/glob.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/glob.hpp)
-- Test: [test/file/glob.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/glob.hpp)
+- Test: [test/src_test/file/glob.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/file/glob.cpp)
 

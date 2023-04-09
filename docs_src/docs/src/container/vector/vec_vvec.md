@@ -33,6 +33,6 @@ int main(){
 ## Implementation
 - Source: header only
 - Header: [sstd/src/container/vector/typeDef.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/vector/typeDef.hpp)
-- Test: [test/container/vector/typeDef.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/vector/typeDef.hpp)
+- Test: [test/src_test/container/vector/typeDef.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/container/vector/typeDef.cpp)
   (Not implemented yet)
 

@@ -85,4 +85,4 @@ int main(){
 ## Implementation
 - Source: header only
 - Header: [sstd/src/container/vector/vvec.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/vector/vvec.hpp)
-- Test: [test/container/vector/vvec.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/vector/vvec.hpp)
+- Test: [test/src_test/container/vector/vvec.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/container/vector/vvec.cpp)

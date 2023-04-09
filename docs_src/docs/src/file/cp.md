@@ -104,5 +104,5 @@ int main(){
 ## Implementation
 - Source: [sstd/src/file/cp.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/cp.cpp)
 - Header: [sstd/src/file/cp.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/cp.hpp)
-- Test: [test/file/cp.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/cp.hpp)
+- Test: [test/src_test/file/cp.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/file/cp.cpp)
 

@@ -214,6 +214,6 @@ int main(){
 ## Implementation
 - Source: [sstd/src/container/matrixContainer_rowMajor/mat_r.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/matrixContainer_rowMajor/mat_r.cpp)
 - Header: [sstd/src/container/matrixContainer_rowMajor/mat_r.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/container/matrixContainer_rowMajor/mat_r.hpp)
-- Test: [test/container/mat_r.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/container/mat_r.hpp)
+- Test: [test/src_test/container/matrixContainer_rowMajor/mat_r.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/container/matrixContainer_rowMajor/mat_r.cpp)
   (Not implemented yet)
 

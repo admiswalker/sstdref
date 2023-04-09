@@ -75,6 +75,6 @@ int main(){
 ## Implementation
 - Source: [sstd/src/file/read_write.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/read_write.cpp)
 - Header: [sstd/src/file/read_write.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/read_write.hpp)
-- Test: [test/file/read_write.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/file/read_write.hpp)
+- Test: [test/src_test/file/read_write.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/file/read_write.cpp)
   (Not implemented yet)
 
