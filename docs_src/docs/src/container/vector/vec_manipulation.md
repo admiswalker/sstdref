@@ -1,6 +1,6 @@
 # manipulation
 ## Abstract
-This file contains the manipulation functions for generalized `std::vector<T>`.<br/>
+This file contains the manipulation functions for generalized `std::vector<T>` template.<br/>
 このファイルでは，一般化された `std::vector<T>` テンプレートを操作する関数を収録します．
 
 ## Header file
@@ -16,8 +16,6 @@ namespace sstd{
     template<typename T> void           rmEmpty_r_ow(      std::vector<T>& vec); // remove empty elements from right side overwrite
     
     // rmEmpty_ow(arg1, arg2, ...) of multiple vector arguments
-    template<typename T>                      inline void _rmEmpty_ow(const std::vector<bool>& v, std::vector<T>& head);
-    template<typename Head, typename... Tail> inline void _rmEmpty_ow(const std::vector<bool>& v, Head&& head, Tail&&... tail);
     template<typename Head, typename... Tail> inline void rmEmpty_ow(Head&& head, Tail&&... tail);
     
     //---
@@ -37,6 +35,7 @@ namespace sstd{
 | rmEmpty_l_ow() | removes empty objects from left (head) side and overwrites the results to the input argument.<br>空のオブジェクトを左 (先頭) 側から取り除き，入力を上書きします． |
 | rmEmpty_r   () | returns as the `std::vector<T>` type which is removed empty objects from right (head) side.<br>空のオブジェクトを右 (末尾) 側から取り除いた `std::vector<T>` 型を返却します． |
 | rmEmpty_r_ow() | removes empty objects from right (head) side and overwrites the results to the input argument.<br>空のオブジェクトを右 (末尾) 側から取り除き，入力を上書きします． |
+| rmEmpty_ow(arg1, arg2, ...)   | removes empty objects and overwrites the results to the input arguments based on the first argment.<br>第一引数のオブジェクトに従って，空のオブジェクトを取り除き，入力を上書きします． |
 | cntEmpty   | returns the number of empty objects.<br>空のオブジェクトの数を返却します． |
 | cntEmpty_l | returns the number of empty objects counted from left (head) side.<br>左 (先頭) 側から数えた空のオブジェクトの数を返却します． |
 | cntEmpty_r | returns the number of empty objects counted from right (tail) side.<br>右 (末尾) 側から数えた空のオブジェクトの数を返却します． |
@@ -86,6 +85,18 @@ int main(){
     sstd::rmEmpty_r_ow(v3_2);
     sstd::printn( v3_2 );
 
+    printf("\n");
+    //---
+    printf("case4: multiple arguments\n");
+    
+    std::vector<std::string> v4_1 = {  "",   "", "2a", "3a",   "", "5a",   "",   ""};
+    std::vector<std::string> v4_2 = {"0b", "1b", "2b", "3b", "4b", "5b", "6b", "7b"};
+    std::vector<std::string> v4_3 = {"0c", "1c", "2c", "3c", "4c", "5c", "6c", "7c"};
+    sstd::rmEmpty_ow(v4_1, v4_2, v4_3);
+    sstd::printn( v4_1 );
+    sstd::printn( v4_2 );
+    sstd::printn( v4_3 );
+    
     printf("\n");
     //---
     printf("--- cntEmpty ---\n");
