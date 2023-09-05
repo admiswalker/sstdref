@@ -1,6 +1,6 @@
 # YAML
 ## Abstract
-The SSTD YAML parser. `sstd::yaml_` seriese functions are the SSTD YAML parser set and are be used along with the `sstd::terp` class.
+The SSTD YAML parser. `sstd::yaml_` seriese functions are the SSTD YAML parser set and are used along with the `sstd::terp` class.
 A instance of the `sstd::terp` class operates like a in**<u>terp</u>**reter object.
 And the user can treat YAML file through the `sstd::terp` object.
 
