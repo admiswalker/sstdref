@@ -16,7 +16,7 @@ if [ $# -gt 1 ]; then
     exit 1
 fi
 
-dRun="docker run --rm -it -w /home"
+dRun="docker run --rm -u $(id -u $USER) -it -w /home"
 opt1="--name run_sstdref_build -v $PWD:/home"
 opt2="--name run_sstdref_httpd -v $PWD/tmp/site:/home -p 8000:8000"
 dImg="sstdref_gen:latest"
