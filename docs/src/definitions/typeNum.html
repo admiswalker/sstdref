@@ -360,6 +360,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../container/vector/vec_manipulation.html" class="md-nav__link">
+        manipulation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../container/vector/vec_vvec.html" class="md-nav__link">
         vec / vvec
       </a>
@@ -487,6 +499,26 @@
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type2num" class="md-nav__link">
+    type2num()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typenum2str" class="md-nav__link">
+    typeNum2str()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -549,7 +581,7 @@
   
     <li class="md-nav__item">
       <a href="../file/csv.html" class="md-nav__link">
-        csv
+        CSV
       </a>
     </li>
   
@@ -658,6 +690,18 @@
     <li class="md-nav__item">
       <a href="../file/tinyInterpreter.html" class="md-nav__link">
         tinyInterpreter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/yaml.html" class="md-nav__link">
+        YAML
       </a>
     </li>
   
@@ -803,6 +847,57 @@
           memory
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+      
+      <label class="md-nav__link" for="__nav_2_5_1">
+        terp
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="terp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          terp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/terp/print.html" class="md-nav__link">
+        print
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/terp/terp.html" class="md-nav__link">
+        terp
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
           
             
   
@@ -1157,6 +1252,26 @@
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type2num" class="md-nav__link">
+    type2num()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typenum2str" class="md-nav__link">
+    typeNum2str()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1187,6 +1302,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_void</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_len</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">201</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_err</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">254</span><span class="p">;</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_null</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w">        </span><span class="n">num_bool</span><span class="w">   </span><span class="o">=</span><span class="w">   </span><span class="mi">0</span><span class="p">;</span>
@@ -1300,21 +1416,46 @@
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_double</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">96</span><span class="p">;</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vmat_r_str</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mi">97</span><span class="p">;</span>
 
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">NUM_HASH_BASE</span><span class="w">       </span><span class="o">=</span><span class="w">  </span><span class="mi">98</span><span class="p">;</span><span class="w"> </span><span class="c1">// std::unordered_map&lt;std::string,std::string&gt; // num_hash_str_bool = NUM_HASH_BASE + num_bool</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_bool</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">98</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_char</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">99</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_uchar</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_int8</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_int16</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">102</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_int32</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">103</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_int64</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">104</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_uint8</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">105</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_uint16</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">106</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_uint32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">107</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_uint64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">108</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_float</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">109</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">110</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_str</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">111</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_void_ptr</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">112</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vec_void_ptr</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">113</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_vvec_void_ptr</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">114</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_mat_c_void_ptr</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">115</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_mat_r_void_ptr</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">116</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_str_void_ptr</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">117</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">uchar</span><span class="w"> </span><span class="n">num_hash_void_ptr_void_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">118</span><span class="p">;</span>
+
 <span class="w">    </span><span class="c1">//---</span>
 
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">       </span><span class="kt">bool</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">       </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">  </span><span class="c1">//uchar type2num(      uchar rhs); // same as uint8</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">       </span><span class="n">int8</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="n">int16</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="n">int32</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="n">int64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="n">uint8</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">     </span><span class="n">uint16</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">     </span><span class="n">uint32</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">     </span><span class="n">uint64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">      </span><span class="kt">float</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">     </span><span class="kt">double</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">              </span><span class="kt">bool</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">              </span><span class="kt">char</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">//uchar type2num(             uchar rhs); // same as uint8</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">              </span><span class="n">int8</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">             </span><span class="n">int16</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">             </span><span class="n">int32</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">             </span><span class="n">int64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">             </span><span class="n">uint8</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">            </span><span class="n">uint16</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">            </span><span class="n">uint32</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">            </span><span class="n">uint64</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">             </span><span class="kt">float</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
 <span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
 
 <span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">bool</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
@@ -1331,6 +1472,79 @@
 <span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
 <span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
 <span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">bool</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">char</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">//uchar type2num(const std::vector&lt;std::vector&lt;      uchar&gt;&gt;&amp; rhs); // same as uint8</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">       </span><span class="n">int8</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int16</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int32</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int64</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="n">uint8</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint16</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint32</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint64</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">      </span><span class="kt">float</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w">     </span><span class="kt">double</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">bool</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">char</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">//uchar type2num(const sstd::mat_c&lt;      uchar&gt;&amp; rhs); // same as uint8</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">       </span><span class="n">int8</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int16</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int32</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int64</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">      </span><span class="n">uint8</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint16</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint32</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint64</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">      </span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="w">     </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">bool</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">       </span><span class="kt">char</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">//uchar type2num(const sstd::mat_r&lt;      uchar&gt;&amp; rhs); // same as uint8</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">       </span><span class="n">int8</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int16</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int32</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">      </span><span class="n">int64</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">      </span><span class="n">uint8</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint16</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint32</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">     </span><span class="n">uint64</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">      </span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="w">     </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">       </span><span class="kt">bool</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">       </span><span class="kt">char</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">//uchar type2num(const std::unordered_map&lt;std::string,      uchar&gt;&amp; rhs); // same as uint8</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">       </span><span class="n">int8</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">      </span><span class="n">int16</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">      </span><span class="n">int32</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">      </span><span class="n">int64</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">      </span><span class="n">uint8</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">     </span><span class="n">uint16</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">     </span><span class="n">uint32</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">     </span><span class="n">uint64</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">      </span><span class="kt">float</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">     </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w">             </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_c</span><span class="o">&lt;</span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">mat_r</span><span class="o">&lt;</span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">uchar</span><span class="w"> </span><span class="nf">type2num</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//uchar type2num(const std::unordered_map&lt;sstd::void_ptr, sstd::void_ptr&gt;&amp; rhs);</span>
+
+<span class="w">    </span><span class="c1">//---</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">typeNum2str</span><span class="p">(</span><span class="n">uchar</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
 <h2 id="description">Description</h2>
@@ -1346,9 +1560,14 @@
 <td>type2num()</td>
 <td>returns the ID according to the C++ type.<br>C++ の型に応じた ID を返します．</td>
 </tr>
+<tr>
+<td>typeNum2str()</td>
+<td>returns the type string according to the typeNum.<br>typeNum に応じた文字列を返します．</td>
+</tr>
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
+<h3 id="type2num">type2num()</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
@@ -1366,6 +1585,26 @@
 sstd::type2num(bool()) = 0
 sstd::type2num(int64()) = 6
 sstd::type2num(std::vector&lt;int64&gt;()) = 20
+</code></pre></div></li>
+</ul>
+<h3 id="typenum2str">typeNum2str()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">typeNum2str</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">type2num</span><span class="p">(</span><span class="n">tmp</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">typeNum2str</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">type2num</span><span class="p">(</span><span class="kt">bool</span><span class="p">())));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">typeNum2str</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">type2num</span><span class="p">(</span><span class="n">int64</span><span class="p">())));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">typeNum2str</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">type2num</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">int64</span><span class="o">&gt;</span><span class="p">())));</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::typeNum2str(sstd::type2num(tmp)) = &quot;bool&quot;
+sstd::typeNum2str(sstd::type2num(bool())) = &quot;bool&quot;
+sstd::typeNum2str(sstd::type2num(int64())) = &quot;int64&quot;
+sstd::typeNum2str(sstd::type2num(std::vector&lt;int64&gt;())) = &quot;vec_int64&quot;
 </code></pre></div></li>
 </ul>
 <h2 id="implementation">Implementation</h2>

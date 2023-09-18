@@ -1,0 +1,2358 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is a documentation for SubStandardLibrary (SSTD), a library providing convenient functions set for C++, works on GCC (g++).">
+      
+      
+      
+        <meta name="author" content="ADMIS_Walker">
+      
+      
+        <link rel="canonical" href="https://admiswalker.github.io/sstdref/index.html/src/memory/terp/terp.html">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>terp - SSTD documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../custom_dir/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#terp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="SSTD documentation" class="md-header__button md-logo" aria-label="SSTD documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SSTD documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              terp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="SSTD documentation" class="md-nav__button md-logo" aria-label="SSTD documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    SSTD documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        What is SSTD ?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        src
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="src" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          src
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        container
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="container" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          container
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1_1">
+        matrix
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="matrix" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          matrix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/matrix/bmat.html" class="md-nav__link">
+        bmat (binary-matrix)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/matrix/mat_colMajor.html" class="md-nav__link">
+        mat_c (Col-major)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/matrix/mat_rowMajor.html" class="md-nav__link">
+        mat_r (Row-major)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_2" type="checkbox" id="__nav_2_1_2" >
+      
+      <label class="md-nav__link" for="__nav_2_1_2">
+        vector
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="vector" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          vector
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/vector/Tr.html" class="md-nav__link">
+        Tr (Transpose)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/vector/slice.html" class="md-nav__link">
+        slice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/vector/stdVector_expansion.html" class="md-nav__link">
+        Ope. Exp. for std::vector&lt;T&gt;
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/vector/vec_manipulation.html" class="md-nav__link">
+        manipulation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/vector/vec_vvec.html" class="md-nav__link">
+        vec / vvec
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        definitions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="definitions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          definitions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/itr.html" class="md-nav__link">
+        itr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/typeDef.html" class="md-nav__link">
+        typeDef
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/typeNum.html" class="md-nav__link">
+        typeNum
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        file
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="file" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          file
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/cp.html" class="md-nav__link">
+        cp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/csv.html" class="md-nav__link">
+        CSV
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/file.html" class="md-nav__link">
+        file
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/file_operations.html" class="md-nav__link">
+        file_operations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/glob.html" class="md-nav__link">
+        glob
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/mkdir.html" class="md-nav__link">
+        mkdir
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/mv.html" class="md-nav__link">
+        mv
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/path.html" class="md-nav__link">
+        path
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/read_write.html" class="md-nav__link">
+        read / write
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/rm.html" class="md-nav__link">
+        rm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/tinyInterpreter.html" class="md-nav__link">
+        tinyInterpreter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file/yaml.html" class="md-nav__link">
+        YAML
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        math
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="math" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          math
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_1" type="checkbox" id="__nav_2_4_1" >
+      
+      <label class="md-nav__link" for="__nav_2_4_1">
+        hashFunction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="hashFunction" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          hashFunction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/hashFunction/hashSum.html" class="md-nav__link">
+        hashSum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/hashFunction/md5.html" class="md-nav__link">
+        MD5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/hashFunction/sha1.html" class="md-nav__link">
+        SHA-1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/hashFunction/sha2.html" class="md-nav__link">
+        SHA-2<br/>(224, 256, 384, 512 bits)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/math.html" class="md-nav__link">
+        math
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
+      
+      <label class="md-nav__link" for="__nav_2_5">
+        memory
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="memory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          memory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" checked>
+      
+      <label class="md-nav__link" for="__nav_2_5_1">
+        terp
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="terp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          terp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="print.html" class="md-nav__link">
+        print
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          terp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="terp.html" class="md-nav__link md-nav__link--active">
+        terp
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sstdterp" class="md-nav__link">
+    sstd::terp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstdterpiterator" class="md-nav__link">
+    sstd::terp::iterator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstdterpvar" class="md-nav__link">
+    sstd::terp::var
+  </a>
+  
+    <nav class="md-nav" aria-label="sstd::terp::var">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common" class="md-nav__link">
+    common
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-hash-type" class="md-nav__link">
+    for hash type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-list-type" class="md-nav__link">
+    for list type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sstdterp_1" class="md-nav__link">
+    sstd::terp
+  </a>
+  
+    <nav class="md-nav" aria-label="sstd::terp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-list" class="md-nav__link">
+    hash(), list()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ishash-islist-isnull-isvalue" class="md-nav__link">
+    isHash(), isList(), isNull(), isValue()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstdterpiterator_1" class="md-nav__link">
+    sstd::terp::iterator
+  </a>
+  
+    <nav class="md-nav" aria-label="sstd::terp::iterator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#second" class="md-nav__link">
+    second()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstdterpvar_1" class="md-nav__link">
+    sstd::terp::var
+  </a>
+  
+    <nav class="md-nav" aria-label="sstd::terp::var">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-begin-end" class="md-nav__link">
+    [common]: begin(), end()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-size" class="md-nav__link">
+    [common]: size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-tot" class="md-nav__link">
+    [common]: to&lt;T&gt;()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-typenum-typestr" class="md-nav__link">
+    [common]: typeNum(), typeStr()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-hash-type-bucket_count" class="md-nav__link">
+    [for hash type]: bucket_count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-hash-type-erase" class="md-nav__link">
+    [for hash type]: erase()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-hash-type-find" class="md-nav__link">
+    [for hash type]: find()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-list-type-pop_back" class="md-nav__link">
+    [for list type]: pop_back()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-list-type-push_back" class="md-nav__link">
+    [for list type]: push_back()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-list-type-resize" class="md-nav__link">
+    [for list type]: resize()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unique_void_ptr.html" class="md-nav__link">
+        unique_void_ptr
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      <label class="md-nav__link" for="__nav_2_6">
+        print
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="print" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          print
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print/pdbg.html" class="md-nav__link">
+        pdbg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print/print.html" class="md-nav__link">
+        print / printn
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/c2py.html" class="md-nav__link">
+        c2py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      <label class="md-nav__link" for="__nav_2_8">
+        string
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="string" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          string
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/encode_decode.html" class="md-nav__link">
+        encode / decode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/ssprintf.html" class="md-nav__link">
+        ssprintf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/strEdit.html" class="md-nav__link">
+        strEdit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/strmatch.html" class="md-nav__link">
+        strmatch
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      <label class="md-nav__link" for="__nav_2_9">
+        sys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="sys" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          sys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sys/pid.html" class="md-nav__link">
+        pid
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sys/system.html" class="md-nav__link">
+        system
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      <label class="md-nav__link" for="__nav_2_10">
+        time
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="time" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          time
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../time/measureTime.html" class="md-nav__link">
+        measureTime
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../time/sleep.html" class="md-nav__link">
+        sleep
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../time/time.html" class="md-nav__link">
+        time
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-file" class="md-nav__link">
+    Header file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sstdterp" class="md-nav__link">
+    sstd::terp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstdterpiterator" class="md-nav__link">
+    sstd::terp::iterator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstdterpvar" class="md-nav__link">
+    sstd::terp::var
+  </a>
+  
+    <nav class="md-nav" aria-label="sstd::terp::var">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common" class="md-nav__link">
+    common
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-hash-type" class="md-nav__link">
+    for hash type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-list-type" class="md-nav__link">
+    for list type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sstdterp_1" class="md-nav__link">
+    sstd::terp
+  </a>
+  
+    <nav class="md-nav" aria-label="sstd::terp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-list" class="md-nav__link">
+    hash(), list()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ishash-islist-isnull-isvalue" class="md-nav__link">
+    isHash(), isList(), isNull(), isValue()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstdterpiterator_1" class="md-nav__link">
+    sstd::terp::iterator
+  </a>
+  
+    <nav class="md-nav" aria-label="sstd::terp::iterator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#second" class="md-nav__link">
+    second()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstdterpvar_1" class="md-nav__link">
+    sstd::terp::var
+  </a>
+  
+    <nav class="md-nav" aria-label="sstd::terp::var">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-begin-end" class="md-nav__link">
+    [common]: begin(), end()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-size" class="md-nav__link">
+    [common]: size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-tot" class="md-nav__link">
+    [common]: to&lt;T&gt;()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-typenum-typestr" class="md-nav__link">
+    [common]: typeNum(), typeStr()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-hash-type-bucket_count" class="md-nav__link">
+    [for hash type]: bucket_count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-hash-type-erase" class="md-nav__link">
+    [for hash type]: erase()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-hash-type-find" class="md-nav__link">
+    [for hash type]: find()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-list-type-pop_back" class="md-nav__link">
+    [for list type]: pop_back()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-list-type-push_back" class="md-nav__link">
+    [for list type]: push_back()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-list-type-resize" class="md-nav__link">
+    [for list type]: resize()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="terp">terp</h1>
+<h2 id="abstract">Abstract</h2>
+<p>The SSTD in<strong><u>terp</u></strong>reter type object class.
+<code>sstd::terp</code> class provides the interface to treat built-in data types as a interpreter like object.</p>
+<p>The SSTD インタープリタ型オブジェクトクラス．
+<code>sstd::terp</code> クラスは，組み込み型のデータタイプをインタープリタオブジェクトのように取り扱うインターフェースを提供します．</p>
+<h2 id="header-file">Header file</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c1">// forward declaration</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="o">::</span><span class="nn">terp</span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// hash</span>
+<span class="w">    </span><span class="n">var</span><span class="w"> </span><span class="nf">hash</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">allocate_size</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="w"> </span><span class="nf">hash</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// list</span>
+<span class="w">    </span><span class="n">var</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">allocate_size</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="w"> </span><span class="nf">list</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// type check</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isHash</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isList</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isNull</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isValue</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c1">// iterator</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">iterator</span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">iterator</span><span class="p">();</span>
+<span class="w">    </span><span class="n">iterator</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">_v_iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">iterator</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">_h_iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="o">~</span><span class="n">iterator</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">_v_iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">_v_itr_R</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">_h_iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">_h_itr_R</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">iterator</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">first_to</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">second_to</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="nf">second</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">iterator</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">var</span><span class="p">();</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">var</span><span class="o">&amp;</span><span class="w">  </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vp_in</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="w">      </span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">*</span><span class="w">  </span><span class="n">p_in</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w">         </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w">         </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w">  </span><span class="n">int8</span><span class="w">        </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w">  </span><span class="n">int16</span><span class="w">       </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w">  </span><span class="n">int32</span><span class="w">       </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w">  </span><span class="n">int64</span><span class="w">       </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">uint8</span><span class="w">        </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">uint16</span><span class="w">       </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">uint32</span><span class="w">       </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">uint64</span><span class="w">       </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w">  </span><span class="kt">float</span><span class="w">       </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w">       </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">        </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="o">~</span><span class="n">var</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">//---</span>
+<span class="w">    </span><span class="c1">// internal</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">void_ptr</span><span class="o">*</span><span class="w"> </span><span class="nf">p</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//---</span>
+<span class="w">    </span><span class="c1">// common</span>
+
+<span class="w">    </span><span class="n">var</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">var</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">          </span><span class="n">var</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">          </span><span class="n">var</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pKey</span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pKey</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="nf">begin</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="nf">end</span><span class="w">  </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">to</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="nf">typeNum</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">typeStr</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//---</span>
+<span class="w">    </span><span class="c1">// for hash type</span>
+
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="nf">bucket_count</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="nf">erase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="nf">erase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pKey</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pKey</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//---</span>
+<span class="w">    </span><span class="c1">// for list type</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">pop_back</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pRhs</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">resize</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">//-----------------------------------------------------------------------------------------------------------------------------------------------</span>
+</code></pre></div>
+<h2 id="description">Description</h2>
+<h3 id="sstdterp"><code>sstd::terp</code></h3>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hash()</td>
+<td>allocates memory for the hash type objects.<br>ハッシュ型用のメモリ領域を確保します．</td>
+</tr>
+<tr>
+<td>list()</td>
+<td>allocates memory for the list type objects.<br>リスト型用のメモリ領域を確保します．</td>
+</tr>
+<tr>
+<td>isHash()</td>
+<td>checks if the input argument is hash type.<br>入力引数がハッシュ型であるか確認します．</td>
+</tr>
+<tr>
+<td>isList()</td>
+<td>checks if the input argument is list type.<br>入力引数がリスト型であるか確認します．</td>
+</tr>
+<tr>
+<td>isNull()</td>
+<td>checks if the input argument is null type.<br>入力引数が Null 型であるか確認します．</td>
+</tr>
+<tr>
+<td>isValue()</td>
+<td>checks if the input argument has value.<br>入力引数が値を持つか確認します．</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sstdterpiterator"><code>sstd::terp::iterator</code></h3>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first_to&lt;T&gt;()</td>
+<td>converts the data of list or hash-key to the specified type.<br>リストまたはハッシュのキーのデータを指定された型に変換します．</td>
+</tr>
+<tr>
+<td>second_to&lt;T&gt;()</td>
+<td>converts the data of hash-value to the specified type.<br>ハッシュのバリューのデータを指定された型に変換します．</td>
+</tr>
+<tr>
+<td>second()</td>
+<td>returns the data of hash-value type.<br>ハッシュのバリューのデータを返却します．</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sstdterpvar"><code>sstd::terp::var</code></h3>
+<h4 id="common">common</h4>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin()</td>
+<td>returns the start point of the iterator.<br>イテレータの開始位置を返却します．</td>
+</tr>
+<tr>
+<td>end()</td>
+<td>returns the end point of the iterator.<br>イテレータの終了位置を返却します．</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>returns the size of instance.<br> インスタンスのサイズを返却します．</td>
+</tr>
+<tr>
+<td>to&lt;T&gt;()</td>
+<td>converts the data to the specified type.<br>データを指定された型に変換します．</td>
+</tr>
+<tr>
+<td>typeNum()</td>
+<td>returns the data type. The type definition is in <a href="../../definitions/typeNum.html">definitions/typeNum</a>.<br>データ型を返却します．型定義は <a href="../../definitions/typeNum.html">definitions/typeNum</a> を参照すること．</td>
+</tr>
+<tr>
+<td>typeStr()</td>
+<td>returns the data type name string. The definition is in <a href="../../definitions/typeNum.html">definitions/typeNum</a>.<br>データ型の名前を文字列で返却します．定義は <a href="../../definitions/typeNum.html">definitions/typeNum</a> を参照すること．</td>
+</tr>
+</tbody>
+</table>
+<h4 id="for-hash-type">for hash type</h4>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bucket_count()</td>
+<td>is allocated size of the hash table.<br>ハッシュテーブルのテーブルとして確保されているサイズ．</td>
+</tr>
+<tr>
+<td>erase()</td>
+<td>erases the key-value pair at the hash table.<br>ハッシュテーブルにある key-value 要素を削除する．</td>
+</tr>
+<tr>
+<td>find()</td>
+<td>searches the key at the hash table.<br>ハッシュテーブル中のキーを検索する．</td>
+</tr>
+</tbody>
+</table>
+<h4 id="for-list-type">for list type</h4>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pop_back()</td>
+<td>deletes the last element of the list.<br>リストの末尾の要素を削除します．</td>
+</tr>
+<tr>
+<td>push_back()</td>
+<td>append the value to the end of the list type.<br>list 型の末尾に要素を追加します．</td>
+</tr>
+<tr>
+<td>resize()</td>
+<td>resize the allocated size of the list.<br>リスト型に確保されている領域をリサイズします．</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<h3 id="sstdterp_1"><code>sstd::terp</code></h3>
+<h4 id="hash-list">hash(), list()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">();</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s">&quot;key&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>x = [&quot;a&quot; [&quot;b&quot; &quot;c&quot;] {&quot;key&quot;: &quot;value&quot;}]
+</code></pre></div></li>
+</ul>
+<h4 id="ishash-islist-isnull-isvalue">isHash(), isList(), isNull(), isValue()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isHash</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isList</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isNull</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isValue</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isHash</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isList</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isNull</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isValue</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isHash</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isList</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isNull</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isValue</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;str&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isHash</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isList</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isNull</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">isValue</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>isHash(x) = false
+isList(x) = false
+isNull(x) = true
+isValue(x) = false
+
+isHash(x) = true
+isList(x) = false
+isNull(x) = false
+isValue(x) = false
+
+isHash(x) = false
+isList(x) = true
+isNull(x) = false
+isValue(x) = false
+
+isHash(x) = false
+isList(x) = false
+isNull(x) = false
+isValue(x) = true
+</code></pre></div></li>
+</ul>
+<h3 id="sstdterpiterator_1"><code>sstd::terp::iterator</code></h3>
+<h4 id="second">second()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">();</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v2&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v3&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">itr</span><span class="o">=</span><span class="n">x</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">itr</span><span class="p">.</span><span class="n">second</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>itr.second() = [&quot;v1&quot; &quot;v2&quot; &quot;v3&quot;]
+</code></pre></div></li>
+</ul>
+<h3 id="sstdterpvar_1"><code>sstd::terp::var</code></h3>
+<h4 id="common-begin-end">[common]: begin(), end()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">xl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">xl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">xl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">xl</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">xl</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">xl</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xl</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">to</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">itr</span><span class="o">=</span><span class="n">xl</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">itr</span><span class="o">!=</span><span class="n">xl</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">itr</span><span class="p">){</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">itr</span><span class="p">.</span><span class="n">first_to</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">xh</span><span class="p">;</span>
+<span class="w">    </span><span class="n">xh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">();</span>
+<span class="w">    </span><span class="n">xh</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">xh</span><span class="p">[</span><span class="s">&quot;k2&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v2&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">xh</span><span class="p">[</span><span class="s">&quot;k3&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v3&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">itr</span><span class="o">=</span><span class="n">xh</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">itr</span><span class="o">!=</span><span class="n">xh</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">itr</span><span class="p">){</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s: %s, &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">itr</span><span class="p">.</span><span class="n">first_to</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">itr</span><span class="p">.</span><span class="n">second_to</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>a b c 
+a b c 
+k3: v3, k1: v1, k2: v2, 
+</code></pre></div></li>
+</ul>
+<h4 id="common-size">[common]: size()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">();</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">());</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">][</span><span class="s">&quot;k1&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">][</span><span class="s">&quot;k2&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v2&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">].</span><span class="n">size</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>x.size() = 2
+x[x.size()-1].size() = 2
+x = [&quot;a&quot; {&quot;k2&quot;: &quot;v2&quot;, &quot;k1&quot;: &quot;v1&quot;}]
+</code></pre></div></li>
+</ul>
+<h4 id="common-tot">[common]: to&lt;T&gt;()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">xs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">to</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">xs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">to</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">xi</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>xs = &quot;123&quot;
+xi = 123
+</code></pre></div></li>
+</ul>
+<h4 id="common-typenum-typestr">[common]: typeNum(), typeStr()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">typeNum</span><span class="p">());</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">typeStr</span><span class="p">());</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">typeNum2str</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">typeNum</span><span class="p">()));</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">xl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">xl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">xl</span><span class="p">.</span><span class="n">typeNum</span><span class="p">());</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">xl</span><span class="p">.</span><span class="n">typeStr</span><span class="p">());</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">typeNum2str</span><span class="p">(</span><span class="n">xl</span><span class="p">.</span><span class="n">typeNum</span><span class="p">()));</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">xh</span><span class="p">;</span>
+<span class="w">    </span><span class="n">xh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">xh</span><span class="p">.</span><span class="n">typeNum</span><span class="p">());</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">xh</span><span class="p">.</span><span class="n">typeStr</span><span class="p">());</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">sstd</span><span class="o">::</span><span class="n">typeNum2str</span><span class="p">(</span><span class="n">xh</span><span class="p">.</span><span class="n">typeNum</span><span class="p">()));</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>x.typeNum() = 255
+x.typeStr() = &quot;null&quot;
+sstd::typeNum2str(x.typeNum()) = &quot;null&quot;
+
+xl.typeNum() = 113
+xl.typeStr() = &quot;vec_void_ptr&quot;
+sstd::typeNum2str(xl.typeNum()) = &quot;vec_void_ptr&quot;
+
+xh.typeNum() = 117
+xh.typeStr() = &quot;hash_str_void_ptr&quot;
+sstd::typeNum2str(xh.typeNum()) = &quot;hash_str_void_ptr&quot;
+</code></pre></div></li>
+</ul>
+<h4 id="for-hash-type-bucket_count">[for hash type]: bucket_count()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">();</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k2&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v2&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k3&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v3&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">bucket_count</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>x = {&quot;k3&quot;: &quot;v3&quot;, &quot;k1&quot;: &quot;v1&quot;, &quot;k2&quot;: &quot;v2&quot;}
+x.size() = 3
+x.bucket_count() = 5
+</code></pre></div></li>
+</ul>
+<h4 id="for-hash-type-erase">[for hash type]: erase()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">();</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k2&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v2&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k3&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v3&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&quot;k1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&quot;k3&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>x = {&quot;k3&quot;: &quot;v3&quot;, &quot;k1&quot;: &quot;v1&quot;, &quot;k2&quot;: &quot;v2&quot;}
+x.size() = 3
+x = {&quot;k2&quot;: &quot;v2&quot;}
+x.size() = 1
+</code></pre></div></li>
+</ul>
+<h4 id="for-hash-type-find">[for hash type]: find()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">hash</span><span class="p">();</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k2&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v2&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="s">&quot;k3&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;v3&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">itr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;k1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">itr1</span><span class="o">!=</span><span class="n">x</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">itr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;not existing key&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">itr2</span><span class="o">!=</span><span class="n">x</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>itr1!=x.end() = true
+itr2!=x.end() = false
+</code></pre></div></li>
+</ul>
+<h4 id="for-list-type-pop_back">[for list type]: pop_back()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>x = [&quot;a&quot; &quot;b&quot; &quot;c&quot;]
+x = [&quot;a&quot; &quot;b&quot;]
+</code></pre></div></li>
+</ul>
+<h4 id="for-list-type-push_back">[for list type]: push_back()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">();</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>x = [&quot;a&quot; &quot;b&quot; &quot;c&quot;]
+</code></pre></div></li>
+</ul>
+<h4 id="for-list-type-resize">[for list type]: resize()</h4>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">list</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>x = [&quot;a&quot; &quot;b&quot; &quot;c&quot;]
+x.size() = 3
+x = [&quot;a&quot;]
+x.size() = 1
+</code></pre></div></li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/memory/terp/terp.cpp">sstd/src/memory/terp/terp.cpp</a></li>
+<li>Header: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/memory/terp/terp.hpp">sstd/src/memory/terp/terp.cpp</a></li>
+<li>Test: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/memory/terp/terp.cpp">test/memory/terp/terp.cpp</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="print.html" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              print
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../unique_void_ptr.html" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              unique_void_ptr
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+        <script src="../../../custom_dir/custom.js"></script>
+      
+    
+  </body>
+</html>
