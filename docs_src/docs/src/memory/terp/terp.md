@@ -19,6 +19,12 @@ namespace sstd::terp{
     // list
     var list(uint allocate_size);
     var list();
+    
+    // type check
+    bool isHash (const sstd::terp::var& rhs);
+    bool isList (const sstd::terp::var& rhs);
+    bool isNull (const sstd::terp::var& rhs);
+    bool isValue(const sstd::terp::var& rhs);
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,6 +73,14 @@ public:
     var(const char*        rhs);
     var(const std::string& rhs);
     ~var();
+
+    //---
+    // internal
+    
+    sstd::void_ptr* p() const;
+    
+    //---
+    // common
     
     var operator=(const char* rhs);
     var operator=(const sstd::terp::var& rhs);
@@ -82,6 +96,16 @@ public:
     sstd::terp::iterator begin() const;
     sstd::terp::iterator end  () const;
     
+    uint size() const;
+    
+    template <typename T> const T to() const;
+    
+    uint typeNum() const;
+    std::string typeStr() const;
+    
+    //---
+    // for hash type
+    
     uint bucket_count();
 
     sstd::terp::iterator erase(const sstd::terp::iterator& rhs);
@@ -89,7 +113,8 @@ public:
     
     sstd::terp::iterator find(const char* pKey) const;
     
-    sstd::void_ptr* p() const;
+    //---
+    // for list type
     
     void pop_back();
 
@@ -97,13 +122,6 @@ public:
     void push_back(const sstd::terp::var& rhs);
     
     void resize(uint len);
-    
-    uint size() const;
-    
-    template <typename T> const T to() const;
-    
-    uint typeNum() const;
-    std::string typeStr() const;
 };
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -117,6 +135,10 @@ public:
 | ------------- | ----------- |
 | hash() | allocates memory for the hash type objects.<br>ハッシュ型用のメモリ領域を確保します． |
 | list() | allocates memory for the list type objects.<br>リスト型用のメモリ領域を確保します． |
+| isHash() | checks if the input argument is hash type.<br>入力引数がハッシュ型であるか確認します． |
+| isList() | checks if the input argument is list type.<br>入力引数がリスト型であるか確認します． |
+| isNull() | checks if the input argument is null type.<br>入力引数が Null 型であるか確認します． |
+| isValue() | checks if the input argument has value.<br>入力引数が値を持つか確認します． |
 
 ### `sstd::terp::iterator`
 
@@ -177,6 +199,48 @@ int main(){
     x[2]["key"] = "value";
     
     sstd::printn(x);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### isHash(), isList(), isNull(), isValue()
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::terp::var x;
+    sstd::printn(isHash(x));
+    sstd::printn(isList(x));
+    sstd::printn(isNull(x));
+    sstd::printn(isValue(x));
+    printf("\n");
+    
+    x = sstd::terp::hash();
+    sstd::printn(isHash(x));
+    sstd::printn(isList(x));
+    sstd::printn(isNull(x));
+    sstd::printn(isValue(x));
+    printf("\n");
+    
+    x = sstd::terp::list();
+    sstd::printn(isHash(x));
+    sstd::printn(isList(x));
+    sstd::printn(isNull(x));
+    sstd::printn(isValue(x));
+    printf("\n");
+    
+    x = "str";
+    sstd::printn(isHash(x));
+    sstd::printn(isList(x));
+    sstd::printn(isNull(x));
+    sstd::printn(isValue(x));
+    printf("\n");
 }
 ```
 - <u>**Execution result**</u>

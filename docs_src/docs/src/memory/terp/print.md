@@ -15,8 +15,8 @@ namespace sstd{
 ## Description
 | Function name | Description |
 | ------------- | ----------- |
-| print()      | is an implementation for `sstd::print()`.<br>ja-xxxxxxx |
-| for_printn() | is an implementation for `sstd::printn()` macro defined at [print/printn](../../print/print.md).<br>`sstd::printn()` マクロ向け実装．マクロ実装は [print/printn](../../print/print.md) を参照すること． |
+| print()      | prints the `sstd::terp::var` type.<br>`sstd::terp::var` 型を表示します． |
+| for_printn() | is an internal implementation for `sstd::printn()` macro defined at [print/printn](../../print/print.md).<br>`sstd::printn()` マクロ向け内部実装．マクロ実装は [print/printn](../../print/print.md) を参照すること． |
 
 ## Usage
 - <u>**main.cpp**</u>
