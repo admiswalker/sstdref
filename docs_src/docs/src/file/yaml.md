@@ -224,12 +224,27 @@ int main(){
 ```
 
 #### flow style notation
-
-Not supported.
-
-```text
-ex:
+- <u>**example.yaml**</u>
+```
+#mdEx: cpp example (in:attachment:example.yaml)
 [a, b, c, {k1: v1}]
+```
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::file fp; if(!fp.fopen("./example.yaml", "r")){ sstd::pdbg_err("fopen() is failed.\n"); return 0; }
+    
+    sstd::terp::var yml;
+    if(!sstd::yaml_load(yml, fp)){ sstd::pdbg_err("yaml_load() is failed.\n"); return 0; }
+    sstd::printn(yml);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
 ```
 
 #### hash / ハッシュ
@@ -304,6 +319,15 @@ Using the pipe sign ('|') enables to read the string which contains the line fee
 - '|+' は改行のある文字列と最終行は次の項目までの改行を読み込みます．
 - '|-' は改行のある文字列を読み込みますが，最終行の改行は取り除かれます．
 
+**Note / 注意:**
+
+The YAML standard does NOT treat '#' in the `Block Chomping Indicator ('|')` as a comment, but treats as a text.
+
+YAML の規格では，`Block Chomping Indicator ('|')` 中に含まれる '#' をコメントとして取り扱わず，テキストとして取り扱います．
+
+Ref: [8.1.1.2. Block Chomping Indicator - The YAML Standard](https://yaml.org/spec/1.2.2/#8112-block-chomping-indicator)
+
+
 - <u>**example.yaml**</u>
 ```
 #mdEx: cpp example (in:attachment:example.yaml)
@@ -323,8 +347,6 @@ Using the pipe sign ('|') enables to read the string which contains the line fee
   s_minus1
   s_minus2
   s_minus3 # not contains the last line feed / 最終行の改行を含めない
-
-
 ```
 - <u>**main.cpp**</u>
 ```cpp
@@ -403,6 +425,15 @@ Using the greater-than sign ('>') enables to read the string which contains the 
 - '>' は改行コードのある文字列を読み込み，改行コードをスペース (' ') に変換します．
 - '>+' は改行コードのある文字列を読み込み，改行コードをスペース (' ') に変換します．ただし，最終行から次の項目までの改行を保持します．
 - '>-' は改行コードのある文字列を読み込み，改行コードをスペース (' ') に変換します．ただし，最終行の改行を無視します．
+
+**Note / 注意:**
+
+The YAML standard does NOT treat '#' in the `Block Chomping Indicator ('|')` as a comment, but treats as a text.
+
+YAML の規格では，`Block Chomping Indicator ('|')` 中に含まれる '#' をコメントとして取り扱わず，テキストとして取り扱います．
+
+Ref: [8.1.1.2. Block Chomping Indicator - The YAML Standard](https://yaml.org/spec/1.2.2/#8112-block-chomping-indicator)
+
 
 - <u>**example.yaml**</u>
 ```
@@ -633,7 +664,6 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-<!--
 #### sample2: setting file for some Server
 
 - <u>**example.yaml**</u>
@@ -676,10 +706,8 @@ int main(){
 ```
 #mdEx: cpp example (out)
 ```
--->
 
 ## Implementation
 - Source: [sstd/src/file/yaml.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/yaml.cpp)
 - Header: [sstd/src/file/yaml.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/yaml.hpp)
 - Test: [test/file/yaml.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/file/yaml.cpp)
-

@@ -6,6 +6,18 @@
 ## Header file
 ```cpp
 namespace sstd{
+    uint  count(const        char* str, char X);
+    uint  count(const std::string& str, char X);
+    uint lcount(const        char* str, char X);
+    uint lcount(const std::string& str, char X);
+    uint rcount(const        char* str, char X);
+    uint rcount(const std::string& str, char X);
+
+    bool startswith(const        char* str, const        char* searchString);
+    bool startswith(const        char* str, const std::string& searchString);
+    bool startswith(const std::string& str, const        char* searchString);
+    bool startswith(const std::string& str, const std::string& searchString);
+    
     bool strcmp(const        char* str1, const        char* str2);
     bool strcmp(const        char* str1, const std::string& str2);
     bool strcmp(const std::string& str1, const        char* str2);
@@ -65,19 +77,66 @@ namespace sstd{
 ## Description
 | Function name | Description |
 | ------------- | ----------- |
+| count()       | A function that counts up the whole number of character in the string. This functions counts up and returns whole the number of the 2nd argument in the 1st arguments.<br/>文字列に含まれる文字の数を数え上げる関数．第 2 引数の文字が第 1 引数の文字列に含まれる数を数え上げて返却します． |
+| lcount()      | A function that counts up the whole number of character in the string from the left side (from the head of string). This functions counts up and returns whole the number of the 2nd argument in the 1st arguments from the left side (from the head of string).<br/>文字列に含まれる文字の数を左側 (先頭) から数え上げる関数．第 2 引数の文字が第 1 引数の文字列に含まれる数を左側 (先頭) から数え上げて返却します． |
+| rcount()      | A function that counts up the whole number of character in the string from the right side (from the tail of string). This functions counts up and returns whole the number of the 2nd argument in the 1st arguments from the right side (from the tail of string).<br/>文字列に含まれる文字の数を右側 (末尾) から数え上げる関数．第 2 引数の文字が第 1 引数の文字列に含まれる数を右側 (末尾) から数え上げて返却します． |
+| startswith()  | A function that checks whether a string starts with the specific string or not. When the 1st argument starts from 2nd, true is returned. Otherwise false is returned.<br/>文字列が特定の文字列で始まるかどうかを判定する関数．第 1 引数が第 2 引数の値で始まる場合は true を，それ以外は false を返します． |
 | strcmp()      | A function that compares whether two input strings exactly the same or not. When two arguments of strings are exactly the same, true is returned. Otherwise false is returned.<br/>2 つの入力引数が完全に一致するかどうか判定する関数．2 つの入力引数が完全に一致する場合は，true を，それ以外は false を返します． |
-| strmatch()    | A function that judges whether a string and a string using wildcard are considered equivalent or not. When a string of 1st argument and a string of the 2nd argument can use wildcard considered equivalent, true is returned. Otherwise false is returned. Characters of `*` or `?` can use as wildcards.<br/>文字列とワイルドカード付き文字列が等価と見なせるか判定する関数．第一引数の文字列と，ワイルドカードを使える第二引数の文字列が等価と見なせる場合は，true を，それ以外は false を返します．また，wildcard には，`*` と `?` を使うことができます． |
-| strmatch_getWC() | A function to get a substring indicated by a wildcard. The 3rd argument will return the substring of the 1st argument that matches for the wildcard (`*` or `?`) of the 2nd argument. The other handlings work the same as `strmatch()`.<br/>ワイルドカードが示す部分文字列を取得する関数．第三引数は，第一引数の文字列の内，第二引数の wildcard (`*` または `?`) と一致する部分を返却します．それ以外は，`strmatch()` と同様に動作します． |
+| strmatch()    | A function that judges whether a string and a string using wildcard are considered equivalent or not. When a string of 1st argument and a string of the 2nd argument can use wildcard considered equivalent, true is returned. Otherwise false is returned. Characters of `*` or `?` can use as wildcards.<br/>文字列とワイルドカード付き文字列が等価と見なせるか判定する関数．第 1 引数の文字列と，ワイルドカードを使える第 2 引数の文字列が等価と見なせる場合は，true を，それ以外は false を返します．また，wildcard には，`*` と `?` を使うことができます． |
+| strmatch_getWC() | A function to get a substring indicated by a wildcard. The 3rd argument will return the substring of the 1st argument that matches for the wildcard (`*` or `?`) of the 2nd argument. The other handlings work the same as `strmatch()`.<br/>ワイルドカードが示す部分文字列を取得する関数．第 3 引数は，第 1 引数の文字列の内，第 2 引数の wildcard (`*` または `?`) と一致する部分を返却します．それ以外は，`strmatch()` と同様に動作します． |
 | pathmatch()   | A function that judges whether a path string and a path string using wildcard are considered equivalent or not. The splitter string (`/` or `\\`) cannot be excluded with wildcards. The other handlings work the same as `strmatch()`.<br/>パスの比較用関数．スプリッタとなる文字列 (`/` または `\\`) が wildcard による除外を受付ません．それ以外は，`strmatch()` と同様に動作します． |
-| isNum()       | A function that judges whether a whole string is configured by numerical string or not. When all the character or string of the 1st argument is in the range of `0` to `9` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が数値で構成されているか判定する関数．第一引数に渡される全ての文字または文字列が ASCII Code での `0` ~ `9` の範囲にある場合は，true を，それ以外は false を返します． |
-| isAlphabet()  | A function that judges whether a whole string is configured by alphabet or not. When a character or whole string of the 1st argument are in the range of `A` to `Z` or `a` to `z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列がアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` または `a` ~ `z` の範囲にある場合は，true を，それ以外は false を返します． |
-| isAlphabet_upper() | A function that judges whether a whole string is configured by uppercase or not. When all the character or string of the 1st argument is in the range of `A` to `Z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が大文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` の範囲にある場合は，true を，それ以外は false を返します． |
-| isAlphabet_lower() | A function that judges whether a whole string is configured by lowercase or not. When all the character or string of the 1st argument is in the range of `a` to `z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が小文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での `a` ~ `z` の範囲にある場合は，true を，それ以外は false を返します． |
-| charIn()      | A function that judges whether a particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
-| charIn_all()  | A function that judges whether all of particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を全て内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
-| strIn()       | A function that judges whether a particular string is included in a string or not. When the string of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字列を内包するか判定する関数．第一引数の文字列が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
+| isNum()       | A function that judges whether a whole string is configured by numerical string or not. When all the character or string of the 1st argument is in the range of `0` to `9` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が数値で構成されているか判定する関数．第 1 引数に渡される全ての文字または文字列が ASCII Code での `0` ~ `9` の範囲にある場合は，true を，それ以外は false を返します． |
+| isAlphabet()  | A function that judges whether a whole string is configured by alphabet or not. When the character(s) or whole string of the 1st argument are in the range of `A` to `Z` or `a` to `z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列がアルファベットで構成されているか判定する関数．第 1 引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` または `a` ~ `z` の範囲にある場合は，true を，それ以外は false を返します． |
+| isAlphabet_upper() | A function that judges whether a whole string is configured by uppercase or not. When all the character or string of the 1st argument is in the range of `A` to `Z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が大文字のアルファベットで構成されているか判定する関数．第 1 引数に渡された全ての文字または文字列が ASCII Code での `A` ~ `Z` の範囲にある場合は，true を，それ以外は false を返します． |
+| isAlphabet_lower() | A function that judges whether a whole string is configured by lowercase or not. When all the character or string of the 1st argument is in the range of `a` to `z` as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が小文字のアルファベットで構成されているか判定する関数．第 1 引数に渡された全ての文字または文字列が ASCII Code での `a` ~ `z` の範囲にある場合は，true を，それ以外は false を返します． |
+| charIn()      | A function that judges whether a particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を内包するか判定する関数．第 1 引数の文字が，第 2 引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
+| charIn_all()  | A function that judges whether all of particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を全て内包するか判定する関数．第 1 引数の文字が，第 2 引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
+| strIn()       | A function that judges whether a particular string is included in a string or not. When the string of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字列を内包するか判定する関数．第 1 引数の文字列が，第 2 引数の文字列に含まれる場合は，true を，それ以外は false を返します． |
 
 ## Usage
+### rcount(), lcount(), count()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::printn( sstd::count("aabbccddeeff", 'a') );
+    sstd::printn( sstd::count("aabbccddeeff", 'f') );
+    sstd::printn( sstd::count("aabbccddeeff", 'x') );
+    printf("\n");
+    
+    sstd::printn( sstd::lcount("aabbccddeeff", 'a') );
+    sstd::printn( sstd::lcount("aabbccddeeff", 'f') );
+    sstd::printn( sstd::lcount("aabbccddeeff", 'x') );
+    printf("\n");
+    
+    sstd::printn( sstd::rcount("aabbccddeeff", 'a') );
+    sstd::printn( sstd::rcount("aabbccddeeff", 'f') );
+    sstd::printn( sstd::rcount("aabbccddeeff", 'x') );
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### startswith()
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::printn( sstd::startswith("abcdef", "abc") );
+    sstd::printn( sstd::startswith("abcdef", "xabc") );
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
 ### strcmp()
 - <u>**main.cpp**</u>
 ```cpp

@@ -18,16 +18,24 @@ namespace sstd{
     bool splitByLine_quotes(std::vector<std::string>& ret, const        char* str);
     bool splitByLine_quotes(std::vector<std::string>& ret, const std::string& str);
     
+    std::vector<std::string> split(const char*        str);
+    std::vector<std::string> split(const std::string& str);
     std::vector<std::string> split(const char*        str, const char X);
     std::vector<std::string> split(const std::string& str, const char X);
+    std::vector<std::string> split(const char*        str, const char*        X);
+    std::vector<std::string> split(const std::string& str, const std::string& X);
     
     std::vector<std::string> split_rmSpace(const char*        str);               // rm: remove
     std::vector<std::string> split_rmSpace(const std::string& str);               // rm: remove
     std::vector<std::string> split_rmSpace(const char*        str, const char X); // rm: remove
     std::vector<std::string> split_rmSpace(const std::string& str, const char X); // rm: remove
     
+    bool split_quotes(std::vector<std::string>& ret, const        char* str);
+    bool split_quotes(std::vector<std::string>& ret, const std::string& str);
     bool split_quotes(std::vector<std::string>& ret, const        char* str, const char X);
     bool split_quotes(std::vector<std::string>& ret, const std::string& str, const char X);
+    bool split_quotes(std::vector<std::string>& ret, const        char* str, const char*        X);
+    bool split_quotes(std::vector<std::string>& ret, const std::string& str, const std::string& X);
 
     //---
     
@@ -67,6 +75,10 @@ namespace sstd{
     std::string               stripAll   (const        char* str, const std::string& stripList);
     std::string               stripAll   (const std::string& str, const std::string& stripList);
 
+    void                     lstripAll_ow(      std::string& str, const        char* stripList);
+    void                     lstripAll_ow(      std::string& str, const std::string& stripList);
+    void                     rstripAll_ow(      std::string& str, const        char* stripList);
+    void                     rstripAll_ow(      std::string& str, const std::string& stripList);
     void                      stripAll_ow(      std::string& str, const        char* stripList);
     void                      stripAll_ow(      std::string& str, const std::string& stripList);
     // todo: rm '\t'
@@ -105,14 +117,16 @@ namespace sstd{
 ### Remove spaces and tabs / 空白 (半角スペース) とタブ文字の除去
 | Function name | Description |
 | --- | --- |
-| lstrip()    | removes head spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去します． |
-| lstrip_ow() | removes head spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
-| rstrip()    | removes tail spaces and tabs.<br/>文字列の末尾にある半角スペースとタブ文字を除去します． |
-| rstrip_ow() | removes tail spaces and tabs. `_ow` means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
-| strip()     | removes head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します． |
-| strip_ow()  | removes head and tail spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
-| stripAll()    | removes all types of characters in arg 2.<br/>第 2 引数にある全ての種類の文字を除去します． |
-| stripAll_ow() | removes all types of characters in arg 2. `_ow` means overwrite.<br/>第 2 引数にある全ての種類の文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+| lstrip()       | removes head spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去します． |
+| lstrip_ow()    | removes head spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+| rstrip()       | removes tail spaces and tabs.<br/>文字列の末尾にある半角スペースとタブ文字を除去します． |
+| rstrip_ow()    | removes tail spaces and tabs. `_ow` means overwrite.<br/>文字列の末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+|  strip()       | removes head and tail spaces and tabs.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します． |
+|  strip_ow()    | removes head and tail spaces and tabs. `_ow` means overwrite.<br/>文字列の先頭と末尾にある半角スペースとタブ文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+|  stripAll()    | removes all types of characters in arg 2.<br/>第 2 引数にある全ての種類の文字を除去します． |
+| lstripAll_ow() | removes all types of characters in arg 2 from the left (head) of the string until all the types of characters in arg 2 is included. If a character not contained in the 2nd arg's characters occurs, removal process is stopped. `_ow` means overwrite.<br/>第 2 引数に含まれる文字種類が現れる間，第 2 引数の文字を先頭から除去します．第 2 引数に含まれない文字が現れた場合，削除プロセスは停止します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+| rstripAll_ow() | removes all types of characters in arg 2 from the right (tail) of the string until all the types of characters in arg 2 is included. If a character not contained in the 2nd arg's characters occurs, removal process is stopped. `_ow` means overwrite.<br/>第 2 引数に含まれる文字種類が現れる間，第 2 引数の文字を末尾から除去します．第 2 引数に含まれない文字が現れた場合，削除プロセスは停止します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
+|  stripAll_ow() | removes all types of characters in arg 2. `_ow` means overwrite.<br/>第 2 引数にある全ての種類の文字を除去します．`_ow` は overwrite の意味で，引数に結果を上書きします． |
 | strip_quotes() | removes head and tail quotes after removing head and tail spaces and tabs.<br/>文字列の先頭にある半角スペースとタブ文字を除去した後，Quotation を取り除きます． |
 
 ### Join objects / オブジェクトの結合
@@ -209,13 +223,21 @@ int main(){
 #include <sstd/sstd.hpp>
 
 int main(){
-    std::string s1 = "abc|def|";
-    std::vector<std::string> vS1 = sstd::split(s1, '|');
+    std::string s1 = "a b   c";
+    std::vector<std::string> vS1 = sstd::split(s1);
     sstd::printn(vS1);
     
-    std::string s2 = "|abc|def||";
+    std::string s2 = "a | b | c ";
     std::vector<std::string> vS2 = sstd::split(s2, '|');
     sstd::printn(vS2);
+    
+    std::string s3 = "a | b | c |";
+    std::vector<std::string> vS3 = sstd::split(s3, '|');
+    sstd::printn(vS3);
+    
+    std::string s4 = "a | b || c |";
+    std::vector<std::string> vS4 = sstd::split(s4, "||");
+    sstd::printn(vS4);
 }
 ```
 - <u>**Execution result**</u>
@@ -342,16 +364,25 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### stripAll()
+#### stripAll(), lstripAll(), rstripAll()
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
 int main(){
-    std::string s = "   a x b x c   ";
+    std::string s;
     
+    s = "   a x b x c   ";
     sstd::stripAll_ow(s, " x");
+    sstd::printn(s);
+    
+    s = "   a x b x c   ";
+    sstd::lstripAll_ow(s, " ax");
+    sstd::printn(s);
+    
+    s = "   a x b x c   ";
+    sstd::rstripAll_ow(s, " cx");
     sstd::printn(s);
 }
 ```

@@ -40,9 +40,9 @@ $(TARGET): $(LIB_ALL) $(SRC)
 
 $(LIB_SSTD):
 	@echo ""
-	@unzip -n SubStandardLibrary-SSTD--master.zip
-	@mv SubStandardLibrary-SSTD--master/sstd ./
-	@rm -rf SubStandardLibrary-SSTD--master/
+	@unzip -n SubStandardLibrary-SSTD--main.zip
+	@mv SubStandardLibrary-SSTD--main/sstd ./
+	@rm -rf SubStandardLibrary-SSTD--main/
 	@(cd ./sstd; make -j)
 
 
@@ -68,7 +68,7 @@ test: # run_all_test
 
 .PHONY: updateLib
 updateLib:
-	wget https://github.com/admiswalker/SubStandardLibrary-SSTD-/archive/master.zip -O SubStandardLibrary-SSTD--master.zip
+	wget https://github.com/admiswalker/SubStandardLibrary-SSTD-/archive/main.zip -O SubStandardLibrary-SSTD--main.zip
 	-rm -rf sstd # remove previous versions of sstd
 
 
