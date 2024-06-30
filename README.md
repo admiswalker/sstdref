@@ -57,6 +57,10 @@ sstdref is the document files for SSTD ([repository](https://github.com/admiswal
    ```
 ## Development
 ### documents development cycle
+1. Updating the local sstd to the latest one
+   ```
+   $ make updateLib
+   ```
 1. Running the local server
    ```
    $ ./make.sh run  # with Docker
