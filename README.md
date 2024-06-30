@@ -92,6 +92,16 @@ sstdref is the document files for SSTD ([repository](https://github.com/admiswal
 1. Testing the build process in the command line
 1. Dropping the build process into the dockerfile
 
+## Release
+### Tagging
+
+Tagging rule: sstd-[VersionWrittenBySemanticVersioning]
+
+```bash
+git tag -a sstd-X.X.X -m 'sstd-X.X.X' [CommitHash]
+git push origin sstd-X.X.X
+```
+
 ## Command descriptions
 ### In the case with docker
 ```
