@@ -840,6 +840,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sample2-setting-file-for-some-server" class="md-nav__link">
+    sample2: setting file for some Server
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1580,6 +1587,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sample2-setting-file-for-some-server" class="md-nav__link">
+    sample2: setting file for some Server
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1815,10 +1829,25 @@ And the user can treat YAML file through the <code>sstd::terp</code> object.</p>
 </code></pre></div></li>
 </ul>
 <h4 id="flow-style-notation">flow style notation</h4>
-<p>Not supported.</p>
-<div class="highlight"><pre><span></span><code>ex:
-[a, b, c, {k1: v1}]
-</code></pre></div>
+<ul>
+<li><u><strong>example.yaml</strong></u>
+<div class="highlight"><pre><span></span><code>[a, b, c, {k1: v1}]
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">file</span><span class="w"> </span><span class="n">fp</span><span class="p">;</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">.</span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;./example.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">)){</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg_err</span><span class="p">(</span><span class="s">&quot;fopen() is failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">terp</span><span class="o">::</span><span class="n">var</span><span class="w"> </span><span class="n">yml</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">sstd</span><span class="o">::</span><span class="n">yaml_load</span><span class="p">(</span><span class="n">yml</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">)){</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg_err</span><span class="p">(</span><span class="s">&quot;yaml_load() is failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">yml</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>yml = [&quot;a&quot; &quot;b&quot; &quot;c&quot; {&quot;k1&quot;: &quot;v1&quot;}]
+</code></pre></div></li>
+</ul>
 <h4 id="hash">hash / ハッシュ</h4>
 <ul>
 <li><u><strong>example.yaml</strong></u>
@@ -1880,11 +1909,14 @@ k3:
 <ul>
 <li>'|' は改行のある文字列を読み込みます．</li>
 <li>'|+' は改行のある文字列と最終行は次の項目までの改行を読み込みます．</li>
-<li>
-<p>'|-' は改行のある文字列を読み込みますが，最終行の改行は取り除かれます．</p>
-</li>
-<li>
-<p><u><strong>example.yaml</strong></u>
+<li>'|-' は改行のある文字列を読み込みますが，最終行の改行は取り除かれます．</li>
+</ul>
+<p><strong>Note / 注意:</strong></p>
+<p>The YAML standard does NOT treat '#' in the <code>Block Chomping Indicator ('|')</code> as a comment, but treats as a text.</p>
+<p>YAML の規格では，<code>Block Chomping Indicator ('|')</code> 中に含まれる '#' をコメントとして取り扱わず，テキストとして取り扱います．</p>
+<p>Ref: <a href="https://yaml.org/spec/1.2.2/#8112-block-chomping-indicator">8.1.1.2. Block Chomping Indicator - The YAML Standard</a></p>
+<ul>
+<li><u><strong>example.yaml</strong></u>
 <div class="highlight"><pre><span></span><code>- |
   s1
   s2
@@ -1901,8 +1933,7 @@ k3:
   s_minus1
   s_minus2
   s_minus3 # not contains the last line feed / 最終行の改行を含めない
-</code></pre></div></p>
-</li>
+</code></pre></div></li>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
 
@@ -1917,15 +1948,15 @@ k3:
 <li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>yml = [&quot;s1
 s2
-s3
+s3 # contains the line feed / 改行を含める
 &quot; &quot;s_plus1
 s_plus2
-s_plus3
+s_plus3 # contains the last line feed(s) to the next item / 最終行と次の項目までの改行を含める
 
 
 &quot; &quot;s_minus1
 s_minus2
-s_minus3&quot;]
+s_minus3 # not contains the last line feed / 最終行の改行を含めない&quot;]
 </code></pre></div></li>
 </ul>
 <h4 id="multiple-line-string-by-n-n">multiple line string by '|N' / 複数行の文字列 ('|N')</h4>
@@ -1964,15 +1995,15 @@ s_minus3&quot;]
 <li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>yml = [&quot;  s1
   s2
-  s3
+  s3 # contains the line feed / 改行を含める
 &quot; &quot;  s_plus1
   s_plus2
-  s_plus3
+  s_plus3 # contains the last line feed(s) to the next item / 最終行と次の項目までの改行を含める
 
 
 &quot; &quot;  s_minus1
   s_minus2
-  s_minus3&quot;]
+  s_minus3 # not contains the last line feed / 最終行の改行を含めない&quot;]
 </code></pre></div></li>
 </ul>
 <h4 id="multiple-line-string-by_1">multiple line string by '&gt;' / 複数行の文字列 ('&gt;')</h4>
@@ -1986,11 +2017,14 @@ s_minus3&quot;]
 <ul>
 <li>'&gt;' は改行コードのある文字列を読み込み，改行コードをスペース (' ') に変換します．</li>
 <li>'&gt;+' は改行コードのある文字列を読み込み，改行コードをスペース (' ') に変換します．ただし，最終行から次の項目までの改行を保持します．</li>
-<li>
-<p>'&gt;-' は改行コードのある文字列を読み込み，改行コードをスペース (' ') に変換します．ただし，最終行の改行を無視します．</p>
-</li>
-<li>
-<p><u><strong>example.yaml</strong></u>
+<li>'&gt;-' は改行コードのある文字列を読み込み，改行コードをスペース (' ') に変換します．ただし，最終行の改行を無視します．</li>
+</ul>
+<p><strong>Note / 注意:</strong></p>
+<p>The YAML standard does NOT treat '#' in the <code>Block Chomping Indicator ('|')</code> as a comment, but treats as a text.</p>
+<p>YAML の規格では，<code>Block Chomping Indicator ('|')</code> 中に含まれる '#' をコメントとして取り扱わず，テキストとして取り扱います．</p>
+<p>Ref: <a href="https://yaml.org/spec/1.2.2/#8112-block-chomping-indicator">8.1.1.2. Block Chomping Indicator - The YAML Standard</a></p>
+<ul>
+<li><u><strong>example.yaml</strong></u>
 <div class="highlight"><pre><span></span><code>- &gt;
   s1
   s2
@@ -2007,8 +2041,7 @@ s_minus3&quot;]
   s_minus1
   s_minus2
   s_minus3 # not contains the last line feed / 最終行の改行を含めない
-</code></pre></div></p>
-</li>
+</code></pre></div></li>
 <li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
 
@@ -2021,11 +2054,11 @@ s_minus3&quot;]
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>yml = [&quot;s1 s2 s3
-&quot; &quot;s_plus1 s_plus2 s_plus3
+<div class="highlight"><pre><span></span><code>yml = [&quot;s1 s2 s3 # contains the line feed / 改行を含める
+&quot; &quot;s_plus1 s_plus2 s_plus3 # contains the last line feed(s) to the next item / 最終行と次の項目までの改行を含める
 
 
-&quot; &quot;s_minus1 s_minus2 s_minus3&quot;]
+&quot; &quot;s_minus1 s_minus2 s_minus3 # not contains the last line feed / 最終行の改行を含めない&quot;]
 </code></pre></div></li>
 </ul>
 <h4 id="multiple-line-string-by-n-n_1">multiple line string by '&gt;N' / 複数行の文字列 ('&gt;N')</h4>
@@ -2064,15 +2097,15 @@ s_minus3&quot;]
 <li><u><strong>Execution result</strong></u>
 <div class="highlight"><pre><span></span><code>yml = [&quot;  s1
   s2
-  s3
+  s3 # contains the line feed / 改行を含める
 &quot; &quot;  s_plus1
   s_plus2
-  s_plus3
+  s_plus3 # contains the last line feed(s) to the next item / 最終行と次の項目までの改行を含める
 
 
 &quot; &quot;  s_minus1
   s_minus2
-  s_minus3&quot;]
+  s_minus3 # not contains the last line feed / 最終行の改行を含めない&quot;]
 </code></pre></div></li>
 </ul>
 <h4 id="quotes">quotes / 引用符</h4>
@@ -2215,10 +2248,9 @@ max_retry = 10
 wait_time_sec = 10
 </code></pre></div></li>
 </ul>
-<!--
-#### sample2: setting file for some Server
-
-- <u>**example.yaml**</u>
+<h4 id="sample2-setting-file-for-some-server">sample2: setting file for some Server</h4>
+<ul>
+<li><u><strong>example.yaml</strong></u>
 <div class="highlight"><pre><span></span><code>#cloud-config
 cloud_final_modules:
   - [users-groups, always]
@@ -2238,8 +2270,8 @@ runcmd: # run by &quot;scripts-user&quot; option
   - echo &quot;------------------------------------------------------------------------ end ---&quot;
   - echo &quot;&quot;
   - echo &quot;&quot;
-</code></pre></div>
-- <u>**main.cpp**</u>
+</code></pre></div></li>
+<li><u><strong>main.cpp</strong></u>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
@@ -2249,12 +2281,11 @@ runcmd: # run by &quot;scripts-user&quot; option
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">sstd</span><span class="o">::</span><span class="n">yaml_load</span><span class="p">(</span><span class="n">yml</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">)){</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">pdbg_err</span><span class="p">(</span><span class="s">&quot;yaml_load() is failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="n">yml</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
-- <u>**Execution result**</u>
-<div class="highlight"><pre><span></span><code>yml = {&quot;runcmd&quot;: [&quot;echo &quot;&quot;&quot; &quot;echo &quot;&quot;&quot; &quot;echo &quot;--- begin --- example of run command -------------------------------------------&quot;&quot; &quot;echo &quot;Hello cloud-config / runcmd&quot;&quot; &quot;echo &quot;------------------------------------------------------------------------ end ---&quot;&quot; &quot;echo &quot;&quot;&quot; &quot;echo &quot;&quot;&quot;], &quot;cloud_final_modules&quot;: [&quot;[users-groups, always]&quot;], &quot;users&quot;: [&quot;default&quot; {&quot;ssh-authorized-keys&quot;: [&quot;ssh-ed25519 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX user_name@user_name.XXX.XXX&quot;], &quot;shell&quot;: &quot;/bin/bash&quot;, &quot;sudo&quot;: &quot;[&quot;ALL=(ALL) NOPASSWD:ALL&quot;]&quot;, &quot;name&quot;: &quot;user_name&quot;, &quot;groups&quot;: &quot;[wheel]&quot;}]}
-</code></pre></div>
--->
-
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>yml = {&quot;runcmd&quot;: [&quot;echo &quot;&quot;&quot; &quot;echo &quot;&quot;&quot; &quot;echo &quot;--- begin --- example of run command -------------------------------------------&quot;&quot; &quot;echo &quot;Hello cloud-config / runcmd&quot;&quot; &quot;echo &quot;------------------------------------------------------------------------ end ---&quot;&quot; &quot;echo &quot;&quot;&quot; &quot;echo &quot;&quot;&quot;], &quot;cloud_final_modules&quot;: [[&quot;users-groups&quot; &quot;always&quot;]], &quot;users&quot;: [&quot;default&quot; {&quot;ssh-authorized-keys&quot;: [&quot;ssh-ed25519 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX user_name@user_name.XXX.XXX&quot;], &quot;shell&quot;: &quot;/bin/bash&quot;, &quot;sudo&quot;: [&quot;&quot;ALL=(ALL) NOPASSWD:ALL&quot;&quot;], &quot;name&quot;: &quot;user_name&quot;, &quot;groups&quot;: [&quot;wheel&quot;]}]}
+</code></pre></div></li>
+</ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
 <li>Source: <a href="https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/file/yaml.cpp">sstd/src/file/yaml.cpp</a></li>

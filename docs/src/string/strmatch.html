@@ -1043,6 +1043,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#rcount-lcount-count" class="md-nav__link">
+    rcount(), lcount(), count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startswith" class="md-nav__link">
+    startswith()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#strcmp" class="md-nav__link">
     strcmp()
   </a>
@@ -1305,6 +1319,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#rcount-lcount-count" class="md-nav__link">
+    rcount(), lcount(), count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startswith" class="md-nav__link">
+    startswith()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#strcmp" class="md-nav__link">
     strcmp()
   </a>
@@ -1398,6 +1426,18 @@
 <code>strmatch.hpp</code> は文字列比較関数を収録しています．</p>
 <h2 id="header-file">Header file</h2>
 <div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">sstd</span><span class="p">{</span>
+<span class="w">    </span><span class="n">uint</span><span class="w">  </span><span class="nf">count</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">X</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w">  </span><span class="nf">count</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">X</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="nf">lcount</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">X</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="nf">lcount</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">X</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="nf">rcount</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">X</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="nf">rcount</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">X</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">startswith</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">searchString</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">startswith</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">searchString</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">startswith</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">searchString</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">startswith</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">searchString</span><span class="p">);</span>
+
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str2</span><span class="p">);</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str2</span><span class="p">);</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str2</span><span class="p">);</span>
@@ -1463,16 +1503,32 @@
 </thead>
 <tbody>
 <tr>
+<td>count()</td>
+<td>A function that counts up the whole number of character in the string. This functions counts up and returns whole the number of the 2nd argument in the 1st arguments.<br/>文字列に含まれる文字の数を数え上げる関数．第 2 引数の文字が第 1 引数の文字列に含まれる数を数え上げて返却します．</td>
+</tr>
+<tr>
+<td>lcount()</td>
+<td>A function that counts up the whole number of character in the string from the left side (from the head of string). This functions counts up and returns whole the number of the 2nd argument in the 1st arguments from the left side (from the head of string).<br/>文字列に含まれる文字の数を左側 (先頭) から数え上げる関数．第 2 引数の文字が第 1 引数の文字列に含まれる数を左側 (先頭) から数え上げて返却します．</td>
+</tr>
+<tr>
+<td>rcount()</td>
+<td>A function that counts up the whole number of character in the string from the right side (from the tail of string). This functions counts up and returns whole the number of the 2nd argument in the 1st arguments from the right side (from the tail of string).<br/>文字列に含まれる文字の数を右側 (末尾) から数え上げる関数．第 2 引数の文字が第 1 引数の文字列に含まれる数を右側 (末尾) から数え上げて返却します．</td>
+</tr>
+<tr>
+<td>startswith()</td>
+<td>A function that checks whether a string starts with the specific string or not. When the 1st argument starts from 2nd, true is returned. Otherwise false is returned.<br/>文字列が特定の文字列で始まるかどうかを判定する関数．第 1 引数が第 2 引数の値で始まる場合は true を，それ以外は false を返します．</td>
+</tr>
+<tr>
 <td>strcmp()</td>
 <td>A function that compares whether two input strings exactly the same or not. When two arguments of strings are exactly the same, true is returned. Otherwise false is returned.<br/>2 つの入力引数が完全に一致するかどうか判定する関数．2 つの入力引数が完全に一致する場合は，true を，それ以外は false を返します．</td>
 </tr>
 <tr>
 <td>strmatch()</td>
-<td>A function that judges whether a string and a string using wildcard are considered equivalent or not. When a string of 1st argument and a string of the 2nd argument can use wildcard considered equivalent, true is returned. Otherwise false is returned. Characters of <code>*</code> or <code>?</code> can use as wildcards.<br/>文字列とワイルドカード付き文字列が等価と見なせるか判定する関数．第一引数の文字列と，ワイルドカードを使える第二引数の文字列が等価と見なせる場合は，true を，それ以外は false を返します．また，wildcard には，<code>*</code> と <code>?</code> を使うことができます．</td>
+<td>A function that judges whether a string and a string using wildcard are considered equivalent or not. When a string of 1st argument and a string of the 2nd argument can use wildcard considered equivalent, true is returned. Otherwise false is returned. Characters of <code>*</code> or <code>?</code> can use as wildcards.<br/>文字列とワイルドカード付き文字列が等価と見なせるか判定する関数．第 1 引数の文字列と，ワイルドカードを使える第 2 引数の文字列が等価と見なせる場合は，true を，それ以外は false を返します．また，wildcard には，<code>*</code> と <code>?</code> を使うことができます．</td>
 </tr>
 <tr>
 <td>strmatch_getWC()</td>
-<td>A function to get a substring indicated by a wildcard. The 3rd argument will return the substring of the 1st argument that matches for the wildcard (<code>*</code> or <code>?</code>) of the 2nd argument. The other handlings work the same as <code>strmatch()</code>.<br/>ワイルドカードが示す部分文字列を取得する関数．第三引数は，第一引数の文字列の内，第二引数の wildcard (<code>*</code> または <code>?</code>) と一致する部分を返却します．それ以外は，<code>strmatch()</code> と同様に動作します．</td>
+<td>A function to get a substring indicated by a wildcard. The 3rd argument will return the substring of the 1st argument that matches for the wildcard (<code>*</code> or <code>?</code>) of the 2nd argument. The other handlings work the same as <code>strmatch()</code>.<br/>ワイルドカードが示す部分文字列を取得する関数．第 3 引数は，第 1 引数の文字列の内，第 2 引数の wildcard (<code>*</code> または <code>?</code>) と一致する部分を返却します．それ以外は，<code>strmatch()</code> と同様に動作します．</td>
 </tr>
 <tr>
 <td>pathmatch()</td>
@@ -1480,35 +1536,85 @@
 </tr>
 <tr>
 <td>isNum()</td>
-<td>A function that judges whether a whole string is configured by numerical string or not. When all the character or string of the 1st argument is in the range of <code>0</code> to <code>9</code> as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が数値で構成されているか判定する関数．第一引数に渡される全ての文字または文字列が ASCII Code での <code>0</code> ~ <code>9</code> の範囲にある場合は，true を，それ以外は false を返します．</td>
+<td>A function that judges whether a whole string is configured by numerical string or not. When all the character or string of the 1st argument is in the range of <code>0</code> to <code>9</code> as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が数値で構成されているか判定する関数．第 1 引数に渡される全ての文字または文字列が ASCII Code での <code>0</code> ~ <code>9</code> の範囲にある場合は，true を，それ以外は false を返します．</td>
 </tr>
 <tr>
 <td>isAlphabet()</td>
-<td>A function that judges whether a whole string is configured by alphabet or not. When a character or whole string of the 1st argument are in the range of <code>A</code> to <code>Z</code> or <code>a</code> to <code>z</code> as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列がアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での <code>A</code> ~ <code>Z</code> または <code>a</code> ~ <code>z</code> の範囲にある場合は，true を，それ以外は false を返します．</td>
+<td>A function that judges whether a whole string is configured by alphabet or not. When the character(s) or whole string of the 1st argument are in the range of <code>A</code> to <code>Z</code> or <code>a</code> to <code>z</code> as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列がアルファベットで構成されているか判定する関数．第 1 引数に渡された全ての文字または文字列が ASCII Code での <code>A</code> ~ <code>Z</code> または <code>a</code> ~ <code>z</code> の範囲にある場合は，true を，それ以外は false を返します．</td>
 </tr>
 <tr>
 <td>isAlphabet_upper()</td>
-<td>A function that judges whether a whole string is configured by uppercase or not. When all the character or string of the 1st argument is in the range of <code>A</code> to <code>Z</code> as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が大文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での <code>A</code> ~ <code>Z</code> の範囲にある場合は，true を，それ以外は false を返します．</td>
+<td>A function that judges whether a whole string is configured by uppercase or not. When all the character or string of the 1st argument is in the range of <code>A</code> to <code>Z</code> as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が大文字のアルファベットで構成されているか判定する関数．第 1 引数に渡された全ての文字または文字列が ASCII Code での <code>A</code> ~ <code>Z</code> の範囲にある場合は，true を，それ以外は false を返します．</td>
 </tr>
 <tr>
 <td>isAlphabet_lower()</td>
-<td>A function that judges whether a whole string is configured by lowercase or not. When all the character or string of the 1st argument is in the range of <code>a</code> to <code>z</code> as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が小文字のアルファベットで構成されているか判定する関数．第一引数に渡された全ての文字または文字列が ASCII Code での <code>a</code> ~ <code>z</code> の範囲にある場合は，true を，それ以外は false を返します．</td>
+<td>A function that judges whether a whole string is configured by lowercase or not. When all the character or string of the 1st argument is in the range of <code>a</code> to <code>z</code> as a ASCII Code, true is returned. Otherwise false is returned.<br/>全ての文字列が小文字のアルファベットで構成されているか判定する関数．第 1 引数に渡された全ての文字または文字列が ASCII Code での <code>a</code> ~ <code>z</code> の範囲にある場合は，true を，それ以外は false を返します．</td>
 </tr>
 <tr>
 <td>charIn()</td>
-<td>A function that judges whether a particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します．</td>
+<td>A function that judges whether a particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を内包するか判定する関数．第 1 引数の文字が，第 2 引数の文字列に含まれる場合は，true を，それ以外は false を返します．</td>
 </tr>
 <tr>
 <td>charIn_all()</td>
-<td>A function that judges whether all of particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を全て内包するか判定する関数．第一引数の文字が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します．</td>
+<td>A function that judges whether all of particular character is included in a string or not. When the character of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字を全て内包するか判定する関数．第 1 引数の文字が，第 2 引数の文字列に含まれる場合は，true を，それ以外は false を返します．</td>
 </tr>
 <tr>
 <td>strIn()</td>
-<td>A function that judges whether a particular string is included in a string or not. When the string of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字列を内包するか判定する関数．第一引数の文字列が，第二引数の文字列に含まれる場合は，true を，それ以外は false を返します．</td>
+<td>A function that judges whether a particular string is included in a string or not. When the string of the 1st argument is included in the string of the 2nd argument, true is returned. Otherwise false is returned.<br>特定の文字列を内包するか判定する関数．第 1 引数の文字列が，第 2 引数の文字列に含まれる場合は，true を，それ以外は false を返します．</td>
 </tr>
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
+<h3 id="rcount-lcount-count">rcount(), lcount(), count()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">count</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">count</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;f&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">count</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">lcount</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">lcount</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;f&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">lcount</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">rcount</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">rcount</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;f&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">rcount</span><span class="p">(</span><span class="s">&quot;aabbccddeeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::count(&quot;aabbccddeeff&quot;, &#39;a&#39;) = 2
+sstd::count(&quot;aabbccddeeff&quot;, &#39;f&#39;) = 2
+sstd::count(&quot;aabbccddeeff&quot;, &#39;x&#39;) = 0
+
+sstd::lcount(&quot;aabbccddeeff&quot;, &#39;a&#39;) = 2
+sstd::lcount(&quot;aabbccddeeff&quot;, &#39;f&#39;) = 0
+sstd::lcount(&quot;aabbccddeeff&quot;, &#39;x&#39;) = 0
+
+sstd::rcount(&quot;aabbccddeeff&quot;, &#39;a&#39;) = 0
+sstd::rcount(&quot;aabbccddeeff&quot;, &#39;f&#39;) = 2
+sstd::rcount(&quot;aabbccddeeff&quot;, &#39;x&#39;) = 0
+</code></pre></div></li>
+</ul>
+<h3 id="startswith">startswith()</h3>
+<ul>
+<li><u><strong>main.cpp</strong></u>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstd/sstd.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;abcdef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">sstd</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="w"> </span><span class="n">sstd</span><span class="o">::</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;abcdef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;xabc&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><u><strong>Execution result</strong></u>
+<div class="highlight"><pre><span></span><code>sstd::startswith(&quot;abcdef&quot;, &quot;abc&quot;) = true
+sstd::startswith(&quot;abcdef&quot;, &quot;xabc&quot;) = false
+</code></pre></div></li>
+</ul>
 <h3 id="strcmp">strcmp()</h3>
 <ul>
 <li><u><strong>main.cpp</strong></u>
