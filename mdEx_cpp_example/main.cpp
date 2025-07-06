@@ -23,7 +23,7 @@ std::string cpp2exe(const std::string& exe_path, const std::string& cpp_path){
     std::string CXX = R"(g++)";
     std::string CFLAG;
     CFLAG += R"( -L./sstd/lib -I./sstd/include -lsstd)"; // sstd
-    CFLAG += R"( -std=c++11)";
+    CFLAG += R"( -std=c++2a)"; // C++ 20
     CFLAG += R"( -Wall)";
     CFLAG += R"( -O3)";
     std::string cmd = sstd::ssprintf("%s -o %s %s %s", CXX.c_str(), exe_path.c_str(), cpp_path.c_str(), CFLAG.c_str());

@@ -10,7 +10,7 @@ RMs = *.stackdump __pycache__ tmpDir
 
 # compilation options
 CFLAGS += -L./sstd/lib -I./sstd/include -lsstd # sstd
-CFLAGS += -std=c++14 # CFLAGS += -std=gnu++0x
+CFLAGS += -std=c++2a # C++ 20
 CFLAGS += -Wall
 #CFLAGS += -Wextra
 CFLAGS += -O3
