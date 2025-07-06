@@ -20,10 +20,22 @@ namespace sstd{
     
     std::vector<std::string> split(const char*        str);
     std::vector<std::string> split(const std::string& str);
+    std::vector<std::string> split(const char*        str, int maxsplit);
+    std::vector<std::string> split(const std::string& str, int maxsplit);
+    
     std::vector<std::string> split(const char*        str, const char X);
     std::vector<std::string> split(const std::string& str, const char X);
     std::vector<std::string> split(const char*        str, const char*        X);
     std::vector<std::string> split(const std::string& str, const std::string& X);
+    
+    std::vector<std::string> splitAll       (const char*        str, const char*        X);
+    std::vector<std::string> splitAll       (const std::string& str, const char*        X);
+    std::vector<std::string> splitAll       (const char*        str, const std::string& X);
+    std::vector<std::string> splitAll       (const std::string& str, const std::string& X);
+    std::vector<std::string> splitAll_tight(const char*        str, const char*        X);
+    std::vector<std::string> splitAll_tight(const std::string& str, const char*        X);
+    std::vector<std::string> splitAll_tight(const char*        str, const std::string& X);
+    std::vector<std::string> splitAll_tight(const std::string& str, const std::string& X);
     
     std::vector<std::string> split_rmSpace(const char*        str);               // rm: remove
     std::vector<std::string> split_rmSpace(const std::string& str);               // rm: remove
@@ -110,6 +122,9 @@ namespace sstd{
 | splitByLine() | splits the string with a line feed code.<br/>文字列を改行コードごとに分割します． |
 | splitByLine_quotes() | splits the string with a line feed code ignoring the line feed code between quotes. As a quoted type, double quotes or single quotes are required. When a quatation is not closed, this function returns false.<br/>Quotation で囲われた改行コードを無視する形で，文字列を改行コードごとに分割します． Quotation には Double quotation または singhle quotation を指定します．Quotation が閉じていない場合は false を返します． |
 | split() | splits the string by a character of arg 2.<br/>第 2 引数の文字で文字列を分割します． |
+| split(str, int) | splits the string by a character of arg 2, arg 3 times.<br/>第 2 引数の文字で文字列を第 3 引数の回数だけ分割します． |
+| splitAll() | splits the string by all types of characters in arg 2.<br/>第 2 引数にある全ての種類の文字で分割します． |
+| splitAll_tight() | splits the string by all types of characters in arg 2. Empty arrays in the split result will be deleted.<br/>第 2 引数にある全ての種類の文字で分割します．分割結果内の空の配列は削除されます． |
 | split_rmSpace(str) | splits the string by a space (' ') and removes the spaces on the head and tail of string.<br/>空白文字 (' ') で文字列を分割して，前後の空白文字も削除します． |
 | split_rmSpace(str, X) | splits the string by a character of arg 2 and removes the spaces.<br/>第 2 引数の文字で文字列を分割し，前後の空白文字を削除します． |
 | split_quotes() | splits the string by a character of arg 2 ignoring the line feed code between quotes. As a quoted type, double quotes or single quotes are required. When a quatation is not closed, this function returns false.<br/>Quotation で囲われた改行コードを無視する形で，第 2 引数の文字で文字列を分割します．Quotation には Double quotation または singhle quotation を指定します．Quotation が閉じていない場合は false を返します． |
@@ -227,17 +242,29 @@ int main(){
     std::vector<std::string> vS1 = sstd::split(s1);
     sstd::printn(vS1);
     
-    std::string s2 = "a | b | c ";
-    std::vector<std::string> vS2 = sstd::split(s2, '|');
+    std::string s2 = "a b   c";
+    std::vector<std::string> vS2 = sstd::split(s2, 1);
     sstd::printn(vS2);
     
-    std::string s3 = "a | b | c |";
+    std::string s3 = "a | b | c ";
     std::vector<std::string> vS3 = sstd::split(s3, '|');
     sstd::printn(vS3);
     
-    std::string s4 = "a | b || c |";
-    std::vector<std::string> vS4 = sstd::split(s4, "||");
+    std::string s4 = "a | b | c |";
+    std::vector<std::string> vS4 = sstd::split(s4, '|');
     sstd::printn(vS4);
+    
+    std::string s5 = "a | b || c |";
+    std::vector<std::string> vS5 = sstd::split(s5, "||");
+    sstd::printn(vS5);
+
+    std::string s6 = "a | b || c |";
+    std::vector<std::string> vS6 = sstd::splitAll(s6, "| ");
+    sstd::printn(vS6);
+    
+    std::string s7 = "a | b || c |";
+    std::vector<std::string> vS7 = sstd::splitAll_tight(s7, "| ");
+    sstd::printn(vS7);
 }
 ```
 - <u>**Execution result**</u>
