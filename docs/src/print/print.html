@@ -1495,7 +1495,7 @@ main(7): i = 0
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>&amp;num = 0x7fff1edd4114
+<div class="highlight"><pre><span></span><code>&amp;num = 0x7fffcd899044
 </code></pre></div></li>
 </ul>
 <h4 id="char-case">char* case</h4>
@@ -1511,7 +1511,7 @@ main(7): i = 0
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>(void*)pC = 0x558fa713500d
+<div class="highlight"><pre><span></span><code>(void*)pC = 0x55a0decc2010
 pC = &quot;abc&quot;
 </code></pre></div></li>
 </ul>
@@ -1567,7 +1567,7 @@ v4_int = [[[[1 2] [3 4]] [[5 6] [7 8]]] [[[9 10] [11 12]] [[13 14] [15 16]]]]
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>table = [ [key: &quot;def&quot;, value: [456 789]], [key: &quot;abc&quot;, value: [123 456]] ]
+<div class="highlight"><pre><span></span><code>table = { (key: &quot;def&quot;, value: [456 789]), (key: &quot;abc&quot;, value: [123 456]) }
 </code></pre></div></li>
 </ul>
 <h3 id="print-sstdmat_rt-type">print sstd::mat_r&lt;T&gt; type</h3>
@@ -1581,8 +1581,7 @@ v4_int = [[[[1 2] [3 4]] [[5 6] [7 8]]] [[[9 10] [11 12]] [[13 14] [15 16]]]]
 <span class="p">}</span>
 </code></pre></div></li>
 <li><u><strong>Execution result</strong></u>
-<div class="highlight"><pre><span></span><code>m = 
- 1.000000     2.000000    3.000000
+<div class="highlight"><pre><span></span><code>m =  1.000000     2.000000    3.000000
  4.000000     5.000000    6.000000
  7.000000     8.000000    9.000000
 </code></pre></div></li>
