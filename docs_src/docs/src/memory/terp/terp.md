@@ -25,6 +25,15 @@ namespace sstd::terp{
     bool isList (const sstd::terp::var& rhs);
     bool isNull (const sstd::terp::var& rhs);
     bool isValue(const sstd::terp::var& rhs);
+
+    // copy
+    bool copy     (sstd::terp::var& lhs, const sstd::terp::var& rhs);
+    bool eRef_copy(sstd::terp::var& lhs, const sstd::terp::var& rhs);
+    bool deep_copy(sstd::terp::var& lhs, const sstd::terp::var& rhs);
+
+    // equal
+    bool equal    (const sstd::terp::var& lhs, const sstd::terp::var& rhs);
+    bool equal_val(const sstd::terp::var& lhs, const sstd::terp::var& rhs);
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -55,9 +64,9 @@ public:
 class sstd::terp::var{
 public:
     var();
-    var(const var&  rhs);
-    var(const sstd::void_ptr& vp_in);
-    var(      sstd::void_ptr*  p_in);
+    var(const class var&   rhs);
+    var(      class var&&  rhs);
+    var(const class var*  pRhs);
     var(const bool         rhs);
     var(const char         rhs);
     var(const  int8        rhs);
@@ -77,21 +86,32 @@ public:
     //---
     // internal
     
-    sstd::void_ptr* p() const;
+    uint type() const;
+    bool is_reference() const;
     
     //---
     // common
     
-    var operator=(const char* rhs);
-    var operator=(const sstd::terp::var& rhs);
+    bool copy(const class sstd::terp::var&  rhs);
+    void move(      class sstd::terp::var&& rhs);
+    
+    var& operator=(const sstd::terp::var&  rhs);
+    var  operator=(      sstd::terp::var&& rhs);
+    
+    var& operator=(const char* rhs);
+    var& operator=(const  var* rhs); // for the reference of var address. // Note: sstd::terp did NOT mention the trouble with circular reference.
 
+    bool equal    (const sstd::terp::var& rhs) const;
+    bool equal_val(const sstd::terp::var& rhs) const;
     bool operator==(const sstd::terp::var& rhs);
     bool operator!=(const sstd::terp::var& rhs);
 
-          var operator[](const int idx);
-    const var operator[](const int idx) const;
-          var operator[](const char* pKey);
-    const var operator[](const char* pKey) const;
+          var& operator[](const int idx);
+    const var& operator[](const int idx) const;
+          var& operator[](const char* pKey);
+    const var& operator[](const char* pKey) const;
+          var& operator[](const std::string key);
+    const var& operator[](const std::string key) const;
     
     sstd::terp::iterator begin() const;
     sstd::terp::iterator end  () const;
@@ -139,6 +159,11 @@ public:
 | isList() | checks if the input argument is list type.<br>入力引数がリスト型であるか確認します． |
 | isNull() | checks if the input argument is null type.<br>入力引数が Null 型であるか確認します． |
 | isValue() | checks if the input argument has value.<br>入力引数が値を持つか確認します． |
+| copy(lhs, rhs) | copies rhs to lhs. Internal reference structures are also copied as it is. External reference is copied by original external address.<br>rhs の値を lhs にコピーします．内部参照は構造を保ったままコピーされます．外部参照は元の外部アドレスがコピーされます． |
+| eRef_copy(lhs, rhs) | copies rhs to lhs. Internal and external references are copied by address.<br>rhs の値を lhs にコピーします．内部参照および外部参照は元のオブジェクトのアドレスをコピーします． |
+| deep_copy(lhs, rhs) | copies rhs to lhs. Reference is copied by actual value.<br>rhs の値を lhs にコピーします．参照は実体を持つ値としてコピーされます． |
+| equal()       | checks if the value of arg value is equal to itself. In this case, both the value and the reference are checked.<br>引数の値が自分自身と等しいか確認します．このとき，値と参照の両方を確認します． |
+| equal_val()   | checks if the value of arg value is equal to itself. In this case, only the values are checked. Reference structure's consistency is not checked.<br>引数の値が自分自身と等しいか確認します．このとき，値の一致のみを確認します．参照構造の一致は確認されません． |
 
 ### `sstd::terp::iterator`
 
@@ -150,12 +175,21 @@ public:
 
 ### `sstd::terp::var`
 
+#### internal
+
+| Function name | Description |
+| ------------- | ----------- |
+| type()         | returns the internal type number.<br>内部のタイプ番号を返却します． |
+| is_reference() | returns if the value is reference or not.<br>該当の値が参照かどうかを返却します． |
+
 #### common
 
 | Function name | Description |
 | ------------- | ----------- |
 | begin()       | returns the start point of the iterator.<br>イテレータの開始位置を返却します． |
 | end()         | returns the end point of the iterator.<br>イテレータの終了位置を返却します． |
+| equal()       | is same with `sstd::terp::equal()`.<br>`sstd::terp::equal()` と同じ． |
+| equal_val()   | is same with `sstd::terp::equal_val()`<br>`sstd::terp::equal_val()` と同じ． |
 | size()        | returns the size of instance.<br> インスタンスのサイズを返却します． |
 | to&lt;T&gt;() | converts the data to the specified type.<br>データを指定された型に変換します． |
 | typeNum()     | returns the data type. The type definition is in [definitions/typeNum](../../definitions/typeNum.md).<br>データ型を返却します．型定義は [definitions/typeNum](../../definitions/typeNum.md) を参照すること． |
@@ -248,6 +282,157 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
+#### copy()
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::terp::var x;
+    x = sstd::terp::list(2);
+    x[0] = sstd::terp::list(3);
+    x[0][0] = "a";
+    x[0][1] = "b";
+    x[0][2] = "c";
+    x[1] = &x[0];
+    
+    sstd::terp::var y;
+    sstd::terp::copy(y, x); // Reference structure is also copied. / 参照構造もコピーされます．
+    
+    sstd::printn(x[1].is_reference());
+    sstd::printn(y[1].is_reference());
+    sstd::printn(&x[0]);
+    sstd::printn(x[1].p()); // x[1] references the x[0], as it defined. / 定義通り，x[1] は x[0] を参照しています．
+    sstd::printn(&y[0]);
+    sstd::printn(y[1].p()); // In this case, y[1] references the y[0]. The copy() function makes reference structures in y that is identical to x. / この場合，y[1] は y[0] を参照しています．copy() 関数は y 内部に x と同様の参照構造を作ります．
+    sstd::printn(sstd::terp::equal(x, y));
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### eRef_copy()
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::terp::var x;
+    x = sstd::terp::list(2);
+    x[0] = sstd::terp::list(3);
+    x[0][0] = "a";
+    x[0][1] = "b";
+    x[0][2] = "c";
+    x[1] = &x[0];
+    
+    sstd::terp::var y;
+    sstd::terp::eRef_copy(y, x); // Reference structure is also copied. / 参照構造もコピーされます．
+    
+    sstd::printn(x[1].is_reference());
+    sstd::printn(y[1].is_reference());
+    sstd::printn(&x[0]);
+    sstd::printn(x[1].p());
+    sstd::printn(y[1].p()); // In this case, y[1] references the x[0]. The eRef_copy() function copies the address of the reference in the x object. / この場合，y[1] は x[0] を参照します．eRef_copy() 関数はアドレスをコピーして x オプジェクトの参照先を参照します．
+    sstd::printn(sstd::terp::equal(x, y));
+    sstd::printn(sstd::terp::equal_val(x, y));
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### deep_copy()
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::terp::var x;
+    x = sstd::terp::list(2);
+    x[0] = sstd::terp::list(3);
+    x[0][0] = "a";
+    x[0][1] = "b";
+    x[0][2] = "c";
+    x[1] = &x[0];
+    
+    sstd::terp::var y;
+    sstd::terp::deep_copy(y, x); // Reference structure is also copied. / 参照構造もコピーされます．
+
+    sstd::printn(x[1].is_reference());
+    sstd::printn(y[1].is_reference()); // In this case, y[1] is NOT a reference, but an actual object. / この場合，y[1] は参照ではなく，実際のオブジェクトです．
+    sstd::printn(sstd::terp::equal(x, y));
+    sstd::printn(sstd::terp::equal_val(x, y));
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### equal(), equal_val()
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::terp::var x;
+    x = sstd::terp::list(2);
+    x[0] = sstd::terp::list(3);
+    x[0][0] = "a";
+    x[0][1] = "b";
+    x[0][2] = "c";
+    x[1] = &x[0];
+    
+    sstd::terp::var y; // has same value and reference structure with x. / x と同様の値を参照構造を持つ．
+    y = sstd::terp::list(2);
+    y[0] = sstd::terp::list(3);
+    y[0][0] = "a";
+    y[0][1] = "b";
+    y[0][2] = "c";
+    y[1] = &y[0];
+    
+    sstd::terp::var z; // has same value structure with x. But did not have same reference structure with x. / x と同様の値の構造を持つ．しかし，x と同一の参照構造は持たない．
+    z = sstd::terp::list(2);
+    z[0] = sstd::terp::list(3);
+    z[0][0] = "a";
+    z[0][1] = "b";
+    z[0][2] = "c";
+    z[1] = sstd::terp::list(3);
+    z[1][0] = "a";
+    z[1][1] = "b";
+    z[1][2] = "c";
+    
+    sstd::printn(x[1].is_reference());
+    sstd::printn(y[1].is_reference());
+    sstd::printn(z[1].is_reference());
+    printf("\n");
+    
+    sstd::printn(sstd::terp::equal    (x, y));
+    sstd::printn(sstd::terp::equal    (x, z));
+    sstd::printn(sstd::terp::equal_val(x, y));
+    sstd::printn(sstd::terp::equal_val(x, z));
+    printf("\n");
+    
+    sstd::printn(x==y); // Operator== is same with sstd::terp::equal(). / == 演算子は sstd::terp::equal() と同一．
+    sstd::printn(x==z); // Operator== is same with sstd::terp::equal(). / == 演算子は sstd::terp::equal() と同一．
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
 ### `sstd::terp::iterator`
 
 #### second()
@@ -307,6 +492,62 @@ int main(){
         printf("%s: %s, ", itr.first_to<std::string>().c_str(), itr.second_to<std::string>().c_str());
     }
     printf("\n");
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### [common]: equal(), equal_val()
+
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::terp::var x;
+    x = sstd::terp::list(2);
+    x[0] = sstd::terp::list(3);
+    x[0][0] = "a";
+    x[0][1] = "b";
+    x[0][2] = "c";
+    x[1] = &x[0];
+    
+    sstd::terp::var y; // has same value and reference structure with x. / x と同様の値を参照構造を持つ．
+    y = sstd::terp::list(2);
+    y[0] = sstd::terp::list(3);
+    y[0][0] = "a";
+    y[0][1] = "b";
+    y[0][2] = "c";
+    y[1] = &y[0];
+    
+    sstd::terp::var z; // has same value structure with x. But did not have same reference structure with x. / x と同様の値の構造を持つ．しかし，x と同一の参照構造は持たない．
+    z = sstd::terp::list(2);
+    z[0] = sstd::terp::list(3);
+    z[0][0] = "a";
+    z[0][1] = "b";
+    z[0][2] = "c";
+    z[1] = sstd::terp::list(3);
+    z[1][0] = "a";
+    z[1][1] = "b";
+    z[1][2] = "c";
+    
+    sstd::printn(x[1].is_reference());
+    sstd::printn(y[1].is_reference());
+    sstd::printn(z[1].is_reference());
+    printf("\n");
+    
+    sstd::printn(x.equal    (y));
+    sstd::printn(x.equal    (z));
+    sstd::printn(x.equal_val(y));
+    sstd::printn(x.equal_val(z));
+    printf("\n");
+    
+    sstd::printn(x==y); // Operator== is same with sstd::terp::equal(). / == 演算子は sstd::terp::equal() と同一．
+    sstd::printn(x==z); // Operator== is same with sstd::terp::equal(). / == 演算子は sstd::terp::equal() と同一．
 }
 ```
 - <u>**Execution result**</u>
@@ -529,6 +770,83 @@ int main(){
     x.resize(1);
     sstd::printn(x);
     sstd::printn(x.size());
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+### `sstd::terp::var`'s references
+
+`sstd::terp::var` allows references between the same variable types as `sstd::terp::var`.
+Internal reference means a self-contained reference within the same variable.
+External reference means a reference to another variable.
+
+`sstd::terp::var` は同じ `sstd::terp::var` 型間で参照を張ることができます．
+内部参照は同じ変数内で自己完結する参照を意味します．外部参照は別の変数への参照を意味します．
+
+#### Internal reference
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::terp::var x;
+    x = sstd::terp::list(2);
+    x[0] = sstd::terp::list(3);
+    x[0][0] = "a";
+    x[0][1] = "b";
+    x[0][2] = "c";
+    x[1] = &x[0]; // This is an internal reference. x references one of the internal address of variable x. / これは内部参照です．x は変数 x の内部アドレスの 1 つを参照します．
+    
+    sstd::printn(&x[0]);
+    sstd::printn(x[1].p());
+    sstd::printn(x[1].is_reference());
+    printf("\n");
+    
+    sstd::printn(x);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### External reference
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::terp::var y;
+    
+    {
+        sstd::terp::var x;
+        x = sstd::terp::list(3);
+        x[0] = "a";
+        x[1] = "b";
+        x[2] = "c";
+        
+        sstd::terp::var y = &x; // This is an external reference. y references another variable x. / これは外部参照です．y は別の変数 x を参照します．
+        
+        sstd::printn(&x);
+        sstd::printn(y.p());
+        sstd::printn(y.is_reference());
+        printf("\n");
+        
+        sstd::printn(x);
+        sstd::printn(y);
+        printf("\n");
+        
+    } // x deleted by the out of scope. / x がスコープを超えて削除される．
+    
+    sstd::printn(y.p()); // NULL filled if the referencing address freed. / 参照先のアドレスが解放された場合 NULL 埋めされます．
+    sstd::printn(y);
 }
 ```
 - <u>**Execution result**</u>
