@@ -53,7 +53,7 @@ int main(){
 
 ### yaml_load(var&, file&)
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - a1
 - k1: v1
@@ -107,7 +107,7 @@ int main(){
 
 ### yaml_load_all(var&, file&)
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - a1
 - k1: v1
@@ -141,20 +141,100 @@ int main(){
 
 ### YAML notation and support status / YAML 記法とサポート状況
 
-#### alias
+#### Anchor and alias explanation / アンカーとエイリアスの説明
+
+Anchor ('&') defines the variable used by alias.
+Alias ('\*') expands the variables defined by anchor.
+
+アンカー ('&') はエイリアスで使われる変数を定義します．
+エイリアス ('\*') はアンカーで定義された変数を展開します．
+
+#### Anchor and alias (for list values) / アンカーとエイリアス (list 値)
+
+- <u>**example.yaml**</u>
+```yaml
+#mdEx: cpp example (in:attachment:example.yaml)
+- &l1 # Anchor for list values. / list 値をアンカー．
+ - listed-v1
+ - listed-v2
+- *l1 # Alias expands the variables. / エイリアス ('*') で変数を展開．
+```
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::file fp; if(!fp.fopen("./example.yaml", "r")){ sstd::pdbg_err("fopen() is failed.\n"); return 0; }
+    
+    sstd::terp::var yml;
+    if(!sstd::yaml_load(yml, fp)){ sstd::pdbg_err("yaml_load() is failed.\n"); return 0; }
+    sstd::printn(yml);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### Anchor and alias (for hash key) / アンカーとエイリアス (hash キー)
 
 Not supported.
 
-#### anchor
+```yaml
+# ex:
+&h1_key h1: v1 # Anchor for hash key. / Hash キーをアンカー．
+h2: *h1_key # Alias expands the variables. / エイリアスで変数を展開．
+```
+
+#### Anchor and alias (for hash values) / アンカーとエイリアス (hash 値)
+
+- <u>**example.yaml**</u>
+```yaml
+#mdEx: cpp example (in:attachment:example.yaml)
+h1: &h1 # Anchor for hash value. / Hash 値をアンカー．
+  k1: v1
+  k2: v2
+h2: *h1 # Alias expands the variables. / エイリアスで変数を展開．
+```
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(){
+    sstd::file fp; if(!fp.fopen("./example.yaml", "r")){ sstd::pdbg_err("fopen() is failed.\n"); return 0; }
+    
+    sstd::terp::var yml;
+    if(!sstd::yaml_load(yml, fp)){ sstd::pdbg_err("yaml_load() is failed.\n"); return 0; }
+    sstd::printn(yml);
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+```
+
+#### Anchor and alias ('<<:' for hash values insertion) / アンカーとエイリアス ('<<:' で hash 値の挿入)
 
 Not supported.
 
-#### data type specification
+```yaml
+# ex:
+hx: &hx # Anchor for hash value. / Hash 値をアンカー．
+  k1: v1
+  k2: v2
+h2:
+  <<: *hx # Hash values insertion / Hash 値の挿入
+  k3: v3
+```
+
+#### Data type specification
 
 Not supported.
 
-```text
-ex:
+```yaml
+# ex:
 - !str abc
 - !str 123
 - !pairs
@@ -162,9 +242,9 @@ ex:
   - k2: v2
 ```
 
-#### comment
+#### Comment
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - a
 #- b
@@ -191,14 +271,14 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### end of YAML ('...')
+#### End of YAML ('...')
 
 Using '...' notation enables to stop reading the YAML file.
 
 '...' 記法の使用で YAML ファイルの読み込みを終了できます．
 
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - a
 - b
@@ -223,9 +303,9 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### flow style notation
+#### Flow style notation
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 [a, b, c, {k1: v1}]
 ```
@@ -247,9 +327,9 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### hash / ハッシュ
+#### Hash / ハッシュ
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 k1: v1
 k2: v2
@@ -276,9 +356,9 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### list / 配列
+#### List / 配列
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - a1
 - b1
@@ -305,7 +385,7 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### multiple line string by '|' / 複数行の文字列 ('|')
+#### Multiple line string by '|' / 複数行の文字列 ('|')
 
 Using the pipe sign ('|') enables to read the string which contains the line feed code.
 
@@ -329,7 +409,7 @@ Ref: [8.1.1.2. Block Chomping Indicator - The YAML Standard](https://yaml.org/sp
 
 
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - |
   s1
@@ -366,14 +446,14 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### multiple line string by '|N' / 複数行の文字列 ('|N')
+#### Multiple line string by '|N' / 複数行の文字列 ('|N')
 
 Using the pipe sign with number ('|N') enables to indicate the width of indent.
 
 パイプ記号と数値を組み合わせ ('|N') でインデント幅を指示できます．
 
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - |2
     s1
@@ -412,7 +492,7 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### multiple line string by '>' / 複数行の文字列 ('>')
+#### Multiple line string by '>' / 複数行の文字列 ('>')
 
 Using the greater-than sign ('>') enables to read the string which contains the line feed code. At this time, the line feed code(s) are converted to the space(s) (' ').
 
@@ -436,7 +516,7 @@ Ref: [8.1.1.2. Block Chomping Indicator - The YAML Standard](https://yaml.org/sp
 
 
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - >
   s1
@@ -475,14 +555,14 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### multiple line string by '>N' / 複数行の文字列 ('>N')
+#### Multiple line string by '>N' / 複数行の文字列 ('>N')
 
 Using the greater-than with number ('>N') enables to indicate the width of indent.
 
 大なり記号と数値を組み合わせ ('>N') でインデント幅を指示できます．
 
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - >2
     s1
@@ -521,9 +601,9 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### quotes / 引用符
+#### Quotes / 引用符
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 - ' a 1 '
 - " b 1 "
@@ -550,10 +630,10 @@ int main(){
 
 ### Example of setting file loading
 
-#### sample1
+#### Sample1
 
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 users:
   - name: user001
@@ -630,10 +710,10 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### sample2
+#### Sample2
 
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 parameter:
   lib_url: "https://github.com/admiswalker/SubStandardLibrary-SSTD-/archive/refs/heads/master.zip"
@@ -664,10 +744,10 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-#### sample2: setting file for some Server
+#### Sample3: setting file for some Server
 
 - <u>**example.yaml**</u>
-```
+```yaml
 #mdEx: cpp example (in:attachment:example.yaml)
 #cloud-config
 cloud_final_modules:
