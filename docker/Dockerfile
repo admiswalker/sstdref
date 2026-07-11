@@ -7,7 +7,8 @@ RUN set -ex \
     gcc \
     g++ \
     make \
-    tree
+    tree \
+    git
 
 RUN set -ex \
   && pip install -r requirements.txt
