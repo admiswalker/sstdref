@@ -59,7 +59,9 @@ sstdref is the document files for SSTD ([repository](https://github.com/admiswal
 ### documents development cycle
 1. Updating the local sstd to the latest one
    ```
-   $ make updateLib
+   # $ git branch <branch-name-of-SSTD>   # To update by the specific `SSTD's working git branch`, please make a branch having the same name with `SSTD's working git branch` in this repository.
+   # $ git checkout <branch-name-of-SSTD> # To update by the specific `SSTD's working git branch`, please checkout to the branch having the same name with `SSTD's working git branch`.
+   $ make updateLib                       # This command try to update the SSTD by searching the current git branch name of this repository from SSTD repository's git branch name.
    ```
 1. Running the local server
    ```

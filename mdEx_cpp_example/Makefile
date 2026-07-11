@@ -22,6 +22,8 @@ CFLAGS += -O3
 LIB_SSTD  = ./sstd/lib/libsstd.a
 LIB_ALL  += $(LIB_SSTD)
 
+GIT_BRANCH_NAME = $(shell git branch --show-current)
+GIT_BRANCH_NAME_S = $(subst /,-,$(GIT_BRANCH_NAME))
 
 # generate exe file
 TARGET_all = FORCE_MAKEALL
@@ -40,9 +42,9 @@ $(TARGET): $(LIB_ALL) $(SRC)
 
 $(LIB_SSTD):
 	@echo ""
-	@unzip -n SubStandardLibrary-SSTD--main.zip
-	@mv SubStandardLibrary-SSTD--main/sstd ./
-	@rm -rf SubStandardLibrary-SSTD--main/
+	@unzip -n SubStandardLibrary-SSTD--$(GIT_BRANCH_NAME_S).zip
+	@mv SubStandardLibrary-SSTD--$(GIT_BRANCH_NAME_S)/sstd ./
+	@rm -rf SubStandardLibrary-SSTD--$(GIT_BRANCH_NAME_S)/
 	@(cd ./sstd; make -j)
 
 
@@ -68,7 +70,7 @@ test: # run_all_test
 
 .PHONY: updateLib
 updateLib:
-	wget https://github.com/admiswalker/SubStandardLibrary-SSTD-/archive/main.zip -O SubStandardLibrary-SSTD--main.zip
+	wget https://github.com/admiswalker/SubStandardLibrary-SSTD-/archive/$(GIT_BRANCH_NAME).zip -O SubStandardLibrary-SSTD--$(GIT_BRANCH_NAME_S).zip
 	-rm -rf sstd # remove previous versions of sstd
 
 
