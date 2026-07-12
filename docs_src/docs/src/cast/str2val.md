@@ -1,6 +1,6 @@
 # str2val
 ## Abstract
-`str2val.hpp` / `str2val.cpp` contain functions to convert `std::string` type to `T` type.
+`str2val.hpp` / `str2val.cpp` contain functions to convert `std::string` type to `T` type.  
 `str2val.hpp` / `str2val.cpp` は，文字列を適切な型に変換する関数を収録している．
 
 ## Header file
@@ -106,8 +106,6 @@ int main(){
 ```
 #mdEx: cpp example (out)
 ```
-
-## Appendix
 
 ## Implementation
 - Source: [sstd/src/cast/str2val.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/cast/str2val.cpp)
