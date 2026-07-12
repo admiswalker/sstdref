@@ -25,6 +25,9 @@ namespace sstd{
     
     std::vector<std::string> split(const char*        str, const char X);
     std::vector<std::string> split(const std::string& str, const char X);
+    std::vector<std::string> split(const char*        str, const char X, int maxsplit);
+    std::vector<std::string> split(const std::string& str, const char X, int maxsplit);
+    
     std::vector<std::string> split(const char*        str, const char*        X);
     std::vector<std::string> split(const std::string& str, const std::string& X);
     
@@ -238,33 +241,53 @@ int main(){
 #include <sstd/sstd.hpp>
 
 int main(){
-    std::string s1 = "a b   c";
-    std::vector<std::string> vS1 = sstd::split(s1);
-    sstd::printn(vS1);
+    std::string s1a = "a b   c";
+    std::vector<std::string> vS1a = sstd::split(s1a);
+    sstd::printn(vS1a);
     
-    std::string s2 = "a b   c";
-    std::vector<std::string> vS2 = sstd::split(s2, 1);
-    sstd::printn(vS2);
+    std::string s1b = "a b   c"; int maxsplit1b = -1;
+    std::vector<std::string> vS1b = sstd::split(s1b, maxsplit1b);
+    sstd::printn(vS1b);
     
-    std::string s3 = "a | b | c ";
-    std::vector<std::string> vS3 = sstd::split(s3, '|');
-    sstd::printn(vS3);
+    std::string s1c = "a b   c"; int maxsplit1c = 1;
+    std::vector<std::string> vS1c = sstd::split(s1c, maxsplit1c);
+    sstd::printn(vS1c);
     
-    std::string s4 = "a | b | c |";
-    std::vector<std::string> vS4 = sstd::split(s4, '|');
-    sstd::printn(vS4);
+    std::string s1d = "a b   c"; int maxsplit1d = 2;
+    std::vector<std::string> vS1d = sstd::split(s1d, maxsplit1d);
+    sstd::printn(vS1d);
     
-    std::string s5 = "a | b || c |";
-    std::vector<std::string> vS5 = sstd::split(s5, "||");
-    sstd::printn(vS5);
+    std::string s2a = "a | b | c ";
+    std::vector<std::string> vS2a = sstd::split(s2a, '|');
+    sstd::printn(vS2a);
+    
+    std::string s3a = "a | b | c |";
+    std::vector<std::string> vS3a = sstd::split(s3a, '|');
+    sstd::printn(vS3a);
 
-    std::string s6 = "a | b || c |";
-    std::vector<std::string> vS6 = sstd::splitAll(s6, "| ");
-    sstd::printn(vS6);
+    std::string s3b = "a | b | c |"; int maxsplit3b = -1;
+    std::vector<std::string> vS3b = sstd::split(s3b, '|', maxsplit3b);
+    sstd::printn(vS3b);
+
+    std::string s3c = "a | b | c |"; int maxsplit3c = 1;
+    std::vector<std::string> vS3c = sstd::split(s3c, '|', maxsplit3c);
+    sstd::printn(vS3c);
+
+    std::string s3d = "a | b | c |"; int maxsplit3d = 2;
+    std::vector<std::string> vS3d = sstd::split(s3d, '|', maxsplit3d);
+    sstd::printn(vS3d);
+
+    std::string s4a = "a | b || c |";
+    std::vector<std::string> vS4a = sstd::split(s4a, "||");
+    sstd::printn(vS4a);
+
+    std::string s4b = "a | b || c |";
+    std::vector<std::string> vS4b = sstd::splitAll(s4b, "| ");
+    sstd::printn(vS4b);
     
-    std::string s7 = "a | b || c |";
-    std::vector<std::string> vS7 = sstd::splitAll_tight(s7, "| ");
-    sstd::printn(vS7);
+    std::string s4c = "a | b || c |";
+    std::vector<std::string> vS4c = sstd::splitAll_tight(s4c, "| ");
+    sstd::printn(vS4c);
 }
 ```
 - <u>**Execution result**</u>
