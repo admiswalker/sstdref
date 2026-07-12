@@ -110,5 +110,4 @@ int main(){
 ## Implementation
 - Source: [sstd/src/cast/str2val.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/cast/str2val.cpp)
 - Header: [sstd/src/cast/str2val.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/cast/str2val.hpp)
-- Test: [test/cast/str2val.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/cast/str2val.hpp)
-
+- Test: [test/src_test/cast/str2val.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/cast/str2val.cpp)

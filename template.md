@@ -33,6 +33,5 @@ int main(){
 ## Implementation
 - Source: [sstd/src/XXXXXX.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/XXXXXX.cpp)
 - Header: [sstd/src/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/XXXXXX.hpp)
-- Test: [test/XXXXXX.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/XXXXXX.hpp)
+- Test: [test/src_test/XXXXXX.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/XXXXXX.cpp)
   (Not implemented yet)
-
