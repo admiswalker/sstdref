@@ -79,7 +79,7 @@ int main(){
 #mdEx: cpp example (out)
 ```
 
-## Appendix
+## Application
 
 One of the application of this template function is `sstd::argparse()`. See [sstd::argparse()](./argparse.md) for more detail.
 
