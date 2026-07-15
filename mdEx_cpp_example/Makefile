@@ -64,7 +64,7 @@ clean:
 
 .PHONY: test
 test: # run_all_test
-#	@(./$(TARGET) ./ ./in1.md ./output1.md)
+	@(./$(TARGET) ./ ./in1.md ./output1.md)
 	@(./$(TARGET) ./ ./in2.md ./output2.md)
 #	./exe_test
 
