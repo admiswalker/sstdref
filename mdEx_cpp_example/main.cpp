@@ -140,7 +140,6 @@ int main(int argc, char *argv[]){
             std::string fileName = "a.out";
             std::string exe_path = tmpDir_exe + '/' + fileName;
             cpp2exe(exe_path, cpp_path); // compile with g++
-            sstd::printn_all(vCmdArgs);
             std::string cpp_out;
             if(vCmdArgs.size()==0){
                 cpp_out += cpp2out(tmpDir_exe, fileName, ""); // execute compiled binary
