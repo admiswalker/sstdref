@@ -19,7 +19,7 @@ void gen_attachment_files(const std::string& dir_path, const std::vector<std::st
     }
 }
 
-std::string cpp2exe(const std::string& exe_path, const std::string& cpp_path){
+void cpp2exe(const std::string& exe_path, const std::string& cpp_path){
     std::string CXX = R"(g++)";
     std::string CFLAG;
     CFLAG += R"( -L./sstd/lib -I./sstd/include -lsstd)"; // sstd
@@ -27,30 +27,20 @@ std::string cpp2exe(const std::string& exe_path, const std::string& cpp_path){
     CFLAG += R"( -Wall)";
     CFLAG += R"( -O3)";
     std::string cmd = sstd::ssprintf("%s -o %s %s %s", CXX.c_str(), exe_path.c_str(), cpp_path.c_str(), CFLAG.c_str());
-    
-    return sstd::system_stdout_stderr(cmd); // compile with g++
-}
-
-std::string cpp2out(const std::string& tmpDir, const std::string& cpp_path){
-    std::string ret;
-    
-    // compile with g++
-    std::string fileName = sstd::getFileName_withoutExtension(cpp_path.c_str()) + ".exe";
-    std::string exe_path = tmpDir + '/' + fileName;
-    ret += cpp2exe(exe_path, cpp_path);
-    if(ret.size()!=0){
+    std::string res = sstd::system_stdout_stderr(cmd); // compile with g++
+    if(res.size()!=0){
         printf("\u001b[31m"); // set output red
         printf("Compile ERROR or WARNING: "); // set output red
-        printf("%s\n", ret.c_str());
+        printf("%s\n", res.c_str());
         printf("\u001b[0m"); // reset color
     }
-    
-    // get output
+    return;
+}
+
+std::string cpp2out(const std::string& tmpDir, const std::string& fileName, const std::string& args){
     sstd::system( sstd::ssprintf("cp -r ./sstd ./%s", tmpDir.c_str()) );
-    std::string cmd = sstd::ssprintf("cd %s; ./%s", tmpDir.c_str(), fileName.c_str());
-    ret += sstd::system_stdout_stderr(cmd); // running exe
-    
-    return ret;
+    std::string cmd = sstd::ssprintf("cd %s; ./%s %s", tmpDir.c_str(), fileName.c_str(), args.c_str());
+    return sstd::system_stdout_stderr(cmd); // running exe
 }
 
 
@@ -72,7 +62,7 @@ void runTimeErrCheck(const std::string& s){
     
     if(TF){
 	printf("\u001b[31m"); // set output red
-	printf("Compile ERROR or WARNING: "); // set output red
+	printf("Runtime ERROR or WARNING: "); // set output red
 	printf("%s\n", s.c_str());
 	printf("\u001b[0m"); // reset color
     }
@@ -87,13 +77,14 @@ int main(int argc, char *argv[]){
     std::string strIn = sstd::read(path_in);
     std::vector<std::string> vStrIn = sstd::splitByLine(strIn);
     std::vector<std::string> vStrOut;
-    
-    std::string cpp_out;
+
+    std::string tmpDir_exe;
+    std::string cpp_path;
     
     std::vector<std::string> vAttachment_filename;
     std::vector<std::string> vAttachment_txt;
     
-    uint l = vStrIn.size(); // num of lines
+    const uint l = vStrIn.size(); // num of lines
     for(uint i=0; i<l; ++i){
         vStrOut <<= vStrIn[i];
         sstd::strip_ow(vStrIn[i]);
@@ -128,22 +119,42 @@ int main(int argc, char *argv[]){
             
             // vCppCode to cpp_file
             std::string file_name = std::regex_replace(path_in.c_str(), std::regex("/"), "_")+'_'+sstd::ssprintf("%d",i)+".cpp";
-            std::string tmpDir_exe = tmpDir+'/'+file_name;
+            tmpDir_exe = tmpDir+'/'+file_name;
             sstd::mkdir(tmpDir_exe);
-
+            
 	    gen_attachment_files(tmpDir_exe, vAttachment_filename, vAttachment_txt);
             
-            std::string cpp_path = tmpDir+'/'+file_name+'/'+file_name;
+            cpp_path = tmpDir+'/'+file_name+"/a.cpp";
             sstd::write(cpp_path, cpp_code);
-            cpp_out = cpp2out(tmpDir_exe, cpp_path); // cpp_file to output
-	    runTimeErrCheck(cpp_out);
-            
-            sstd::rm(tmpDir_exe);
             
         }else if(vStrIn[i] == "#mdEx: cpp example (out)"){
+            ++i;
             vStrOut.pop_back(); // rm "#mdEx: cpp example (in)"
+
+            std::vector<std::string> vCmdArgs;
+            while(vStrIn[i]!="```" && i<l){
+                vCmdArgs <<= vStrIn[i];
+                ++i;
+            }
+            
+            std::string fileName = "a.out";
+            std::string exe_path = tmpDir_exe + '/' + fileName;
+            cpp2exe(exe_path, cpp_path); // compile with g++
+            sstd::printn_all(vCmdArgs);
+            std::string cpp_out;
+            if(vCmdArgs.size()==0){
+                cpp_out += cpp2out(tmpDir_exe, fileName, ""); // execute compiled binary
+            }
+            for(uint i=0; i<vCmdArgs.size(); ++i){
+                cpp_out += vCmdArgs[i] + '\n';
+                cpp_out += cpp2out(tmpDir_exe, fileName, std::regex_replace(vCmdArgs[i], std::regex("\\$ ./a.out"), "")); // execute compiled binary
+            }
+	    runTimeErrCheck(cpp_out);
+            sstd::rm(tmpDir_exe);
+            
             vStrOut <<= cpp_out;
-	    
+            vStrOut <<= vStrIn[i]; // add "```"
+            
 	    vAttachment_filename.clear();
 	    vAttachment_txt.clear();
         }
