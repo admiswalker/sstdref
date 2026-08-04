@@ -1,0 +1,325 @@
+# argparse
+## Abstract
+`argparse.hpp` contains the functions to parse command line options.  
+`argparse.hpp` は，コマンドラインオプションパースする関数を収録している．
+
+## Header file
+```cpp
+namespace sstd::arg_rule{
+    const static int num_error                  = -1;
+    const static int num_command_does_not_exist = -2;
+    
+    struct cmd_rule{
+        int cmd_id                     = -1;
+        int   return_val_type          = sstd::num_null;
+        void* return_val_ptr           = NULL;
+        sstd::void_ptr initial_val_ptr;
+        std::string cmd;
+        int expected_num_of_args       = 0;
+    };
+    struct opt_rule{
+        int   return_val_type          = sstd::num_null;
+        void* return_val_ptr           = NULL;
+        sstd::void_ptr initial_val_ptr;
+        std::string opt_full;
+        std::string opt_short;
+        int expected_num_of_args       = 0;
+    };
+    
+    struct sstd::arg_rule::cmd_rule cmd(const int cmd_id,                                      const char* cmd, const int expected_num_of_args);
+    template<typename T>
+    struct sstd::arg_rule::cmd_rule cmd(const int cmd_id, T& return_val, const T& initial_val, const char* cmd, const int expected_num_of_args);
+    template<typename T>
+    struct sstd::arg_rule::opt_rule opt(T& return_val, const T& initial_val, const char* opt_short, const char* opt_full, const int expected_num_of_args);
+}
+namespace sstd{
+    class argparse{
+        argparse();
+        ~argparse();
+        const std::string& err() const;
+        
+        template<class... Args>
+        int parse(int argc, char* argv[], Args... args);
+    };
+}
+```
+
+## Description
+| Function name | Description |
+| ------------- | ----------- |
+| function01()  | en-xxxxxxx<br>ja-xxxxxxx |
+| function02()  | en-xxxxxxx<br>ja-xxxxxxx |
+
+## Usage
+### Commands definition
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(int argc, char *argv[]){
+
+    enum class CmdID{
+                     EMPTY
+                     , CMD1
+                     , CMD2
+    };
+
+    std::vector<std::string> vCmdArg_s;
+    std::vector<int> vCmdArg_i;
+    
+    sstd::argparse ap;
+    int cmd_id = ap.parse(argc, argv
+    , sstd::arg_rule::cmd((int)CmdID::EMPTY, vCmdArg_s, {}, "",     -1)
+    , sstd::arg_rule::cmd((int)CmdID::CMD1,  vCmdArg_s, {}, "cmd1", -1)
+    , sstd::arg_rule::cmd((int)CmdID::CMD2,  vCmdArg_i, {}, "cmd2", -1)
+    );
+    
+    switch(cmd_id){
+    case (int)CmdID::EMPTY:{printf("EMPTY.\n");sstd::printn(vCmdArg_s);}break;
+    case (int)CmdID::CMD1: {printf("CMD1.\n"); sstd::printn(vCmdArg_s);}break;
+    case (int)CmdID::CMD2: {printf("CMD2.\n"); sstd::printn(vCmdArg_i);}break;
+    default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
+    }
+    
+    printf("\n");
+    return 0;
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out arg1 arg2 arg3
+$ ./a.out cmd1 arg1 arg2 arg3
+$ ./a.out cmd2 1 2 3
+$ ./a.out cmd2 arg1 arg2 arg3 # **This is error case.**
+```
+
+### Options definition
+
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(int argc, char *argv[]){
+
+    enum class CmdID{
+                     EMPTY
+                     , CMD1
+                     , CMD2
+    };
+
+    bool opt_a=false, opt_b=false;
+    
+    sstd::argparse ap;
+    int cmd_id = ap.parse(argc, argv
+    , sstd::arg_rule::cmd((int)CmdID::EMPTY, "", 0)
+    , sstd::arg_rule::opt(opt_a, false, "-a", "--option-a", 0)
+    , sstd::arg_rule::opt(opt_b, false, "-b", "--option-b", 0)
+    );
+    
+    switch(cmd_id){
+    case (int)CmdID::EMPTY:{
+	sstd::printn(opt_a);
+	sstd::printn(opt_b);
+	
+    }break;
+    default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
+    }
+    
+    printf("\n");
+    return 0;
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out
+$ ./a.out -a
+$ ./a.out --option-a
+$ ./a.out -b
+$ ./a.out --option-b
+$ ./a.out -ab # Following commands also output the same result: `$ ./a.out --option-a --option-b`, `$ ./a.out -a --option-b`, `$ ./a.out --option-a -b`, `$ ./a.out -ba`, `$ ./a.out --option-b --option-a`, `$ ./a.out -b --option-a`, `$ ./a.out --option-b -a`.
+```
+
+### Commands and Options definition
+
+
+## Appendix
+### Select few commands
+- <u>**example.csv**</u>
+```
+#mdEx: cpp example (in:attachment:example.csv)
+row-name, A, B, C, D, E, F, G, H, I, J
+row1, A1, B1, C1, D1, E1, F1, G1, H1, I1, J1
+row2, A2, B2, C2, D2, E2, F2, G2, H2, I2, J2
+row3, A3, B3, C3, D3, E3, F3, G3, H3, I3, J3
+row4, A4, B4, C4, D4, E4, F4, G4, H4, I4, J4
+row5, A5, B5, C5, D5, E5, F5, G5, H5, I5, J5
+```
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(int argc, char *argv[]){
+
+    enum class CmdID{
+                     GET_LINES
+    };
+
+    bool skip_header=false, skip_col_header=false;
+    std::vector<std::string> vCmdArgs;
+    
+    sstd::argparse ap;
+    int cmd_id = ap.parse(
+        argc, argv
+        , sstd::arg_rule::cmd((int)CmdID::GET_LINES, vCmdArgs, {}, "get-lines", -1)
+//                          , sstd::arg_rule::opt(skip_header, false, "", "--skip-header", 0)
+//                          , sstd::arg_rule::opt(skip_col_header, false, "", "--skip-col-header", 0)
+                          , sstd::arg_rule::opt(skip_header, false, "-r", "--skip-row-header", 0)
+                          , sstd::arg_rule::opt(skip_col_header, false, "-c", "--skip-col-header", 0)
+//                          , sstd::arg_rule::opt( optC, false, "-c", "--option-c", 0)
+//                          , sstd::arg_rule::opt( optD, false, "-d", "--option-d", 0)
+//                          , sstd::arg_rule::opt( optE, false, "-e", "--option-e", 1)
+//                          , sstd::arg_rule::opt( optF, false, "-f", "--option-f", 1)
+//                          , sstd::arg_rule::opt( optG,  true, "-g", "--option-g", 1)
+//                          , sstd::arg_rule::opt( optH,  true, "-h", "--option-h", 1)
+//                          , sstd::arg_rule::opt(vOptR, std::vector<int>({0,0,0,0}), "-r", "--rectangle", 4)
+                    );
+    
+    switch(cmd_id){
+    case (int)CmdID::GET_LINES : {
+        if(vCmdArgs.size()<1){ sstd::pdbg_err("`get-lines` command requires more or equal than 2 args."); }
+        sstd::printn(vCmdArgs);
+        
+        std::string src_path = vCmdArgs[0];
+        
+        std::vector<int> vLines;
+        if(!sstd::str2val(vLines, vCmdArgs&&sstd::slice(1,sstd::end()))){ sstd::pdbg_err("`get-lines` failed to get line number."); }
+        
+        std::vector<std::vector<std::string>> vv = sstd::csv2vvec("example.csv");
+        sstd::printn(vv);
+        sstd::printn(src_path);
+        sstd::printn(vLines);
+	
+        sstd::printn(skip_header);
+        sstd::printn(skip_col_header);
+        
+    } break;
+    default : {
+        sstd::pdbg_err("%s", ap.err().c_str());
+    }
+    }
+    
+    printf("\n");
+    return 0;
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out get-lines example.csv 1 2 3
+```
+
+### TEST
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(int argc, char *argv[]){
+    sstd::printn(argc);
+    for(int i=0; i<argc; ++i){
+        sstd::printn(argv[i]);
+    }
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out cmd src_path dst_path
+```
+
+### A complicated example of `sstd::argparse()`
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(int argc, char *argv[]){
+
+    enum class CmdID{
+                     EMPTY,
+                     CMD
+    };
+
+    std::vector<std::string> vCmdArgs;
+    std::vector<int> vOptA, vOptR;
+    bool optB=false,optC=false,optD=false,optE=false,optF=false,optG=true,optH=true;
+    
+    sstd::argparse ap;
+    int cmd_id = ap.parse(argc, argv
+                          , sstd::arg_rule::cmd((int)CmdID::EMPTY, "", 0)
+                          , sstd::arg_rule::cmd((int)CmdID::CMD, vCmdArgs, {}, "cmd", 2)
+                          , sstd::arg_rule::opt(vOptA, std::vector<int>({}), "-a", "--option-a", 2)
+                          , sstd::arg_rule::opt( optB, false, "-b", "--option-b", 0)
+                          , sstd::arg_rule::opt( optC, false, "-c", "--option-c", 0)
+                          , sstd::arg_rule::opt( optD, false, "-d", "--option-d", 0)
+                          , sstd::arg_rule::opt( optE, false, "-e", "--option-e", 1)
+                          , sstd::arg_rule::opt( optF, false, "-f", "--option-f", 1)
+                          , sstd::arg_rule::opt( optG,  true, "-g", "--option-g", 1)
+                          , sstd::arg_rule::opt( optH,  true, "-h", "--option-h", 1)
+                          , sstd::arg_rule::opt(vOptR, std::vector<int>({0,0,0,0}), "-r", "--rectangle", 4)
+                    );
+    if(cmd_id==-1){ sstd::printn_all(ap.err()); }
+//    if(cmd_id==-2){ sstd::printn_all(ap.err()); } // empty command が呼び出されるべきでは？
+    
+    switch(cmd_id){
+    case (int)CmdID::EMPTY : {
+        printf("--- In the `CmdID::EMPTY` case ---\n");
+//        sstd::pdbg_err("%s", ap.err().c_str());
+//        ASSERT_TRUE(false);
+//        ap.print_help();
+    } break;
+    case (int)CmdID::CMD: {
+        printf("--- In the `CmdID::CMD` case ---\n");
+	
+        // process get lines
+        sstd::printn(vCmdArgs);
+        sstd::printn(vOptA);
+        sstd::printn(optB);
+        sstd::printn(optC);
+        sstd::printn(optD);
+        sstd::printn(optE);
+        sstd::printn(optF);
+        sstd::printn(optG);
+        sstd::printn(optH);
+        sstd::printn(vOptR);
+    } break;
+    case (int)sstd::arg_rule::num_error : {
+        sstd::pdbg_err("%s", ap.err().c_str());
+//        ASSERT_TRUE(false);
+    } break;
+    default : {
+        sstd::pdbg_err("%s", ap.err().c_str());
+//        ASSERT_TRUE(false);
+    }
+    }
+    
+    printf("\n");
+    return 0;
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out
+$ ./a.out cmd -a 1 2 -b -cd -e true -f=true -g false -h=false --rectangle 5 5 5 5 src_path dst_path
+```
+
+## Implementation
+- Source: [sstd/src/utils/argparse.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/utils/argparse.cpp)
+- Header: [sstd/src/utils/argparse.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/utils/argparse.hpp)
+- Test: [test/src_test/utils/argparse.cpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/test/src_test/utils/argparse.cpp)

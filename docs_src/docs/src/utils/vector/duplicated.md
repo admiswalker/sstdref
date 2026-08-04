@@ -89,9 +89,9 @@ int main(){
 ```
 
 ## Application
-One of the application of this template function is `sstd::argparse()`. See [sstd::argparse()](./argparse.md) for more detail.
+One of the application of this template function is `sstd::argparse()`. See [sstd::argparse()](../argparse.md) for more detail.
 
-このテンプレート関数の応用の 1 つに `sstd::argparse()` があります．詳細は [sstd::argparse()](./argparse.md) をご確認ください．
+このテンプレート関数の応用の 1 つに `sstd::argparse()` があります．詳細は [sstd::argparse()](../argparse.md) をご確認ください．
 
 ## Implementation
 - Header: [sstd/src/utils/vector/duplicated.hpp](https://github.com/admiswalker/SubStandardLibrary-SSTD-/blob/master/sstd/src/utils/vector/duplicated.hpp)
