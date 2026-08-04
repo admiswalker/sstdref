@@ -50,6 +50,11 @@ namespace sstd{
 | function01()  | en-xxxxxxx<br>ja-xxxxxxx |
 | function02()  | en-xxxxxxx<br>ja-xxxxxxx |
 
+メモ：optionに指定できる文字の制約として以下を記載する。
+$ ./a.out -a cmd2 -1 0 1 2 -b 3
+# Note: As an limitation, option did not allow to begin numeric number. `-1` will not treat as an option.
+# Note: As a constraint, option must begin with an alphabetic character. In this case, So, `-1` is not treated as an option and can be extracted as a numerical value. / 注：制約としてオプションは英字で始まる必要があります．そのため，`-1` はオプションとはみなされず，数値として抽出できます．
+
 ## Usage
 ### Commands definition
 - <u>**main.cpp**</u>
@@ -96,7 +101,6 @@ $ ./a.out cmd2 arg1 arg2 arg3 # **This is error case.**
 ```
 
 ### Options definition
-
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -144,7 +148,57 @@ $ ./a.out -ab # Following commands also output the same result: `$ ./a.out --opt
 ```
 
 ### Commands and Options definition
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
 
+int main(int argc, char *argv[]){
+
+    enum class CmdID{
+                     CMD1
+                     , CMD2
+    };
+
+    std::vector<std::string> vCmdArg_s;
+    std::vector<int> vCmdArg_i;
+    bool opt_a=false, opt_b=false;
+    
+    sstd::argparse ap;
+    int cmd_id = ap.parse(argc, argv
+    , sstd::arg_rule::cmd((int)CmdID::CMD1,  vCmdArg_s, {}, "cmd1", -1)
+    , sstd::arg_rule::cmd((int)CmdID::CMD2,  vCmdArg_i, {}, "cmd2", -1)
+    , sstd::arg_rule::opt(opt_a, false, "-a", "--option-a", 0)
+    , sstd::arg_rule::opt(opt_b, false, "-b", "--option-b", 0)
+    );
+    
+    switch(cmd_id){
+    case (int)CmdID::CMD1: {
+        printf("CMD1.\n");
+    	sstd::printn(opt_a);
+	sstd::printn(opt_b);
+        sstd::printn(vCmdArg_s);
+	
+    }break;
+    case (int)CmdID::CMD2: {
+        printf("CMD2.\n");
+    	sstd::printn(opt_a);
+	sstd::printn(opt_b);
+        sstd::printn(vCmdArg_i);
+    }break;
+    default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
+    }
+    
+    printf("\n");
+    return 0;
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out cmd1 -a arg1 arg2 arg3
+$ ./a.out -a cmd2 -1 0 1 2 -b 3 # Note: As a constraint, option must begin with an alphabetic character. In this case, So, `-1` is not treated as an option and can be extracted as a numerical value. / 注：制約としてオプションは英字で始まる必要があります．そのため，`-1` はオプションとはみなされず，数値として抽出できます．
+```
 
 ## Appendix
 ### Select few commands
