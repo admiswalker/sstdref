@@ -201,7 +201,11 @@ $ ./a.out -a cmd2 -1 0 1 2 -b 3 # Note: As a constraint, option must begin with 
 ```
 
 ## Appendix
-### Select few commands
+### Example of CSV extraction
+This sample code extracts specific rows, cols or item from CSV by selecting `get-rows`, `get-cols` or `get-item` command. If the `--skip-row-header (-r)` or `--skip-col-header (-c)` option is enabled, the code ignores the CSV header(s).
+
+このサンプルコードは，`get-rows`, `get-cols` または `get-item` コマンドを選択することで，CSVから特定の行，列，または項目を抽出します．`--skip-row-header (-r)` または `--skip-col-header (-c)` オプションが有効な場合，コードは CSV のヘッダーを無視します．
+
 - <u>**example.csv**</u>
 ```
 #mdEx: cpp example (in:attachment:example.csv)
@@ -237,7 +241,6 @@ void print_vv(const std::vector<std::vector<std::string>>& vv){
         printf(" "); sstd::print(vv[i]);
     }
     printf("]\n");
-    printf("\n");
 }
 
 int main(int argc, char *argv[]){
@@ -245,6 +248,7 @@ int main(int argc, char *argv[]){
     enum class CmdID{
                        GET_ROWS
                      , GET_COLS
+                     , GET_ITEM
     };
 
     std::string src_path;
@@ -255,6 +259,7 @@ int main(int argc, char *argv[]){
     int cmd_id = ap.parse(argc, argv
     , sstd::arg_rule::cmd((int)CmdID::GET_ROWS, vArg, {}, "get-rows", -1)
     , sstd::arg_rule::cmd((int)CmdID::GET_COLS, vArg, {}, "get-cols", -1)
+    , sstd::arg_rule::cmd((int)CmdID::GET_ITEM, vArg, {}, "get-item",  2)
     , sstd::arg_rule::opt(src_path, std::string(""), "-s", "--src", 1)
     , sstd::arg_rule::opt(skip_row_header, false, "-r", "--skip-row-header", 0)
     , sstd::arg_rule::opt(skip_col_header, false, "-c", "--skip-col-header", 0)
@@ -266,14 +271,37 @@ int main(int argc, char *argv[]){
 
         vv = read_csv(src_path, skip_row_header, skip_col_header);
         for(uint i=0; i<vArg.size(); ++i){
-            int idx = vArg[i]-1;
-            if(idx>(int)vv.size()){ sstd::pdbg("%d is out of range.\n\n", vArg[i]); return -1; }
-            res_vv <<= vv[ idx ];
+            int ri = vArg[i]-1; if(ri>(int)vv.size()){ sstd::pdbg("%d is out of range.\n\n", vArg[i]); return -1; }
+            res_vv <<= vv[ri];
         }
         print_vv(res_vv);
 
     } break;
     case (int)CmdID::GET_COLS : {
+        std::vector<std::vector<std::string>> res_vv, vv;
+
+        vv = read_csv(src_path, skip_row_header, skip_col_header);
+        for(uint ri=0; ri<vv.size(); ++ri){
+            std::vector<std::string> tmp_v;
+            for(uint i=0; i<vArg.size(); ++i){
+                int ci = vArg[i]-1; if(ci>(int)vv[ri].size()){ sstd::pdbg("%d is out of range.\n\n", vArg[i]); return -1; }
+                tmp_v <<= vv[ri][ci];
+            }
+            res_vv <<= tmp_v;
+        }
+        print_vv(res_vv);
+
+    } break;
+    case (int)CmdID::GET_ITEM : {
+        std::vector<std::vector<std::string>> res_vv, vv;
+
+        vv = read_csv(src_path, skip_row_header, skip_col_header);
+        int ri = vArg[0]-1;
+        int ci = vArg[1]-1;
+        if( ri>=(int)vv.size() || ci>=(int)vv[ri].size() ){ sstd::pdbg("(%d, %d) is out of range.\n\n", vArg[0], vArg[1]); return -1; }
+        res_vv <<= std::vector<std::string>({ vv[ri][ci] });
+        print_vv(res_vv);
+
     } break;
     default : {
         sstd::pdbg_err("%s", ap.err().c_str());
@@ -287,7 +315,9 @@ int main(int argc, char *argv[]){
 - <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
-$ ./a.out get-rows 1 2 3 -rc --src example.csv
+$ ./a.out get-rows 1 3 -rc --src example.csv
+$ ./a.out get-cols 2 4 -rc --src example.csv
+$ ./a.out get-item 2 2 -rc --src example.csv
 ```
 
 ### TEST
