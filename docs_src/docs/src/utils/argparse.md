@@ -56,98 +56,7 @@ $ ./a.out -a cmd2 -1 0 1 2 -b 3
 # Note: As a constraint, option must begin with an alphabetic character. In this case, So, `-1` is not treated as an option and can be extracted as a numerical value. / 注：制約としてオプションは英字で始まる必要があります．そのため，`-1` はオプションとはみなされず，数値として抽出できます．
 
 ## Usage
-### Commands definition
-- <u>**main.cpp**</u>
-```cpp
-#mdEx: cpp example (in)
-#include <sstd/sstd.hpp>
-
-int main(int argc, char *argv[]){
-
-    enum class CmdID{
-                     EMPTY
-                     , CMD1
-                     , CMD2
-    };
-
-    std::vector<std::string> vCmdArg_s;
-    std::vector<int> vCmdArg_i;
-    
-    sstd::argparse ap;
-    int cmd_id = ap.parse(argc, argv
-    , sstd::arg_rule::cmd((int)CmdID::EMPTY, vCmdArg_s, {}, "",     -1)
-    , sstd::arg_rule::cmd((int)CmdID::CMD1,  vCmdArg_s, {}, "cmd1", -1)
-    , sstd::arg_rule::cmd((int)CmdID::CMD2,  vCmdArg_i, {}, "cmd2", -1)
-    );
-    
-    switch(cmd_id){
-    case (int)CmdID::EMPTY:{printf("EMPTY.\n");sstd::printn(vCmdArg_s);}break;
-    case (int)CmdID::CMD1: {printf("CMD1.\n"); sstd::printn(vCmdArg_s);}break;
-    case (int)CmdID::CMD2: {printf("CMD2.\n"); sstd::printn(vCmdArg_i);}break;
-    default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
-    }
-    
-    printf("\n");
-    return 0;
-}
-```
-- <u>**Execution result**</u>
-```
-#mdEx: cpp example (out)
-$ ./a.out arg1 arg2 arg3
-$ ./a.out cmd1 arg1 arg2 arg3
-$ ./a.out cmd2 1 2 3
-$ ./a.out cmd2 arg1 arg2 arg3 # **This is error case.**
-```
-
-### Options definition
-- <u>**main.cpp**</u>
-```cpp
-#mdEx: cpp example (in)
-#include <sstd/sstd.hpp>
-
-int main(int argc, char *argv[]){
-
-    enum class CmdID{
-                     EMPTY
-                     , CMD1
-                     , CMD2
-    };
-
-    bool opt_a=false, opt_b=false;
-    
-    sstd::argparse ap;
-    int cmd_id = ap.parse(argc, argv
-    , sstd::arg_rule::cmd((int)CmdID::EMPTY, "", 0)
-    , sstd::arg_rule::opt(opt_a, false, "-a", "--option-a", 0)
-    , sstd::arg_rule::opt(opt_b, false, "-b", "--option-b", 0)
-    );
-    
-    switch(cmd_id){
-    case (int)CmdID::EMPTY:{
-	sstd::printn(opt_a);
-	sstd::printn(opt_b);
-	
-    }break;
-    default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
-    }
-    
-    printf("\n");
-    return 0;
-}
-```
-- <u>**Execution result**</u>
-```
-#mdEx: cpp example (out)
-$ ./a.out
-$ ./a.out -a
-$ ./a.out --option-a
-$ ./a.out -b
-$ ./a.out --option-b
-$ ./a.out -ab # Following commands also output the same result: `$ ./a.out --option-a --option-b`, `$ ./a.out -a --option-b`, `$ ./a.out --option-a -b`, `$ ./a.out -ba`, `$ ./a.out --option-b --option-a`, `$ ./a.out -b --option-a`, `$ ./a.out --option-b -a`.
-```
-
-### Commands and Options definition
+### Commands and Options definitions
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -174,16 +83,16 @@ int main(int argc, char *argv[]){
     
     switch(cmd_id){
     case (int)CmdID::CMD1: {
-        printf("CMD1.\n");
-    	sstd::printn(opt_a);
-	sstd::printn(opt_b);
+        printf("In CMD1\n");
+        sstd::printn(opt_a);
+        sstd::printn(opt_b);
         sstd::printn(vCmdArg_s);
-	
+        
     }break;
     case (int)CmdID::CMD2: {
-        printf("CMD2.\n");
-    	sstd::printn(opt_a);
-	sstd::printn(opt_b);
+        printf("In CMD2\n");
+        sstd::printn(opt_a);
+        sstd::printn(opt_b);
         sstd::printn(vCmdArg_i);
     }break;
     default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
@@ -198,6 +107,142 @@ int main(int argc, char *argv[]){
 #mdEx: cpp example (out)
 $ ./a.out cmd1 -a arg1 arg2 arg3
 $ ./a.out -a cmd2 -1 0 1 2 -b 3 # Note: As a constraint, option must begin with an alphabetic character. In this case, So, `-1` is not treated as an option and can be extracted as a numerical value. / 注：制約としてオプションは英字で始まる必要があります．そのため，`-1` はオプションとはみなされず，数値として抽出できます．
+```
+
+### Commands definitions
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(int argc, char *argv[]){
+
+    enum class CmdID{
+                     EMPTY
+                     , CMD1
+                     , CMD2
+    };
+
+    std::vector<std::string> vCmdArg_s;
+    std::vector<int> vCmdArg_i;
+    
+    sstd::argparse ap;
+    int cmd_id = ap.parse(argc, argv
+    , sstd::arg_rule::cmd((int)CmdID::EMPTY, vCmdArg_s, {}, "",     -1)
+    , sstd::arg_rule::cmd((int)CmdID::CMD1,  vCmdArg_s, {}, "cmd1", -1)
+    , sstd::arg_rule::cmd((int)CmdID::CMD2,  vCmdArg_i, {}, "cmd2", -1)
+    );
+    
+    switch(cmd_id){
+    case (int)CmdID::EMPTY:{printf("In EMPTY: ");sstd::printn(vCmdArg_s);}break;
+    case (int)CmdID::CMD1: {printf("In CMD1: "); sstd::printn(vCmdArg_s);}break;
+    case (int)CmdID::CMD2: {printf("In CMD2: "); sstd::printn(vCmdArg_i);}break;
+    default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
+    }
+    
+    printf("\n");
+    return 0;
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out arg1 arg2 arg3
+$ ./a.out cmd1 arg1 arg2 arg3
+$ ./a.out cmd2 1 2 3
+$ ./a.out cmd2 arg1 arg2 arg3 # **This is error case.**
+```
+
+### Options definitions (Case1)
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(int argc, char *argv[]){
+
+    enum class CmdID{
+                     EMPTY
+    };
+
+    bool opt_a=false, opt_b=false;
+    
+    sstd::argparse ap;
+    int cmd_id = ap.parse(argc, argv
+    , sstd::arg_rule::cmd((int)CmdID::EMPTY, "", 0)
+    , sstd::arg_rule::opt(opt_a, false, "-a", "--option-a", 0)
+    , sstd::arg_rule::opt(opt_b, false, "-b", "--option-b", 0)
+    );
+    
+    switch(cmd_id){
+    case (int)CmdID::EMPTY:{
+        sstd::printn(opt_a);
+        sstd::printn(opt_b);
+        
+    }break;
+    default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
+    }
+    
+    printf("\n");
+    return 0;
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out
+$ ./a.out -a
+$ ./a.out --option-a
+$ ./a.out -b
+$ ./a.out --option-b
+$ ./a.out -ab # Following commands also output the same result: `$ ./a.out --option-a --option-b`, `$ ./a.out -a --option-b`, `$ ./a.out --option-a -b`, `$ ./a.out -ba`, `$ ./a.out --option-b --option-a`, `$ ./a.out -b --option-a`, `$ ./a.out --option-b -a`.
+```
+
+### Options definitions (Case2)
+- <u>**main.cpp**</u>
+```cpp
+#mdEx: cpp example (in)
+#include <sstd/sstd.hpp>
+
+int main(int argc, char *argv[]){
+
+    enum class CmdID{
+                     EMPTY
+    };
+
+    bool opt_c=false;
+    
+    sstd::argparse ap;
+    int cmd_id = ap.parse(argc, argv
+    , sstd::arg_rule::cmd((int)CmdID::EMPTY, "", 0)
+    , sstd::arg_rule::opt(opt_c, false, "-c", "--option-c", 1) // Note: Expected arg length is set `1`.
+    );
+    
+    switch(cmd_id){
+    case (int)CmdID::EMPTY:{
+        sstd::printn(opt_c);
+        
+    }break;
+    default:{ sstd::pdbg_err("%s", ap.err().c_str()); }
+    }
+    
+    printf("\n");
+    return 0;
+}
+```
+- <u>**Execution result**</u>
+```
+#mdEx: cpp example (out)
+$ ./a.out
+$ ./a.out -c # **This is error case. `--option-c` should have 1 argument.**
+$ ./a.out -c true
+$ ./a.out -c=true
+$ ./a.out --option-c true
+$ ./a.out --option-c=true
+$ ./a.out -c false
+$ ./a.out -c=false
+$ ./a.out --option-c false
+$ ./a.out --option-c=false
 ```
 
 ## Appendix
