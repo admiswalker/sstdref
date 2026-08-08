@@ -64,7 +64,13 @@ namespace sstd{
 
 | Function name | Description |
 | ------------- | ----------- |
-| arg_rule::opt_rule()  | en-xxxxxxx<br>ja-xxxxxxx |
+| arg_rule::opt_rule(<br/>&nbsp;&nbsp;T& return_val, <br/>&nbsp;&nbsp;const T& initial_val, <br/>&nbsp;&nbsp;const char* opt_short, <br/>&nbsp;&nbsp;const char* opt_full, <br/>&nbsp;&nbsp;const int expected_num_of_args)  | en-xxxxxxx<br>ja-xxxxxxx |
+
+- return_val: Same with `arg_rule::cmd_rule()` / `arg_rule::cmd_rule()` と同じ
+- initial_val: Same with `arg_rule::cmd_rule()` / `arg_rule::cmd_rule()` と同じ
+- opt_short: 
+- opt_full: 
+- expected_num_of_args: Same with `arg_rule::cmd_rule()` / `arg_rule::cmd_rule()` と同じ
 
 メモ：optionに指定できる文字の制約として以下を記載する。
 $ ./a.out -a cmd2 -1 0 1 2 -b 3
