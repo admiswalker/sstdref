@@ -217,50 +217,63 @@ row5, A5, B5, C5, D5, E5, F5, G5, H5, I5, J5
 #mdEx: cpp example (in)
 #include <sstd/sstd.hpp>
 
+std::vector<std::vector<std::string>> read_csv(
+    const std::string& src_path,
+    const bool skip_row_header,
+    const bool skip_col_header)
+{
+    std::vector<std::vector<std::string>> vv = sstd::csv2vvec(src_path);
+    if(skip_row_header){ vv = vv && sstd::slice(1, sstd::end()); }
+    if(skip_col_header){
+        for(uint i=0; i<vv.size(); ++i){
+            vv[i] = vv[i] && sstd::slice(1, sstd::end());
+        }
+    }
+    return vv;
+}
+void print_vv(const std::vector<std::vector<std::string>>& vv){
+    printf("[\n");
+    for(uint i=0; i<vv.size(); ++i){
+        printf(" "); sstd::print(vv[i]);
+    }
+    printf("]\n");
+    printf("\n");
+}
+
 int main(int argc, char *argv[]){
 
     enum class CmdID{
-                     GET_LINES
+                       GET_ROWS
+                     , GET_COLS
     };
 
-    bool skip_header=false, skip_col_header=false;
-    std::vector<std::string> vCmdArgs;
+    std::string src_path;
+    bool skip_row_header=false, skip_col_header=false;
+    std::vector<uint> vArg;
     
     sstd::argparse ap;
-    int cmd_id = ap.parse(
-        argc, argv
-        , sstd::arg_rule::cmd((int)CmdID::GET_LINES, vCmdArgs, {}, "get-lines", -1)
-//                          , sstd::arg_rule::opt(skip_header, false, "", "--skip-header", 0)
-//                          , sstd::arg_rule::opt(skip_col_header, false, "", "--skip-col-header", 0)
-                          , sstd::arg_rule::opt(skip_header, false, "-r", "--skip-row-header", 0)
-                          , sstd::arg_rule::opt(skip_col_header, false, "-c", "--skip-col-header", 0)
-//                          , sstd::arg_rule::opt( optC, false, "-c", "--option-c", 0)
-//                          , sstd::arg_rule::opt( optD, false, "-d", "--option-d", 0)
-//                          , sstd::arg_rule::opt( optE, false, "-e", "--option-e", 1)
-//                          , sstd::arg_rule::opt( optF, false, "-f", "--option-f", 1)
-//                          , sstd::arg_rule::opt( optG,  true, "-g", "--option-g", 1)
-//                          , sstd::arg_rule::opt( optH,  true, "-h", "--option-h", 1)
-//                          , sstd::arg_rule::opt(vOptR, std::vector<int>({0,0,0,0}), "-r", "--rectangle", 4)
-                    );
+    int cmd_id = ap.parse(argc, argv
+    , sstd::arg_rule::cmd((int)CmdID::GET_ROWS, vArg, {}, "get-rows", -1)
+    , sstd::arg_rule::cmd((int)CmdID::GET_COLS, vArg, {}, "get-cols", -1)
+    , sstd::arg_rule::opt(src_path, std::string(""), "-s", "--src", 1)
+    , sstd::arg_rule::opt(skip_row_header, false, "-r", "--skip-row-header", 0)
+    , sstd::arg_rule::opt(skip_col_header, false, "-c", "--skip-col-header", 0)
+    );
     
     switch(cmd_id){
-    case (int)CmdID::GET_LINES : {
-        if(vCmdArgs.size()<1){ sstd::pdbg_err("`get-lines` command requires more or equal than 2 args."); }
-        sstd::printn(vCmdArgs);
-        
-        std::string src_path = vCmdArgs[0];
-        
-        std::vector<int> vLines;
-        if(!sstd::str2val(vLines, vCmdArgs&&sstd::slice(1,sstd::end()))){ sstd::pdbg_err("`get-lines` failed to get line number."); }
-        
-        std::vector<std::vector<std::string>> vv = sstd::csv2vvec("example.csv");
-        sstd::printn(vv);
-        sstd::printn(src_path);
-        sstd::printn(vLines);
-	
-        sstd::printn(skip_header);
-        sstd::printn(skip_col_header);
-        
+    case (int)CmdID::GET_ROWS : {
+        std::vector<std::vector<std::string>> res_vv, vv;
+
+        vv = read_csv(src_path, skip_row_header, skip_col_header);
+        for(uint i=0; i<vArg.size(); ++i){
+            int idx = vArg[i]-1;
+            if(idx>(int)vv.size()){ sstd::pdbg("%d is out of range.\n\n", vArg[i]); return -1; }
+            res_vv <<= vv[ idx ];
+        }
+        print_vv(res_vv);
+
+    } break;
+    case (int)CmdID::GET_COLS : {
     } break;
     default : {
         sstd::pdbg_err("%s", ap.err().c_str());
@@ -274,7 +287,7 @@ int main(int argc, char *argv[]){
 - <u>**Execution result**</u>
 ```
 #mdEx: cpp example (out)
-$ ./a.out get-lines example.csv 1 2 3
+$ ./a.out get-rows 1 2 3 -rc --src example.csv
 ```
 
 ### TEST
