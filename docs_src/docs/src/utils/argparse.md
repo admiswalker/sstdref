@@ -47,24 +47,34 @@ namespace sstd{
 ## Description
 ### Parsing class
 
-| Class method name | Description |
-| ------------- | ----------- |
-| argparse::parse(`argc`, `argv`, `cmd-or-option-definitions...`) | receives the inputted argc and argv passed to the main() function. And parses argc and argv according to the definitions after 3rd arg. Based on the analysis, the function returns the command ID specified by argc and argv.<br/><br/>main() 関数に渡された argc および argv を受け取り，第3引数以降の定義に従って解析します．解析結果に基づき，この関数は argc および argv で指定されたコマンド ID を返します． |
-| argparse::err()  | en-xxxxxxx<br>ja-xxxxxxx |
-| argparse::help()  | en-xxxxxxx<br>ja-xxxxxxx |
+| Class | Method | Variable | Description |
+| ----- | ------ | -------- | ----------- |
+| argparse | parse() | -                              | receives the inputted argc and argv passed to the main() function. And parses argc and argv according to the definitions after 3rd arg. Based on the analysis, the function returns the command ID.<br/><br/>main() 関数に渡された argc および argv を受け取り，第3引数以降の定義に従って解析します．解析結果に基づきコマンド ID を返します． |
+|          |         | RETURN VALUE                   | returns the command ID. <br/>コマンド ID を返します． |
+|          |         | int argc                       | receives the inputted argc passed to the main() function. <br/>main() 関数に入力された argc を受け取ります． |
+|          |         | char* argv[]                   | receives the inputted argv passed to the main() function. <br/>main() 関数に入力された argv を受け取ります． |
+|          |         | `cmd-or-option-definitions...` | receives the definitions described by `arg_rule::cmd_rule()` or `arg_rule::opt_rule()`. <br/>`arg_rule::cmd_rule()` または `arg_rule::opt_rule()` で記述された定義を受け取ります． |
+|          | err()  | - | en-xxxxxxx<br>ja-xxxxxxx |
+|          | help() | - | en-xxxxxxx<br>ja-xxxxxxx |
 
 ### Command defining function
 
-| Function name | Description |
-| ------------- | ----------- |
-| arg_rule::cmd_rule(<br/>&nbsp;&nbsp;const int cmd_id, <br/>&nbsp;&nbsp;const char* cmd, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>) | Same as follows.<br>以下と同様． |
-| arg_rule::cmd_rule(<br/>&nbsp;&nbsp;const int cmd_id, <br/>&nbsp;&nbsp;T& return_val, <br/>&nbsp;&nbsp;const T& initial_val, <br/>&nbsp;&nbsp;const char* cmd, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>) | - cmd_id: defines the command ID returned by `argparse::parse()` class method. Returned command ID can use in a `switch-case` statement. As a constraint, cmd_id must be a positive integer; negative integers are reserved as error values in the return value of `argparse::parse()`.<br>- return_val: defines the address and data type of return variable.<br>- initial_val: defines the initial value of `return_val`.<br>- cmd: defines the command string.<br>- expected_num_of_args: defines the expected number of arguments for the command. `-1` treats as variable length arguments.<br><br>- cmd_id: `argparse::parse()` クラスメソッドが返すコマンドIDを定義します．返されたコマンドIDは，`switch-case` 文で使用できます．制約として `cmd_id` は正の整数である必要があります．負の整数は `argparse::parse()` の戻り値でエラー値として予約されています．<br/>- return_val: 戻り値の変数アドレスとデータ型を定義します．<br/>- initial_val: `return_val` の初期値を定義します．<br/>- cmd: コマンド文字列を定義します．<br/>- expected_num_of_args: コマンドに指定される引数の数を定義します．`-1` は可変長引数として扱われます． |
+| Function | Variable | Description |
+| -------- | ---------| ----------- |
+| arg_rule::cmd_rule() | -                              | defines the command rule for `argparse::parse()`. <br/>`argparse::parse()` のコマンドルールを定義します． |
+|                      | RETURN VALUE                   | returns a command definition to be passed to `argparse::parse()`. <br/>`argparse::parse()` に渡すためのコマンド定義を返します． |
+|                      | const int cmd_id               | defines the command ID returned by `argparse::parse()` class method. Returned command ID can use in a `switch-case` statement. As a constraint, cmd_id must be a positive integer; negative integers are reserved as error values in the return value of `argparse::parse()`. <br/>`argparse::parse()` クラスメソッドが返すコマンドIDを定義します．返されたコマンドIDは，`switch-case` 文で使用できます．制約として `cmd_id` は正の整数である必要があります．負の整数は `argparse::parse()` の戻り値でエラー値として予約されています． |
+|                      | T& return_val                  | defines the address and data type of return variable. <br/>戻り値の変数アドレスとデータ型を定義します． |
+|                      | const T& initial_val           | defines the initial value of `return_val`. <br/>`return_val` の初期値を定義します． |
+|                      | const char* cmd                | defines the command string. <br/>コマンド文字列を定義します． |
+|                      | const int expected_num_of_args | defines the expected number of arguments for the command. `-1` treats as variable length arguments. <br/>コマンドに指定される引数の数を定義します．`-1` は可変長引数として扱われます． |
 
 ### Option defining function
 
-| Function name | Variable name | Description |
-| ------------- | ----------- | ----------- |
-| arg_rule::opt_rule() | RETURN VALUE                   |                                                                       |
+| Function | Variable | Description |
+| -------- | -------- | ----------- |
+| arg_rule::opt_rule() | -                              | defines the option rule for `argparse::parse()`. <br/>`argparse::parse()` のオプションルールを定義します． |
+|                      | RETURN VALUE                   | returns a command definition to be passed to `argparse::parse()`. <br/>`argparse::parse()` に渡すためのコマンド定義を返します． |
 |                      | T& return_val                  | Same with `arg_rule::cmd_rule()`. <br/>`arg_rule::cmd_rule()` と同様． |
 |                      | const T& initial_val           | Same with `arg_rule::cmd_rule()`. <br/>`arg_rule::cmd_rule()` と同様． |
 |                      | const char* opt_short          | defines a short option, which should start with '-'. This option is restricted to a single alphabetic character (`*1`). As a constraint enabling to extract negative number like `$ ./a.out -3 -2 -1 0 1 2 3` command line arguments, short option must begin with an alphabetic character. With this constraint, `-3`, `-2` and `-1` are not treated as an option and can be extracted as a numerical value. <br/>短縮オプションを定義します．定義は `-` で始まる1文字のアルファベットである必要があります．制約として短縮オプションは英字で始まる必要があります．例えば `$ ./a.out -3 -2 -1 0 1 2 3` のような負の数を含むコマンドライン引数は，この制約により `-3`、`-2`、`-1` はオプションとして扱われず，数値として抽出できます． |
