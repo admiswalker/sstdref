@@ -57,25 +57,14 @@ namespace sstd{
 
 | Function name | Description |
 | ------------- | ----------- |
-| arg_rule::cmd_rule(<br/>&nbsp;&nbsp;const int cmd_id, <br/>&nbsp;&nbsp;const char* cmd, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>) | Same as follows.<br>以下に同じ． |
+| arg_rule::cmd_rule(<br/>&nbsp;&nbsp;const int cmd_id, <br/>&nbsp;&nbsp;const char* cmd, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>) | Same as follows.<br>以下と同様． |
 | arg_rule::cmd_rule(<br/>&nbsp;&nbsp;const int cmd_id, <br/>&nbsp;&nbsp;T& return_val, <br/>&nbsp;&nbsp;const T& initial_val, <br/>&nbsp;&nbsp;const char* cmd, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>) | - cmd_id: defines the command ID returned by `argparse::parse()` class method. Returned command ID can use in a `switch-case` statement.<br>- return_val: defines the address and data type of return variable.<br>- initial_val: defines the initial value of `return_val`.<br>- cmd: defines the command string.<br>- expected_num_of_args: defines the expected number of arguments for the command. `-1` treats as variable length arguments.<br><br>- cmd_id: `argparse::parse()` クラスメソッドが返すコマンドIDを定義します．返されたコマンドIDは，`switch-case` 文で使用できます．<br/>- return_val: 戻り値の変数アドレスとデータ型を定義します．<br/>- initial_val: `return_val` の初期値を定義します．<br/>- cmd: コマンド文字列を定義します．<br/>- expected_num_of_args: コマンドに指定される引数の数を定義します．`-1` は可変長引数として扱われます． |
 
 ### Option defining function
 
 | Function name | Description |
 | ------------- | ----------- |
-| arg_rule::opt_rule(<br/>&nbsp;&nbsp;T& return_val, <br/>&nbsp;&nbsp;const T& initial_val, <br/>&nbsp;&nbsp;const char* opt_short, <br/>&nbsp;&nbsp;const char* opt_full, <br/>&nbsp;&nbsp;const int expected_num_of_args)  | en-xxxxxxx<br>ja-xxxxxxx |
-
-- return_val: Same with `arg_rule::cmd_rule()` / `arg_rule::cmd_rule()` と同じ
-- initial_val: Same with `arg_rule::cmd_rule()` / `arg_rule::cmd_rule()` と同じ
-- opt_short: 
-- opt_full: 
-- expected_num_of_args: Same with `arg_rule::cmd_rule()` / `arg_rule::cmd_rule()` と同じ
-
-メモ：optionに指定できる文字の制約として以下を記載する。
-$ ./a.out -a cmd2 -1 0 1 2 -b 3
-# Note: As an limitation, option did not allow to begin numeric number. `-1` will not treat as an option.
-# Note: As a constraint, option must begin with an alphabetic character. In this case, So, `-1` is not treated as an option and can be extracted as a numerical value. / 注：制約としてオプションは英字で始まる必要があります．そのため，`-1` はオプションとはみなされず，数値として抽出できます．
+| arg_rule::opt_rule(<br/>&nbsp;&nbsp;T& return_val, <br/>&nbsp;&nbsp;const T& initial_val, <br/>&nbsp;&nbsp;const char* opt_short, <br/>&nbsp;&nbsp;const char* opt_full, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>)  | - return_val: Same with `arg_rule::cmd_rule()`<br>- initial_val: Same with `arg_rule::cmd_rule()`<br>- opt_short: defines a short option, which should start with '-'. This option is restricted to a single alphabetic character (`*1`).<br>- opt_full: defines the full-format option, which should start with '--'.<br>- expected_num_of_args: Same with `arg_rule::cmd_rule()`<br><br>`*1`. As a constraint enabling to extract negative number like `$ ./a.out -3 -2 -1 0 1 2 3` command line arguments, short option must begin with an alphabetic character. With this constraint, `-3`, `-2` and `-1` are not treated as an option and can be extracted as a numerical value.<br><br>- return_val: `arg_rule::cmd_rule()` と同様<br>- initial_val: `arg_rule::cmd_rule()` と同様<br>- opt_short: 短縮オプションを定義します．定義は `-` で始まる1文字のアルファベットである必要があります (`*1`)．<br>- opt_full: オプションを定義します．定義は `--` で始まる必要があります．<br>- expected_num_of_args: `arg_rule::cmd_rule()` と同様<br><br>`*1`. 制約として短縮オプションは英字で始まる必要があります．例えば `$ ./a.out -3 -2 -1 0 1 2 3` のような負の数を含むコマンドライン引数は，この制約により `-3`、`-2`、`-1` はオプションとして扱われず，数値として抽出できます． |
 
 ## Usage
 ### Commands and Options definitions
