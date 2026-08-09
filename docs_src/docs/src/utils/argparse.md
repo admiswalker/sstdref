@@ -54,7 +54,7 @@ namespace sstd{
 |          |         | int argc                       | receives the inputted argc passed to the main() function. <br/>main() 関数に入力された argc を受け取ります． |
 |          |         | char* argv[]                   | receives the inputted argv passed to the main() function. <br/>main() 関数に入力された argv を受け取ります． |
 |          |         | `cmd-or-option-definitions...` | receives the definitions described by `arg_rule::cmd_rule()` or `arg_rule::opt_rule()`. <br/>`arg_rule::cmd_rule()` または `arg_rule::opt_rule()` で記述された定義を受け取ります． |
-|          | err()  | - | en-xxxxxxx<br>ja-xxxxxxx |
+|          | err()  | - | returns a string of error message. <br>エラーメッセージの文字列を返します． |
 |          | help() | - | en-xxxxxxx<br>ja-xxxxxxx |
 
 ### Command defining function
