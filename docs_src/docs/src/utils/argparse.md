@@ -49,7 +49,7 @@ namespace sstd{
 
 | Class method name | Description |
 | ------------- | ----------- |
-| argparse::parse(`argc`, `argv`, `cmd-or-option-definitions...`) | receives the inputted argc and argv passed to the main() function. And parses argc and argv according to the definitions after 3rd arg. Based on the analysis, the function returns the command ID specified by argc and argv.<br/>main() 関数に渡された argc および argv を受け取り，第3引数以降の定義に従って解析します．解析結果に基づき，この関数は argc および argv で指定されたコマンド ID を返します． |
+| argparse::parse(`argc`, `argv`, `cmd-or-option-definitions...`) | receives the inputted argc and argv passed to the main() function. And parses argc and argv according to the definitions after 3rd arg. Based on the analysis, the function returns the command ID specified by argc and argv.<br/><br/>main() 関数に渡された argc および argv を受け取り，第3引数以降の定義に従って解析します．解析結果に基づき，この関数は argc および argv で指定されたコマンド ID を返します． |
 | argparse::err()  | en-xxxxxxx<br>ja-xxxxxxx |
 | argparse::help()  | en-xxxxxxx<br>ja-xxxxxxx |
 
@@ -58,7 +58,7 @@ namespace sstd{
 | Function name | Description |
 | ------------- | ----------- |
 | arg_rule::cmd_rule(<br/>&nbsp;&nbsp;const int cmd_id, <br/>&nbsp;&nbsp;const char* cmd, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>) | Same as follows.<br>以下と同様． |
-| arg_rule::cmd_rule(<br/>&nbsp;&nbsp;const int cmd_id, <br/>&nbsp;&nbsp;T& return_val, <br/>&nbsp;&nbsp;const T& initial_val, <br/>&nbsp;&nbsp;const char* cmd, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>) | - cmd_id: defines the command ID returned by `argparse::parse()` class method. Returned command ID can use in a `switch-case` statement.<br>- return_val: defines the address and data type of return variable.<br>- initial_val: defines the initial value of `return_val`.<br>- cmd: defines the command string.<br>- expected_num_of_args: defines the expected number of arguments for the command. `-1` treats as variable length arguments.<br><br>- cmd_id: `argparse::parse()` クラスメソッドが返すコマンドIDを定義します．返されたコマンドIDは，`switch-case` 文で使用できます．<br/>- return_val: 戻り値の変数アドレスとデータ型を定義します．<br/>- initial_val: `return_val` の初期値を定義します．<br/>- cmd: コマンド文字列を定義します．<br/>- expected_num_of_args: コマンドに指定される引数の数を定義します．`-1` は可変長引数として扱われます． |
+| arg_rule::cmd_rule(<br/>&nbsp;&nbsp;const int cmd_id, <br/>&nbsp;&nbsp;T& return_val, <br/>&nbsp;&nbsp;const T& initial_val, <br/>&nbsp;&nbsp;const char* cmd, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>) | - cmd_id: defines the command ID returned by `argparse::parse()` class method. Returned command ID can use in a `switch-case` statement. As a constraint, cmd_id must be a positive integer; negative integers are reserved as error values in the return value of `argparse::parse()`.<br>- return_val: defines the address and data type of return variable.<br>- initial_val: defines the initial value of `return_val`.<br>- cmd: defines the command string.<br>- expected_num_of_args: defines the expected number of arguments for the command. `-1` treats as variable length arguments.<br><br>- cmd_id: `argparse::parse()` クラスメソッドが返すコマンドIDを定義します．返されたコマンドIDは，`switch-case` 文で使用できます．制約として `cmd_id` は正の整数である必要があります．負の整数は `argparse::parse()` の戻り値でエラー値として予約されています．<br/>- return_val: 戻り値の変数アドレスとデータ型を定義します．<br/>- initial_val: `return_val` の初期値を定義します．<br/>- cmd: コマンド文字列を定義します．<br/>- expected_num_of_args: コマンドに指定される引数の数を定義します．`-1` は可変長引数として扱われます． |
 
 ### Option defining function
 
