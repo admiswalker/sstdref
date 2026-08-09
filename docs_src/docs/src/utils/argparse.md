@@ -64,7 +64,7 @@ namespace sstd{
 | arg_rule::cmd_rule() | -                              | defines the command rule for `argparse::parse()`. <br/>`argparse::parse()` のコマンドルールを定義します． |
 |                      | RETURN VALUE                   | returns a command definition to be passed to `argparse::parse()`. <br/>`argparse::parse()` に渡すためのコマンド定義を返します． |
 |                      | const int cmd_id               | defines the command ID returned by `argparse::parse()` class method. Returned command ID can use in a `switch-case` statement. As a constraint, cmd_id must be a positive integer; negative integers are reserved as error values in the return value of `argparse::parse()`. <br/>`argparse::parse()` クラスメソッドが返すコマンドIDを定義します．返されたコマンドIDは，`switch-case` 文で使用できます．制約として `cmd_id` は正の整数である必要があります．負の整数は `argparse::parse()` の戻り値でエラー値として予約されています． |
-|                      | T& return_val                  | defines the address and data type of return variable. <br/>戻り値の変数アドレスとデータ型を定義します． |
+|                      | T& return_val                  | defines the address and data type of return variable. `argparse::parse()` tries to convert the input arguments into this data type dynamically. <br/>戻り値の変数アドレスとデータ型を定義します．`argparse::parse()` は，入力引数をこのデータ型に動的に変換しようとします． |
 |                      | const T& initial_val           | defines the initial value of `return_val`. <br/>`return_val` の初期値を定義します． |
 |                      | const char* cmd                | defines the command string. <br/>コマンド文字列を定義します． |
 |                      | const int expected_num_of_args | defines the expected number of arguments for the command. `-1` treats as variable length arguments. <br/>コマンドに指定される引数の数を定義します．`-1` は可変長引数として扱われます． |
@@ -179,7 +179,7 @@ $ ./a.out cmd2 1 2 3
 $ ./a.out cmd2 arg1 arg2 arg3 # **This is error case.**
 ```
 
-### Options definitions (Case1)
+### Options definitions (without arguments)
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
@@ -224,7 +224,7 @@ $ ./a.out --option-b
 $ ./a.out -ab # Following commands also output the same result: `$ ./a.out --option-a --option-b`, `$ ./a.out -a --option-b`, `$ ./a.out --option-a -b`, `$ ./a.out -ba`, `$ ./a.out --option-b --option-a`, `$ ./a.out -b --option-a`, `$ ./a.out --option-b -a`.
 ```
 
-### Options definitions (Case2)
+### Options definitions (with an argument)
 - <u>**main.cpp**</u>
 ```cpp
 #mdEx: cpp example (in)
