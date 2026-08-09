@@ -62,9 +62,14 @@ namespace sstd{
 
 ### Option defining function
 
-| Function name | Description |
-| ------------- | ----------- |
-| arg_rule::opt_rule(<br/>&nbsp;&nbsp;T& return_val, <br/>&nbsp;&nbsp;const T& initial_val, <br/>&nbsp;&nbsp;const char* opt_short, <br/>&nbsp;&nbsp;const char* opt_full, <br/>&nbsp;&nbsp;const int expected_num_of_args<br/>)  | - return_val: Same with `arg_rule::cmd_rule()`<br>- initial_val: Same with `arg_rule::cmd_rule()`<br>- opt_short: defines a short option, which should start with '-'. This option is restricted to a single alphabetic character (`*1`).<br>- opt_full: defines the full-format option, which should start with '--'.<br>- expected_num_of_args: Same with `arg_rule::cmd_rule()`<br><br>`*1`. As a constraint enabling to extract negative number like `$ ./a.out -3 -2 -1 0 1 2 3` command line arguments, short option must begin with an alphabetic character. With this constraint, `-3`, `-2` and `-1` are not treated as an option and can be extracted as a numerical value.<br><br>- return_val: `arg_rule::cmd_rule()` と同様<br>- initial_val: `arg_rule::cmd_rule()` と同様<br>- opt_short: 短縮オプションを定義します．定義は `-` で始まる1文字のアルファベットである必要があります (`*1`)．<br>- opt_full: オプションを定義します．定義は `--` で始まる必要があります．<br>- expected_num_of_args: `arg_rule::cmd_rule()` と同様<br><br>`*1`. 制約として短縮オプションは英字で始まる必要があります．例えば `$ ./a.out -3 -2 -1 0 1 2 3` のような負の数を含むコマンドライン引数は，この制約により `-3`、`-2`、`-1` はオプションとして扱われず，数値として抽出できます． |
+| Function name | Variable name | Description |
+| ------------- | ----------- | ----------- |
+| arg_rule::opt_rule() | RETURN VALUE                   |                                                                       |
+|                      | T& return_val                  | Same with `arg_rule::cmd_rule()`. <br/>`arg_rule::cmd_rule()` と同様． |
+|                      | const T& initial_val           | Same with `arg_rule::cmd_rule()`. <br/>`arg_rule::cmd_rule()` と同様． |
+|                      | const char* opt_short          | defines a short option, which should start with '-'. This option is restricted to a single alphabetic character (`*1`). As a constraint enabling to extract negative number like `$ ./a.out -3 -2 -1 0 1 2 3` command line arguments, short option must begin with an alphabetic character. With this constraint, `-3`, `-2` and `-1` are not treated as an option and can be extracted as a numerical value. <br/>短縮オプションを定義します．定義は `-` で始まる1文字のアルファベットである必要があります．制約として短縮オプションは英字で始まる必要があります．例えば `$ ./a.out -3 -2 -1 0 1 2 3` のような負の数を含むコマンドライン引数は，この制約により `-3`、`-2`、`-1` はオプションとして扱われず，数値として抽出できます． |
+|                      | const char* opt_full           | defines the full-format option, which should start with '--'. <br/>オプションを定義します．定義は `--` で始まる必要があります． |
+|                      | const int expected_num_of_args | Same with `arg_rule::cmd_rule()`. <br/>`arg_rule::cmd_rule()` と同様． |
 
 ## Usage
 ### Commands and Options definitions
